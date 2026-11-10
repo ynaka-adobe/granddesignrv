@@ -26,6 +26,28 @@ async function fetchNav() {
   tmp.querySelectorAll('img[src]').forEach((img) => {
     img.src = new URL(img.getAttribute('src'), resp.url).href;
   });
+  tmp.querySelectorAll('source[srcset]').forEach((source) => {
+    source.srcset = new URL(source.getAttribute('srcset'), resp.url).href;
+  });
+  // the published fragment wraps list-item labels/links in <p>: unwrap them so both the
+  // authored and the published markup share one structure (info boxes keep their paragraphs)
+  tmp.querySelectorAll('li').forEach((li) => {
+    if (li.querySelector(':scope > strong, :scope > p > strong')) return;
+    [...li.children].filter((c) => c.tagName === 'P').forEach((p) => p.replaceWith(...p.childNodes));
+  });
+  // content after a nested list can be folded into that list's last item on publish:
+  // hand a stray icon link back to the item that owns the list
+  tmp.querySelectorAll('li').forEach((li) => {
+    const nested = [...li.children].find((c) => c.tagName === 'UL');
+    if (!nested || [...li.children].some((c) => c.tagName === 'A' && c.querySelector('img'))) return;
+    // only a model item (leaf with its own bare thumbnail and a text link) can hold a stray
+    const last = nested.lastElementChild;
+    if (!last || last.querySelector(':scope > ul')) return;
+    if (!last.querySelector(':scope > picture, :scope > img')) return;
+    const links = [...last.children].filter((c) => c.tagName === 'A');
+    const stray = links.find((a) => a.querySelector('img'));
+    if (stray && links.some((a) => !a.querySelector('img'))) li.append(stray);
+  });
   return tmp;
 }
 
@@ -125,7 +147,7 @@ function buildInfo(li) {
   const box = document.createElement('div');
   box.className = 'nav-info';
   const title = li.querySelector('strong');
-  const desc = li.querySelector('p');
+  const desc = [...li.querySelectorAll(':scope > p')].find((p) => !p.querySelector('strong'));
   if (title) {
     const t = document.createElement('p');
     t.className = 'nav-info-title';
@@ -157,7 +179,7 @@ function buildPanel(list, panelId) {
   let looseCards;
 
   directChildren(list, 'li').forEach((li) => {
-    if (li.querySelector(':scope > strong')) {
+    if (li.querySelector(':scope > strong, :scope > p > strong')) {
       panel.append(buildInfo(li));
       panel.classList.add('has-info');
       return;

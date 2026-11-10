@@ -17,6 +17,9 @@ async function fetchFooter() {
   tmp.querySelectorAll('img[src]').forEach((img) => {
     img.src = new URL(img.getAttribute('src'), resp.url).href;
   });
+  tmp.querySelectorAll('source[srcset]').forEach((source) => {
+    source.srcset = new URL(source.getAttribute('srcset'), resp.url).href;
+  });
   return tmp;
 }
 
@@ -45,7 +48,7 @@ function decorateIconLinks(section) {
     icon.className = 'footer-icon';
     icon.setAttribute('aria-hidden', 'true');
     icon.style.setProperty('--icon', `url("${img.src}")`);
-    img.replaceWith(icon);
+    (img.closest('picture') || img).replaceWith(icon);
   });
 }
 
