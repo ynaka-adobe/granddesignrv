@@ -1,0 +1,43 @@
+{
+  "variantName": "shop-compare",
+  "baseBlock": "custom",
+  "version": "1.0.0",
+  "created": "2026-11-10T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/shop-and-compare",
+    "originPage": "Grand Design RV Shop and Compare floor-plan finder",
+    "blockPosition": "main"
+  },
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "dense",
+    "purpose": "product-finder",
+    "layout": "desktop (>=1200px): filters sidebar (400px, #fafafa) left, results right; sort bar and 4-slot compare tray above. Each result is a full-width #fafafa card with a 100px compare | image + 5-stat grid | 200px price + buttons grid. Mobile: filters behind a Filters toggle, card tracks stack.",
+    "accentColor": "#870606",
+    "controls": "dual range sliders with red track and thumbs, checkbox lists, native sort select, numbered pager with red current page, native dialog comparison table"
+  },
+  "contentPattern": {
+    "structure": "key/value config rows: cell 1 = key (case-insensitive), cell 2 = value. Keys: Data (link to the floor-plan sheet JSON), Category Order (comma-separated), Category / Sleeps / Weight / Length / Hitch-Weight (rich-text tooltips), Dealer Stock Note (rich text), Footnote (text).",
+    "dataSource": "EDS sheet JSON { data: [...] } with columns Year, Brand, Floorplan, Category, Show, Dealer Stock, MSRP, Sleeps, Length, Length (in), Hitch, UVW, GVWR, Height, Fresh Water, Gray Water, Waste Water, Slides, Bathroom Access, Image, Details, Inventory, Brochure",
+    "requiredRows": ["Data"],
+    "optionalRows": ["Category Order", "Category", "Sleeps", "Weight", "Length", "Hitch-Weight", "Dealer Stock Note", "Footnote"],
+    "imageCount": 0,
+    "hasCTA": false
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "data-driven product finders with faceted filters, sorting, paging and side-by-side compare",
+      "the Shop and Compare floor-plan tool fed by /data/floorplans.json"
+    ],
+    "notSuitableFor": [
+      "static authored card lists (use cards-model-list)",
+      "single product spec tables (use table)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/shop-and-compare"]
+  }
+}

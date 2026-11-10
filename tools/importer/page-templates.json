@@ -163,6 +163,40 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "shop-and-compare",
+      "urls": [
+        "https://www.granddesignrv.com/shop-and-compare"
+      ],
+      "representativeUrl": "https://www.granddesignrv.com/shop-and-compare",
+      "description": "Shop and Compare: intro heading + subtitle and the interactive floor plan finder (shop-compare block, reads the floor plan data sheet).",
+      "blocks": [
+        {
+          "name": "shop-compare",
+          "instances": [
+            ".brandFilter"
+          ]
+        }
+      ],
+      "urlPattern": "/shop-and-compare",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Shop and Compare intro and floor plan finder",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid:has(.brandFilter)"
+          ],
+          "style": null,
+          "blocks": [
+            "shop-compare"
+          ],
+          "defaultContent": [
+            ".title.gdrv-title.red.aem-GridColumn--phone--hide h1",
+            ".title.heading-scale-secondary.aem-GridColumn--phone--hide h2"
+          ]
+        }
+      ]
     }
   ]
 }

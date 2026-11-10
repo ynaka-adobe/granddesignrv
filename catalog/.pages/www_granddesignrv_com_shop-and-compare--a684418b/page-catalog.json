@@ -1,0 +1,1068 @@
+{
+  "schemaVersion": 2,
+  "url": "https://www.granddesignrv.com/shop-and-compare",
+  "title": "Grand Design RV | Shop and Compare",
+  "timestamp": "2026-11-10T16:10:00.124Z",
+  "duration": "11.4s",
+  "cleanup": {
+    "elementsRemoved": 11,
+    "types": [
+      "overlay",
+      "cookie-banner",
+      "popup"
+    ],
+    "cookieConsentDismissed": true,
+    "lateConsentOverlaysRemoved": 0,
+    "removed": [
+      {
+        "selector": "#cookie-banner",
+        "type": "overlay"
+      },
+      {
+        "selector": "div.cookie-banner.aem-GridColumn",
+        "type": "cookie-banner",
+        "rule": "[class*=\"cookie-banner\"]"
+      },
+      {
+        "selector": "dialog.dialog-modal",
+        "type": "popup",
+        "rule": "body [class*=\"modal\"]:not(nav *)"
+      },
+      {
+        "selector": "div.cmp-button__modal",
+        "type": "popup",
+        "rule": "body [class*=\"modal\"]:not(nav *)"
+      },
+      {
+        "selector": "#button-350b9d2480",
+        "type": "popup",
+        "rule": "body [class*=\"lightbox\"]"
+      }
+    ]
+  },
+  "snapshot": {
+    "html": "page.html",
+    "unresolvedSelectors": []
+  },
+  "images": [
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/logos/corporate/web/GrandDesignRV-logo-white.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/customer-service/1pximage.gif",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/transcend/web/131DL.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/transcend/web/151BH.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/transcend/web/151RB.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/transcend/web/161DB.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/imagine/web/15RBA.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/transcend/web/19BHX.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/transcend/web/161BH.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/transcend/web/24BHX.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/imagine/web/16MLA.png/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/GrandDesignRV-norv-reversed-web?ts=1786451733792&$Transparency-Logo$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://t.co/1/i/adsct?bci=4&dv=America%2FNew_York%26en-US%2Cen%26Google%20Inc.%26Win32%26255%261920%261080%268%2624%261440%26900%260%26na%261&eci=3&event=%7B%7D&event_id=ed1c7012-0e86-4564-bf73-8c027e0ee0ae&integration=advertiser&p_id=Twitter&p_user_id=0&pl_id=ceaa9500-fa0e-47c3-a628-b843cec94b28&tw_ch_fvl=Not%3AA-Brand%2F99.0.0.0%2CHeadlessChrome%2F145.0.7632.6%2CChromium%2F145.0.7632.6&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Fshop-and-compare&tw_engaged_ms=1&tw_iframe_status=0&tw_pid_src=1&tw_session_count=1&tw_session_id=1794326990011-694728525&tw_session_start=1&twpid=tw.1794326990011.350693372891785777&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://analytics.twitter.com/1/i/adsct?bci=4&dv=America%2FNew_York%26en-US%2Cen%26Google%20Inc.%26Win32%26255%261920%261080%268%2624%261440%26900%260%26na%261&eci=3&event=%7B%7D&event_id=ed1c7012-0e86-4564-bf73-8c027e0ee0ae&integration=advertiser&p_id=Twitter&p_user_id=0&pl_id=ceaa9500-fa0e-47c3-a628-b843cec94b28&tw_ch_fvl=Not%3AA-Brand%2F99.0.0.0%2CHeadlessChrome%2F145.0.7632.6%2CChromium%2F145.0.7632.6&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Fshop-and-compare&tw_engaged_ms=1&tw_iframe_status=0&tw_pid_src=1&tw_session_count=1&tw_session_id=1794326990011-694728525&tw_session_start=1&twpid=tw.1794326990011.350693372891785777&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=187008127&Ver=2&mid=28d1225b-88d8-4f6d-9824-db9395984cb5&bo=1&sid=283db570dd2111f1bbaa39c1547625d8&vid=283dc450dd2111f1be5403031c4fcf39&vids=1&msclkid=N&uach=pv%3D10.0&pi=1200101525&lg=en-US&sw=1920&sh=1080&sc=24&tl=Grand%20Design%20RV%20%7C%20Shop%20and%20Compare&p=https%3A%2F%2Fwww.granddesignrv.com%2Fshop-and-compare&r=&lt=541&evt=pageLoad&sv=2&cdb=AQAQ&rn=407761",
+      "type": "img"
+    }
+  ],
+  "skeleton": {
+    "signature": "sB(s(s(s,s),s(s(s,s,s),2x4(s,2x1,5x1,s(,,,,,,,,,))),s),s,s)",
+    "nodeMap": {
+      "r": "body",
+      "rc1": "body > div.root.container.responsivegrid",
+      "rc1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment",
+      "rc1c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment > div.cmp-experiencefragment.cmp-experiencefragment--header > div.cmp-container > div.embed",
+      "rc1c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment > div.cmp-experiencefragment.cmp-experiencefragment--header > div.cmp-container > div.topNav",
+      "rc1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2)",
+      "rc1c2c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid.margin-top-small",
+      "rc1c2c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid.margin-top-small > div.cmp-container.background-x-center.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-feature.gdrv-title.red.align-center.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c2c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid.margin-top-small > div.cmp-container.background-x-center.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-secondary.align-center.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c2c1c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid.margin-top-small > div.cmp-container.background-x-center.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.embed.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c2c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2)",
+      "rc1c2c2c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.heading-container",
+      "rc1c2c2c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.sort-container",
+      "rc1c2c2c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.compare-container",
+      "rc1c2c2c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content",
+      "rc1c2c2c4c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(1)",
+      "rc1c2c2c4c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(2)",
+      "rc1c2c2c4c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(3)",
+      "rc1c2c2c4c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(4)",
+      "rc1c2c2c4c5": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(5)",
+      "rc1c2c2c4c6": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(6)",
+      "rc1c2c2c4c7": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(7)",
+      "rc1c2c2c4c8": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(8)",
+      "rc1c2c2c4c9": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.floor-plan-container:nth-of-type(9)",
+      "rc1c2c2c4c10": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2) > div.cmp-container.background-y-center.background-size-auto > div.container.responsivegrid:nth-of-type(2) > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.brandFilter.aem-GridColumn.aem-GridColumn--default--12 > div.brand-filter > div.new-brand-filter-page.cmp-container > div.main-content > div > div > div.pagination.shaded-btn",
+      "rc1c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(3)",
+      "rc2": "body > div.cloudservice.testandtarget",
+      "rc3": "body > div:nth-of-type(4)"
+    },
+    "sections": [
+      {
+        "id": "rc1",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc2",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(2)",
+        "layout": null,
+        "hasBg": false,
+        "hint": "block",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc3",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid:nth-of-type(3)",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc4",
+        "selector": "body > div.cloudservice.testandtarget",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc5",
+        "selector": "body > div:nth-of-type(4)",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      }
+    ],
+    "invalidIgnore": []
+  },
+  "pageLayout": {
+    "box": {
+      "y": 106,
+      "height": 5343.5
+    },
+    "splits": [
+      {
+        "selector": "div.new-brand-filter-page.cmp-container > div.filters",
+        "sides": [
+          [
+            0,
+            0.3238094175158205
+          ]
+        ],
+        "top": 448.484375,
+        "bottom": 5429.5,
+        "cover": 0.9321634930289137,
+        "above": 2
+      }
+    ],
+    "start": {
+      "kind": "heading",
+      "look": {
+        "font": "\"SS Nickson Six\", Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif",
+        "color": "rgb(159, 16, 16)",
+        "align": "center"
+      }
+    }
+  },
+  "blocks": [
+    {
+      "id": "344d058916fe",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#container-f35521099f > div > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-feature.gdrv-title.red.align-center.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "bounds": {
+        "x": 0,
+        "y": 106,
+        "width": 1440,
+        "height": 69
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/344d058916fe.html"
+    },
+    {
+      "id": "3deacfc30413",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#container-f35521099f > div > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-secondary.align-center.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "bounds": {
+        "x": 0,
+        "y": 175,
+        "width": 1440,
+        "height": 39
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/3deacfc30413.html"
+    },
+    {
+      "id": "41955d168edf",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.heading-container",
+      "bounds": {
+        "x": 40,
+        "y": 233,
+        "width": 1360,
+        "height": 22
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": ""
+      },
+      "description": "heading-container",
+      "features": {
+        "skeleton": "T",
+        "variant": "T",
+        "variantClean": "T"
+      },
+      "screenshot": "blocks/41955d168edf.jpg",
+      "html": "blocks/41955d168edf.html"
+    },
+    {
+      "id": "77340ffcd81b",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.sort-container",
+      "bounds": {
+        "x": 40,
+        "y": 280,
+        "width": 1360,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field"
+      },
+      "description": "sort-container",
+      "features": {
+        "skeleton": "[T|[T|select]]",
+        "variant": "[Tk|[Tk|select~w]]",
+        "variantClean": "[Tk|[Tk|select~w]]"
+      },
+      "screenshot": "blocks/77340ffcd81b.jpg",
+      "html": "blocks/77340ffcd81b.html"
+    },
+    {
+      "id": "04c255de624a",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.compare-container",
+      "bounds": {
+        "x": 20,
+        "y": 349,
+        "width": 1400,
+        "height": 79
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "button"
+      },
+      "description": "compare-container",
+      "features": {
+        "skeleton": "[~|button]",
+        "variant": "[~r|button]",
+        "variantClean": "[~r|button]"
+      },
+      "screenshot": "blocks/04c255de624a.jpg",
+      "html": "blocks/04c255de624a.html"
+    },
+    {
+      "id": "ce0d369ac4b2",
+      "type": "unknown",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.filters",
+      "bounds": {
+        "x": 20,
+        "y": 448,
+        "width": 453,
+        "height": 2128
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "dense",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "link + heading + list + field"
+      },
+      "description": "filters",
+      "features": {
+        "skeleton": "(T details)",
+        "variant": "(Tnr details)",
+        "variantClean": "(Tk details)"
+      },
+      "screenshot": "blocks/ce0d369ac4b2.jpg",
+      "html": "blocks/ce0d369ac4b2.html"
+    },
+    {
+      "id": "8e10f969cd06",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(1)",
+      "bounds": {
+        "x": 493,
+        "y": 448,
+        "width": 927,
+        "height": 661
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T] T)*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk] Tk)*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk] Tk)*3|Tk*2])"
+      },
+      "screenshot": "blocks/8e10f969cd06.jpg",
+      "html": "blocks/8e10f969cd06.html"
+    },
+    {
+      "id": "7acc9f68b856",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(2)",
+      "bounds": {
+        "x": 493,
+        "y": 1129,
+        "width": 927,
+        "height": 526
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/7acc9f68b856.jpg",
+      "html": "blocks/7acc9f68b856.html"
+    },
+    {
+      "id": "048d40e04f02",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(3)",
+      "bounds": {
+        "x": 493,
+        "y": 1675,
+        "width": 927,
+        "height": 547
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/048d40e04f02.jpg",
+      "html": "blocks/048d40e04f02.html"
+    },
+    {
+      "id": "2657189271cb",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(4)",
+      "bounds": {
+        "x": 493,
+        "y": 2243,
+        "width": 927,
+        "height": 528
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/2657189271cb.jpg",
+      "html": "blocks/2657189271cb.html"
+    },
+    {
+      "id": "1c950c1c6092",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(5)",
+      "bounds": {
+        "x": 493,
+        "y": 2791,
+        "width": 927,
+        "height": 515
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/1c950c1c6092.jpg",
+      "html": "blocks/1c950c1c6092.html"
+    },
+    {
+      "id": "67ef816a3fbf",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(6)",
+      "bounds": {
+        "x": 493,
+        "y": 3326,
+        "width": 927,
+        "height": 483
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/67ef816a3fbf.jpg",
+      "html": "blocks/67ef816a3fbf.html"
+    },
+    {
+      "id": "4785c5c08313",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(7)",
+      "bounds": {
+        "x": 493,
+        "y": 3829,
+        "width": 927,
+        "height": 501
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/4785c5c08313.jpg",
+      "html": "blocks/4785c5c08313.html"
+    },
+    {
+      "id": "7887cc95cd06",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(8)",
+      "bounds": {
+        "x": 493,
+        "y": 4350,
+        "width": 927,
+        "height": 439
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/7887cc95cd06.jpg",
+      "html": "blocks/7887cc95cd06.html"
+    },
+    {
+      "id": "a542dd591e17",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div:nth-child(9)",
+      "bounds": {
+        "x": 493,
+        "y": 4810,
+        "width": 927,
+        "height": 488
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "field + image + heading + text + link + button"
+      },
+      "description": "floor-plan-container",
+      "features": {
+        "skeleton": "(T [(input T)|(T [T|T*1.25|T])*3|T*2])",
+        "variant": "(Tk [(input Tk)|(T [Tn|Tn*1.25|Tn] [Tk|Tk*1.25|Tk])*3|Tkrw*2])",
+        "variantClean": "(Tk [(input Tk)|(T [Tw|Tw*1.25|Tw] [Tk|Tk*1.25|Tk])*3|Tk*2])"
+      },
+      "screenshot": "blocks/a542dd591e17.jpg",
+      "html": "blocks/a542dd591e17.html"
+    },
+    {
+      "id": "bf266f541c33",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(1)",
+      "bounds": {
+        "x": 520,
+        "y": 5318,
+        "width": 122,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~w",
+        "variantClean": "button~w"
+      },
+      "screenshot": "blocks/bf266f541c33.jpg",
+      "html": "blocks/bf266f541c33.html"
+    },
+    {
+      "id": "9a03aa944a8d",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button.cmp-button.active",
+      "bounds": {
+        "x": 652,
+        "y": 5318,
+        "width": 49,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~r",
+        "variantClean": "button~r"
+      },
+      "screenshot": "blocks/9a03aa944a8d.jpg",
+      "html": "blocks/9a03aa944a8d.html"
+    },
+    {
+      "id": "936c0d8a5207",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(3)",
+      "bounds": {
+        "x": 711,
+        "y": 5318,
+        "width": 51,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/936c0d8a5207.jpg",
+      "html": "blocks/936c0d8a5207.html"
+    },
+    {
+      "id": "f365ba3f9dad",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(4)",
+      "bounds": {
+        "x": 772,
+        "y": 5318,
+        "width": 51,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/f365ba3f9dad.jpg",
+      "html": "blocks/f365ba3f9dad.html"
+    },
+    {
+      "id": "7027c377b593",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(5)",
+      "bounds": {
+        "x": 834,
+        "y": 5318,
+        "width": 51,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/7027c377b593.jpg",
+      "html": "blocks/7027c377b593.html"
+    },
+    {
+      "id": "552582f43c07",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(6)",
+      "bounds": {
+        "x": 895,
+        "y": 5318,
+        "width": 52,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/552582f43c07.jpg",
+      "html": "blocks/552582f43c07.html"
+    },
+    {
+      "id": "2db9b5fbb4e5",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(7)",
+      "bounds": {
+        "x": 957,
+        "y": 5318,
+        "width": 52,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/2db9b5fbb4e5.jpg",
+      "html": "blocks/2db9b5fbb4e5.html"
+    },
+    {
+      "id": "474d5f95c0c6",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(8)",
+      "bounds": {
+        "x": 1019,
+        "y": 5318,
+        "width": 50,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/474d5f95c0c6.jpg",
+      "html": "blocks/474d5f95c0c6.html"
+    },
+    {
+      "id": "77f5ec9ed5aa",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(9)",
+      "bounds": {
+        "x": 1079,
+        "y": 5318,
+        "width": 51,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/77f5ec9ed5aa.jpg",
+      "html": "blocks/77f5ec9ed5aa.html"
+    },
+    {
+      "id": "5059b3623feb",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(10)",
+      "bounds": {
+        "x": 1141,
+        "y": 5318,
+        "width": 52,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/5059b3623feb.jpg",
+      "html": "blocks/5059b3623feb.html"
+    },
+    {
+      "id": "a6f28a97515d",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(11)",
+      "bounds": {
+        "x": 1203,
+        "y": 5318,
+        "width": 58,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/a6f28a97515d.jpg",
+      "html": "blocks/a6f28a97515d.html"
+    },
+    {
+      "id": "6bb2c400d836",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(12)",
+      "bounds": {
+        "x": 1271,
+        "y": 5318,
+        "width": 54,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/6bb2c400d836.jpg",
+      "html": "blocks/6bb2c400d836.html"
+    },
+    {
+      "id": "1af7af221e31",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(13)",
+      "bounds": {
+        "x": 1336,
+        "y": 5318,
+        "width": 57,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/1af7af221e31.jpg",
+      "html": "blocks/1af7af221e31.html"
+    },
+    {
+      "id": "b6a22729c169",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(14)",
+      "bounds": {
+        "x": 848,
+        "y": 5380,
+        "width": 57,
+        "height": 42
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/b6a22729c169.jpg",
+      "html": "blocks/b6a22729c169.html"
+    },
+    {
+      "id": "8a84ba94c5cc",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(15)",
+      "bounds": {
+        "x": 916,
+        "y": 5380,
+        "width": 57,
+        "height": 42
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/8a84ba94c5cc.jpg",
+      "html": "blocks/8a84ba94c5cc.html"
+    },
+    {
+      "id": "fff4e4e00efc",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b7d407ad08 > div > div > div > div > div.main-content > div > div > div.pagination.shaded-btn > button:nth-child(16)",
+      "bounds": {
+        "x": 983,
+        "y": 5380,
+        "width": 82,
+        "height": 42
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "cmp-button",
+      "features": {
+        "skeleton": "button",
+        "variant": "button~n",
+        "variantClean": "button~n"
+      },
+      "screenshot": "blocks/fff4e4e00efc.jpg",
+      "html": "blocks/fff4e4e00efc.html"
+    }
+  ]
+}
