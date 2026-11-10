@@ -1,54 +1,89 @@
-/* cards-callouts — horizontal strip of icon + short label items */
+/* cards-callouts: row of centered line-icon + label links (values from source computed styles) */
+main > .section > .cards-callouts-wrapper {
+  max-width: var(--content-max-width);
+}
+
+.cards-callouts {
+  margin: 0 0 60px;
+  color: var(--text-color);
+  text-align: center;
+}
+
 .cards-callouts > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px 48px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 79px 40px;
 }
 
 .cards-callouts > ul > li {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  border: none;
-  background-color: transparent;
+  flex-direction: column;
+  align-items: stretch;
+  cursor: pointer;
+}
+
+.cards-callouts .cards-callouts-card-image {
+  padding: 0 40px;
+  line-height: 0;
+}
+
+.cards-callouts .cards-callouts-card-image:empty {
+  display: none;
+}
+
+.cards-callouts .cards-callouts-card-image picture {
+  display: block;
+}
+
+.cards-callouts .cards-callouts-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .cards-callouts .cards-callouts-card-body {
-  margin: 0;
+  margin: 20px 0 0;
 }
 
 .cards-callouts .cards-callouts-card-body h2,
 .cards-callouts .cards-callouts-card-body h3 {
   margin: 0;
-  font-family: var(--body-font-family);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--body-font-size-m);
-  line-height: 1.4;
+  font-family: var(--heading-font-family);
+  font-size: 25.6px;
+  font-weight: 700;
+  line-height: 33.28px;
+  color: var(--text-color);
+}
+
+.cards-callouts .cards-callouts-card-body a:any-link {
   color: inherit;
+  text-decoration: none;
 }
 
-.cards-callouts .cards-callouts-card-image {
-  line-height: 0;
-  color: var(--brand-yellow);
+/* whole card is clickable on the source */
+.cards-callouts .cards-callouts-card-body a:any-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
-/* hide empty image cell (source icons are web-component glyphs, not imgs) */
-.cards-callouts .cards-callouts-card-image:empty {
-  display: none;
+.cards-callouts .cards-callouts-card-body a:focus-visible {
+  outline: none;
 }
 
-.cards-callouts .cards-callouts-card-image img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
+.cards-callouts > ul > li:has(a:focus-visible) {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 @media (width >= 900px) {
   .cards-callouts > ul {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    grid-template-columns: repeat(4, minmax(0, 200px));
+    justify-content: center;
+    column-gap: clamp(40px, calc((100% - 800px) / 3), 160px);
   }
 }

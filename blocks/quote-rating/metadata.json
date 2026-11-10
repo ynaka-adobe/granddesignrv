@@ -1,0 +1,46 @@
+{
+  "variantName": "quote-rating",
+  "baseBlock": "quote",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/",
+    "originPage": "Grand Design RV homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "testimonial",
+    "imagePattern": "none",
+    "notes": [
+      "Testimonial with 5-star rating, large quote marks and right-aligned attribution; multiple instances laid out in a 2-column masonry"
+    ]
+  },
+  "contentPattern": {
+    "structure": "row 1 = quotation (optional first line with the rating, e.g. \"★★★★★\" or \"5/5\"), row 2 = attribution (author, location)",
+    "buttonCount": 0,
+    "imageCount": 0,
+    "hasDescription": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "customer/owner reviews with a star rating",
+      "short testimonials with attribution"
+    ],
+    "notSuitableFor": [
+      "pull quotes without a rating (use quote)",
+      "testimonial carousels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-09T00:00:00.000Z"
+  }
+}

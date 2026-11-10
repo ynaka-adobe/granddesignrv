@@ -1,0 +1,67 @@
+/* Grand Design RV brand tokens (extracted from https://www.granddesignrv.com/) */
+:root {
+  /* colors */
+  --background-color: #fff;
+  --light-color: #f4f4f4;
+  --dark-color: #191919;
+  --text-color: #000;
+  --text-muted-color: #707070;
+  --link-color: #696767;
+  --link-hover-color: #232424;
+  --brand-red: #9f1010;
+  --brand-red-dark: #971b26;
+  --focus-color: #237da0;
+
+  /* fonts */
+  --body-font-family: proxima-nova, proxima-nova-fallback, arial, helvetica, sans-serif;
+  --heading-font-family: proxima-nova, proxima-nova-fallback, arial, helvetica, sans-serif;
+  --button-font-family: "Aktiv Grotesk SemiBold", "Aktiv Grotesk", proxima-nova, proxima-nova-fallback, arial, helvetica, sans-serif;
+  --accent-font-family: "Aktiv Grotesk Regular", "Aktiv Grotesk", proxima-nova, proxima-nova-fallback, arial, helvetica, sans-serif;
+  --display-font-family: "SS Nickson Six", roboto-condensed, impact, haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+  /* body sizes */
+  --body-font-size-m: 17.6px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
+  --body-line-height: 1.3;
+
+  /* heading sizes (mobile) */
+  --heading-font-size-xxl: 32px;
+  --heading-font-size-xl: 24px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* buttons */
+  --button-font-size: 20px;
+  --button-padding: 20px 30px;
+
+  /* spacing */
+  --section-spacing: 40px;
+  --content-max-width: 1440px;
+
+  /* nav heights */
+  --nav-height: 76px;
+  --breadcrumbs-height: 34px;
+  --header-height: var(--nav-height);
+}
+
+@media (width >= 1200px) {
+  :root {
+    /* header bar: 86px on desktop (76px below the header breakpoint) */
+    --nav-height: 86px;
+  }
+}
+
+@media (width >= 900px) {
+  :root {
+    /* heading sizes (desktop) */
+    --heading-font-size-xxl: 50px;
+    --heading-font-size-xl: 24px;
+    --heading-font-size-l: 25.6px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
+  }
+}

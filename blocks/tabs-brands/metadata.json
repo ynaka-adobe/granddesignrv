@@ -1,0 +1,47 @@
+{
+  "variantName": "tabs-brands",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/",
+    "originPage": "Grand Design RV homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "tabbed product browser",
+    "imagePattern": "product cutout",
+    "notes": [
+      "Centered underline tab bar whose panels show a horizontal model slider (image, name, floorplans/MSRP, CTA)"
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per tab: cell 1 = tab label, cell 2 = optional lead link (\"All <type>\") then per model: image, model name, floorplans/MSRP line, CTA link (each image starts a new model card)",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "hasDescription": true,
+    "hasCTA": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "product lines grouped by category",
+      "tabbed sliders of brand/model cards"
+    ],
+    "notSuitableFor": [
+      "tabs with long-form text panels (use tabs)",
+      "single non-tabbed card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-09T00:00:00.000Z"
+  }
+}

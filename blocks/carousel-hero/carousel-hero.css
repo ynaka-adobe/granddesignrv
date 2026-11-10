@@ -1,0 +1,312 @@
+/* carousel-hero: values from https://www.granddesignrv.com/ home hero carousel (computed styles) */
+
+/* Full-bleed: break out of the section's max-width container */
+main > .section > .carousel-hero-wrapper {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+main .section:has(> .carousel-hero-wrapper:first-child) {
+  padding-top: 0;
+}
+
+.carousel-hero {
+  position: relative;
+  color: #fff;
+}
+
+.carousel-hero .carousel-hero-slides-container {
+  position: relative;
+}
+
+.carousel-hero .carousel-hero-slides,
+.carousel-hero .carousel-hero-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* each slide keeps its own height; JS sizes the track to the active slide */
+.carousel-hero .carousel-hero-slides {
+  display: flex;
+  align-items: flex-start;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+  scrollbar-width: none;
+}
+
+.carousel-hero .carousel-hero-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-hero .carousel-hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--dark-color);
+}
+
+/* background image: covers the slide */
+.carousel-hero .carousel-hero-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-hero .carousel-hero-slide-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* content cell (EDS can mark a CTA-only cell .button-container, which is inline globally) */
+.carousel-hero .carousel-hero-slide-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.carousel-hero .carousel-hero-slide-content > :first-child {
+  margin-top: 0;
+}
+
+/* --- slide with a heading: left-aligned knockout copy over the photo (herov2 --transparent) --- */
+.carousel-hero .carousel-hero-slide-content:has(> :is(h1, h2, h3)) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 560px;
+  padding: 48px 20px 40px;
+  text-align: left;
+}
+
+.carousel-hero .carousel-hero-slide-content :is(h1, h2, h3) {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 42.24px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.carousel-hero .carousel-hero-slide-content p {
+  margin: 24px 0 0;
+  font-family: var(--accent-font-family);
+  font-size: 18px;
+  line-height: 25.2px;
+  color: #fff;
+}
+
+.carousel-hero .carousel-hero-slide-content p.button-container {
+  margin: 0;
+}
+
+main .carousel-hero .carousel-hero-slide-content a.button:any-link {
+  box-sizing: border-box;
+  min-width: 210px;
+  min-height: 58px;
+  margin: 32px 0 0;
+  border: 0;
+  padding: 16px 28px;
+  font-family: "Aktiv Grotesk Bold", var(--button-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+/* --- CTA-only slide (awards lineup): artwork carries the message, button centered --- */
+.carousel-hero .carousel-hero-slide:not(:has(:is(h1, h2, h3))) .carousel-hero-slide-image picture {
+  position: static;
+}
+
+.carousel-hero .carousel-hero-slide:not(:has(:is(h1, h2, h3))) .carousel-hero-slide-image img {
+  height: auto;
+}
+
+.carousel-hero .carousel-hero-slide-content:not(:has(:is(h1, h2, h3))) {
+  padding: 24px 20px 42px;
+  text-align: center;
+}
+
+.carousel-hero .carousel-hero-slide-content:not(:has(:is(h1, h2, h3))) p {
+  max-width: none;
+  margin: 0;
+}
+
+main .carousel-hero .carousel-hero-slide-content:not(:has(:is(h1, h2, h3))) a.button:any-link {
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  border: 2px solid var(--brand-red);
+  padding: var(--button-padding);
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* --- prev/next arrows: hidden on the source (cmp-carousel__actions display: none) --- */
+.carousel-hero .carousel-hero-navigation-buttons {
+  display: none;
+}
+
+/* --- dot indicators below the slides, with the autoplay pause/play toggle --- */
+.carousel-hero nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.carousel-hero .carousel-hero-slide-indicators {
+  display: flex;
+  justify-content: center;
+}
+
+main .carousel-hero .carousel-hero-autoplay-toggle {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  color: rgb(0 0 0 / 80%);
+  cursor: pointer;
+  filter: none;
+}
+
+/* pause icon: two bars */
+main .carousel-hero .carousel-hero-autoplay-toggle::before,
+main .carousel-hero .carousel-hero-autoplay-toggle::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  width: 3px;
+  height: 10px;
+  background-color: currentcolor;
+}
+
+main .carousel-hero .carousel-hero-autoplay-toggle::before {
+  left: 8px;
+}
+
+main .carousel-hero .carousel-hero-autoplay-toggle::after {
+  left: 13px;
+}
+
+/* play icon: triangle */
+main .carousel-hero .carousel-hero-autoplay-toggle.is-stopped::before {
+  left: 9px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid currentcolor;
+  background: none;
+}
+
+main .carousel-hero .carousel-hero-autoplay-toggle.is-stopped::after {
+  content: none;
+}
+
+main .carousel-hero .carousel-hero-autoplay-toggle:hover {
+  color: #000;
+  filter: none;
+}
+
+main .carousel-hero .carousel-hero-autoplay-toggle:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 0;
+}
+
+.carousel-hero .carousel-hero-slide-indicator {
+  margin: 0 7px;
+}
+
+main .carousel-hero .carousel-hero-slide-indicator button {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  background-color: rgb(0 0 0 / 50%);
+  font-size: 0;
+  cursor: pointer;
+  filter: none;
+  transition: background-color 0.15s;
+}
+
+main .carousel-hero .carousel-hero-slide-indicator button[aria-current] {
+  cursor: default;
+}
+
+main .carousel-hero .carousel-hero-slide-indicator button:hover,
+main .carousel-hero .carousel-hero-slide-indicator button:disabled,
+main .carousel-hero .carousel-hero-slide-indicator button:disabled:hover {
+  border: 0;
+  background-color: rgb(0 0 0 / 80%);
+  filter: none;
+}
+
+.carousel-hero .carousel-hero-slide-indicator-label {
+  display: none;
+}
+
+@media (width >= 900px) {
+  /* slide with a heading: 146px top spacer, then a 560px band with copy vertically centered */
+  .carousel-hero .carousel-hero-slide-content:has(> :is(h1, h2, h3)) {
+    justify-content: center;
+    margin-top: 146px;
+    padding: 72px 106px;
+  }
+
+  .carousel-hero .carousel-hero-slide-content :is(h1, h2, h3) {
+    max-width: 700px;
+    font-size: 80px;
+    line-height: 76px;
+  }
+
+  .carousel-hero .carousel-hero-slide-content p {
+    max-width: 640px;
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  main .carousel-hero .carousel-hero-slide-content a.button:any-link {
+    min-width: 242px;
+    min-height: 68px;
+    margin-top: 46px;
+    padding: 18px 36px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  /* CTA-only slide: artwork covers a 535px slide, button sits 429px down */
+  .carousel-hero .carousel-hero-slide:not(:has(:is(h1, h2, h3))) .carousel-hero-slide-image picture {
+    position: absolute;
+  }
+
+  .carousel-hero .carousel-hero-slide:not(:has(:is(h1, h2, h3))) .carousel-hero-slide-image img {
+    height: 100%;
+  }
+
+  .carousel-hero .carousel-hero-slide-content:not(:has(:is(h1, h2, h3))) {
+    padding: 429px 16px 42px;
+  }
+}

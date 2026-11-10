@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/",
+  "path": "index",
+  "timestamp": "2026-11-09T19:06:34.360Z",
+  "title": "Grand Design RV | Home",
+  "template": "home",
+  "blocks": [
+    "carousel-hero",
+    "cards-callouts",
+    "cards-promo",
+    "tabs-brands",
+    "hero-banner",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ]
+}

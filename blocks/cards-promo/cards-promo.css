@@ -1,113 +1,105 @@
-/* cards-promo — promotional feature cards: 1 yellow (tall) + 2 navy (split) */
-.cards-promo > ul {
-  list-style: none;
-  margin: 0;
+/* cards-promo: pillar cards (photo, red title, short centered text, red CTA) */
+
+/* source content area is 1440px wide with 20px gutters supplied by the cards */
+main .section > .cards-promo-wrapper {
+  max-width: var(--content-max-width);
   padding: 0;
+}
+
+.cards-promo {
+  padding: 0 0 20px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.cards-promo > ul {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .cards-promo > ul > li {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  border: none;
-  border-radius: var(--border-radius);
-  background-color: var(--cat-neutral-10);
+  padding: 0 20px;
 }
 
 .cards-promo .cards-promo-card-image {
   line-height: 0;
 }
 
+.cards-promo .cards-promo-card-image picture,
 .cards-promo .cards-promo-card-image img {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  height: auto;
 }
 
 .cards-promo .cards-promo-card-body {
-  margin: 0;
-  padding: 24px;
   display: flex;
-  flex-direction: column;
   flex: 1;
-  gap: 8px;
+  flex-direction: column;
 }
 
+.cards-promo .cards-promo-card-body h1,
 .cards-promo .cards-promo-card-body h2,
 .cards-promo .cards-promo-card-body h3,
 .cards-promo .cards-promo-card-body h4 {
   margin: 0;
+  color: var(--brand-red);
   font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--heading-font-size-l);
-  line-height: 1.2;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
 }
 
 .cards-promo .cards-promo-card-body p {
   margin: 0;
+  padding: 0 40px;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.5;
+  line-height: 22.88px;
 }
 
-.cards-promo .cards-promo-card-body a:any-link {
-  align-self: flex-start;
+.cards-promo .cards-promo-card-body p strong {
+  font-weight: 700;
+}
+
+/* CTA sits at the bottom so buttons line up across cards */
+.cards-promo .cards-promo-card-body p.button-container {
+  display: block;
   margin-top: auto;
+  padding: 0;
 }
 
-/* first card = Cat Yellow (black text) */
-.cards-promo > ul > li:first-child {
-  background-color: var(--brand-yellow);
-  color: var(--text-strong-color);
+/* mobile: source uses the outline treatment of the cardinal-red button */
+main .cards-promo .button-container a.button:any-link {
+  margin: 20px 0 0;
+  background-color: transparent;
+  color: var(--brand-red);
 }
 
-/* remaining cards = navy (knockout text) */
-.cards-promo > ul > li:not(:first-child) {
-  background-color: var(--brand-navy);
-  color: var(--background-color);
-}
-
-.cards-promo > ul > li:not(:first-child) h2,
-.cards-promo > ul > li:not(:first-child) h3,
-.cards-promo > ul > li:not(:first-child) h4 {
-  color: var(--background-color);
-}
-
-/* CTA inside navy cards uses yellow button */
-.cards-promo > ul > li a.button:any-link {
-  background-color: var(--brand-yellow);
-  border-color: var(--brand-yellow);
-  color: var(--text-strong-color);
+main .cards-promo .button-container a.button:hover {
+  color: var(--brand-red);
 }
 
 @media (width >= 900px) {
   .cards-promo > ul {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
   }
 
-  /* left yellow card spans both rows */
-  .cards-promo > ul > li:first-child {
-    grid-row: span 2;
+  /* desktop: solid cardinal-red button */
+  main .cards-promo .button-container a.button:any-link {
+    background-color: var(--brand-red);
+    color: #fff;
   }
 
-  /* navy cards: image left, text right */
-  .cards-promo > ul > li:not(:first-child) {
-    flex-direction: row;
-  }
-
-  .cards-promo > ul > li:not(:first-child) .cards-promo-card-image {
-    flex: 0 0 45%;
-  }
-
-  .cards-promo > ul > li:not(:first-child) .cards-promo-card-image img {
-    height: 100%;
-    aspect-ratio: auto;
-  }
-
-  .cards-promo > ul > li:not(:first-child) .cards-promo-card-body {
-    flex: 1;
+  main .cards-promo .button-container a.button:hover {
+    color: #fff;
   }
 }

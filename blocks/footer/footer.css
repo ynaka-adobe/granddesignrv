@@ -1,20 +1,337 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* footer: values from https://www.granddesignrv.com/ (computed styles); mobile first, full layout from 1200px */
+
+footer .footer {
+  background-color: #000f13;
+  color: #f7f7f7;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer-inner {
+  box-sizing: border-box;
+  padding: 40px 20px 70px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* below 1200px the source shows only brand, legal, social and CTA */
+footer .footer-links,
+footer .footer-address,
+footer .footer-contact {
+  display: none;
+}
+
+footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* link columns */
+footer .footer-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-column {
+  padding-left: 8px;
+  text-align: center;
+}
+
+footer .footer-column h2 {
+  margin: 0 0 5px;
+  color: #f7f7f7;
+  font-family: var(--body-font-family);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 40.5px;
+  text-transform: uppercase;
+}
+
+footer .footer-column li {
+  padding: 2.5px 0;
+  line-height: 22.5px;
+}
+
+footer .footer-column a:any-link {
+  color: #c4c4c4;
+  font-size: 15px;
+  line-height: 22.5px;
+  text-decoration: none;
+}
+
+footer .footer-column a:hover {
+  color: #f7f7f7;
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
+/* brand logo */
+footer .footer-brand a:any-link {
+  display: block;
+  line-height: 0;
+}
+
+footer .footer-brand img {
+  display: block;
+  width: 292px;
+  height: auto;
+}
+
+/* address + phone numbers */
+footer .footer-address p,
+footer .footer-contact p {
+  color: #868686;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+footer .footer-contact a:any-link {
+  margin-right: 8px;
+  color: #868686;
+  text-decoration: underline;
+}
+
+footer .footer-contact a:hover,
+footer .footer-legal-links a:hover {
+  opacity: 0.75;
+}
+
+/* disclaimer + copyright */
+footer .footer-legal-notice {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 321px;
+  padding-right: 30px;
+}
+
+footer .footer-legal-notice p {
+  color: #868686;
+  font-size: 10.72px;
+  font-weight: 100;
+  line-height: 16.08px;
+}
+
+/* legal links */
+footer .footer-legal-links {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 321px;
+  margin-top: 20px;
+  padding-right: 30px;
+}
+
+footer .footer-legal-links p {
+  color: #868686;
+  font-size: 13.6px;
+  font-weight: 700;
+  line-height: 20.4px;
+}
+
+footer .footer-legal-links a:any-link {
+  margin: 0 3px;
+  color: #868686;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+/* social icons: masked images so they take the link colour */
+footer .footer-social {
+  margin-top: 20px;
+}
+
+footer .footer-social ul {
+  display: flex;
+  gap: 30px;
+}
+
+footer .footer-social a:any-link {
+  display: block;
+  color: #fff;
+  line-height: 0;
+}
+
+footer .footer-social a:hover {
+  color: var(--brand-red-dark);
+}
+
+footer .footer-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: currentcolor;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+/* Ask an Expert CTA */
+footer .footer-cta {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  padding: 20px 0 0 20px;
+}
+
+footer a.footer-cta-link:any-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  border: 2px solid var(--brand-red);
+  padding: 20px 30px;
+  background-color: var(--brand-red);
+  color: #fff;
+  font-family: var(--button-font-family);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: filter 0.15s;
+}
+
+footer a.footer-cta-link:hover {
+  color: #fff;
+  filter: brightness(0.88);
+}
+
+/* space between the disclaimer and the copyright paragraph */
+footer .footer-legal-notice p:last-child {
+  margin-top: 16px;
+}
+
+/* first address line ("Corporate Office") is uppercase */
+footer .footer-address p:first-child {
+  text-transform: uppercase;
+}
+
+/* tablet: logo + disclaimer side by side, legal links under the logo, social row, centred CTA */
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer-bottom {
+    display: grid;
+    grid-template-columns: 5fr 2fr 5fr;
+    align-items: start;
+    text-align: left;
   }
+
+  footer .footer-brand {
+    grid-area: 1 / 1;
+  }
+
+  footer .footer-brand img {
+    width: 100%;
+  }
+
+  footer .footer-legal-notice {
+    grid-area: 1 / 3;
+    max-width: none;
+    text-align: center;
+  }
+
+  footer .footer-legal-links {
+    grid-area: 2 / 1 / 2 / 3;
+    justify-self: end;
+    width: calc(100% * 5 / 7);
+    max-width: none;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  footer .footer-social {
+    grid-area: 3 / 1 / 3 / 4;
+  }
+
+  footer .footer-cta {
+    display: flex;
+    grid-area: 4 / 1 / 4 / 4;
+    justify-content: center;
+    max-width: none;
+    padding: 0;
+  }
+
+  footer a.footer-cta-link:any-link {
+    width: auto;
+  }
+}
+
+/* desktop: four link columns, then logo / address / phones / disclaimer, legal, social, CTA */
+@media (width >= 1200px) {
+  footer .footer-inner {
+    padding: 80px 20px 70px;
+  }
+
+  footer .footer-links,
+  footer .footer-address,
+  footer .footer-contact {
+    display: block;
+  }
+
+  footer .footer-bottom {
+    display: grid;
+    grid-template-columns: 266px 173px 378px 1fr;
+    align-items: start;
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  footer .footer-brand {
+    grid-area: 1 / 1;
+  }
+
+  footer .footer-brand img {
+    width: 233px;
+  }
+
+  footer .footer-address {
+    grid-area: 1 / 2;
+    width: 133px;
+    text-align: center;
+  }
+
+  footer .footer-contact {
+    grid-area: 1 / 3;
+    width: 208px;
+    text-align: center;
+  }
+
+  footer .footer-legal-notice {
+    grid-area: 1 / 4;
+    max-width: none;
+    text-align: center;
+  }
+
+  footer .footer-legal-links {
+    grid-area: 2 / 1 / 2 / 4;
+    justify-self: start;
+    width: 553px;
+    max-width: none;
+    margin: 3px 0 0 233px;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  footer .footer-social {
+    grid-area: 3 / 1 / 3 / 5;
+  }
+
+  footer .footer-cta {
+    display: flex;
+    grid-area: 4 / 1 / 4 / 5;
+    justify-content: flex-end;
+    max-width: none;
+    margin-top: 0;
+    padding: 0 30px 0 0;
+  }
+
 }

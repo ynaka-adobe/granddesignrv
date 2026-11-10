@@ -1,0 +1,139 @@
+/* quote-rating: owner testimonial (values from granddesignrv.com .customercomment) */
+
+.quote-rating blockquote {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* rating */
+.quote-rating .quote-rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.quote-rating .quote-rating-star {
+  position: relative;
+  display: inline-block;
+  color: #868686;
+}
+
+.quote-rating .quote-rating-star::before {
+  content: '★';
+}
+
+.quote-rating .quote-rating-star-full {
+  color: #ffb900;
+}
+
+.quote-rating .quote-rating-star-half::after {
+  content: '★';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ffb900;
+}
+
+/* quotation */
+.quote-rating .quote-rating-quotation {
+  margin-top: 9px;
+}
+
+.quote-rating .quote-rating-quotation p {
+  margin: 0;
+  font-family: "Aktiv Grotesk SemiBold", proxima-nova, proxima-nova-fallback, arial, helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  color: #767676;
+}
+
+.quote-rating .quote-rating-quotation > :first-child::before,
+.quote-rating .quote-rating-quotation > :last-child::after {
+  position: relative;
+  font-size: 46px;
+  line-height: 0;
+  color: var(--brand-red);
+}
+
+.quote-rating .quote-rating-quotation > :first-child::before {
+  content: '“';
+  top: 0.25em;
+  padding-right: 0.15em;
+}
+
+.quote-rating .quote-rating-quotation > :last-child::after {
+  content: '“';
+  display: inline-block;
+  top: 0.15em;
+  left: 0.5em;
+  width: 0;
+  white-space: nowrap;
+  transform: rotate(180deg);
+}
+
+/* attribution */
+.quote-rating .quote-rating-attribution {
+  margin-top: 27px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+
+  /* source uses #868686 (3.6:1); darkened to meet WCAG AA 4.5:1 */
+  color: var(--text-muted-color);
+  text-align: right;
+}
+
+.quote-rating .quote-rating-attribution p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.quote-rating .quote-rating-attribution cite {
+  font-style: normal;
+}
+
+/* section heading (default content of the section holding the quote-rating blocks) */
+main .section.quote-rating-container > .default-content-wrapper h2 {
+  margin: 0;
+  padding-bottom: 12px;
+  font-family: var(--accent-font-family);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  color: var(--brand-red-dark);
+  text-transform: uppercase;
+}
+
+@media (width >= 900px) {
+  /* sibling quote-rating blocks sit in a 2-column grid */
+  main .section.quote-rating-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 528px));
+    justify-content: center;
+    gap: 32px 80px;
+    padding-inline: 32px;
+  }
+
+  main .section.quote-rating-container > div {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main .section.quote-rating-container > .default-content-wrapper {
+    grid-column: 1 / -1;
+    margin-bottom: -32px;
+  }
+}

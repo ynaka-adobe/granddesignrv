@@ -1,0 +1,47 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/",
+    "originPage": "Grand Design RV homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero carousel",
+    "imagePattern": "full-bleed background",
+    "notes": [
+      "Full-bleed photo slides with overlaid knockout heading, text and CTA; slide indicator tabs"
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per slide: cell 1 = slide image, cell 2 = heading + description + CTA link (optional)",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "hasDescription": true,
+    "hasCTA": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage rotating hero banners",
+      "campaign or award announcements over full-bleed photos"
+    ],
+    "notSuitableFor": [
+      "single static hero (use hero-banner)",
+      "product/card sliders with many small items"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-09T00:00:00.000Z"
+  }
+}

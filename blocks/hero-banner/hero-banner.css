@@ -1,79 +1,222 @@
-/* hero-banner — full-bleed photographic banner with knockout text + yellow CTA */
-.hero-banner-container .hero-banner-wrapper {
-  max-width: unset;
+/* hero-banner — full-bleed launch hero: background video or image, centered knockout text */
+
+/* full-bleed: escape the 1200px section column */
+main > .section > .hero-banner-wrapper {
+  max-width: none;
   padding: 0;
 }
 
+/* mobile base (source <= 420px) */
 .hero-banner {
   position: relative;
+  isolation: isolate;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  height: 536px;
-  padding: 48px 24px;
+  box-sizing: border-box;
+  min-height: 380px;
+  padding: 38px 16px 54px;
   overflow: hidden;
-  color: var(--background-color);
+  background-color: #000;
+  color: #fff;
+  text-align: center;
 }
 
-/* background photo */
-.hero-banner picture {
+/* background media layer (video or picture) */
+.hero-banner .hero-banner-media {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.hero-banner picture img {
+.hero-banner .hero-banner-media video,
+.hero-banner .hero-banner-media picture,
+.hero-banner .hero-banner-media img {
+  display: block;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
-/* dark scrim so knockout text stays legible */
-.hero-banner::after {
+/* shade over photographic backgrounds (source hides it for video) */
+.hero-banner.has-image .hero-banner-media::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(90deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 35%) 55%, rgb(0 0 0 / 10%) 100%);
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 98%), rgb(0 0 0 / 55%) 28%, rgb(0 0 0 / 38%) 50%, rgb(0 0 0 / 55%) 72%, rgb(0 0 0 / 98%)),
+    linear-gradient(rgb(0 0 0 / 94%), rgb(0 0 0 / 24%) 42%, rgb(0 0 0 / 90%));
 }
 
-.hero-banner > div {
-  max-width: 1200px;
+/* decorative scroll chevron */
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  bottom: 25px;
+  left: calc(50% - 4px);
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  border-right: 1px solid rgb(255 255 255 / 75%);
+  border-bottom: 1px solid rgb(255 255 255 / 75%);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* text column */
+.hero-banner .hero-banner-content {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  margin: 0 auto;
+  max-width: 740px;
+}
+
+.hero-banner .hero-banner-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-banner .hero-banner-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 118px;
+  min-height: 26px;
+  max-width: none;
+  margin: 0 0 21px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgb(168 207 206);
+  color: #fff;
+  font-size: var(--body-font-size-m);
+  font-weight: 900;
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
 }
 
 .hero-banner h1,
 .hero-banner h2 {
-  margin: 0 0 0.25em;
-  max-width: 640px;
-  color: var(--background-color);
-  font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--heading-font-size-xxl);
-  line-height: 1.1;
+  max-width: 100%;
+  margin: 0;
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 69px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
+/* red rule under the heading */
+.hero-banner h1::after,
+.hero-banner h2::after {
+  content: "";
+  display: block;
+  width: 85px;
+  height: 3px;
+  margin: 12px auto 17px;
+  background: rgb(215 25 32);
+}
+
+/* body copy */
 .hero-banner p {
-  max-width: 520px;
-  margin: 0 0 1.5em;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  max-width: 620px;
+  margin: 0;
+  color: rgb(255 255 255 / 78%);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: var(--body-line-height);
 }
 
-.hero-banner a.button:any-link,
-.hero-banner p strong {
-  display: inline-block;
-  background-color: var(--brand-yellow);
-  color: var(--text-strong-color);
-  font-weight: var(--font-weight-semibold);
-  padding: 0.625em 1.5em;
-  border-radius: var(--border-radius);
+/* subheading: first paragraph after the heading */
+.hero-banner h1 + p,
+.hero-banner h2 + p {
+  max-width: 660px;
+  color: #fff;
+  font-weight: 500;
 }
 
-@media (width >= 900px) {
+/* CTA */
+main .hero-banner .button-container {
+  display: block;
+  max-width: none;
+}
+
+main .hero-banner .button-container a.button:any-link {
+  min-width: 190px;
+  min-height: 51px;
+  margin: 29px 0 0;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 7px;
+  background-color: rgb(200 16 24);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: background-color 0.16s, transform 0.16s;
+}
+
+main .hero-banner .button-container a.button:hover,
+main .hero-banner .button-container a.button:focus-visible {
+  background-color: var(--brand-red-dark);
+  color: #fff;
+  filter: none;
+}
+
+main .hero-banner .button-container a.button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+main .hero-banner .button-container a.button:active {
+  transform: translateY(1px);
+}
+
+/* the source launch hero suppresses eyebrow and CTA over video */
+.hero-banner.has-video .hero-banner-eyebrow,
+main .hero-banner.has-video .button-container {
+  display: none;
+}
+
+/* source 421px - 760px */
+@media (width >= 421px) {
   .hero-banner {
-    height: 536px;
-    padding: 64px 32px;
+    min-height: 400px;
+    padding: 46px 18px 58px;
+  }
+
+  .hero-banner .hero-banner-eyebrow {
+    min-width: 138px;
+    min-height: 28px;
+    padding: 8px 18px;
+  }
+
+  main .hero-banner .button-container a.button:any-link {
+    min-width: 207px;
+  }
+}
+
+/* source desktop (> 760px) */
+@media (width >= 761px) {
+  .hero-banner {
+    min-height: 430px;
+    padding: 56px 20px 62px;
+  }
+
+  .hero-banner h1,
+  .hero-banner h2 {
+    line-height: 0.95;
   }
 }
