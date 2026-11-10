@@ -1,0 +1,45 @@
+{
+  "variantName": "columns-image-text",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-11-10T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/travel-trailers",
+    "originPage": "Grand Design RV travel trailers category page",
+    "blockPosition": "top"
+  },
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "intro",
+    "imagePattern": "side-by-side",
+    "layout": "two equal columns: photo left, heading stack right; stacks photo-first on mobile"
+  },
+  "contentPattern": {
+    "structure": "one row, two cells: image | H1 + H2 subtitle + body paragraphs with inline links",
+    "rows": 1,
+    "columns": 2,
+    "imageCount": 1,
+    "buttonCount": 0,
+    "hasDescription": true,
+    "hasCTA": false
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "category or landing page intros with a photo beside a title and copy",
+      "image + long-form text pairs"
+    ],
+    "notSuitableFor": [
+      "repeating lists of items (use a cards variant)",
+      "full-bleed hero banners with overlaid text"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/travel-trailers"],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-10T00:00:00.000Z"
+  }
+}

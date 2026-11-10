@@ -125,6 +125,44 @@
           ]
         }
       ]
+    },
+    {
+      "name": "travel-trailers",
+      "urls": [
+        "https://www.granddesignrv.com/travel-trailers"
+      ],
+      "representativeUrl": "https://www.granddesignrv.com/travel-trailers",
+      "description": "Vehicle category landing page: intro (photo + H1 + copy) followed by a stacked model lineup (logo, spin image, stats, headline, copy, CTAs).",
+      "blocks": [
+        {
+          "name": "columns-image-text",
+          "instances": [
+            ".outer-block.margin-top-medium .inner-block__left:has(+ .inner-block__right h1)"
+          ]
+        },
+        {
+          "name": "cards-model-list",
+          "instances": [
+            ".outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)"
+          ]
+        }
+      ],
+      "urlPattern": "/travel-trailers",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Travel trailers intro and model lineup",
+          "selector": [
+            ".outer-block.margin-top-medium"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-text",
+            "cards-model-list"
+          ],
+          "defaultContent": []
+        }
+      ]
     }
   ]
 }

@@ -19,16 +19,24 @@ async function fetchNav() {
   let resp = await fetch('/content/nav.plain.html');
   if (!resp.ok) resp = await fetch('/nav.plain.html');
   if (!resp.ok) return null;
-  const html = await resp.text();
-  const tmp = document.createElement('div');
-  tmp.innerHTML = html;
+  // parse in an inert document: images there don't download, so the lazy hints below are
+  // in place before the markup joins the page
+  const parsed = new DOMParser().parseFromString(await resp.text(), 'text/html').body;
+  // menu images sit in closed (display: none) panels: lazy ones load only when a panel opens.
+  // The brand logo (section 1) stays eager.
+  parsed.querySelectorAll(':scope > div:not(:first-child) img').forEach((img) => {
+    img.loading = 'lazy';
+    img.fetchPriority = 'low';
+  });
   // resolve fragment-relative image paths against the fragment URL
-  tmp.querySelectorAll('img[src]').forEach((img) => {
+  parsed.querySelectorAll('img[src]').forEach((img) => {
     img.src = new URL(img.getAttribute('src'), resp.url).href;
   });
-  tmp.querySelectorAll('source[srcset]').forEach((source) => {
+  parsed.querySelectorAll('source[srcset]').forEach((source) => {
     source.srcset = new URL(source.getAttribute('srcset'), resp.url).href;
   });
+  const tmp = document.createElement('div');
+  tmp.append(...parsed.childNodes);
   // the published fragment wraps list-item labels/links in <p>: unwrap them so both the
   // authored and the published markup share one structure (info boxes keep their paragraphs)
   tmp.querySelectorAll('li').forEach((li) => {
@@ -52,6 +60,14 @@ async function fetchNav() {
 }
 
 const directChildren = (el, selector) => [...el.children].filter((c) => c.matches(selector));
+
+/* copy an image keeping it lazy: cloneNode() copies src before loading and so downloads at once */
+function copyImage(img) {
+  const copy = document.createElement('img');
+  copy.loading = img.loading;
+  [...img.attributes].forEach(({ name, value }) => copy.setAttribute(name, value));
+  return copy;
+}
 const ownText = (el) => [...el.childNodes]
   .filter((n) => n.nodeType === Node.TEXT_NODE)
   .map((n) => n.textContent.trim())
@@ -78,7 +94,7 @@ function buildModels(list, featured) {
       const thumb = document.createElement('span');
       thumb.className = 'nav-model-thumb';
       thumb.setAttribute('aria-hidden', 'true');
-      thumb.append(img.cloneNode());
+      thumb.append(copyImage(img));
       item.prepend(thumb);
     }
     if (caption) {
@@ -89,7 +105,7 @@ function buildModels(list, featured) {
     }
     if (img && featured) {
       const show = () => {
-        featured.replaceChildren(img.cloneNode());
+        featured.replaceChildren(copyImage(img));
         if (caption) {
           const price = document.createElement('span');
           price.textContent = caption.textContent;
@@ -244,7 +260,7 @@ function closeSearch(nav) {
 function closeMobileMenu(nav) {
   nav.setAttribute('aria-expanded', 'false');
   const btn = nav.querySelector('.nav-hamburger button');
-  if (btn) btn.setAttribute('aria-label', 'Open navigation');
+  if (btn) btn.setAttribute('aria-label', 'Open menu');
   closePanels(nav);
   document.body.classList.remove('nav-menu-open');
 }
@@ -318,7 +334,7 @@ function buildSearch(li, nav) {
   form.className = 'nav-search-form';
   form.method = 'get';
   form.setAttribute('role', 'search');
-  const searchIcon = icon ? icon.cloneNode() : null;
+  const searchIcon = icon ? copyImage(icon) : null;
   if (searchIcon) searchIcon.className = 'nav-search-icon';
   const input = document.createElement('input');
   input.type = 'search';
@@ -438,7 +454,7 @@ export default async function decorate(block) {
   // hamburger (below the desktop breakpoint): opens the menu, then acts as "Back"
   const hamburger = document.createElement('div');
   hamburger.className = 'nav-hamburger';
-  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
+  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open menu">
       <span class="nav-hamburger-icon"></span>
       <span class="nav-hamburger-label">Menu</span>
       <span class="nav-back-label">Back</span>
@@ -465,7 +481,7 @@ export default async function decorate(block) {
   const close = document.createElement('button');
   close.type = 'button';
   close.className = 'nav-close';
-  close.setAttribute('aria-label', 'Close navigation');
+  close.setAttribute('aria-label', 'Close menu');
   close.innerHTML = '<span class="nav-close-icon"></span><span class="nav-close-label">Menu</span>';
   close.addEventListener('click', (e) => {
     e.stopPropagation();

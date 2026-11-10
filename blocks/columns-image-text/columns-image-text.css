@@ -1,0 +1,104 @@
+/* columns-image-text: photo beside a heading stack (H1, red H2, body copy)
+ * Values from source computed styles (granddesignrv.com/travel-trailers):
+ * outer container 1440px max, 20px (mobile) / 36px (desktop) inset,
+ * two 50% columns with 36px inner padding each (72px gutter). */
+
+/* source container: 1440px max with a 20px / 36px inset (wider than the 1200px section default) */
+main > .section > .columns-image-text-wrapper {
+  max-width: 1440px;
+  padding: 0 20px;
+}
+
+/* page-top intro: source outer block sits 40px margin + 20px padding below the header */
+main > .section:first-of-type > .columns-image-text-wrapper:first-child {
+  padding-top: 60px;
+}
+
+.columns-image-text > .columns-image-text-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-image-text .columns-image-text-img-col {
+  line-height: 0;
+}
+
+.columns-image-text .columns-image-text-img-col picture,
+.columns-image-text .columns-image-text-img-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* reserve the photo's space before it loads (no layout shift); its real ratio wins once loaded */
+.columns-image-text .columns-image-text-img-col img {
+  aspect-ratio: auto 3 / 2;
+}
+
+.columns-image-text .columns-image-text-text-col {
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  line-height: 24px;
+}
+
+.columns-image-text .columns-image-text-text-col h1,
+.columns-image-text .columns-image-text-text-col h2 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.columns-image-text .columns-image-text-text-col h1 {
+  color: var(--text-color);
+  font-size: 65px;
+}
+
+.columns-image-text .columns-image-text-text-col h2 {
+  margin-bottom: 20px;
+  color: var(--brand-red);
+  font-size: 32px;
+}
+
+.columns-image-text .columns-image-text-text-col p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  line-height: 24px;
+}
+
+/* source separates paragraphs with a one-line (24px) spacer paragraph */
+.columns-image-text .columns-image-text-text-col p + p {
+  margin-top: 24px;
+}
+
+.columns-image-text .columns-image-text-text-col a:any-link {
+  color: var(--brand-red);
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: var(--brand-red);
+}
+
+@media (width >= 900px) {
+  main > .section > .columns-image-text-wrapper {
+    padding: 0 36px;
+  }
+
+  /* desktop: 40px margin + 36px padding below the header */
+  main > .section:first-of-type > .columns-image-text-wrapper:first-child {
+    padding-top: 76px;
+  }
+
+  .columns-image-text > .columns-image-text-row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 72px;
+  }
+
+  .columns-image-text > .columns-image-text-row > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}

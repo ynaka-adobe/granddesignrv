@@ -10,16 +10,18 @@ async function fetchFooter() {
   let resp = await fetch('/content/footer.plain.html');
   if (!resp.ok) resp = await fetch('/footer.plain.html');
   if (!resp.ok) return null;
-  const html = await resp.text();
-  const tmp = document.createElement('div');
-  tmp.innerHTML = html;
+  // parse in an inert document so images get their lazy hint before they can download
+  const parsed = new DOMParser().parseFromString(await resp.text(), 'text/html').body;
   // resolve fragment-relative image paths against the fragment URL
-  tmp.querySelectorAll('img[src]').forEach((img) => {
+  parsed.querySelectorAll('img[src]').forEach((img) => {
+    img.loading = 'lazy'; // the footer is always below the fold
     img.src = new URL(img.getAttribute('src'), resp.url).href;
   });
-  tmp.querySelectorAll('source[srcset]').forEach((source) => {
+  parsed.querySelectorAll('source[srcset]').forEach((source) => {
     source.srcset = new URL(source.getAttribute('srcset'), resp.url).href;
   });
+  const tmp = document.createElement('div');
+  tmp.append(...parsed.childNodes);
   return tmp;
 }
 

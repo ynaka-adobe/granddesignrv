@@ -127,9 +127,11 @@ function appendSource(picture, { type, srcset, media }) {
 
 function renderScene7Picture(src, alt) {
   const picture = document.createElement('picture');
+  // webp-alpha keeps transparent product shots and logos transparent (plain webp/jpg fill
+  // them with black); for opaque photos it costs about 1% extra
   DM_BREAKPOINTS.forEach((bp) => appendSource(picture, {
     type: 'image/webp',
-    srcset: buildScene7Rendition(src, { width: bp.width, format: 'webp' }),
+    srcset: buildScene7Rendition(src, { width: bp.width, format: 'webp-alpha' }),
     media: bp.media,
   }));
   DM_BREAKPOINTS.forEach((bp) => appendSource(picture, {
@@ -251,6 +253,9 @@ window.__dmRender__ = (src, alt) => {
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
+  // leave headings and images that an authored block (e.g. columns) already owns
+  const inBlock = (el) => el && el.closest('main > div > div[class]');
+  if (inBlock(h1) || inBlock(picture)) return;
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');

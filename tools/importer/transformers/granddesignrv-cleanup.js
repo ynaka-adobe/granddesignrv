@@ -41,6 +41,18 @@ export default function transform(hookName, element, payload) {
       wrapper.remove();
     });
 
+    // Lightbox "Brochure Request" buttons open a modal form (removed below);
+    // keep them as links to the brochure page so the CTA survives.
+    safeQueryAll(element, '.button button.cmp-button.glightbox').forEach((btn) => {
+      const label = btn.textContent.replace(/\s+/g, ' ').trim();
+      if (!/brochure/i.test(`${label} ${btn.getAttribute('aria-label') || ''}`)) return;
+      const link = element.ownerDocument.createElement('a');
+      link.className = 'cmp-button';
+      link.setAttribute('href', '/shopping-tools/brochures/brochure-download');
+      link.textContent = label;
+      btn.replaceWith(link);
+    });
+
     removeAll(element, [
       // Header / footer chrome
       'header.headergv',

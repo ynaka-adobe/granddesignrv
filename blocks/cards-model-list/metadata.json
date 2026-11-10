@@ -1,0 +1,44 @@
+{
+  "variantName": "cards-model-list",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-11-10T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/travel-trailers",
+    "originPage": "Grand Design RV travel trailers category page",
+    "blockPosition": "main"
+  },
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-listing",
+    "imagePattern": "logo beside product cutout",
+    "layout": "one full-width card per row, thin rules between cards; stats in two columns; three CTAs in a row on desktop"
+  },
+  "contentPattern": {
+    "structure": "per card row: cell 1 product image | cell 2 model logo image, stat paragraphs (label + <strong>value</strong>), heading, description paragraphs, CTA links each in its own paragraph",
+    "imageCount": 2,
+    "buttonCount": 3,
+    "statCount": 2,
+    "hasDescription": true,
+    "hasCTA": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "RV model lineups on category pages (travel trailers, fifth wheels, toy haulers)",
+      "full-width product entries with logo, image, key stats, copy and several CTAs"
+    ],
+    "notSuitableFor": [
+      "multi-column card grids",
+      "compact icon or category tiles (use cards-category or cards-callouts)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/travel-trailers"],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-10T00:00:00.000Z"
+  }
+}

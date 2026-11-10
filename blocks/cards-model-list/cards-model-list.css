@@ -1,0 +1,193 @@
+/* cards-model-list: one full-width model entry per row, grey rules between entries.
+   Values from the source computed styles (granddesignrv.com/travel-trailers). */
+
+/* the source entries span the full 1440px content width, not the 1200px section */
+main > .section > .cards-model-list-wrapper {
+  max-width: var(--content-max-width);
+}
+
+.cards-model-list > ul {
+  margin: 62px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-model-list > ul > li {
+  padding: 20px 20px 0;
+}
+
+/* the source separator: a 2px hr with 1px inset grey borders, 60px below it */
+.cards-model-list > ul > li:not(:last-child)::after {
+  content: '';
+  display: block;
+  margin: 20px -20px 60px;
+  border-top: 1px inset rgb(128 128 128);
+  border-bottom: 1px inset rgb(128 128 128);
+}
+
+/* logo above the product image (mobile), beside it (desktop) */
+.cards-model-list .cards-model-list-logo {
+  padding: 60px 0 0;
+}
+
+.cards-model-list .cards-model-list-logo,
+.cards-model-list .cards-model-list-image {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-model-list .cards-model-list-logo img,
+.cards-model-list .cards-model-list-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cards-model-list .cards-model-list-logo img {
+  margin-bottom: 24px;
+}
+
+/* stats: overline label above the value */
+.cards-model-list .cards-model-list-stats {
+  padding: 20px;
+}
+
+.cards-model-list .cards-model-list-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-model-list .cards-model-list-stat-label {
+  font-family: 'Aktiv Grotesk Light', 'Aktiv Grotesk', var(--body-font-family);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--brand-red);
+}
+
+.cards-model-list .cards-model-list-stat-value {
+  font-family: 'Aktiv Grotesk Regular', 'Aktiv Grotesk', var(--body-font-family);
+  font-size: 18.72px;
+  font-weight: 700;
+  line-height: 28.08px;
+  color: var(--text-color);
+}
+
+/* heading + description in columns 2-11; 124px of empty separators sit under the copy */
+.cards-model-list .cards-model-list-body {
+  box-sizing: border-box;
+  width: calc(100% * 10 / 12);
+  margin-left: calc(100% / 12);
+  padding: 20px 20px 144px;
+}
+
+.cards-model-list .cards-model-list-body h2,
+.cards-model-list .cards-model-list-body h3 {
+  margin: 20px 0 0;
+  font-family: 'Aktiv Grotesk Bold', 'Aktiv Grotesk', var(--body-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--text-color);
+}
+
+.cards-model-list .cards-model-list-body p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+/* the source separates paragraphs with an empty 24px line */
+.cards-model-list .cards-model-list-body p + p {
+  margin-top: 24px;
+}
+
+/* CTAs: each centered in its own column, 42px (hidden separator) below each */
+.cards-model-list .cards-model-list-ctas p.button-container {
+  display: block;
+  margin: 0 0 42px;
+  text-align: center;
+}
+
+main .cards-model-list .cards-model-list-ctas a.button:any-link {
+  margin: 0;
+  line-height: 20px;
+}
+
+@media (width >= 900px) {
+  .cards-model-list > ul > li {
+    padding: 36px 36px 0;
+  }
+
+  .cards-model-list > ul > li:not(:last-child)::after {
+    margin: 36px -36px 60px;
+  }
+
+  /* 12-column grid: logo in columns 2-5, product image in 7-11 */
+  .cards-model-list .cards-model-list-media,
+  .cards-model-list .cards-model-list-stats,
+  .cards-model-list .cards-model-list-ctas {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .cards-model-list .cards-model-list-logo {
+    grid-column: 2 / span 4;
+    padding: 60px 36px 0 0;
+  }
+
+  .cards-model-list .cards-model-list-logo img {
+    margin-bottom: 0;
+  }
+
+  .cards-model-list .cards-model-list-image {
+    grid-column: 7 / span 5;
+    padding-left: 36px;
+  }
+
+  .cards-model-list .cards-model-list-logo:only-child,
+  .cards-model-list .cards-model-list-image:only-child {
+    grid-column: 2 / span 10;
+  }
+
+  /* stats: columns 2-6 and 7-12 of the padded row */
+  .cards-model-list .cards-model-list-stats {
+    padding: 36px;
+  }
+
+  .cards-model-list .cards-model-list-stat:nth-child(odd) {
+    grid-column: 2 / span 5;
+    padding-right: 36px;
+  }
+
+  .cards-model-list .cards-model-list-stat:nth-child(even) {
+    grid-column: 7 / span 6;
+    padding-left: 36px;
+  }
+
+  .cards-model-list .cards-model-list-body {
+    padding: 36px 36px 160px;
+  }
+
+  /* CTAs: columns 2-4, 5-7, 8-10 */
+  .cards-model-list .cards-model-list-ctas p.button-container {
+    grid-column: span 3;
+  }
+
+  .cards-model-list .cards-model-list-ctas p.button-container:nth-child(3n + 1) {
+    grid-column: 2 / span 3;
+    padding-right: 36px;
+  }
+
+  .cards-model-list .cards-model-list-ctas p.button-container:nth-child(3n + 2) {
+    padding: 0 20px;
+  }
+
+  .cards-model-list .cards-model-list-ctas p.button-container:nth-child(3n) {
+    padding-left: 36px;
+  }
+}

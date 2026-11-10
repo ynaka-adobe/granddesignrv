@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/travel-trailers",
+  "path": "travel-trailers",
+  "timestamp": "2026-11-10T05:02:35.832Z",
+  "title": "Grand Design RV | Travel Trailers",
+  "template": "travel-trailers",
+  "blocks": [
+    "columns-image-text",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list"
+  ],
+  "importScript": "4d07da56016d"
+}
