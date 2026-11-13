@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/fifth-wheels/solitude",
+  "path": "fifth-wheels/solitude",
+  "timestamp": "2026-11-13T05:43:25.957Z",
+  "title": "Fifth Wheels | Solitude",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-swatch",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

@@ -19,7 +19,7 @@
     ]
   },
   "contentPattern": {
-    "structure": "row 1 = quotation (optional first line with the rating, e.g. \"★★★★★\" or \"5/5\"), row 2 = attribution (author, location)",
+    "structure": "row 1 = quotation (optional first line with the rating, e.g. \"\u2605\u2605\u2605\u2605\u2605\" or \"5/5\"), row 2 = attribution (author, location)",
     "buttonCount": 0,
     "imageCount": 0,
     "hasDescription": true
@@ -38,9 +38,10 @@
   },
   "usage": {
     "pagesUsing": [
-      "/index"
+      "/index",
+      "/toy-haulers/momentum"
     ],
-    "reuseCount": 1,
-    "lastUsed": "2026-11-09T00:00:00.000Z"
+    "reuseCount": 2,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
   }
 }

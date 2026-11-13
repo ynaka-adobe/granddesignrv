@@ -261,8 +261,9 @@ function buildDualRange({
     hiOut.textContent = format(b);
     lo.setAttribute('aria-valuetext', format(a));
     hi.setAttribute('aria-valuetext', format(b));
-    track.style.setProperty('--lo', `${((a - min) / span) * 100}%`);
-    track.style.setProperty('--hi', `${((b - min) / span) * 100}%`);
+    // on the root so the value bubbles follow the thumbs as well as the track fill
+    root.style.setProperty('--lo', `${((a - min) / span) * 100}%`);
+    root.style.setProperty('--hi', `${((b - min) / span) * 100}%`);
     // keep the lower thumb reachable when both sit at the max
     lo.style.zIndex = a >= max - span * 0.02 ? '3' : '';
   };

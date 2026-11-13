@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/fifth-wheels/influence",
+  "path": "fifth-wheels/influence",
+  "timestamp": "2026-11-13T05:43:18.855Z",
+  "title": "Fifth Wheels | Influence",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-swatch",
+    "video-inline",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

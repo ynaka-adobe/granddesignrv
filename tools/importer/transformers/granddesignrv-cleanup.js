@@ -68,6 +68,9 @@ export default function transform(hookName, element, payload) {
       // "Ask an Expert" floating form / modal (lightbox content)
       '.cmp-button__modal',
       '.askexpert',
+
+      // Model pages: "Inventory Inquiry" side panel (floor plan / location form) next to the sub-nav
+      '.root > .cmp-container > .inventory',
       '.cmp-askexpert',
       'button.glightbox',
 

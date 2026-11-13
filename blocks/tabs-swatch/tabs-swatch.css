@@ -1,0 +1,113 @@
+/* tabs-swatch: full body paint colour picker
+ * exterior image (full content width) over a centred row of round swatches with uppercase names
+ */
+
+/* the source runs the picker 20px from the viewport edge (36px from 1200px), up to 1440px wide */
+main > .section > .tabs-swatch-wrapper {
+  max-width: none;
+  padding: 0 20px;
+}
+
+.tabs-swatch {
+  text-align: center;
+}
+
+.tabs-swatch .tabs-swatch-panels {
+  margin-bottom: 24px;
+}
+
+.tabs-swatch .tabs-swatch-panel[hidden] {
+  display: none;
+}
+
+.tabs-swatch .tabs-swatch-panel picture,
+.tabs-swatch .tabs-swatch-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tabs-swatch .tabs-swatch-panel p {
+  margin: 0;
+}
+
+.tabs-swatch .tabs-swatch-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* reset the global CTA button look */
+.tabs-swatch .tabs-swatch-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: none;
+  margin: 0;
+  padding: 8px 24px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--link-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: none;
+}
+
+.tabs-swatch .tabs-swatch-tab:hover {
+  color: var(--link-hover-color);
+  filter: none;
+}
+
+.tabs-swatch .tabs-swatch-chip {
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  padding: 1px;
+  border: 0 solid var(--brand-red-dark);
+  border-radius: 50%;
+}
+
+.tabs-swatch .tabs-swatch-chip picture,
+.tabs-swatch .tabs-swatch-chip img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tabs-swatch .tabs-swatch-name {
+  margin-top: 10px;
+}
+
+.tabs-swatch .tabs-swatch-tab[aria-selected='true'] {
+  color: var(--brand-red-dark);
+}
+
+.tabs-swatch .tabs-swatch-tab[aria-selected='true']:hover {
+  color: var(--brand-red);
+}
+
+.tabs-swatch .tabs-swatch-tab[aria-selected='true'] .tabs-swatch-chip {
+  border-width: 3px;
+}
+
+.tabs-swatch .tabs-swatch-tab:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 0;
+  filter: none;
+}
+
+@media (width >= 1200px) {
+  main > .section > .tabs-swatch-wrapper {
+    max-width: 1512px;
+    padding: 0 36px;
+  }
+}

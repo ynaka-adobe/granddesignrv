@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels",
+  "path": "toy-haulers/momentum-mav-fifth-wheels",
+  "timestamp": "2026-11-13T05:43:43.774Z",
+  "title": "Toy Haulers | Momentum MAV Fifth Wheels",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

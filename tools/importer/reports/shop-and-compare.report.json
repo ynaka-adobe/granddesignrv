@@ -2,11 +2,11 @@
   "status": "success",
   "url": "https://www.granddesignrv.com/shop-and-compare",
   "path": "shop-and-compare",
-  "timestamp": "2026-11-10T16:30:30.941Z",
+  "timestamp": "2026-11-13T06:40:41.732Z",
   "title": "Grand Design RV | Shop and Compare",
   "template": "shop-and-compare",
   "blocks": [
     "shop-compare"
   ],
-  "importScript": "e714db36f483"
+  "importScript": "c1ba0da4fd88"
 }

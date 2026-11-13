@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/fifth-wheels/reflection-100-series",
+  "path": "fifth-wheels/reflection-100-series",
+  "timestamp": "2026-11-13T05:42:54.958Z",
+  "title": "Fifth Wheels | Reflection 100 Series",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

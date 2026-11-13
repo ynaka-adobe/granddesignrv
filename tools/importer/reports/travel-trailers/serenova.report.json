@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/travel-trailers/serenova",
+  "path": "travel-trailers/serenova",
+  "timestamp": "2026-11-13T05:42:38.628Z",
+  "title": "Travel Trailers | Serenova",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-vertical",
+    "table-specs"
+  ],
+  "importScript": "118622389486"
+}

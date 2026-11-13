@@ -1,0 +1,42 @@
+{
+  "variantName": "tabs-swatch",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+    "originPage": "Momentum model page (template \"model\", 23 RV model pages)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "paint colour picker: round swatches swap the exterior image and colour name",
+    "imagePattern": "product cutout + round swatch thumbnails"
+  },
+  "contentPattern": {
+    "structure": "one row per colour (any count). Cell 1: swatch image + colour name (e.g. SMOKE). Cell 2: exterior image of the unit in that colour (alt = colour name)",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "optional paint / colour selectors",
+      "any image swap driven by thumbnail swatches"
+    ],
+    "notSuitableFor": [
+      "text tabs (use tabs-feature)",
+      "tabbed sliders (use tabs-brands)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/toy-haulers/momentum"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
+  }
+}

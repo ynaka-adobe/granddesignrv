@@ -1,0 +1,49 @@
+{
+  "variantName": "tabs-feature",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+    "originPage": "Momentum model page (template \"model\", 23 RV model pages)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "feature tabs with rich panels",
+    "imagePattern": "mixed: side image, full-width banner, background photo, logo/icon rows",
+    "notes": [
+      "Panel layout chosen from content: images only = banner; standalone image before text = split; standalone image after text = overlay; text only = text",
+      "A paragraph or list holding 2+ images renders as an icon row",
+      "Tab bar is not rendered when there is a single tab"
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per feature (1-10). Cell 1: tab label. Cell 2: free-form content (images, heading, paragraphs, lists, links). Put a standalone image first for image-beside-text, last for text-over-background-photo, alone for a full-width banner; put several logos/icons in one paragraph or list for an icon row",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "hasDescription": true,
+    "hasCTA": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "model feature showcases",
+      "tabbed rich content panels"
+    ],
+    "notSuitableFor": [
+      "colour swatches (use tabs-swatch)",
+      "vertical item lists (use tabs-vertical)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/toy-haulers/momentum"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
+  }
+}

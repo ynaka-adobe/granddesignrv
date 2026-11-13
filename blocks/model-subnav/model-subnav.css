@@ -1,0 +1,506 @@
+/* model-subnav: sticky white model bar below the fixed site header */
+
+/* the whole section sticks, so the bar stays put for the length of the page */
+main > .section.model-subnav-container {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 900;
+  margin: 0;
+  padding: 0;
+}
+
+main > .section.model-subnav-container > .model-subnav-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.model-subnav {
+  --model-subnav-line: #c4c4c4;
+  --model-subnav-ink: #171717;
+  --model-subnav-ease: cubic-bezier(0.4, 0.9, 0.3, 1);
+  --model-subnav-panel-shadow:
+    rgb(130 130 130 / 45%) 0 0.3px 0.3px 0,
+    rgb(130 130 130 / 45%) 0 1.8px 2px -0.4px,
+    rgb(130 130 130 / 45%) 0 3.3px 3.7px -0.7px,
+    rgb(130 130 130 / 45%) 0 5.4px 6.1px -1.1px,
+    rgb(130 130 130 / 45%) 0 8.7px 9.8px -1.4px,
+    rgb(130 130 130 / 45%) 0 13.5px 15.2px -1.8px,
+    rgb(130 130 130 / 45%) 0.1px 20.6px 23.2px -2.1px,
+    rgb(130 130 130 / 45%) 0.1px 30.3px 34.1px -2.5px;
+  --model-subnav-panel-height: calc(100dvh - var(--nav-height) - 51px);
+
+  position: relative;
+  border-bottom: 1px solid var(--model-subnav-line);
+  background-color: var(--background-color);
+  box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.model-subnav .model-subnav-bar {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+  height: 50px;
+  margin: 0 auto;
+}
+
+/* model name */
+.model-subnav .model-subnav-brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0;
+  padding: 16px;
+  color: #424242;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateY(1px);
+}
+
+/* shared look of the floorplans toggle and the jump links */
+.model-subnav .model-subnav-toggle,
+.model-subnav .model-subnav-links a {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 0;
+  padding: 16px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: none;
+  color: var(--link-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  transform: translateY(1px);
+  transition: color 0.213s var(--model-subnav-ease), border-color 0.213s var(--model-subnav-ease);
+}
+
+.model-subnav .model-subnav-toggle:hover,
+.model-subnav .model-subnav-toggle:focus-visible,
+.model-subnav .model-subnav-links a:hover,
+.model-subnav .model-subnav-links a:focus-visible {
+  color: var(--model-subnav-ink);
+  filter: none;
+}
+
+.model-subnav .model-subnav-toggle:focus-visible,
+.model-subnav .model-subnav-links a:focus-visible {
+  outline: 3px auto var(--link-color);
+  outline-offset: 0;
+}
+
+/* floorplans dropdown */
+.model-subnav .model-subnav-floorplans {
+  display: flex;
+  flex-shrink: 0;
+  border-right: 1px solid var(--model-subnav-line);
+  border-left: 1px solid var(--model-subnav-line);
+}
+
+.model-subnav.is-open .model-subnav-toggle {
+  border-bottom-color: var(--background-color);
+}
+
+/* caret (closed) / cross (open), both #c4c4c4 */
+.model-subnav .model-subnav-toggle-icon {
+  position: relative;
+  box-sizing: border-box;
+  width: 10px;
+  height: 6px;
+  margin-left: 16px;
+  border-top: 6px solid var(--model-subnav-line);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.model-subnav.is-open .model-subnav-toggle-icon {
+  width: 11px;
+  height: 11px;
+  border: 0;
+}
+
+.model-subnav.is-open .model-subnav-toggle-icon::before,
+.model-subnav.is-open .model-subnav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: -1px;
+  width: 13px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: var(--model-subnav-line);
+  transform: rotate(45deg);
+}
+
+.model-subnav.is-open .model-subnav-toggle-icon::after {
+  transform: rotate(-45deg);
+}
+
+.model-subnav .model-subnav-panel {
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  left: 0;
+  z-index: 99;
+  box-sizing: border-box;
+  height: var(--model-subnav-panel-height);
+  padding: 0 0 192px;
+  overflow: hidden auto;
+  background-color: var(--background-color);
+  box-shadow: var(--model-subnav-panel-shadow);
+  animation: model-subnav-fade 0.213s var(--model-subnav-ease);
+}
+
+.model-subnav .model-subnav-panel[hidden] {
+  display: none;
+}
+
+@keyframes model-subnav-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.model-subnav .model-subnav-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.model-subnav .model-subnav-grid > li {
+  margin: 0;
+  padding: 25px 0 5px;
+  border-bottom: 2px solid #ddd;
+}
+
+/* floorplan card */
+.model-subnav .model-subnav-card {
+  display: block;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.model-subnav .model-subnav-card:hover {
+  color: var(--link-hover-color);
+}
+
+.model-subnav .model-subnav-card-thumb {
+  position: relative;
+  display: block;
+  margin-bottom: 3.2px;
+}
+
+.model-subnav .model-subnav-card-thumb img {
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: contain;
+  transition: transform 0.25s ease-in-out;
+}
+
+.model-subnav .is-dealer-stock .model-subnav-card-thumb img {
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.model-subnav .model-subnav-card:hover .model-subnav-card-thumb img {
+  transform: scale(1.125);
+}
+
+.model-subnav .model-subnav-card-flag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2px 6px;
+  background-color: #232425;
+  color: #fff;
+  font-size: 14.4px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+/* name + specs: centred inline boxes on a shared baseline */
+.model-subnav .model-subnav-card-body {
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* the source's flag still takes a 24px line below the specs */
+.model-subnav .is-dealer-stock .model-subnav-card-body {
+  padding-bottom: 24px;
+}
+
+.model-subnav .model-subnav-card-name {
+  display: inline-block;
+  margin-right: 16px;
+  color: var(--model-subnav-ink);
+  font-size: 17.6px;
+  font-weight: 700;
+  line-height: 57.2px;
+}
+
+.model-subnav .model-subnav-card-specs {
+  display: inline-block;
+  margin: 0;
+}
+
+/* 4px left = the word space between the source's inline-block spec items */
+.model-subnav .model-subnav-card-specs > div {
+  display: inline-block;
+  margin: 0 16px 0 4px;
+}
+
+.model-subnav .model-subnav-card-specs dt {
+  margin: 0;
+  color: #757575;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.model-subnav .model-subnav-card-specs dd {
+  margin: 0;
+  color: var(--model-subnav-ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22.5px;
+}
+
+/* section jump links: desktop only (hidden on small screens, as on the source) */
+.model-subnav .model-subnav-links {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* item tabs: grey wash on hover / while open, faded out towards the bottom */
+.model-subnav .model-subnav-floorplans,
+.model-subnav .model-subnav-links li {
+  background-image: linear-gradient(0deg, #fff 40%, rgb(247 247 247 / 0%) 100%);
+  transition: background-color 0.426s var(--model-subnav-ease);
+}
+
+.model-subnav .model-subnav-floorplans:hover,
+.model-subnav.is-open .model-subnav-floorplans,
+.model-subnav .model-subnav-links li:hover {
+  background-color: rgb(196 196 196 / 50%);
+}
+
+/* actions: red toggle + full-width panel on small screens */
+.model-subnav .model-subnav-more {
+  display: flex;
+  margin-left: auto;
+}
+
+.model-subnav .model-subnav-more-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 80px;
+  height: 50px;
+  margin: 0;
+  padding: 13.6px 20px;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(#bf1313, var(--brand-red)) no-repeat;
+  color: #fff;
+}
+
+/* chevron (closed) / cross (open) */
+.model-subnav .model-subnav-more-icon {
+  position: relative;
+  width: 15px;
+  height: 24px;
+}
+
+.model-subnav .model-subnav-more-icon::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border-right: 3px solid currentcolor;
+  border-bottom: 3px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+.model-subnav.is-actions-open .model-subnav-more-icon {
+  opacity: 0.75;
+}
+
+.model-subnav.is-actions-open .model-subnav-more-icon::before,
+.model-subnav.is-actions-open .model-subnav-more-icon::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -2px;
+  width: 20px;
+  height: 4px;
+  border: 0;
+  border-radius: 1px;
+  background-color: currentcolor;
+  transform: rotate(45deg);
+}
+
+.model-subnav.is-actions-open .model-subnav-more-icon::after {
+  transform: rotate(-45deg);
+}
+
+.model-subnav .model-subnav-actions {
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  left: 0;
+  z-index: 99;
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: var(--model-subnav-panel-height);
+  padding: 28px 20px;
+  overflow: hidden auto;
+  background-color: var(--background-color);
+  box-shadow: var(--model-subnav-panel-shadow);
+}
+
+.model-subnav.is-actions-open .model-subnav-actions {
+  display: flex;
+}
+
+.model-subnav .model-subnav-action:any-link {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 0 16px;
+  padding: 13.6px 16px;
+  border: 1px solid #b5b5b5;
+  border-radius: 4px;
+  color: #686868;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.21px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.model-subnav .model-subnav-action:hover,
+.model-subnav .model-subnav-action:focus-visible {
+  color: #505050;
+  filter: brightness(0.98);
+}
+
+@media (width >= 600px) {
+  .model-subnav .model-subnav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .model-subnav .model-subnav-grid > li {
+    padding: 16px 16px 0;
+    border-bottom: 1px solid var(--model-subnav-line);
+  }
+}
+
+@media (width >= 900px) {
+  .model-subnav .model-subnav-brand {
+    padding: 16px 12px;
+  }
+
+  .model-subnav .model-subnav-toggle,
+  .model-subnav .model-subnav-links a {
+    padding: 16px 12px;
+  }
+
+  /* long model names: the links scroll rather than run under the actions */
+  .model-subnav .model-subnav-links {
+    display: flex;
+    min-width: 0;
+    overflow: auto hidden;
+    scrollbar-width: none;
+  }
+
+  .model-subnav .model-subnav-panel {
+    height: auto;
+    max-height: var(--model-subnav-panel-height);
+    padding: 32px 0;
+  }
+
+  .model-subnav .model-subnav-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .model-subnav .model-subnav-grid > li {
+    padding: 0 16px;
+    border-bottom: 0;
+  }
+
+  .model-subnav .model-subnav-card-thumb img {
+    height: 133px;
+  }
+
+  /* actions inline at the right end of the bar; the toggle is not needed */
+  .model-subnav .model-subnav-more {
+    align-items: center;
+    padding: 0 16px 0 8px;
+  }
+
+  .model-subnav .model-subnav-more-toggle {
+    display: none;
+  }
+
+  .model-subnav .model-subnav-actions,
+  .model-subnav.is-actions-open .model-subnav-actions {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+    background: none;
+    box-shadow: none;
+  }
+
+  .model-subnav .model-subnav-action:any-link {
+    margin: 0;
+    padding: 4px 16px;
+    font-size: 14.4px;
+    line-height: 24px;
+  }
+}
+
+@media (width >= 1200px) {
+  .model-subnav .model-subnav-brand,
+  .model-subnav .model-subnav-toggle,
+  .model-subnav .model-subnav-links a {
+    padding: 16px 20px;
+  }
+}

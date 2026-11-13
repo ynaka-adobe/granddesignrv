@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/travel-trailers/transcend-one",
+  "path": "travel-trailers/transcend-one",
+  "timestamp": "2026-11-13T05:41:51.869Z",
+  "title": "Travel Trailers | Transcend One",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

@@ -1,0 +1,47 @@
+{
+  "variantName": "model-subnav",
+  "baseBlock": "custom",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+    "originPage": "Momentum model page (template \"model\", 23 RV model pages)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "sticky model sub-navigation with floorplan dropdown, section jump links and brochure download",
+    "imagePattern": "floorplan thumbnails",
+    "notes": [
+      "Section sticks below the fixed site header (top: var(--nav-height))",
+      "Floorplans dropdown is a disclosure button (aria-expanded, Esc closes)"
+    ]
+  },
+  "contentPattern": {
+    "structure": "two columns, three rows. Row 1: model name | Download Brochure link (PDF). Row 2: \"Floorplans\" | bulleted list, one item per floorplan: thumbnail image, floorplan name linked to its page, then lines \"Hitch 3,500\", \"UVW 15,910\", \"Length 39' 11\"\" and optionally \"Dealer stock only\" (separate lines or one line). Row 3: \"Links\" | bulleted list of in-page links (Exterior -> #brand-360spin, Construction -> #brand-construction, Specification -> #brand-floorplanspecs, Testimonials -> #brand-testimonials). Floorplans and Links rows are optional",
+    "buttonCount": 1,
+    "imageCount": 0,
+    "hasCTA": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "RV model pages (one per page, first section)",
+      "in-page sticky product sub-navigation"
+    ],
+    "notSuitableFor": [
+      "site-wide navigation (use header)",
+      "floorplan detail pages without section anchors"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/toy-haulers/momentum"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
+  }
+}

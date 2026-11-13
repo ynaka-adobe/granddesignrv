@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/travel-trailers/imagine-aim",
+  "path": "travel-trailers/imagine-aim",
+  "timestamp": "2026-11-13T05:42:15.614Z",
+  "title": "Travel Trailers | Imagine AIM",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "video-inline",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

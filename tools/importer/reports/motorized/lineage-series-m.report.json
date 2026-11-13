@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/motorized/lineage-series-m",
+  "path": "motorized/lineage-series-m",
+  "timestamp": "2026-11-13T05:44:16.567Z",
+  "title": "Motorized | Lineage Series M",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-swatch",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

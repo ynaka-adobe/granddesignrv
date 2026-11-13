@@ -36,10 +36,29 @@ function isSoleMeaningfulChild(anchor, img) {
   return imgs.length === 1 && imgs[0] === img;
 }
 
+/*
+ * 360 spin sets left in default content (parsers that use them, e.g. cards-model-list, already
+ * replaced theirs) become a still image: Scene7 serves a spin set's first frame at
+ * /is/image/{asset}. The spin viewer's own UI images are dropped with it.
+ */
+function replaceSpinSets(element, doc) {
+  element.querySelectorAll('[data-asset-type="spinset"][data-asset-path]').forEach((viewer) => {
+    if (!viewer.isConnected) return;
+    const wrapper = viewer.closest('.dynamicmedia') || viewer;
+    const server = (viewer.getAttribute('data-imageserver') || 'https://gdrv.scene7.com/is/image/').replace(/\/?$/, '/');
+    const img = doc.createElement('img');
+    img.src = `${server}${viewer.getAttribute('data-asset-path')}`;
+    const model = (doc.title.split('|').pop() || '').trim();
+    img.alt = model ? `${model} exterior` : '';
+    wrapper.replaceWith(img);
+  });
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'afterTransform') return;
 
   const doc = element.ownerDocument;
+  replaceSpinSets(element, doc);
 
   Array.from(element.querySelectorAll('img')).forEach((img) => {
     const src = img.getAttribute('src') || '';

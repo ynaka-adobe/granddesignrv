@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/travel-trailers/transcend-lite",
+  "path": "travel-trailers/transcend-lite",
+  "timestamp": "2026-11-13T05:41:44.729Z",
+  "title": "Travel Trailers | Transcend LITE",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

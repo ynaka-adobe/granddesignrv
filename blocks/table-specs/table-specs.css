@@ -1,0 +1,278 @@
+/* table-specs: floorplan spec table (values measured on granddesignrv.com .spectable) */
+
+.table-specs {
+  /* column geometry, in widths of the table frame (container query units) */
+  --table-specs-label-w: 30cqw;
+  --table-specs-col-w: calc(100cqw - var(--table-specs-label-w));
+  --table-specs-line: 2px solid #f7f7f7;
+
+  position: relative;
+  font-family: var(--body-font-family);
+}
+
+/* small screens: one floorplan column at a time, chosen with the select */
+.table-specs .table-specs-picker {
+  position: relative;
+}
+
+.table-specs .table-specs-picker label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.table-specs .table-specs-picker select {
+  appearance: none;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 62px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 10px 5px;
+  background: #fff url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%2F%3E%3C%2Fsvg%3E") no-repeat calc(100% - 12px) center / 0.6em auto;
+  color: var(--brand-red);
+  font-family: var(--body-font-family);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: center;
+  text-align-last: center;
+  cursor: pointer;
+}
+
+.table-specs .table-specs-picker select:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: -3px;
+}
+
+.table-specs .is-col-off {
+  display: none;
+}
+
+/* the source table insets its columns by a 5px border-spacing */
+.table-specs .table-specs-frame {
+  container-type: inline-size;
+  padding: 5px;
+}
+
+/* right-edge fade over the floorplan columns (the source masks them at 85%) */
+.table-specs .table-specs-scroll {
+  overflow-x: auto;
+  mask-image: linear-gradient(90deg, #000 calc(var(--table-specs-label-w) + (100cqw - var(--table-specs-label-w)) * 0.85), transparent);
+}
+
+.table-specs .table-specs-scroll:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: -3px;
+}
+
+.table-specs table {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-specs th,
+.table-specs td {
+  box-sizing: border-box;
+  border: 0;
+  padding: 11px calc(var(--table-specs-col-w) * 0.05);
+  vertical-align: top;
+  text-align: center;
+}
+
+.table-specs th p,
+.table-specs td p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+/* header row: floorplan names (hidden on small screens, the select names the column) */
+.table-specs thead {
+  display: none;
+}
+
+.table-specs thead th {
+  border-top: var(--table-specs-line);
+  border-left: var(--table-specs-line);
+  padding-block: 12px;
+  color: var(--brand-red);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 25.5px;
+}
+
+.table-specs thead td.table-specs-label {
+  padding: 11px 0;
+}
+
+/* spec rows */
+.table-specs tbody tr {
+  height: var(--table-specs-row-h, auto);
+}
+
+.table-specs tbody td {
+  border-top: var(--table-specs-line);
+  border-left: var(--table-specs-line);
+  color: #575757;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 37.5px;
+}
+
+/* label column, fixed while the floorplans scroll */
+.table-specs .table-specs-label {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: var(--table-specs-label-w);
+  background-color: var(--background-color);
+  padding-inline: calc(var(--table-specs-label-w) * 0.05);
+  text-align: right;
+}
+
+.table-specs tbody .table-specs-label {
+  border-top: var(--table-specs-line);
+  border-left: 0;
+  color: #757575;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.table-specs tbody .table-specs-last {
+  height: calc(var(--table-specs-row-h, 0px) + 2px);
+}
+
+.table-specs tbody .table-specs-last > * {
+  border-bottom: var(--table-specs-line);
+}
+
+/* VIEW links row (wide screens; small screens use the link below the table) */
+.table-specs .table-specs-links {
+  display: none;
+}
+
+.table-specs .table-specs-links a:any-link,
+.table-specs .table-specs-links a:hover {
+  display: inline-block;
+  padding: 1px 6px;
+  color: var(--brand-red-dark);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  text-decoration: none;
+}
+
+.table-specs .table-specs-cta {
+  margin: 0;
+  padding: 15px 0 11px;
+  text-align: center;
+}
+
+.table-specs .table-specs-cta[hidden] {
+  display: none;
+}
+
+.table-specs .table-specs-cta a:any-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  border: 2px solid #868686;
+  border-radius: 4px;
+  padding: 16.5px 22px;
+  background: linear-gradient(#fff, #b4b4b4);
+  color: #868686;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.21px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.table-specs .table-specs-cta a:hover {
+  background: linear-gradient(#f7f7f7, #868686);
+  color: #777;
+}
+
+@media (width >= 900px) {
+  .table-specs {
+    /* label column 13%, floorplan columns share the rest, at least 18% of it each */
+    --table-specs-label-w: 13cqw;
+    --table-specs-col-w: max(calc((100cqw - var(--table-specs-label-w)) / var(--table-specs-cols, 1)), calc((100cqw - var(--table-specs-label-w)) * 0.18));
+  }
+
+  .table-specs .table-specs-picker,
+  .table-specs .table-specs-cta {
+    display: none;
+  }
+
+  .table-specs .is-col-off {
+    display: table-cell;
+  }
+
+  .table-specs table {
+    table-layout: fixed;
+    width: calc(var(--table-specs-label-w) + var(--table-specs-cols, 1) * var(--table-specs-col-w));
+  }
+
+  .table-specs thead {
+    display: table-header-group;
+  }
+
+  .table-specs thead th,
+  .table-specs tbody td {
+    width: var(--table-specs-col-w);
+  }
+
+  .table-specs tbody td {
+    font-size: 15px;
+    line-height: 22.5px;
+  }
+
+  .table-specs tbody .table-specs-label {
+    border-top: 0;
+    padding-block: 12px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .table-specs tbody .table-specs-last {
+    height: var(--table-specs-row-h, auto);
+  }
+
+  .table-specs tbody .table-specs-last > * {
+    border-bottom: 0;
+  }
+
+  .table-specs .table-specs-links {
+    display: table-row;
+  }
+
+  .table-specs tbody tr:last-child {
+    height: calc(var(--table-specs-row-h, 0px) + 2px);
+  }
+
+  .table-specs tbody tr:last-child > td:not(.table-specs-label) {
+    border-bottom: var(--table-specs-line);
+  }
+}
+
+@media (width >= 1200px) {
+  .table-specs {
+    /* label column 12%, floorplan columns at least 13% of the rest */
+    --table-specs-label-w: 12cqw;
+    --table-specs-col-w: max(calc((100cqw - var(--table-specs-label-w)) / var(--table-specs-cols, 1)), calc((100cqw - var(--table-specs-label-w)) * 0.13));
+  }
+}

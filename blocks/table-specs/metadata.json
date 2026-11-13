@@ -1,0 +1,44 @@
+{
+  "variantName": "table-specs",
+  "baseBlock": "table",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+    "originPage": "Momentum model page (template \"model\", 23 RV model pages)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "floorplan specification comparison table",
+    "imagePattern": "none",
+    "notes": [
+      "Fixed label column with horizontal scroll and right-edge fade from 600px",
+      "Below 600px a labelled select shows one floorplan column at a time"
+    ]
+  },
+  "contentPattern": {
+    "structure": "a table: row 1 = empty corner cell then one cell per floorplan name; rows 2..n = spec label then one value per floorplan; optional last row = empty cell then one link per floorplan (VIEW). Any number of floorplan columns",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "product line specification tables with a variable number of columns"
+    ],
+    "notSuitableFor": [
+      "simple data tables (use table)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/toy-haulers/momentum"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
+  }
+}

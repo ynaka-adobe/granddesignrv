@@ -30,7 +30,7 @@ const PAGE_TEMPLATE = {
       "selector": [
         ".root > .cmp-container > .container.responsivegrid:has(.brandFilter)"
       ],
-      "style": null,
+      "style": "centered",
       "blocks": [
         "shop-compare"
       ],

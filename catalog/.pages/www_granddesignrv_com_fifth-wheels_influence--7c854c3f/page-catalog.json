@@ -1,0 +1,1025 @@
+{
+  "schemaVersion": 2,
+  "url": "https://www.granddesignrv.com/fifth-wheels/influence",
+  "title": "Fifth Wheels | Influence",
+  "timestamp": "2026-11-13T01:47:36.763Z",
+  "duration": "23.1s",
+  "cleanup": {
+    "elementsRemoved": 26,
+    "types": [
+      "overlay",
+      "cookie-banner",
+      "popup"
+    ],
+    "cookieConsentDismissed": true,
+    "lateConsentOverlaysRemoved": 0,
+    "removed": [
+      {
+        "selector": "#cookie-banner",
+        "type": "overlay"
+      },
+      {
+        "selector": "div.cookie-banner.aem-GridColumn",
+        "type": "cookie-banner",
+        "rule": "[class*=\"cookie-banner\"]"
+      },
+      {
+        "selector": "div.cmp-button__modal",
+        "type": "popup",
+        "rule": "body [class*=\"modal\"]:not(nav *)"
+      },
+      {
+        "selector": "div.subnavigation__overlay",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "div.loading-overlay.loading-overlay--inline",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "#dynamicmedia_68863823_emailShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "#dynamicmedia_68863823_embedShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "div.s7backoverlay",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "#button-eca525c09f",
+        "type": "popup",
+        "rule": "body [class*=\"lightbox\"]"
+      },
+      {
+        "selector": "#dynamicmedia_68863823_emailShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "[role=\"dialog\"]"
+      },
+      {
+        "selector": "#dynamicmedia_68863823_embedShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "[role=\"dialog\"]"
+      },
+      {
+        "selector": "div.s7dialog",
+        "type": "popup",
+        "rule": "[role=\"dialog\"]"
+      }
+    ]
+  },
+  "snapshot": {
+    "html": "page.html",
+    "unresolvedSelectors": []
+  },
+  "images": [
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/logos/corporate/web/GrandDesignRV-logo-white.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/influence/web/2903RL.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/influence/web/3003RL.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/influence/web/3203GK.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/influence/web/3503GK.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/influence/web/3705RD.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/influence/web/3804DS.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/influence/web/3904BH.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SRT-3?ts=1774564677901&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-reversed?qlt=85&wid=600&ts=1763155171449&$Transparency$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-web22?$Mobile$",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence_Paint_Headline?ts=1778512885767&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-White?ts=1778511355809&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-Smoke?ts=1778511823329&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-Glamis?ts=1778511851652&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-Pearl?ts=1778511883689&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-Aurora?ts=1778511911368&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-Midnight?ts=1778511933684&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/assets-by-product-launch/influence/exterior-colors/white/White-swatch.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/assets-by-product-launch/influence/exterior-colors/smoke/Smoke-swatch.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/assets-by-product-launch/influence/exterior-colors/glamis/glamis-swatch.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/assets-by-product-launch/influence/exterior-colors/pearl/influence-pearl-swatch.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/assets-by-product-launch/influence/exterior-colors/aurora/influence-aurora-swatch.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/assets-by-product-launch/influence/exterior-colors/midnight/influence-midnight-swatch.png",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Solitude-Roof-Fist-Hail?ts=1762354179154&$Transparent-500$&fmt=webp-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/MORryde-Ind-Suspension-fade?ts=1768422425631&$Transparent-500$&fmt=webp-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/MoRryde-3D?ts=1715094167165&fmt=webp-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_Bullets-3?ts=1757116915108&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_Bullets-3?ts=1757116949521&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$Mobile$",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/CooperTires-reversed-1?ts=1715217029015&$Transparency$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/coopertire-ratings?ts=1715218828262&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/CooperWork-RHT%202-three-cropped?ts=1715193785676&$1440-PNG$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SuperChassis-Graphic?ts=1715216918130&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SuperChassis-Logo?ts=1715218829748&fmt=png-alpha&wid=400&hei=110&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SuperChassis-Graphic?ts=1715216918130&fmt=png-alpha&wid=400&hei=180&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Stealth3Plus?ts=1715216778197&$Transparency-Logo$&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/stealthac-icon-quiet?ts=1715216918017&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/stealthac-icon-cooling?ts=1715216917575&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/stealthac-icon-airtite?ts=1715216917773&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/StealthAC-Diagram-web?ts=1715209013596&$1440-PNG$&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarPanel?ts=1715097077212&$SmallLogo$&fit=crop&align=0,0&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/ChargeController?ts=1715096981335&$Transparency$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/12VRefer?ts=1715097176157&$Transparency$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$Mobile$",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/INFLUENCE%20ROOF%202026?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/INFLUENCE%20Siding%20CUT%20A%20WAY%202026?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/TRIPLE%20INSULATED%20MAIN%20FLOOR-2?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/INSULATED%20GOOSNECK?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/INSULATED%20STORAGE?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/GrandDesignRV-norv-reversed-web?ts=1786451733792&$Transparency-Logo$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://t.co/1/i/adsct?bci=4&dv=America%2FChicago%26en-US%2Cen%26Google%20Inc.%26Win32%26255%262560%261440%2612%2624%261440%26900%260%26na%261&eci=3&event=%7B%7D&event_id=008c49de-2c7a-49be-9e70-e14f69da400d&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=10f5bbef-ff2f-422f-bd49-2a655c6a8a5f&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ffifth-wheels%2Finfluence&tw_engaged_ms=1&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534385838-563534522&twpid=tw.1794534385837.269591947401610605&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://analytics.twitter.com/1/i/adsct?bci=4&dv=America%2FChicago%26en-US%2Cen%26Google%20Inc.%26Win32%26255%262560%261440%2612%2624%261440%26900%260%26na%261&eci=3&event=%7B%7D&event_id=008c49de-2c7a-49be-9e70-e14f69da400d&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=10f5bbef-ff2f-422f-bd49-2a655c6a8a5f&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ffifth-wheels%2Finfluence&tw_engaged_ms=1&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534385838-563534522&twpid=tw.1794534385837.269591947401610605&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=187008127&Ver=2&mid=728a1e71-2dd0-47aa-9d37-0b14180c736b&bo=1&sid=0aa42710df0411f1bb8381ba0da39474&vid=0aa434f0df0411f190e1eb127d386ca3&vids=0&msclkid=N&uach=pv%3D10.0&pi=1200101525&lg=en-US&sw=2560&sh=1440&sc=24&tl=Fifth%20Wheels%20%7C%20Influence&p=https%3A%2F%2Fwww.granddesignrv.com%2Ffifth-wheels%2Finfluence&r=&lt=1723&evt=pageLoad&sv=2&cdb=AQAQ&rn=614920",
+      "type": "img"
+    },
+    {
+      "url": "https://t.co/i/adsct?bci=4&cv=100%261&dv=America%2FChicago%26en-US%2Cen%26Google%20Inc.%26Win32%26255%262560%261440%2612%2624%261440%26900%260%26na%261&eci=2&event_id=21319974-d143-440f-bab4-1a703b15fab3&events=%5B%5B%22auto_long_site_dwell%22%2C%7B%7D%5D%5D&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=10f5bbef-ff2f-422f-bd49-2a655c6a8a5f&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ffifth-wheels%2Finfluence&tw_engaged_ms=10103&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534385838-563534522&twpid=tw.1794534385837.269591947401610605&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://analytics.twitter.com/i/adsct?bci=4&cv=100%261&dv=America%2FChicago%26en-US%2Cen%26Google%20Inc.%26Win32%26255%262560%261440%2612%2624%261440%26900%260%26na%261&eci=2&event_id=21319974-d143-440f-bab4-1a703b15fab3&events=%5B%5B%22auto_long_site_dwell%22%2C%7B%7D%5D%5D&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=10f5bbef-ff2f-422f-bd49-2a655c6a8a5f&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ffifth-wheels%2Finfluence&tw_engaged_ms=10103&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534385838-563534522&twpid=tw.1794534385837.269591947401610605&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-web22?$Hero-Image$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-web22?$1440-JPG$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Influence-web22?$Mobile$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$Hero-Image$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$1440-JPG$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$Mobile$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$Hero-Image$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$1440-JPG$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$Mobile$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/IconEffect_spin_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/ZoomInButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/ZoomOutButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/ZoomResetButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/SpinLeftButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/SpinRightButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/FullScreenButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7sdk/2026.8/images/sdk/busyicon.gif",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/IconEffect_video_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/SocialShare_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/EmailShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/EmbedShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/LinkShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/TwitterShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/FacebookShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/Dot0x000000opacity75.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/PlayPauseButton_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/VideoScrubber_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/ClosedCaptionButton_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/AudioCaptionsButton_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/MutableVolume_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/FullScreenButton_dark_sprite.png",
+      "type": "background"
+    }
+  ],
+  "skeleton": {
+    "signature": "sB(s(s(s,s),2x1B,s,s(s(s(,),s,sB(,)),s(s,s,s(,),s,s(,,)),2x4(s,s,s),sB(7x1,2x1B(,)),s(s,2x1,s),s(s,s(,)),s(s,2x2),s)),s,s)",
+    "nodeMap": {
+      "r": "body",
+      "rc1": "body > div.root.container.responsivegrid",
+      "rc1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment",
+      "rc1c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment > div.cmp-experiencefragment.cmp-experiencefragment--header > div.cmp-container > div.embed",
+      "rc1c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment > div.cmp-experiencefragment.cmp-experiencefragment--header > div.cmp-container > div.topNav",
+      "rc1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.subnavigation",
+      "rc1c3": "body > div.root.container.responsivegrid > div.cmp-container > div.inventory",
+      "rc1c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid",
+      "rc1c4c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c1c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > section.dynamic-media-container.cmp-container--gradient-black.cmp-container--gradient-top > div.cmp-container",
+      "rc1c4c1c1c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > section.dynamic-media-container.cmp-container--gradient-black.cmp-container--gradient-top > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-medium.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c1c1c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > section.dynamic-media-container.cmp-container--gradient-black.cmp-container--gradient-top > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn--tablet--12.aem-GridColumn--offset--tablet--0.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0.aem-GridColumn--tablet--hide",
+      "rc1c4c1c1c1c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > section.dynamic-media-container.cmp-container--gradient-black.cmp-container--gradient-top > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(4)",
+      "rc1c4c1c1c1c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > section.dynamic-media-container.cmp-container--gradient-black.cmp-container--gradient-top > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(5)",
+      "rc1c4c1c1c1c5": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > section.dynamic-media-container.cmp-container--gradient-black.cmp-container--gradient-top > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(6)",
+      "rc1c4c1c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > section.dynamic-media-container.cmp-container--gradient-black.cmp-container--gradient-top > div.dynamic-media-container__image.background-size-cover.background-x-center.background-y-center",
+      "rc1c4c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.embed.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c1c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c1c3c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.background-x-center.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.text.aem-GridColumn--default--none.aem-GridColumn.aem-GridColumn--default--10.aem-GridColumn--offset--default--1",
+      "rc1c4c1c3c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.section.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.cmp-container--gradient-black.background-x-right.background-y-top.background-size-cover > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.background-x-center.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.button.button-color-cardinal-red.button-treatment-solid.margin-top-medium.margin-bottom-large.align-center.aem-GridColumn--default--none.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0.aem-GridColumn--offset--default--0",
+      "rc1c4c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.section.margin-top-small.margin-bottom-small.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c2c1": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.separator.cmp-separator--hidden.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1)",
+      "rc1c4c2c2": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-feature.gdrv-title.red.align-center.margin-top-large.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c2c3": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.dynamicmedia.parbase.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c2c3c1": "#dynamicmedia_101740511_spinView",
+      "rc1c4c2c3c2": "#dynamicmedia_101740511_divToolsButtons",
+      "rc1c4c2c4": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.separator.cmp-separator--hidden.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(4)",
+      "rc1c4c2c5": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c2c5c1": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence-full-body-paint > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.image.aem-GridColumn--default--none.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--8.aem-GridColumn--offset--default--2.aem-GridColumn--offset--phone--0",
+      "rc1c4c2c5c2": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence-full-body-paint > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-medium.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c2c5c3": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence-full-body-paint > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.thumbnailtabs.tabs.panelcontainer.aem-GridColumn--phone--12.aem-GridColumn--phone--newline.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c2c5c3c1": "#tabs-b7f3ddd6ce-item-6e5128ec0f-tabpanel",
+      "rc1c4c2c5c3c2": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence-full-body-paint > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.thumbnailtabs.tabs.panelcontainer.aem-GridColumn--phone--12.aem-GridColumn--phone--newline.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0 > div.cmp-tabs > div.cmp-tabs__tablist-container",
+      "rc1c4c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.section.margin-top-small.brand-story-container.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c3c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.section.margin-top-small.brand-story-container.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(3)",
+      "rc1c4c3c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.section.margin-top-small.brand-story-container.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(4)",
+      "rc1c4c3c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.section.margin-top-small.brand-story-container.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(5)",
+      "rc1c4c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.margin-bottom-medium.padding-top-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c4c1": "#brand-tabs > div.cmp-tabs__tablist-container",
+      "rc1c4c4c2": "#brand-tabs-item-29b7e0abaa-tabpanel",
+      "rc1c4c4c2c1": "#brand-tabs-item-29b7e0abaa-tabpanel > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--worry-free-roofs > div.cmp-container.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.embed.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c4c2c2": "#brand-tabs-item-29b7e0abaa-tabpanel > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--worry-free-roofs > div.cmp-container.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.margin-top-medium.margin-bottom-medium.aem-GridColumn--default--none.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--8.aem-GridColumn--offset--phone--0.aem-GridColumn--offset--default--0",
+      "rc1c4c5": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.margin-top-small.padding-top-small.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c5c1": "#brand-construction > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.title.gdrv-title.red.margin-top-small.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c5c2": "#brand-construction > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.tabs.panelcontainer.gdrv-product-tabs.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c5c3": "#brand-construction > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c6": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(6)",
+      "rc1c4c6c1": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.title.gdrv-title.red.margin-bottom-medium.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c6c2": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c6c2c1": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c6c2c1c1": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12 > div.specTable",
+      "rc1c4c6c2c1c2": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12 > div:nth-of-type(4)",
+      "rc1c4c6c2c2": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--influence > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.text.margin-left-large.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c7": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(7)",
+      "rc1c4c7c1": "#brand-testimonials > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.customercomment.aem-GridColumn.aem-GridColumn--default--12 > div.gdrv-customer-comments > div.gdrv-customer-comments > div.quotes > div.reviewsheader",
+      "rc1c4c7c2": "#apidata",
+      "rc1c4c8": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12",
+      "rc2": "body > div.cloudservice.testandtarget",
+      "rc3": "body > div:nth-of-type(4)"
+    },
+    "sections": [
+      {
+        "id": "rc1",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc2",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.subnavigation",
+        "layout": "2x1",
+        "hasBg": true,
+        "hint": "block",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc3",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.inventory",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc4",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid",
+        "layout": null,
+        "hasBg": false,
+        "hint": "block",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc5",
+        "selector": "body > div.cloudservice.testandtarget",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc6",
+        "selector": "body > div:nth-of-type(4)",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      }
+    ],
+    "invalidIgnore": []
+  },
+  "pageLayout": {
+    "box": {
+      "y": 137,
+      "height": 7157.890625
+    },
+    "splits": [
+      {
+        "selector": "div.aem-Grid.aem-Grid--12 > div.container.responsivegrid",
+        "sides": [
+          [
+            0,
+            0.3333333333333333
+          ]
+        ],
+        "top": 3199.5625,
+        "bottom": 3648.5625,
+        "cover": 0.06272797721046484,
+        "above": 2
+      }
+    ],
+    "start": {
+      "kind": "photo"
+    }
+  },
+  "blocks": [
+    {
+      "id": "0520520cbf2a",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-1f0d13e2c7 > div.subnavigation",
+      "bounds": {
+        "x": 0,
+        "y": 86,
+        "width": 1440,
+        "height": 51
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "dense",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + button + link + image"
+      },
+      "description": "subnavigation",
+      "features": {
+        "skeleton": "nav",
+        "variant": "nav~s",
+        "variantClean": "nav~s"
+      },
+      "screenshot": "blocks/0520520cbf2a.jpg",
+      "html": "blocks/0520520cbf2a.html"
+    },
+    {
+      "id": "41a13b0ec345",
+      "type": "default-content",
+      "detectionTier": 2,
+      "selector": "#container-b467c2e4c3 > div > div.container.responsivegrid.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "bounds": {
+        "x": 0,
+        "y": 137,
+        "width": 1440,
+        "height": 929
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "link + image + text"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "(T [T])",
+        "variant": "(Tw [Tw])",
+        "variantClean": "(Tw [Tw])"
+      },
+      "screenshot": null,
+      "html": "blocks/41a13b0ec345.html"
+    },
+    {
+      "id": "6e63484d0291",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "#container-b467c2e4c3 > div > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 0,
+        "y": 1066,
+        "width": 1440,
+        "height": 284
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading + link"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "~(T)",
+        "variant": "~k(Tw)",
+        "variantClean": "~k(Tw)"
+      },
+      "screenshot": "blocks/6e63484d0291.jpg",
+      "html": "blocks/6e63484d0291.html"
+    },
+    {
+      "id": "e049980d3272",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-360spin > div > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-feature.gdrv-title.red.align-center.margin-top-large.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 1508,
+        "width": 1368,
+        "height": 59
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/e049980d3272.html"
+    },
+    {
+      "id": "664663e7b211",
+      "type": "unknown",
+      "detectionTier": 1,
+      "selector": "#brand-360spin > div > div.dynamicmedia.parbase.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 1607,
+        "width": 1368,
+        "height": 559
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": ""
+      },
+      "description": "dynamicmedia",
+      "features": {
+        "skeleton": "{button ~@}",
+        "variant": "{button ~@}",
+        "variantClean": "{button ~@}"
+      },
+      "screenshot": "blocks/664663e7b211.jpg",
+      "html": "blocks/664663e7b211.html"
+    },
+    {
+      "id": "416a03d5d9f2",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#container-02aecf6d0e > div > div.image.aem-GridColumn--default--none.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--8.aem-GridColumn--offset--default--2.aem-GridColumn--offset--phone--0",
+      "bounds": {
+        "x": 264,
+        "y": 2208,
+        "width": 912,
+        "height": 115
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "large",
+        "hasGrid": false,
+        "structure": "link + image"
+      },
+      "description": "image",
+      "features": {
+        "skeleton": "T",
+        "variant": "T",
+        "variantClean": "T"
+      },
+      "screenshot": null,
+      "html": "blocks/416a03d5d9f2.html"
+    },
+    {
+      "id": "8b55537a14f7",
+      "type": "tabs",
+      "detectionTier": 1,
+      "selector": "#container-02aecf6d0e > div > div.thumbnailtabs.tabs.panelcontainer.aem-GridColumn--phone--12.aem-GridColumn--phone--newline.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "bounds": {
+        "x": 36,
+        "y": 2365,
+        "width": 1368,
+        "height": 682
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "link + image + list"
+      },
+      "description": "thumbnailtabs",
+      "features": {
+        "skeleton": "(T [tab])",
+        "variant": "(T [tab])",
+        "variantClean": "(T [tab])"
+      },
+      "screenshot": "blocks/8b55537a14f7.jpg",
+      "html": "blocks/8b55537a14f7.html"
+    },
+    {
+      "id": "c02ea02d4b6d",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-7c6502fa9d > div > div.container.responsivegrid.outer-block.section.margin-top-small.brand-story-container.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 0,
+        "y": 3164,
+        "width": 1440,
+        "height": 887
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "text + video"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "[T|~({video button})*1.75]",
+        "variant": "[Tk|~k({video button~@})*1.75]",
+        "variantClean": "[Tk|~k({video button~@})*1.75]"
+      },
+      "screenshot": "blocks/c02ea02d4b6d.jpg",
+      "html": "blocks/c02ea02d4b6d.html"
+    },
+    {
+      "id": "d919dad23438",
+      "type": "tabs",
+      "detectionTier": 1,
+      "selector": "#container-7c6502fa9d > div > div.container.responsivegrid.full-width.margin-bottom-medium.padding-top-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 0,
+        "y": 4051,
+        "width": 1440,
+        "height": 815
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "dense",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "list + link + image + heading + text"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "~([tab] [T*2|T])",
+        "variant": "~k([tab] [T*2|Tw])",
+        "variantClean": "~k([tab] [T*2|Tw])"
+      },
+      "screenshot": "blocks/d919dad23438.jpg",
+      "html": "blocks/d919dad23438.html"
+    },
+    {
+      "id": "3b914ba1bad4",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-construction > div > div.title.gdrv-title.red.margin-top-small.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 4965,
+        "width": 1368,
+        "height": 38
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/3b914ba1bad4.html"
+    },
+    {
+      "id": "ef6db38e2d04",
+      "type": "tabs",
+      "detectionTier": 1,
+      "selector": "#brand-construction > div > div.tabs.panelcontainer.gdrv-product-tabs.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 5043,
+        "width": 1368,
+        "height": 534
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + image"
+      },
+      "description": "tabs",
+      "features": {
+        "skeleton": "[tab|T]",
+        "variant": "[tab~n tab|Tk]",
+        "variantClean": "[tab~n tab|Tk]"
+      },
+      "screenshot": "blocks/ef6db38e2d04.jpg",
+      "html": "blocks/ef6db38e2d04.html"
+    },
+    {
+      "id": "622b4772d2a0",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-floorplanspecs > div > div.title.gdrv-title.red.margin-bottom-medium.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "bounds": {
+        "x": 36,
+        "y": 5771,
+        "width": 1368,
+        "height": 38
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/622b4772d2a0.html"
+    },
+    {
+      "id": "a48fcc1d36c4",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-8f6b7d48e4 > div > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 5848,
+        "width": 1368,
+        "height": 688
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "link + button"
+      },
+      "description": "spectable",
+      "features": {
+        "skeleton": "[T|[T]*3]",
+        "variant": "[Tn|[Tnr]*3]",
+        "variantClean": "[Tk|[Tk]*3]"
+      },
+      "screenshot": "blocks/a48fcc1d36c4.jpg",
+      "html": "blocks/a48fcc1d36c4.html"
+    },
+    {
+      "id": "6fddde7db837",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#container-8f6b7d48e4 > div > div.text.margin-left-large.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 96,
+        "y": 6536,
+        "width": 1368,
+        "height": 24
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "text"
+      },
+      "description": "text",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tn",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/6fddde7db837.html"
+    },
+    {
+      "id": "931d159c32e6",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-testimonials > div > div > div > div > div > div.reviewsheader",
+      "bounds": {
+        "x": 36,
+        "y": 6632,
+        "width": 1368,
+        "height": 47
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "reviewsheader",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/931d159c32e6.html"
+    },
+    {
+      "id": "b30136097af2",
+      "type": "cards",
+      "detectionTier": 1,
+      "selector": "#apidata",
+      "bounds": {
+        "x": 36,
+        "y": 6679,
+        "width": 1368,
+        "height": 458
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": ""
+      },
+      "description": "",
+      "features": {
+        "skeleton": "[T]",
+        "variant": "[Tn]",
+        "variantClean": "[Tk]",
+        "set": true
+      },
+      "screenshot": "blocks/b30136097af2.jpg",
+      "html": "blocks/b30136097af2.html"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+/* tabs-feature: feature tabs with content-driven panel layouts (values from the source cmp-tabs) */
+
+main > .section > .tabs-feature-wrapper {
+  max-width: var(--content-max-width);
+  padding: 0;
+}
+
+/* the source band takes the active panel's background: light behind a statement panel.
+   Only when the block is alone in its section, so the band can cover the section padding */
+main > .section > .tabs-feature-wrapper:only-child {
+  margin-block: calc(-1 * var(--section-spacing));
+  padding-block: var(--section-spacing);
+}
+
+main > .section > .tabs-feature-wrapper:only-child:has(.tabs-feature-statement:not([hidden])) {
+  background-color: rgb(243 246 248);
+  box-shadow: 0 0 0 100vmax rgb(243 246 248);
+  clip-path: inset(0 -100vmax);
+}
+
+/* tab bar: centred, wraps; 1px underline on the active tab */
+.tabs-feature .tabs-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tabs-feature .tabs-feature-tab {
+  display: block;
+  max-width: none;
+  margin: 0;
+  padding: 8px 16px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: none;
+  color: rgb(255 255 255 / 60%);
+  font-family: var(--body-font-family);
+  font-size: 10.4px;
+  font-weight: 400;
+  line-height: 15.6px;
+  text-align: center;
+  text-transform: none;
+  white-space: normal;
+  cursor: pointer;
+  transition: none;
+}
+
+.tabs-feature .tabs-feature-tab:hover {
+  color: rgb(255 255 255 / 60%);
+  filter: none;
+}
+
+.tabs-feature .tabs-feature-tab[aria-selected='true'] {
+  border-bottom-color: currentcolor;
+  color: rgb(255 255 255 / 80%);
+}
+
+.tabs-feature .tabs-feature-tab:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: -3px;
+  filter: none;
+}
+
+.tabs-feature:has(.tabs-feature-statement:not([hidden])) .tabs-feature-tab {
+  color: rgb(0 0 0 / 60%);
+}
+
+.tabs-feature:has(.tabs-feature-statement:not([hidden])) .tabs-feature-tab[aria-selected='true'] {
+  color: rgb(0 0 0 / 80%);
+}
+
+/* panels */
+.tabs-feature .tabs-feature-panel {
+  position: relative;
+  color: #fff;
+}
+
+.tabs-feature .tabs-feature-panel[hidden] {
+  display: none;
+}
+
+.tabs-feature .tabs-feature-panel:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: -3px;
+}
+
+.tabs-feature .tabs-feature-panel picture,
+.tabs-feature .tabs-feature-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tabs-feature .tabs-feature-media p {
+  margin: 0;
+}
+
+/* text */
+main .tabs-feature .tabs-feature-panel :is(h1, h2, h3, h4, h5, h6, p, ul, ol, li) {
+  margin: 0;
+  color: inherit;
+  font-family: var(--body-font-family);
+}
+
+main .tabs-feature .tabs-feature-panel :is(h1, h2) {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+main .tabs-feature .tabs-feature-panel h3 {
+  font-size: 27.2px;
+  font-weight: 700;
+  line-height: 32.64px;
+}
+
+main .tabs-feature .tabs-feature-panel :is(h4, h5, h6) {
+  font-size: 18.4px;
+  font-weight: 700;
+  line-height: 27.6px;
+}
+
+main .tabs-feature .tabs-feature-panel :is(p, li) {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main .tabs-feature .tabs-feature-panel :is(ul, ol) {
+  padding-left: 40px;
+}
+
+.tabs-feature .tabs-feature-body {
+  box-sizing: border-box;
+}
+
+.tabs-feature .tabs-feature-body > :not(h1, h2, h3, h4, h5, h6) + :is(h2, h3, h4, h5, h6) {
+  margin-top: 20px;
+}
+
+.tabs-feature .tabs-feature-body > * + .button-container {
+  margin-top: 24px;
+}
+
+/* full-width images below an icon row (diagrams) */
+.tabs-feature .tabs-feature-after > picture,
+.tabs-feature .tabs-feature-after > p > picture {
+  width: 83.333%;
+  margin: 40px auto 0;
+}
+
+/* a leading image in the text column is a logo */
+.tabs-feature .tabs-feature-body > picture:first-child {
+  width: 45%;
+  margin-bottom: 24px;
+}
+
+/* CTAs are bold underlined text links on the source */
+main .tabs-feature .tabs-feature-body .button-container {
+  display: block;
+}
+
+main .tabs-feature .button-container a.button:any-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  text-decoration: underline;
+  text-transform: none;
+}
+
+main .tabs-feature .button-container a.button:hover,
+main .tabs-feature .button-container a.button:focus-visible {
+  color: #fff;
+  filter: none;
+}
+
+/* icon rows: icon beside its label and description */
+main .tabs-feature .tabs-feature-panel .tabs-feature-icons {
+  display: grid;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs-feature .tabs-feature-icons > li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: start;
+  column-gap: 32px;
+}
+
+.tabs-feature .tabs-feature-icons img {
+  width: 64px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.tabs-feature .tabs-feature-icon-text {
+  display: block;
+  color: #aaa;
+  font-size: 17.6px;
+  line-height: 23.76px;
+}
+
+.tabs-feature .tabs-feature-icon-text > strong {
+  display: block;
+  margin-bottom: 8.8px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/* split: image, then text; icon rows and what follows run full width */
+.tabs-feature .tabs-feature-split {
+  padding: 40px 0 56px;
+}
+
+.tabs-feature .tabs-feature-split .tabs-feature-body {
+  padding: 120px 48px 0 32px;
+}
+
+.tabs-feature .tabs-feature-split .tabs-feature-body > :not(:first-child) + picture {
+  margin-top: 20px;
+}
+
+.tabs-feature .tabs-feature-after {
+  margin-top: 40px;
+  padding: 0 32px;
+}
+
+/* banner */
+.tabs-feature .tabs-feature-banner {
+  padding-top: 82px;
+}
+
+/* overlay: the photo fills the panel and the text sits over it */
+.tabs-feature .tabs-feature-overlay {
+  display: grid;
+  padding-top: 60px;
+}
+
+.tabs-feature .tabs-feature-overlay > * {
+  grid-area: 1 / 1;
+}
+
+.tabs-feature .tabs-feature-overlay .tabs-feature-media {
+  position: relative;
+}
+
+.tabs-feature .tabs-feature-overlay .tabs-feature-media img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabs-feature .tabs-feature-overlay .tabs-feature-body {
+  position: relative;
+  padding: 20px 16px;
+}
+
+main .tabs-feature .tabs-feature-overlay h3 {
+  font-size: 18.72px;
+  line-height: 28.08px;
+}
+
+main .tabs-feature .tabs-feature-overlay .tabs-feature-body .button-container {
+  margin-top: 0;
+  text-align: center;
+}
+
+main .tabs-feature .tabs-feature-overlay .button-container a.button:any-link {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* statement: centred copy over a light photo anchored to the bottom */
+.tabs-feature .tabs-feature-statement {
+  padding-top: 0;
+  background-color: rgb(243 246 248);
+  text-align: center;
+}
+
+.tabs-feature .tabs-feature-statement .tabs-feature-media img {
+  inset: auto 0 0;
+  height: 607px;
+  object-position: center bottom;
+}
+
+.tabs-feature .tabs-feature-statement .tabs-feature-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 56px 0;
+}
+
+.tabs-feature .tabs-feature-statement .tabs-feature-body > * + * {
+  margin-top: 20px;
+}
+
+main .tabs-feature .tabs-feature-statement .tabs-feature-body > p {
+  max-width: 885px;
+  color: #797573;
+  font-size: 19.2px;
+  line-height: 28.8px;
+}
+
+main .tabs-feature .tabs-feature-statement .tabs-feature-body > p:where(:has(> strong:only-child)) {
+  max-width: none;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+main .tabs-feature .tabs-feature-statement .tabs-feature-body > p:first-child {
+  color: #514d4d;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+main .tabs-feature .tabs-feature-statement .tabs-feature-body > p:first-child + p {
+  color: #f8c120;
+  font-size: 36px;
+  line-height: 43.2px;
+}
+
+main .tabs-feature .tabs-feature-statement .tabs-feature-body > p:last-child:not(:first-child) {
+  max-width: none;
+  margin: 300px -40px 0;
+  color: #fff;
+  font-size: 14.4px;
+  line-height: 21.6px;
+}
+
+main .tabs-feature .tabs-feature-statement .tabs-feature-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs-feature .tabs-feature-statement .tabs-feature-icons > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 181px;
+}
+
+.tabs-feature .tabs-feature-statement .tabs-feature-icons img {
+  width: auto;
+  height: 75px;
+  margin: 0 auto;
+}
+
+.tabs-feature .tabs-feature-statement .tabs-feature-icon-text {
+  margin-top: 24px;
+}
+
+.tabs-feature .tabs-feature-statement .tabs-feature-icon-text > strong {
+  margin: 0;
+  color: #797576;
+  font-size: 18.72px;
+  line-height: 23.4px;
+}
+
+/* text only: keep a readable measure */
+.tabs-feature .tabs-feature-text .tabs-feature-body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+@media (width >= 900px) {
+  .tabs-feature .tabs-feature-tab {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .tabs-feature .tabs-feature-body > picture:first-child {
+    width: 75%;
+  }
+
+  .tabs-feature .tabs-feature-icons > li {
+    column-gap: 0;
+  }
+
+  main .tabs-feature .tabs-feature-after .tabs-feature-icons {
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+  }
+
+  .tabs-feature .tabs-feature-after .tabs-feature-icons > li {
+    padding-left: 16px;
+  }
+
+  .tabs-feature .tabs-feature-split {
+    display: grid;
+    grid-template-columns: 7fr 1fr 4fr;
+    align-items: start;
+    padding: 40px 0 64px;
+  }
+
+  .tabs-feature .tabs-feature-split .tabs-feature-media {
+    grid-column: 1;
+  }
+
+  .tabs-feature .tabs-feature-split .tabs-feature-body {
+    grid-column: 3;
+    padding: 16px 48px 16px 0;
+  }
+
+  .tabs-feature .tabs-feature-split .tabs-feature-after {
+    grid-column: 1 / -1;
+    margin-top: 48px;
+    padding: 0 40px;
+  }
+
+  .tabs-feature .tabs-feature-overlay .tabs-feature-media {
+    min-height: 964px;
+  }
+
+  .tabs-feature .tabs-feature-overlay .tabs-feature-body {
+    width: calc((100% - 32px) / 3);
+    margin-left: calc(16px + (100% - 32px) / 6);
+    padding: 244px 0 0;
+  }
+
+  .tabs-feature .tabs-feature-statement .tabs-feature-media {
+    min-height: 883px;
+  }
+
+  .tabs-feature .tabs-feature-statement .tabs-feature-media img {
+    inset: 0;
+    height: 100%;
+  }
+
+  .tabs-feature .tabs-feature-statement .tabs-feature-body {
+    width: auto;
+    margin: 0;
+    padding: 60px 56px 0;
+  }
+
+  main .tabs-feature .tabs-feature-statement .tabs-feature-body > p:last-child:not(:first-child) {
+    margin-top: auto;
+  }
+
+  main .tabs-feature .tabs-feature-statement .tabs-feature-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+}

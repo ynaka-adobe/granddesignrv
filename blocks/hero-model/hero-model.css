@@ -1,0 +1,211 @@
+/* hero-model: model-page hero (values from the source computed styles) */
+
+/* the hero sits flush under the model sub-nav and on top of the next band */
+main > .section.hero-model-container {
+  margin: 0;
+}
+
+/* full-bleed: escape the section column */
+main > .section > .hero-model-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.hero-model {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #000;
+  color: var(--light-color);
+}
+
+/* background photo layer, height follows the content (source: no min-height) */
+.hero-model .hero-model-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* source: section::after, black at the top fading out over the top 65% */
+.hero-model .hero-model-media::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 35%;
+  background: linear-gradient(0deg, rgb(0 0 0 / 0%), rgb(0 0 0));
+  pointer-events: none;
+}
+
+.hero-model .hero-model-media picture,
+.hero-model .hero-model-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/*
+ * content: a 12-column grid (no badge) or 7-column grid (logo + badge), as on the source.
+ * Inner width is the viewport less 16px each side, capped at the source's 1441px.
+ */
+.hero-model .hero-model-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+  box-sizing: border-box;
+  width: min(100% - 32px, 1441px);
+  margin: 0 auto;
+  padding: 102px 0 366px;
+  text-align: center;
+}
+
+.hero-model .hero-model-content > * {
+  grid-column: 2 / span 10;
+}
+
+.hero-model .hero-model-logo img,
+.hero-model .hero-model-badge img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* tagline (h1) and price */
+.hero-model .hero-model-text {
+  margin-top: 20px;
+}
+
+.hero-model .hero-model-text > * {
+  margin: 0;
+  color: var(--light-color);
+  text-align: center;
+}
+
+.hero-model .hero-model-text > :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 40px;
+  font-family: var(--heading-font-family);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 57px;
+}
+
+.hero-model .hero-model-text > p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  line-height: 24px;
+}
+
+/* CTAs: stacked and centred on small screens, 60px apart */
+.hero-model .hero-model-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .hero-model .hero-model-actions .button-container {
+  display: block;
+  margin: 60px 0 0;
+}
+
+main .hero-model .hero-model-actions a.button:any-link {
+  margin: 0;
+}
+
+/* logo + award badge (e.g. Momentum): 7-column grid, tighter top/bottom spacing */
+.hero-model.has-badge .hero-model-content {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  padding: 0 0 122px;
+}
+
+.hero-model.has-badge .hero-model-content > * {
+  grid-column: 1 / -1;
+}
+
+.hero-model.has-badge .hero-model-badge {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 0 40px;
+}
+
+/* keep the source rendition's 1440x763 box whatever size the DM rendition comes back at */
+.hero-model.has-badge .hero-model-badge img {
+  width: 20%;
+  aspect-ratio: 1440 / 763;
+  object-fit: contain;
+}
+
+/* two hidden 40px/2px/40px separators sit between the price and the CTAs */
+.hero-model.has-badge .hero-model-actions {
+  margin-top: 164px;
+}
+
+@media (width >= 900px) {
+  .hero-model.has-badge .hero-model-logo {
+    grid-column: 1 / span 4;
+  }
+
+  .hero-model.has-badge .hero-model-badge {
+    grid-column: 5 / span 2;
+  }
+
+  .hero-model.has-badge .hero-model-badge img {
+    width: 100%;
+  }
+
+  .hero-model.has-badge .hero-model-text {
+    grid-column: 1 / span 5;
+  }
+
+  /* each CTA centred in its own 3/7 half */
+  .hero-model.has-badge .hero-model-actions {
+    display: grid;
+    grid-column: 1 / span 6;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-model .hero-model-content {
+    padding-top: 224px;
+  }
+
+  .hero-model.has-badge .hero-model-content {
+    padding-top: 62px;
+  }
+
+  /* no badge: logo, text and CTAs share a 5/12 column, 1 column in by default */
+  .hero-model .hero-model-content > * {
+    grid-column: 2 / span 5;
+  }
+
+  .hero-model.left .hero-model-content > * {
+    grid-column: 1 / span 5;
+  }
+
+  .hero-model.indent .hero-model-content > * {
+    grid-column: 3 / span 5;
+  }
+
+  .hero-model.right .hero-model-content > * {
+    grid-column: 7 / span 5;
+  }
+
+  /* CTAs at 2/5 of the column each, pushed to its edges */
+  .hero-model:not(.has-badge) .hero-model-actions {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  main .hero-model:not(.has-badge) .hero-model-actions .button-container {
+    width: 40%;
+  }
+
+  main .hero-model:not(.has-badge) .hero-model-actions a.button:any-link {
+    width: 100%;
+  }
+}

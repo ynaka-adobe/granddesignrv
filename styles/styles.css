@@ -318,7 +318,7 @@ main .section.glow {
 }
 
 main .section.dark {
-  background-color: var(--dark-color);
+  background-color: #000;
   color: var(--background-color);
   margin: 0;
   padding: var(--section-spacing) 0;
@@ -332,4 +332,89 @@ main .section.dark h5,
 main .section.dark h6,
 main .section.dark a:any-link {
   color: var(--background-color);
+}
+
+/* centered: the source's display headline (SS Nickson Six, red, uppercase) over centred content */
+main .section.centered > .default-content-wrapper h1 {
+  color: var(--brand-red);
+  font-family: var(--display-font-family);
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+main .section.centered > .default-content-wrapper h2 {
+  font-family: var(--display-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+/* split: text beside a media block (model brand story); stacked on mobile */
+main .section.split > .default-content-wrapper {
+  color: #333;
+  text-align: left;
+}
+
+/* headings above the construction, specification and review blocks sit left, in brand red */
+main .section:is(.tabs-vertical-container, .table-specs-container) > .default-content-wrapper {
+  text-align: left;
+}
+
+main .section:is(.tabs-vertical-container, .table-specs-container) > .default-content-wrapper h2 {
+  color: var(--brand-red);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* model pages: the review heading after the specs table is left-aligned (centred on the homepage) */
+main .section.table-specs-container + .section.quote-rating-container > .default-content-wrapper {
+  text-align: left;
+}
+
+/* promo band headline (model pages) */
+main .section.dark > .default-content-wrapper h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* model pages: promo band under the hero has 60px below its button, like the source */
+main .section.hero-model-container + .section.dark {
+  padding-bottom: 60px;
+}
+
+/* model pages: the exterior (360 spin) section after the hero / promo band: 120px above the
+   headline, 40px between headline and image, room below for the source's spin controls */
+main .section.hero-model-container + .section.centered,
+main .section.hero-model-container + .section.dark + .section.centered {
+  margin: 120px 0 100px;
+}
+
+main .section.hero-model-container + .section.centered > .default-content-wrapper > h1 + p > picture,
+main .section.hero-model-container + .section.dark + .section.centered > .default-content-wrapper > h1 + p > picture {
+  margin-top: 40px;
+}
+
+@media (width >= 900px) {
+  /* split: text column (456px at 1440) beside the media column (798px), 114px apart */
+  main > .section.split {
+    display: grid;
+    grid-template-columns: minmax(0, 456fr) minmax(0, 798fr);
+    column-gap: 114px;
+    align-items: start;
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 36px;
+  }
+
+  main > .section.split > div {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/toy-haulers/momentum-g-class",
+  "path": "toy-haulers/momentum-g-class",
+  "timestamp": "2026-11-13T05:43:58.692Z",
+  "title": "Toy Haulers | Momentum G-Class Fifth Wheels",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-swatch",
+    "video-inline",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

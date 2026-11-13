@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers",
+  "path": "toy-haulers/momentum-g-class-travel-trailers",
+  "timestamp": "2026-11-13T05:43:51.464Z",
+  "title": "Toy Haulers | Momentum G-Class Travel Trailers",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "video-inline",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

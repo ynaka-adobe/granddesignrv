@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 2,
+  "url": "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers",
+  "title": "Toy Haulers | Momentum G-Class Travel Trailers",
+  "timestamp": "2026-11-13T01:47:56.224Z",
+  "duration": "20.2s",
+  "cleanup": {
+    "elementsRemoved": 26,
+    "types": [
+      "overlay",
+      "cookie-banner",
+      "popup"
+    ],
+    "cookieConsentDismissed": true,
+    "lateConsentOverlaysRemoved": 0,
+    "removed": [
+      {
+        "selector": "#cookie-banner",
+        "type": "overlay"
+      },
+      {
+        "selector": "div.cookie-banner.aem-GridColumn",
+        "type": "cookie-banner",
+        "rule": "[class*=\"cookie-banner\"]"
+      },
+      {
+        "selector": "div.cmp-button__modal",
+        "type": "popup",
+        "rule": "body [class*=\"modal\"]:not(nav *)"
+      },
+      {
+        "selector": "div.subnavigation__overlay",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "div.loading-overlay.loading-overlay--inline",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "#dynamicmedia_22194789_emailShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "#dynamicmedia_22194789_embedShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "div.s7backoverlay",
+        "type": "popup",
+        "rule": "body [class*=\"overlay\"]:not(nav *)"
+      },
+      {
+        "selector": "#button-eca525c09f",
+        "type": "popup",
+        "rule": "body [class*=\"lightbox\"]"
+      },
+      {
+        "selector": "#dynamicmedia_22194789_emailShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "[role=\"dialog\"]"
+      },
+      {
+        "selector": "#dynamicmedia_22194789_embedShare_dialog > div:nth-child(1)",
+        "type": "popup",
+        "rule": "[role=\"dialog\"]"
+      },
+      {
+        "selector": "div.s7dialog",
+        "type": "popup",
+        "rule": "[role=\"dialog\"]"
+      }
+    ]
+  },
+  "snapshot": {
+    "html": "page.html",
+    "unresolvedSelectors": []
+  },
+  "images": [
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/logos/corporate/web/GrandDesignRV-logo-white.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/23G.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/28G.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/30G.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/21G.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/25G.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/27G.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/29GS.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.granddesignrv.com/content/dam/grand-design-rv/en/master-files/graphics/floorplans/momentum/web/31G.png/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SRT-3?ts=1774564677901&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/MomentumGClass-reversed-2?fmt=png-alpha&wid=587&hei=134&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/MomentumGClass-reversed-2?fmt=png-alpha",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/G-ClassTT1?$Mobile$",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Solitude-Roof-Fist-Hail?ts=1762354179154&$Transparent-500$&fmt=webp-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_Bullets-3?ts=1757116915108&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_Bullets-3?ts=1757116949521&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$Mobile$",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/GoodyearLogo-1?ts=1715094716148&$Transparency-Logo$&fmt=webp-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Goodyear-EnduranceLogo?ts=1715215410523&$1440-PNG$&fmt=webp-alpha&wid=600&hei=120&drp=off&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/gy_endurance_full?ts=1715107849457&$Transparency$&fmt=webp-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SuperChassis-Graphic?ts=1715216918130&fmt=png-alpha&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SuperChassis-Logo?ts=1715218829748&$SmallLogo$&fmt=png-alpha&wid=400&hei=110&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SuperChassis-Graphic?ts=1715216918130&$Transparent-500$&fmt=png-alpha&wid=400&hei=180&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarPanel?ts=1715097077212&$SmallLogo$&fit=crop&align=0,0&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/ChargeController?ts=1715096981335&$Transparency$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Inverter%20Graphic-1?ts=1718127828176&$Transparency$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$Mobile$",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/MOMENTUM%20TT%20CUT%20A%20WAY%20Roof%202026?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/MOMENTUM%20TT%20CUT%20A%20WAY%20SIDING%202026?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Triple%20Insulated%20Main%20Floor?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Triple%20Insulated%20Garage%20Door%202026?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Vented%20Attic-1?$Product-Tab-Image$&fit=crop",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/GrandDesignRV-norv-reversed-web?ts=1786451733792&$Transparency-Logo$&dpr=off",
+      "type": "img"
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=187008127&Ver=2&mid=328a6d0b-35da-44b1-a9c2-b7cb7668353b&bo=1&sid=0c7c78d0df0411f1a0518de7590690b1&vid=0c7d66b0df0411f1aa00196692d37474&vids=0&msclkid=N&uach=pv%3D10.0&pi=1200101525&lg=en-US&sw=1920&sh=1080&sc=24&tl=Toy%20Haulers%20%7C%20Momentum%20G-Class%20Travel%20Trailers&p=https%3A%2F%2Fwww.granddesignrv.com%2Ftoy-haulers%2Fmomentum-g-class-travel-trailers&r=&lt=874&evt=pageLoad&sv=2&cdb=AQAQ&rn=885085",
+      "type": "img"
+    },
+    {
+      "url": "https://t.co/1/i/adsct?bci=4&dv=America%2FLos_Angeles%26en-US%2Cen%26Google%20Inc.%26Win32%26255%261920%261080%268%2624%261440%26900%260%26na%261&eci=3&event=%7B%7D&event_id=f9787194-dd16-46cc-946f-0d1708bb3ae6&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=ca8f1459-e4df-4489-b438-1eedcdcd2db6&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ftoy-haulers%2Fmomentum-g-class-travel-trailers&tw_engaged_ms=2&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534388775-953425562&twpid=tw.1794534388775.485098779994917727&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://analytics.twitter.com/1/i/adsct?bci=4&dv=America%2FLos_Angeles%26en-US%2Cen%26Google%20Inc.%26Win32%26255%261920%261080%268%2624%261440%26900%260%26na%261&eci=3&event=%7B%7D&event_id=f9787194-dd16-46cc-946f-0d1708bb3ae6&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=ca8f1459-e4df-4489-b438-1eedcdcd2db6&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ftoy-haulers%2Fmomentum-g-class-travel-trailers&tw_engaged_ms=2&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534388775-953425562&twpid=tw.1794534388775.485098779994917727&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://t.co/i/adsct?bci=4&cv=100%261&dv=America%2FLos_Angeles%26en-US%2Cen%26Google%20Inc.%26Win32%26255%261920%261080%268%2624%261440%26900%260%26na%261&eci=2&event_id=773b3fe3-d104-47be-9a64-106888f7242d&events=%5B%5B%22auto_long_site_dwell%22%2C%7B%7D%5D%5D&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=ca8f1459-e4df-4489-b438-1eedcdcd2db6&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ftoy-haulers%2Fmomentum-g-class-travel-trailers&tw_engaged_ms=10008&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534388775-953425562&twpid=tw.1794534388775.485098779994917727&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://analytics.twitter.com/i/adsct?bci=4&cv=100%261&dv=America%2FLos_Angeles%26en-US%2Cen%26Google%20Inc.%26Win32%26255%261920%261080%268%2624%261440%26900%260%26na%261&eci=2&event_id=773b3fe3-d104-47be-9a64-106888f7242d&events=%5B%5B%22auto_long_site_dwell%22%2C%7B%7D%5D%5D&first_name=1b836d86806e16bd45164b9d665ce86dac9d9d55bf79d0e771265da9fbf950d1&integration=advertiser&last_name=5b87de02aa741b042511fd277db127a8ac3b04f184420820e6952a0e911441ec&p_id=Twitter&p_user_id=0&pl_id=ca8f1459-e4df-4489-b438-1eedcdcd2db6&tw_ch_fvl=Chromium%2F158.0.8127.18%2CNot.A%2FBrand%2F24.0.0.0%2CHeadlessChrome%2F158.0.8127.18&tw_ch_pv=10.0&tw_document_href=https%3A%2F%2Fwww.granddesignrv.com%2Ftoy-haulers%2Fmomentum-g-class-travel-trailers&tw_engaged_ms=10008&tw_iframe_status=0&tw_pid_src=2&tw_session_count=1&tw_session_id=1794534388775-953425562&twpid=tw.1794534388775.485098779994917727&txn_id=ocqzl&type=javascript&version=2.4.12",
+      "type": "img"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/G-ClassTT1?$Hero-Image$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/G-ClassTT1?$1440-JPG$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/G-ClassTT1?$Mobile$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$Hero-Image$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$1440-JPG$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/Omni_Connect_background?$Mobile$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$Hero-Image$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$1440-JPG$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/image/granddesignrv/SolarBkg-NEW+copy?$Mobile$",
+      "type": "picture"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/IconEffect_spin_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/ZoomInButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/ZoomOutButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/ZoomResetButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/SpinLeftButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/SpinRightButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/is/content/granddesignrv/_CSS/GDRV%20Spin%20Set/FullScreenButton_light_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7sdk/2026.8/images/sdk/busyicon.gif",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/IconEffect_video_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/SocialShare_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/EmailShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/EmbedShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/LinkShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/TwitterShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/FacebookShare_dark_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/Dot0x000000opacity75.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/PlayPauseButton_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/VideoScrubber_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/ClosedCaptionButton_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/AudioCaptionsButton_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/MutableVolume_sprite.png",
+      "type": "background"
+    },
+    {
+      "url": "https://gdrv.scene7.com/s7viewers/html5/images/v2/FullScreenButton_dark_sprite.png",
+      "type": "background"
+    }
+  ],
+  "skeleton": {
+    "signature": "sB(s(s(s,s),2x1B,s,s(s(s(,,,,),s),s(s,s,s(,),s),2x2,sB(5x1,2x1B(,)),s(s,2x1,s),s(s,s(,)),s(s,2x2),s)),s,s)",
+    "nodeMap": {
+      "r": "body",
+      "rc1": "body > div.root.container.responsivegrid",
+      "rc1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment",
+      "rc1c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment > div.cmp-experiencefragment.cmp-experiencefragment--header > div.cmp-container > div.embed",
+      "rc1c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment > div.cmp-experiencefragment.cmp-experiencefragment--header > div.cmp-container > div.topNav",
+      "rc1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.subnavigation",
+      "rc1c3": "body > div.root.container.responsivegrid > div.cmp-container > div.inventory",
+      "rc1c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid",
+      "rc1c4c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1)",
+      "rc1c4c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > section.dynamic-media-container.cmp-container--gradient-black > div.cmp-container",
+      "rc1c4c1c1c1": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > section.dynamic-media-container.cmp-container--gradient-black > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.background-x-center.background-y-bottom.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-medium.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c1c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > section.dynamic-media-container.cmp-container--gradient-black > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.background-x-center.background-y-bottom.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn--tablet--12.aem-GridColumn--offset--tablet--0.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0.aem-GridColumn--tablet--hide",
+      "rc1c4c1c1c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > section.dynamic-media-container.cmp-container--gradient-black > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.background-x-center.background-y-bottom.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(4)",
+      "rc1c4c1c1c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > section.dynamic-media-container.cmp-container--gradient-black > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.background-x-center.background-y-bottom.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(5)",
+      "rc1c4c1c1c5": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > section.dynamic-media-container.cmp-container--gradient-black > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container.background-x-center.background-y-bottom.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--tablet--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(6)",
+      "rc1c4c1c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > section.dynamic-media-container.cmp-container--gradient-black > div.dynamic-media-container__image.background-size-cover.background-x-center.background-y-center",
+      "rc1c4c2": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(2)",
+      "rc1c4c2c1": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c2c2": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-feature.gdrv-title.red.align-center.margin-top-large.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c2c3": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.dynamicmedia.parbase.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c2c3c1": "#dynamicmedia_196150258_spinView",
+      "rc1c4c2c3c2": "#dynamicmedia_196150258_divToolsButtons",
+      "rc1c4c2c4": "#brand-360spin > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-small.margin-bottom-small.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c3": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.margin-top-large.margin-bottom-large.padding-left-medium.padding-right-medium.brand-story-container.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c4": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.full-width.margin-bottom-medium.padding-top-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c4c1": "#brand-tabs > div.cmp-tabs__tablist-container",
+      "rc1c4c4c2": "#brand-tabs-item-c8dc40f06f-tabpanel",
+      "rc1c4c4c2c1": "#brand-tabs-item-c8dc40f06f-tabpanel > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--worry-free-roofs > div.cmp-container.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.embed.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c4c2c2": "#brand-tabs-item-c8dc40f06f-tabpanel > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--worry-free-roofs > div.cmp-container.background-y-center.background-size-auto > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.container.responsivegrid.margin-top-medium.margin-bottom-medium.aem-GridColumn--default--none.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--8.aem-GridColumn--offset--phone--0.aem-GridColumn--offset--default--0",
+      "rc1c4c5": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.margin-top-small.padding-top-small.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c5c1": "#brand-construction > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.title.gdrv-title.red.margin-top-small.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c5c2": "#brand-construction > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.tabs.panelcontainer.gdrv-product-tabs.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c5c3": "#brand-construction > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn--phone--hide.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c6": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(6)",
+      "rc1c4c6c1": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.title.gdrv-title.red.margin-bottom-medium.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "rc1c4c6c2": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c6c2c1": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--momentum-g-class-travel-trailer > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c6c2c1c1": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--momentum-g-class-travel-trailer > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12 > div.specTable",
+      "rc1c4c6c2c1c2": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--momentum-g-class-travel-trailer > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12 > div:nth-of-type(4)",
+      "rc1c4c6c2c2": "#brand-floorplanspecs > div.aem-Grid.aem-Grid--12.aem-Grid--default--12.aem-Grid--phone--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-experiencefragment.cmp-experiencefragment--momentum-g-class-travel-trailer > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.text.margin-left-large.aem-GridColumn.aem-GridColumn--default--12",
+      "rc1c4c7": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.outer-block.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(7)",
+      "rc1c4c7c1": "#brand-testimonials > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.customercomment.aem-GridColumn.aem-GridColumn--default--12 > div.gdrv-customer-comments > div.gdrv-customer-comments > div.quotes > div.reviewsheader",
+      "rc1c4c7c2": "#apidata",
+      "rc1c4c8": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.separator.cmp-separator--hidden.margin-top-large.margin-bottom-large.aem-GridColumn.aem-GridColumn--default--12",
+      "rc2": "body > div.cloudservice.testandtarget",
+      "rc3": "body > div:nth-of-type(4)"
+    },
+    "sections": [
+      {
+        "id": "rc1",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.experiencefragment",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc2",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.subnavigation",
+        "layout": "2x1",
+        "hasBg": true,
+        "hint": "block",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc3",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.inventory",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc4",
+        "selector": "body > div.root.container.responsivegrid > div.cmp-container > div.container.responsivegrid",
+        "layout": null,
+        "hasBg": false,
+        "hint": "block",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc5",
+        "selector": "body > div.cloudservice.testandtarget",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc6",
+        "selector": "body > div:nth-of-type(4)",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      }
+    ],
+    "invalidIgnore": []
+  },
+  "pageLayout": {
+    "box": {
+      "y": 137,
+      "height": 5970.734375
+    },
+    "splits": [
+      {
+        "selector": "div.aem-Grid.aem-Grid--12 > div.container.responsivegrid",
+        "sides": [
+          [
+            0,
+            0.3333333333333333
+          ]
+        ],
+        "top": 2029.40625,
+        "bottom": 2447.40625,
+        "cover": 0.07000813865547319,
+        "above": 1
+      }
+    ],
+    "start": {
+      "kind": "photo"
+    }
+  },
+  "blocks": [
+    {
+      "id": "0520520cbf2a",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-1f0d13e2c7 > div.subnavigation",
+      "bounds": {
+        "x": 0,
+        "y": 86,
+        "width": 1440,
+        "height": 51
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "dense",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + button + link + image"
+      },
+      "description": "subnavigation",
+      "features": {
+        "skeleton": "nav",
+        "variant": "nav~s",
+        "variantClean": "nav~s"
+      },
+      "screenshot": "blocks/0520520cbf2a.jpg",
+      "html": "blocks/0520520cbf2a.html"
+    },
+    {
+      "id": "b8cec7b12aff",
+      "type": "default-content",
+      "detectionTier": 2,
+      "selector": "#container-7c6502fa9d > div > div:nth-child(1)",
+      "bounds": {
+        "x": 0,
+        "y": 137,
+        "width": 1440,
+        "height": 912
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "image + text + link"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "(T [T])",
+        "variant": "(Tw [Tw])",
+        "variantClean": "(Tw [Tw])"
+      },
+      "screenshot": null,
+      "html": "blocks/b8cec7b12aff.html"
+    },
+    {
+      "id": "e049980d3272",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-360spin > div > div.title.title-font-nickson-six.title-treatment-uppercase.heading-scale-feature.gdrv-title.red.align-center.margin-top-large.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 0,
+        "y": 1211,
+        "width": 1440,
+        "height": 59
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/e049980d3272.html"
+    },
+    {
+      "id": "664663e7b211",
+      "type": "unknown",
+      "detectionTier": 1,
+      "selector": "#brand-360spin > div > div.dynamicmedia.parbase.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 0,
+        "y": 1309,
+        "width": 1440,
+        "height": 558
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": ""
+      },
+      "description": "dynamicmedia",
+      "features": {
+        "skeleton": "{button ~@}",
+        "variant": "{button ~@}",
+        "variantClean": "{button ~@}"
+      },
+      "screenshot": "blocks/664663e7b211.jpg",
+      "html": "blocks/664663e7b211.html"
+    },
+    {
+      "id": "153c80df7393",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-7c6502fa9d > div > div.container.responsivegrid.margin-top-large.margin-bottom-large.padding-left-medium.padding-right-medium.brand-story-container.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 0,
+        "y": 2029,
+        "width": 1440,
+        "height": 540
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "text + video"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "[T|~({video button})*1.75]",
+        "variant": "[Tk|~k({video button~@})*1.75]",
+        "variantClean": "[Tk|~k({video button~@})*1.75]"
+      },
+      "screenshot": "blocks/153c80df7393.jpg",
+      "html": "blocks/153c80df7393.html"
+    },
+    {
+      "id": "d919dad23438",
+      "type": "tabs",
+      "detectionTier": 1,
+      "selector": "#container-7c6502fa9d > div > div.container.responsivegrid.full-width.margin-bottom-medium.padding-top-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 0,
+        "y": 2629,
+        "width": 1440,
+        "height": 815
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "dense",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "list + link + image + heading + text"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "~([tab] [T*2|T])",
+        "variant": "~k([tab] [T*2|Tw])",
+        "variantClean": "~k([tab] [T*2|Tw])"
+      },
+      "screenshot": "blocks/d919dad23438.jpg",
+      "html": "blocks/d919dad23438.html"
+    },
+    {
+      "id": "3b914ba1bad4",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-construction > div > div.title.gdrv-title.red.margin-top-small.margin-bottom-medium.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 3544,
+        "width": 1368,
+        "height": 38
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/3b914ba1bad4.html"
+    },
+    {
+      "id": "ef6db38e2d04",
+      "type": "tabs",
+      "detectionTier": 1,
+      "selector": "#brand-construction > div > div.tabs.panelcontainer.gdrv-product-tabs.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 3622,
+        "width": 1368,
+        "height": 510
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + image"
+      },
+      "description": "tabs",
+      "features": {
+        "skeleton": "[tab|T]",
+        "variant": "[tab~n tab|Tk]",
+        "variantClean": "[tab~n tab|Tk]"
+      },
+      "screenshot": "blocks/ef6db38e2d04.jpg",
+      "html": "blocks/ef6db38e2d04.html"
+    },
+    {
+      "id": "622b4772d2a0",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-floorplanspecs > div > div.title.gdrv-title.red.margin-bottom-medium.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12.aem-GridColumn--offset--phone--0",
+      "bounds": {
+        "x": 36,
+        "y": 4326,
+        "width": 1368,
+        "height": 38
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "title",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/622b4772d2a0.html"
+    },
+    {
+      "id": "10d49803fe85",
+      "type": "columns",
+      "detectionTier": 1,
+      "selector": "#container-9f4d350dd5 > div > div.spectable.contentfragment.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 36,
+        "y": 4403,
+        "width": 1368,
+        "height": 784
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "link + button"
+      },
+      "description": "spectable",
+      "features": {
+        "skeleton": "[T|[T|(T button)|T]*3]",
+        "variant": "[Tn|[Tnr|(Tnr button)|Tnr]*3]",
+        "variantClean": "[Tk|[Tk|(Tk button)|Tk]*3]"
+      },
+      "screenshot": "blocks/10d49803fe85.jpg",
+      "html": "blocks/10d49803fe85.html"
+    },
+    {
+      "id": "086c05f6591b",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#container-9f4d350dd5 > div > div.text.margin-left-large.aem-GridColumn.aem-GridColumn--default--12",
+      "bounds": {
+        "x": 96,
+        "y": 5187,
+        "width": 1368,
+        "height": 24
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "text"
+      },
+      "description": "text",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tn",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/086c05f6591b.html"
+    },
+    {
+      "id": "931d159c32e6",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "#brand-testimonials > div > div > div > div > div > div.reviewsheader",
+      "bounds": {
+        "x": 36,
+        "y": 5283,
+        "width": 1368,
+        "height": 47
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "reviewsheader",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tr",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/931d159c32e6.html"
+    },
+    {
+      "id": "b30136097af2",
+      "type": "cards",
+      "detectionTier": 1,
+      "selector": "#apidata",
+      "bounds": {
+        "x": 36,
+        "y": 5330,
+        "width": 1368,
+        "height": 620
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": ""
+      },
+      "description": "",
+      "features": {
+        "skeleton": "[T]",
+        "variant": "[Tn]",
+        "variantClean": "[Tk]",
+        "set": true
+      },
+      "screenshot": "blocks/b30136097af2.jpg",
+      "html": "blocks/b30136097af2.html"
+    }
+  ]
+}

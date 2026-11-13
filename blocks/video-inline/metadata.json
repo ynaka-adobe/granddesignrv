@@ -1,0 +1,46 @@
+{
+  "variantName": "video-inline",
+  "baseBlock": "video",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+    "originPage": "Momentum model page (template \"model\", 23 RV model pages)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "neutral",
+    "density": "medium",
+    "purpose": "click-to-play inline video with poster",
+    "imagePattern": "16:9 poster",
+    "notes": [
+      "Never autoplays; the video loads only on click",
+      "Scene7 AVS sets play as HLS (Safari) or the progressive MP4 rendition, with captions when the set has them"
+    ]
+  },
+  "contentPattern": {
+    "structure": "one cell: poster image + link to the video (Scene7 /is/content/<company>/<name>-AVS, or a direct .mp4/.webm URL). Link text is used as the accessible label when it is not a URL; otherwise the poster alt text",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "brand-story videos beside text (section style \"split\")",
+      "any Scene7 or MP4 video with a poster"
+    ],
+    "notSuitableFor": [
+      "background/autoplay videos (use hero-banner)",
+      "YouTube/Vimeo embeds (use video or embed)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/toy-haulers/momentum"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
+  }
+}

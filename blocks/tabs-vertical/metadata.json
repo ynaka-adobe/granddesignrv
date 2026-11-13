@@ -1,0 +1,46 @@
+{
+  "variantName": "tabs-vertical",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+    "originPage": "Momentum model page (template \"model\", 23 RV model pages)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "vertical tab list with image, title and description panel",
+    "imagePattern": "optional landscape image per item",
+    "notes": [
+      "Active item is a grey pill",
+      "Items without an image show title + description",
+      "Mobile: list stacked above the panel"
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per item (4-8). Cell 1: item label (e.g. Thermal Roof Design (R-40)*). Cell 2: optional image, H3 title, description paragraph",
+    "buttonCount": 0,
+    "imageCount": 1,
+    "hasDescription": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "construction / feature lists with detail panels"
+    ],
+    "notSuitableFor": [
+      "horizontal feature tabs (use tabs-feature)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/toy-haulers/momentum"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
+  }
+}

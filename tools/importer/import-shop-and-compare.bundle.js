@@ -246,9 +246,22 @@ var CustomImportScript = (() => {
     const imgs = anchor.querySelectorAll("img");
     return imgs.length === 1 && imgs[0] === img;
   }
+  function replaceSpinSets(element, doc) {
+    element.querySelectorAll('[data-asset-type="spinset"][data-asset-path]').forEach((viewer) => {
+      if (!viewer.isConnected) return;
+      const wrapper = viewer.closest(".dynamicmedia") || viewer;
+      const server = (viewer.getAttribute("data-imageserver") || "https://gdrv.scene7.com/is/image/").replace(/\/?$/, "/");
+      const img = doc.createElement("img");
+      img.src = `${server}${viewer.getAttribute("data-asset-path")}`;
+      const model = (doc.title.split("|").pop() || "").trim();
+      img.alt = model ? `${model} exterior` : "";
+      wrapper.replaceWith(img);
+    });
+  }
   function transform2(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const doc = element.ownerDocument;
+    replaceSpinSets(element, doc);
     Array.from(element.querySelectorAll("img")).forEach((img) => {
       const src = img.getAttribute("src") || "";
       if (!detectDynamicMediaUrl(src)) return;
@@ -273,6 +286,21 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/granddesignrv-sections.js
   var MARKER_ATTR = "data-excat-section-id";
+  var ANCHOR_ATTR = "data-excat-section-anchor";
+  function linkTargets(root) {
+    const ids = /* @__PURE__ */ new Set();
+    root.querySelectorAll('a[href*="#"]').forEach((a) => {
+      const id = (a.getAttribute("href") || "").split("#")[1];
+      if (id) ids.add(id);
+    });
+    return ids;
+  }
+  function anchorId(el, targets) {
+    if (!targets.size) return "";
+    if (el.id && targets.has(el.id)) return el.id;
+    const hit = [...el.querySelectorAll("[id]")].find((e) => targets.has(e.id));
+    return hit ? hit.id : "";
+  }
   function findSectionElement(root, section) {
     const selectors = Array.isArray(section.selector) ? section.selector : [section.selector];
     for (let i = 0; i < selectors.length; i += 1) {
@@ -289,16 +317,19 @@ var CustomImportScript = (() => {
   function transform3(hookName, element, payload) {
     const template = payload && payload.template;
     const sections = template && template.sections || [];
-    if (sections.length < 2) return;
+    if (!sections.length) return;
     const doc = element.ownerDocument;
     if (hookName === "beforeTransform") {
+      const targets = linkTargets(element);
       for (let i = sections.length - 1; i >= 0; i -= 1) {
         const section = sections[i];
         const el = findSectionElement(element, section);
         if (!el || !el.parentNode) continue;
-        if (i > 0 || section.style) {
+        const id = anchorId(el, targets);
+        if (i > 0 || section.style || id) {
           const hr = doc.createElement("hr");
-          if (section.style) hr.setAttribute(MARKER_ATTR, section.id);
+          if (section.style || id) hr.setAttribute(MARKER_ATTR, section.id);
+          if (id) hr.setAttribute(ANCHOR_ATTR, id);
           el.parentNode.insertBefore(hr, el);
         }
       }
@@ -306,13 +337,17 @@ var CustomImportScript = (() => {
     if (hookName === "afterTransform") {
       for (let i = sections.length - 1; i >= 0; i -= 1) {
         const section = sections[i];
-        if (!section.style) continue;
         const marker = element.querySelector(`hr[${MARKER_ATTR}="${section.id}"]`);
+        const id = marker ? marker.getAttribute(ANCHOR_ATTR) : "";
+        if (!section.style && !id) continue;
         const anchor = marker || findSectionElement(element, section);
         if (!anchor || !anchor.parentNode) continue;
+        const cells = {};
+        if (section.style) cells.style = section.style;
+        if (id) cells.id = id;
         const metadata = WebImporter.Blocks.createBlock(doc, {
           name: "Section Metadata",
-          cells: { style: section.style }
+          cells
         });
         anchor.parentNode.insertBefore(metadata, anchor.nextSibling);
         if (marker) {
@@ -323,7 +358,37 @@ var CustomImportScript = (() => {
           }
         }
       }
-      element.querySelectorAll(`[${MARKER_ATTR}]`).forEach((el) => el.removeAttribute(MARKER_ATTR));
+      element.querySelectorAll(`[${MARKER_ATTR}], [${ANCHOR_ATTR}]`).forEach((el) => {
+        el.removeAttribute(MARKER_ATTR);
+        el.removeAttribute(ANCHOR_ATTR);
+      });
+      removeEmptySections(element, doc);
+    }
+  }
+  function isMetadataTable(el) {
+    if (el.tagName !== "TABLE") return false;
+    const first = el.querySelector("tr > *");
+    return !!first && /^\s*section metadata\s*$/i.test(first.textContent);
+  }
+  function removeEmptySections(element, doc) {
+    const breaks = [...element.querySelectorAll("hr:not([class])")];
+    for (let i = breaks.length - 1; i >= 0; i -= 1) {
+      const hr = breaks[i];
+      if (!hr.isConnected) continue;
+      const range = doc.createRange();
+      range.setStartAfter(hr);
+      const next = breaks.slice(i + 1).find((b) => b.isConnected);
+      if (next) range.setEndBefore(next);
+      else range.setEndAfter(element.lastChild);
+      const frag = range.cloneContents();
+      const tables = [...frag.querySelectorAll("table")];
+      const metas = tables.filter(isMetadataTable);
+      if (metas.some((t) => /\bid\b/i.test(t.textContent.replace(/section metadata/i, "")))) continue;
+      metas.forEach((t) => t.remove());
+      const hasContent = frag.textContent.trim() || [...frag.querySelectorAll("img, iframe, video, source")].some((m) => (m.getAttribute("src") || m.getAttribute("srcset") || "").trim()) || frag.querySelector("table");
+      if (hasContent) continue;
+      range.deleteContents();
+      hr.remove();
     }
   }
 
@@ -351,7 +416,7 @@ var CustomImportScript = (() => {
         "selector": [
           ".root > .cmp-container > .container.responsivegrid:has(.brandFilter)"
         ],
-        "style": null,
+        "style": "centered",
         "blocks": [
           "shop-compare"
         ],

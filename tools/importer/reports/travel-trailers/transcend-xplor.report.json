@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/travel-trailers/transcend-xplor",
+  "path": "travel-trailers/transcend-xplor",
+  "timestamp": "2026-11-13T05:41:58.944Z",
+  "title": "Travel Trailers | Transcend Xplor",
+  "template": "model",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "video-inline",
+    "tabs-feature",
+    "tabs-vertical",
+    "table-specs",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "118622389486"
+}

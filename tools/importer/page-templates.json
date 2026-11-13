@@ -187,13 +187,234 @@
           "selector": [
             ".root > .cmp-container > .container.responsivegrid:has(.brandFilter)"
           ],
-          "style": null,
+          "style": "centered",
           "blocks": [
             "shop-compare"
           ],
           "defaultContent": [
             ".title.gdrv-title.red.aem-GridColumn--phone--hide h1",
             ".title.heading-scale-secondary.aem-GridColumn--phone--hide h2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "model",
+      "urls": [
+        "https://www.granddesignrv.com/travel-trailers/transcend-lite",
+        "https://www.granddesignrv.com/travel-trailers/transcend-one",
+        "https://www.granddesignrv.com/travel-trailers/transcend-xplor",
+        "https://www.granddesignrv.com/travel-trailers/transcend",
+        "https://www.granddesignrv.com/travel-trailers/imagine-aim",
+        "https://www.granddesignrv.com/travel-trailers/imagine-xls",
+        "https://www.granddesignrv.com/travel-trailers/imagine",
+        "https://www.granddesignrv.com/travel-trailers/serenova",
+        "https://www.granddesignrv.com/travel-trailers/reflection",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series",
+        "https://www.granddesignrv.com/fifth-wheels/reflection",
+        "https://www.granddesignrv.com/fifth-wheels/influence",
+        "https://www.granddesignrv.com/fifth-wheels/solitude",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class",
+        "https://www.granddesignrv.com/toy-haulers/momentum",
+        "https://www.granddesignrv.com/motorized/lineage-series-m",
+        "https://www.granddesignrv.com/motorized/lineage-series-f",
+        "https://www.granddesignrv.com/motorized/lineage-series-vt"
+      ],
+      "representativeUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+      "description": "RV model page (22 models): sticky model sub-nav, hero, intro with 360 spin, brand story, feature tabs, construction tabs, specifications table, customer reviews. Parts are positional children of the main grid.",
+      "blocks": [
+        {
+          "name": "model-subnav",
+          "instances": [
+            ".subnavigation"
+          ]
+        },
+        {
+          "name": "hero-model",
+          "instances": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):has(.cmp-container--gradient-black)",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
+          ]
+        },
+        {
+          "name": "tabs-swatch",
+          "instances": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .cmp-tabs:not(.cmp-tabs .cmp-tabs)",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
+          ]
+        },
+        {
+          "name": "video-inline",
+          "instances": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .dynamicmedia:has([data-asset-type=\"videoavs\"])",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .dynamicmedia[data-asset-type=\"videoavs\"]"
+          ]
+        },
+        {
+          "name": "tabs-feature",
+          "instances": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(4) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
+          ]
+        },
+        {
+          "name": "tabs-vertical",
+          "instances": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(5) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
+          ]
+        },
+        {
+          "name": "table-specs",
+          "instances": [
+            ".spectable"
+          ]
+        },
+        {
+          "name": "quote-rating",
+          "instances": [
+            ".customercomment .q.grid-item"
+          ]
+        }
+      ],
+      "urlPattern": "/{category}/{model}",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Model sub-navigation (sticky)",
+          "selector": [
+            ".subnavigation"
+          ],
+          "style": null,
+          "blocks": [
+            "model-subnav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Model hero",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-model"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Black promo band (optional)",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1)",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h2)"
+          ],
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) h1",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) .button a"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Exterior / 360 spin",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2)"
+          ],
+          "style": "centered",
+          "blocks": [],
+          "defaultContent": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .title",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .text",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .dynamicmedia"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Brand story (text + video)",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3)"
+          ],
+          "style": "split",
+          "blocks": [
+            "video-inline"
+          ],
+          "defaultContent": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .text"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Full body paint (optional colour picker)",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .experiencefragment:has(.cmp-tabs)",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .experiencefragment:has(.cmp-tabs)",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .tabs:has(.cmp-tabs)",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .tabs:has(.cmp-tabs)"
+          ],
+          "style": "centered",
+          "blocks": [
+            "tabs-swatch"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Feature tabs",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(4)"
+          ],
+          "style": "dark",
+          "blocks": [
+            "tabs-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Constructed to a Superior Standard",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(5)"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-vertical"
+          ],
+          "defaultContent": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(5) .title h2"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Product Line Specifications",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(6)"
+          ],
+          "style": null,
+          "blocks": [
+            "table-specs"
+          ],
+          "defaultContent": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(6) .title h2",
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(6) .text"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "Customer reviews",
+          "selector": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(7)"
+          ],
+          "style": null,
+          "blocks": [
+            "quote-rating"
+          ],
+          "defaultContent": [
+            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(7) .customercomment h2"
           ]
         }
       ]

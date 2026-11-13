@@ -1,0 +1,46 @@
+{
+  "variantName": "hero-model",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
+    "originPage": "Momentum model page (template \"model\", 23 RV model pages)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "model-page hero with model logo, optional award badge, starting price and two CTAs",
+    "imagePattern": "full-bleed photo with top-down black gradient",
+    "notes": [
+      "Logo top-left, badge top-right, price centred, CTAs left and right on desktop; stacked on mobile",
+      "Works without badge and/or price"
+    ]
+  },
+  "contentPattern": {
+    "structure": "one column, two rows. Row 1: background image. Row 2: model logo image, optional award badge image (second image), optional price paragraph (\"Fifth Wheel Models Starting at $192,156\"), CTA links each in its own paragraph (first = left, second = right)",
+    "buttonCount": 2,
+    "imageCount": 3,
+    "hasCTA": true
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "RV model page heroes with a logo image instead of a heading"
+    ],
+    "notSuitableFor": [
+      "text-heading launch heroes (use hero-banner)",
+      "video backgrounds (use hero-banner)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/toy-haulers/momentum"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-11-13T00:00:00.000Z"
+  }
+}

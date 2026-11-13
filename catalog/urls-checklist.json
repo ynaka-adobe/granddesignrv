@@ -1,0 +1,224 @@
+{
+  "analysis-urls-checklist": {
+    "captured": "2026-11-13T01:46:19.990Z",
+    "totalPages": 28,
+    "statusBreakdown": {
+      "analyzed": 28,
+      "marked": 0
+    },
+    "pages": {
+      "https://www.granddesignrv.com/": {
+        "url": "https://www.granddesignrv.com/",
+        "status": "analyzed"
+      },
+      "https://www.granddesignrv.com/shop-and-compare": {
+        "url": "https://www.granddesignrv.com/shop-and-compare",
+        "status": "analyzed"
+      },
+      "https://www.granddesignrv.com/travel-trailers": {
+        "url": "https://www.granddesignrv.com/travel-trailers",
+        "status": "analyzed"
+      },
+      "https://www.granddesignrv.com/travel-trailers/transcend-lite": {
+        "url": "https://www.granddesignrv.com/travel-trailers/transcend-lite",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:46:37.959Z",
+        "slug": "www_granddesignrv_com_travel-trailers_transcend-lite--0887ffcd",
+        "title": "Travel Trailers | Transcend LITE",
+        "componentBlockCount": 5
+      },
+      "https://www.granddesignrv.com/travel-trailers/transcend-one": {
+        "url": "https://www.granddesignrv.com/travel-trailers/transcend-one",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:46:46.958Z",
+        "slug": "www_granddesignrv_com_travel-trailers_transcend-one--fec5a75d",
+        "title": "Travel Trailers | Transcend One",
+        "componentBlockCount": 6
+      },
+      "https://www.granddesignrv.com/travel-trailers/transcend-xplor": {
+        "url": "https://www.granddesignrv.com/travel-trailers/transcend-xplor",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:46:48.892Z",
+        "slug": "www_granddesignrv_com_travel-trailers_transcend-xplor--37e6c63f",
+        "title": "Travel Trailers | Transcend Xplor",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/travel-trailers/transcend": {
+        "url": "https://www.granddesignrv.com/travel-trailers/transcend",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:46:49.063Z",
+        "slug": "www_granddesignrv_com_travel-trailers_transcend--fa6c657f",
+        "title": "Travel Trailers | Transcend",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/travel-trailers/imagine-aim": {
+        "url": "https://www.granddesignrv.com/travel-trailers/imagine-aim",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:46:50.361Z",
+        "slug": "www_granddesignrv_com_travel-trailers_imagine-aim--f37e683b",
+        "title": "Travel Trailers | Imagine AIM",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/travel-trailers/imagine-xls": {
+        "url": "https://www.granddesignrv.com/travel-trailers/imagine-xls",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:46:58.155Z",
+        "slug": "www_granddesignrv_com_travel-trailers_imagine-xls--60aa8cbb",
+        "title": "Travel Trailers | Imagine XLS",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/travel-trailers/imagine": {
+        "url": "https://www.granddesignrv.com/travel-trailers/imagine",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:12.093Z",
+        "slug": "www_granddesignrv_com_travel-trailers_imagine--cd106c8a",
+        "title": "Travel Trailers | Imagine",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/travel-trailers/serenova": {
+        "url": "https://www.granddesignrv.com/travel-trailers/serenova",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:10.068Z",
+        "slug": "www_granddesignrv_com_travel-trailers_serenova--03a80d57",
+        "title": "Travel Trailers | Serenova",
+        "componentBlockCount": 3
+      },
+      "https://www.granddesignrv.com/travel-trailers/reflection": {
+        "url": "https://www.granddesignrv.com/travel-trailers/reflection",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:13.867Z",
+        "slug": "www_granddesignrv_com_travel-trailers_reflection--23375917",
+        "title": "Travel Trailers | Reflection",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/fifth-wheels/reflection-100-series": {
+        "url": "https://www.granddesignrv.com/fifth-wheels/reflection-100-series",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:14.367Z",
+        "slug": "www_granddesignrv_com_fifth-wheels_reflection-100-series--98da0c9f",
+        "title": "Fifth Wheels | Reflection 100 Series",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/fifth-wheels/reflection-150-series": {
+        "url": "https://www.granddesignrv.com/fifth-wheels/reflection-150-series",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:17.259Z",
+        "slug": "www_granddesignrv_com_fifth-wheels_reflection-150-series--b9c2253a",
+        "title": "Fifth Wheels | Reflection 150 Series",
+        "componentBlockCount": 6
+      },
+      "https://www.granddesignrv.com/fifth-wheels/reflection": {
+        "url": "https://www.granddesignrv.com/fifth-wheels/reflection",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:34.512Z",
+        "slug": "www_granddesignrv_com_fifth-wheels_reflection--fd70a23e",
+        "title": "Fifth Wheels | Reflection",
+        "componentBlockCount": 8
+      },
+      "https://www.granddesignrv.com/fifth-wheels/influence": {
+        "url": "https://www.granddesignrv.com/fifth-wheels/influence",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:36.840Z",
+        "slug": "www_granddesignrv_com_fifth-wheels_influence--7c854c3f",
+        "title": "Fifth Wheels | Influence",
+        "componentBlockCount": 9
+      },
+      "https://www.granddesignrv.com/fifth-wheels/solitude": {
+        "url": "https://www.granddesignrv.com/fifth-wheels/solitude",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:36.559Z",
+        "slug": "www_granddesignrv_com_fifth-wheels_solitude--adfe10e6",
+        "title": "Fifth Wheels | Solitude",
+        "componentBlockCount": 8
+      },
+      "https://www.granddesignrv.com/toy-haulers/momentum-mav": {
+        "url": "https://www.granddesignrv.com/toy-haulers/momentum-mav",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:37.057Z",
+        "slug": "www_granddesignrv_com_toy-haulers_momentum-mav--a69a99ea",
+        "title": "Toy Haulers | Momentum MAV",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels": {
+        "url": "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:37.271Z",
+        "slug": "www_granddesignrv_com_toy-haulers_momentum-mav-fifth-wheels--8e2af2a1",
+        "title": "Toy Haulers | Momentum MAV Fifth Wheels",
+        "componentBlockCount": 6
+      },
+      "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers": {
+        "url": "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:56.277Z",
+        "slug": "www_granddesignrv_com_toy-haulers_momentum-g-class-travel-trailers--76fe9995",
+        "title": "Toy Haulers | Momentum G-Class Travel Trailers",
+        "componentBlockCount": 7
+      },
+      "https://www.granddesignrv.com/toy-haulers/momentum-g-class": {
+        "url": "https://www.granddesignrv.com/toy-haulers/momentum-g-class",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:48:02.255Z",
+        "slug": "www_granddesignrv_com_toy-haulers_momentum-g-class--9226c32e",
+        "title": "Toy Haulers | Momentum G-Class Fifth Wheels",
+        "componentBlockCount": 8
+      },
+      "https://www.granddesignrv.com/toy-haulers/momentum": {
+        "url": "https://www.granddesignrv.com/toy-haulers/momentum",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:48:03.356Z",
+        "slug": "www_granddesignrv_com_toy-haulers_momentum--8205cfe0",
+        "title": "Toy Haulers | Momentum FW",
+        "componentBlockCount": 9
+      },
+      "https://www.granddesignrv.com/destination/foundation": {
+        "url": "https://www.granddesignrv.com/destination/foundation",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:58.066Z",
+        "slug": "www_granddesignrv_com_destination_foundation--9db3d0ad",
+        "title": "Destination | Foundation",
+        "componentBlockCount": 6
+      },
+      "https://www.granddesignrv.com/motorized/lineage-series-m": {
+        "url": "https://www.granddesignrv.com/motorized/lineage-series-m",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:47:59.757Z",
+        "slug": "www_granddesignrv_com_motorized_lineage-series-m--dd12e1e6",
+        "title": "Motorized | Lineage Series M",
+        "componentBlockCount": 5
+      },
+      "https://www.granddesignrv.com/motorized/lineage-series-f": {
+        "url": "https://www.granddesignrv.com/motorized/lineage-series-f",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:48:18.595Z",
+        "slug": "www_granddesignrv_com_motorized_lineage-series-f--7a944b8b",
+        "title": "Motorized | Lineage Series F",
+        "componentBlockCount": 6
+      },
+      "https://www.granddesignrv.com/motorized/lineage-series-e": {
+        "url": "https://www.granddesignrv.com/motorized/lineage-series-e",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:48:19.215Z",
+        "slug": "www_granddesignrv_com_motorized_lineage-series-e--27469676",
+        "title": "Motorized | Lineage Series E",
+        "componentBlockCount": 8
+      },
+      "https://www.granddesignrv.com/motorized/lineage-series-vt": {
+        "url": "https://www.granddesignrv.com/motorized/lineage-series-vt",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:48:20.822Z",
+        "slug": "www_granddesignrv_com_motorized_lineage-series-vt--86ff7f98",
+        "title": "Motorized | Lineage Series VT",
+        "componentBlockCount": 4
+      },
+      "https://www.granddesignrv.com/motorized/lineage-series-vp": {
+        "url": "https://www.granddesignrv.com/motorized/lineage-series-vp",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T01:48:20.841Z",
+        "slug": "www_granddesignrv_com_motorized_lineage-series-vp--7d3a1e95",
+        "title": "Motorized | Lineage Series VP",
+        "componentBlockCount": 7
+      }
+    }
+  }
+}
