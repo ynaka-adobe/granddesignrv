@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/destination/foundation",
+  "path": "destination/foundation",
+  "timestamp": "2026-11-14T15:41:51.153Z",
+  "title": "Destination | Foundation",
+  "template": "hero-overlay-page",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-feature"
+  ],
+  "importScript": "81f7c63466de"
+}

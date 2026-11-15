@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/fifth-wheels",
+  "path": "fifth-wheels",
+  "timestamp": "2026-11-14T16:01:43.255Z",
+  "title": "Grand Design RV | Fifth Wheels",
+  "template": "travel-trailers",
+  "blocks": [
+    "columns-image-text",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list"
+  ],
+  "importScript": "c9025bb445de"
+}

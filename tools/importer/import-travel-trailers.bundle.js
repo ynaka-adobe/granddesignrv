@@ -76,15 +76,16 @@ var CustomImportScript = (() => {
         nh.textContent = cleanText(h1);
         content.push(nh);
       }
-      const h2 = right.querySelector("h2");
-      if (h2 && hasText(h2)) {
+      const h2 = [...right.querySelectorAll(".cmp-title h2, .cmp-title h3, .cmp-title h4, h2")].find((h) => hasText(h) && !h.closest(".cmp-text"));
+      if (h2) {
         const nh = document.createElement("h2");
         nh.textContent = cleanText(h2);
         content.push(nh);
       }
-      right.querySelectorAll(".cmp-text p").forEach((p) => {
+      right.querySelectorAll(".cmp-text p, .cmp-text h2, .cmp-text h3, .cmp-text h4").forEach((p) => {
         if (!hasText(p)) return;
-        const np = document.createElement("p");
+        const isHeading = /^H\d$/.test(p.tagName);
+        const np = document.createElement(isHeading ? "h3" : "p");
         np.innerHTML = p.innerHTML.trim();
         np.querySelectorAll("a[href]").forEach((a) => {
           a.setAttribute("href", relativize(a.getAttribute("href")));
@@ -108,6 +109,8 @@ var CustomImportScript = (() => {
 
   // tools/importer/parsers/cards-model-list.js
   var SELECTOR = ".outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)";
+  var FALLBACK_SELECTOR = ".root .experiencefragment:has(.dynamicmedia):not(.experiencefragment .experiencefragment)";
+  var PAGE_WRAPPER = ".root > .cmp-container > .container.responsivegrid";
   var CONSUMED_ATTR = "data-cards-model-list-consumed";
   var SCENE7_BASE = "https://gdrv.scene7.com/is/image/";
   function hasText2(el) {
@@ -220,6 +223,9 @@ var CustomImportScript = (() => {
     if (marker.hasAttribute(CONSUMED_ATTR)) return;
     marker.setAttribute(CONSUMED_ATTR, "true");
     let entries = Array.from(doc.querySelectorAll(SELECTOR)).filter((e) => e.isConnected);
+    if (!entries.length) {
+      entries = Array.from(doc.querySelectorAll(FALLBACK_SELECTOR)).filter((e) => e.isConnected && !e.closest('[class*="aem-GridColumn--default--hide"]'));
+    }
     if (!entries.includes(element)) entries.push(element);
     entries = entries.filter((e) => !entries.some((o) => o !== e && o.contains(e)));
     entries.sort((a, b) => {
@@ -231,7 +237,7 @@ var CustomImportScript = (() => {
       const row = buildRow(document, entry);
       if (row) cells.push(row);
     });
-    const outer = entries[0].closest(".outer-block.margin-top-medium");
+    const outer = entries[0].closest(".outer-block.margin-top-medium") || entries[0].closest(PAGE_WRAPPER);
     const block = WebImporter.Blocks.createBlock(document, { name: "cards-model-list", cells });
     if (outer) outer.querySelectorAll(".separator").forEach((sep) => sep.remove());
     const [first, ...rest] = entries;
@@ -284,6 +290,8 @@ var CustomImportScript = (() => {
         // "Ask an Expert" floating form / modal (lightbox content)
         ".cmp-button__modal",
         ".askexpert",
+        // Model pages: "Inventory Inquiry" side panel (floor plan / location form) next to the sub-nav
+        ".root > .cmp-container > .inventory",
         ".cmp-askexpert",
         "button.glightbox",
         // Adobe Target cloud service + reCAPTCHA badge
@@ -373,9 +381,22 @@ var CustomImportScript = (() => {
     const imgs = anchor.querySelectorAll("img");
     return imgs.length === 1 && imgs[0] === img;
   }
+  function replaceSpinSets(element, doc) {
+    element.querySelectorAll('[data-asset-type="spinset"][data-asset-path]').forEach((viewer) => {
+      if (!viewer.isConnected) return;
+      const wrapper = viewer.closest(".dynamicmedia") || viewer;
+      const server = (viewer.getAttribute("data-imageserver") || "https://gdrv.scene7.com/is/image/").replace(/\/?$/, "/");
+      const img = doc.createElement("img");
+      img.src = `${server}${viewer.getAttribute("data-asset-path")}`;
+      const model = (doc.title.split("|").pop() || "").trim();
+      img.alt = model ? `${model} exterior` : "";
+      wrapper.replaceWith(img);
+    });
+  }
   function transform2(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const doc = element.ownerDocument;
+    replaceSpinSets(element, doc);
     Array.from(element.querySelectorAll("img")).forEach((img) => {
       const src = img.getAttribute("src") || "";
       if (!detectDynamicMediaUrl(src)) return;
@@ -400,6 +421,21 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/granddesignrv-sections.js
   var MARKER_ATTR = "data-excat-section-id";
+  var ANCHOR_ATTR = "data-excat-section-anchor";
+  function linkTargets(root) {
+    const ids = /* @__PURE__ */ new Set();
+    root.querySelectorAll('a[href*="#"]').forEach((a) => {
+      const id = (a.getAttribute("href") || "").split("#")[1];
+      if (id) ids.add(id);
+    });
+    return ids;
+  }
+  function anchorId(el, targets) {
+    if (!targets.size) return "";
+    if (el.id && targets.has(el.id)) return el.id;
+    const hit = [...el.querySelectorAll("[id]")].find((e) => targets.has(e.id));
+    return hit ? hit.id : "";
+  }
   function findSectionElement(root, section) {
     const selectors = Array.isArray(section.selector) ? section.selector : [section.selector];
     for (let i = 0; i < selectors.length; i += 1) {
@@ -416,16 +452,19 @@ var CustomImportScript = (() => {
   function transform3(hookName, element, payload) {
     const template = payload && payload.template;
     const sections = template && template.sections || [];
-    if (sections.length < 2) return;
+    if (!sections.length) return;
     const doc = element.ownerDocument;
     if (hookName === "beforeTransform") {
+      const targets = linkTargets(element);
       for (let i = sections.length - 1; i >= 0; i -= 1) {
         const section = sections[i];
         const el = findSectionElement(element, section);
         if (!el || !el.parentNode) continue;
-        if (i > 0 || section.style) {
+        const id = anchorId(el, targets);
+        if (i > 0 || section.style || id) {
           const hr = doc.createElement("hr");
-          if (section.style) hr.setAttribute(MARKER_ATTR, section.id);
+          if (section.style || id) hr.setAttribute(MARKER_ATTR, section.id);
+          if (id) hr.setAttribute(ANCHOR_ATTR, id);
           el.parentNode.insertBefore(hr, el);
         }
       }
@@ -433,13 +472,17 @@ var CustomImportScript = (() => {
     if (hookName === "afterTransform") {
       for (let i = sections.length - 1; i >= 0; i -= 1) {
         const section = sections[i];
-        if (!section.style) continue;
         const marker = element.querySelector(`hr[${MARKER_ATTR}="${section.id}"]`);
+        const id = marker ? marker.getAttribute(ANCHOR_ATTR) : "";
+        if (!section.style && !id) continue;
         const anchor = marker || findSectionElement(element, section);
         if (!anchor || !anchor.parentNode) continue;
+        const cells = {};
+        if (section.style) cells.style = section.style;
+        if (id) cells.id = id;
         const metadata = WebImporter.Blocks.createBlock(doc, {
           name: "Section Metadata",
-          cells: { style: section.style }
+          cells
         });
         anchor.parentNode.insertBefore(metadata, anchor.nextSibling);
         if (marker) {
@@ -450,7 +493,37 @@ var CustomImportScript = (() => {
           }
         }
       }
-      element.querySelectorAll(`[${MARKER_ATTR}]`).forEach((el) => el.removeAttribute(MARKER_ATTR));
+      element.querySelectorAll(`[${MARKER_ATTR}], [${ANCHOR_ATTR}]`).forEach((el) => {
+        el.removeAttribute(MARKER_ATTR);
+        el.removeAttribute(ANCHOR_ATTR);
+      });
+      removeEmptySections(element, doc);
+    }
+  }
+  function isMetadataTable(el) {
+    if (el.tagName !== "TABLE") return false;
+    const first = el.querySelector("tr > *");
+    return !!first && /^\s*section metadata\s*$/i.test(first.textContent);
+  }
+  function removeEmptySections(element, doc) {
+    const breaks = [...element.querySelectorAll("hr:not([class])")];
+    for (let i = breaks.length - 1; i >= 0; i -= 1) {
+      const hr = breaks[i];
+      if (!hr.isConnected) continue;
+      const range = doc.createRange();
+      range.setStartAfter(hr);
+      const next = breaks.slice(i + 1).find((b) => b.isConnected);
+      if (next) range.setEndBefore(next);
+      else range.setEndAfter(element.lastChild);
+      const frag = range.cloneContents();
+      const tables = [...frag.querySelectorAll("table")];
+      const metas = tables.filter(isMetadataTable);
+      if (metas.some((t) => /\bid\b/i.test(t.textContent.replace(/section metadata/i, "")))) continue;
+      metas.forEach((t) => t.remove());
+      const hasContent = frag.textContent.trim() || [...frag.querySelectorAll("img, iframe, video, source")].some((m) => (m.getAttribute("src") || m.getAttribute("srcset") || "").trim()) || frag.querySelector("table");
+      if (hasContent) continue;
+      range.deleteContents();
+      hr.remove();
     }
   }
 
@@ -458,7 +531,11 @@ var CustomImportScript = (() => {
   var PAGE_TEMPLATE = {
     "name": "travel-trailers",
     "urls": [
-      "https://www.granddesignrv.com/travel-trailers"
+      "https://www.granddesignrv.com/travel-trailers",
+      "https://www.granddesignrv.com/fifth-wheels",
+      "https://www.granddesignrv.com/toy-haulers.html",
+      "https://www.granddesignrv.com/destination",
+      "https://www.granddesignrv.com/motorized"
     ],
     "representativeUrl": "https://www.granddesignrv.com/travel-trailers",
     "description": "Vehicle category landing page: intro (photo + H1 + copy) followed by a stacked model lineup (logo, spin image, stats, headline, copy, CTAs).",
@@ -466,13 +543,15 @@ var CustomImportScript = (() => {
       {
         "name": "columns-image-text",
         "instances": [
-          ".outer-block.margin-top-medium .inner-block__left:has(+ .inner-block__right h1)"
+          ".outer-block.margin-top-medium .inner-block__left:has(+ .inner-block__right h1)",
+          ".inner-block__left:has(+ .inner-block__right h1)"
         ]
       },
       {
         "name": "cards-model-list",
         "instances": [
-          ".outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)"
+          ".outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)",
+          '.root .experiencefragment:has(.dynamicmedia):not(.experiencefragment .experiencefragment):not([class*="aem-GridColumn--default--hide"] *)'
         ]
       }
     ],
@@ -482,7 +561,8 @@ var CustomImportScript = (() => {
         "id": "section-1",
         "name": "Travel trailers intro and model lineup",
         "selector": [
-          ".outer-block.margin-top-medium"
+          ".outer-block.margin-top-medium",
+          ".root > .cmp-container > .container.responsivegrid"
         ],
         "style": null,
         "blocks": [

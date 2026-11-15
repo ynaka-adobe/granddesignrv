@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/motorized/lineage-series-vp",
+  "path": "motorized/lineage-series-vp",
+  "timestamp": "2026-11-14T15:41:37.309Z",
+  "title": "Motorized | Lineage Series VP",
+  "template": "photo-hero-page",
+  "blocks": [
+    "model-subnav",
+    "hero-model",
+    "tabs-feature",
+    "tabs-swatch"
+  ],
+  "importScript": "81f7c63466de"
+}

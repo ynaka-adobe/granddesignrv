@@ -14,6 +14,11 @@
  */
 
 const SELECTOR = '.outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)';
+// Fifth Wheels / Toy Haulers / Destination / Motorized landing pages: each model entry sits in
+// its own container, without the .outer-block.margin-top-medium wrapper. Output is unchanged:
+// one card row per model, [product image] [text].
+const FALLBACK_SELECTOR = '.root .experiencefragment:has(.dynamicmedia):not(.experiencefragment .experiencefragment)';
+const PAGE_WRAPPER = '.root > .cmp-container > .container.responsivegrid';
 const CONSUMED_ATTR = 'data-cards-model-list-consumed';
 const SCENE7_BASE = 'https://gdrv.scene7.com/is/image/';
 
@@ -163,6 +168,10 @@ export default function parse(element, { document }) {
   marker.setAttribute(CONSUMED_ATTR, 'true');
 
   let entries = Array.from(doc.querySelectorAll(SELECTOR)).filter((e) => e.isConnected);
+  if (!entries.length) {
+    entries = Array.from(doc.querySelectorAll(FALLBACK_SELECTOR))
+      .filter((e) => e.isConnected && !e.closest('[class*="aem-GridColumn--default--hide"]'));
+  }
   if (!entries.includes(element)) entries.push(element);
   entries = entries.filter((e) => !entries.some((o) => o !== e && o.contains(e)));
   // jsdom can return :has() matches out of document order
@@ -177,7 +186,7 @@ export default function parse(element, { document }) {
     if (row) cells.push(row);
   });
 
-  const outer = entries[0].closest('.outer-block.margin-top-medium');
+  const outer = entries[0].closest('.outer-block.margin-top-medium') || entries[0].closest(PAGE_WRAPPER);
   const block = WebImporter.Blocks.createBlock(document, { name: 'cards-model-list', cells });
 
   // Separators' hr.cmp-separator__horizontal-rule would become section breaks

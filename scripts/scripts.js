@@ -288,6 +288,28 @@ function autolinkModals(doc) {
 }
 
 /**
+ * Local preview only: pages are served under /content/, but authored links are site-relative
+ * (/motorized/...), which would leave the local preview for the published copy. Re-point
+ * same-origin page links at their /content/ twin when clicked. No effect on aem.page/aem.live.
+ */
+function keepLocalPreviewLinks(doc) {
+  const { hostname, pathname } = window.location;
+  if (!pathname.startsWith('/content/') || /\.(aem|hlx)\.(page|live)$/.test(hostname)) return;
+  const rewrite = (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const url = new URL(a.href, window.location.href);
+    if (url.origin !== window.location.origin || url.pathname.startsWith('/content/')) return;
+    // pages only: leave files (.pdf, .json, images) and code paths alone
+    if (/\.[a-z0-9]+$/i.test(url.pathname) || /^\/(blocks|scripts|styles|icons|fonts|media)/.test(url.pathname)) return;
+    url.pathname = url.pathname === '/' ? '/content/index' : `/content${url.pathname.replace(/\/$/, '')}`;
+    a.href = url.href;
+  };
+  doc.addEventListener('click', rewrite, true);
+  doc.addEventListener('auxclick', rewrite, true);
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -405,6 +427,7 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  keepLocalPreviewLinks(doc);
   autolinkModals(doc);
 
   const main = doc.querySelector('main');

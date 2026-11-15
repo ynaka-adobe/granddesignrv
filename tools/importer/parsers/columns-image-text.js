@@ -50,15 +50,21 @@ export default function parse(element, { document }) {
       nh.textContent = cleanText(h1);
       content.push(nh);
     }
-    const h2 = right.querySelector('h2');
-    if (h2 && hasText(h2)) {
+    // Subtitle: first title heading after the H1 (h2 on Travel Trailers, h3 on the other
+    // category landing pages), always emitted as h2. Same single row, two cells: [image] [text].
+    const h2 = [...right.querySelectorAll('.cmp-title h2, .cmp-title h3, .cmp-title h4, h2')]
+      .find((h) => hasText(h) && !h.closest('.cmp-text'));
+    if (h2) {
       const nh = document.createElement('h2');
       nh.textContent = cleanText(h2);
       content.push(nh);
     }
-    right.querySelectorAll('.cmp-text p').forEach((p) => {
+    // Body (text cell): paragraphs, plus headings authored inside the rich text
+    // (e.g. a closing "Shop and Compare" link set as an h3).
+    right.querySelectorAll('.cmp-text p, .cmp-text h2, .cmp-text h3, .cmp-text h4').forEach((p) => {
       if (!hasText(p)) return;
-      const np = document.createElement('p');
+      const isHeading = /^H\d$/.test(p.tagName);
+      const np = document.createElement(isHeading ? 'h3' : 'p');
       np.innerHTML = p.innerHTML.trim();
       np.querySelectorAll('a[href]').forEach((a) => {
         a.setAttribute('href', relativize(a.getAttribute('href')));

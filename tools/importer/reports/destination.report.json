@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/destination",
+  "path": "destination",
+  "timestamp": "2026-11-14T16:02:04.044Z",
+  "title": "Grand Design RV | Destination",
+  "template": "travel-trailers",
+  "blocks": [
+    "columns-image-text",
+    "cards-model-list"
+  ],
+  "importScript": "c9025bb445de"
+}

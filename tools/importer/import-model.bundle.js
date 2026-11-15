@@ -1008,6 +1008,155 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
+  // tools/importer/parsers/hero-banner.js
+  function clean9(text) {
+    return (text || "").replace(/[\s ]+/g, " ").trim();
+  }
+  function buildMedia(document, element) {
+    const video = element.querySelector("video");
+    const poster = video && video.getAttribute("poster");
+    if (poster) {
+      const img = document.createElement("img");
+      img.src = poster;
+      img.alt = "";
+      return img;
+    }
+    const bgImg = element.querySelector(".cmp-launch-hero__image img, picture img");
+    if (bgImg && bgImg.getAttribute("src")) {
+      const img = document.createElement("img");
+      img.src = bgImg.getAttribute("src");
+      img.alt = (bgImg.getAttribute("alt") || "").trim();
+      return img;
+    }
+    const source = video && (video.querySelector("source[src]") || (video.getAttribute("src") ? video : null));
+    const videoSrc = source && source.getAttribute("src");
+    if (videoSrc) {
+      const a = document.createElement("a");
+      a.href = videoSrc;
+      a.textContent = videoSrc;
+      return a;
+    }
+    return null;
+  }
+  function parse9(element, { document, params }) {
+    const keepAnchor = !!(params && params.keepAnchorCta);
+    const cells = [];
+    const inner = element.querySelector(".cmp-launch-hero__inner") || element;
+    const media = buildMedia(document, element);
+    if (media) cells.push([media]);
+    const content = [];
+    const eyebrow = inner.querySelector(".cmp-launch-hero__eyebrow");
+    if (eyebrow && clean9(eyebrow.textContent)) {
+      const p = document.createElement("p");
+      p.textContent = clean9(eyebrow.textContent);
+      content.push(p);
+    }
+    const heading = inner.querySelector(".cmp-launch-hero__heading, h1, h2");
+    if (heading && clean9(heading.textContent)) {
+      const h1 = document.createElement("h1");
+      h1.textContent = clean9(heading.textContent);
+      content.push(h1);
+    }
+    inner.querySelectorAll(".cmp-launch-hero__subheading, .cmp-launch-hero__body").forEach((el) => {
+      if (!clean9(el.textContent)) return;
+      const p = document.createElement("p");
+      p.innerHTML = el.innerHTML.trim();
+      content.push(p);
+    });
+    inner.querySelectorAll("a.cmp-launch-hero__cta[href]").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#") && !(keepAnchor && href.length > 1) || !clean9(link.textContent)) return;
+      const a = document.createElement("a");
+      a.href = href;
+      a.textContent = clean9(link.textContent);
+      const p = document.createElement("p");
+      p.append(a);
+      content.push(p);
+    });
+    if (content.length) cells.push([content]);
+    const block = WebImporter.Blocks.createBlock(document, { name: "hero-banner", cells });
+    element.replaceWith(block);
+  }
+
+  // tools/importer/parsers/columns.js
+  function clean10(text) {
+    return (text || "").replace(/[ ​]/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function listItem(document, li) {
+    const item = document.createElement("li");
+    const label = li.querySelector(".cmp-performance-details__label");
+    const value = li.querySelector(".cmp-performance-details__value");
+    const copy = li.querySelector(".cmp-performance-details__copy");
+    if (label || value) {
+      if (label && clean10(label.textContent)) {
+        const strong = document.createElement("strong");
+        strong.textContent = clean10(label.textContent);
+        item.append(strong);
+      }
+      if (value && clean10(value.textContent)) {
+        if (item.childNodes.length) item.append(document.createElement("br"));
+        item.append(document.createTextNode(clean10(value.textContent)));
+      }
+    } else if (copy) {
+      const title = copy.querySelector("strong, b");
+      if (title && clean10(title.textContent)) {
+        const strong = document.createElement("strong");
+        strong.textContent = clean10(title.textContent);
+        item.append(strong);
+      }
+      const rest = clean10([...copy.childNodes].filter((n) => n !== title).map((n) => n.textContent).join(" "));
+      if (rest) {
+        if (item.childNodes.length) item.append(document.createElement("br"));
+        item.append(document.createTextNode(rest));
+      }
+    } else if (clean10(li.textContent)) {
+      item.textContent = clean10(li.textContent);
+    }
+    return clean10(item.textContent) ? item : null;
+  }
+  function parse10(element, { document }) {
+    const inner = element.querySelector(".cmp-performance-details__inner") || element;
+    const before = [];
+    const after = [];
+    const heading = [...inner.querySelectorAll("h2")].find((h) => !h.closest(".cmp-performance-details__group"));
+    if (heading && clean10(heading.textContent)) {
+      const h2 = document.createElement("h2");
+      h2.textContent = clean10(heading.textContent);
+      before.push(h2);
+    }
+    const row = [];
+    inner.querySelectorAll(".cmp-performance-details__group").forEach((group) => {
+      const cell = [];
+      const title = group.querySelector("h3, h4");
+      if (title && clean10(title.textContent)) {
+        const h3 = document.createElement("h3");
+        h3.textContent = clean10(title.textContent);
+        cell.push(h3);
+      }
+      group.querySelectorAll("ul, ol").forEach((list) => {
+        const ul = document.createElement("ul");
+        [...list.children].filter((li) => li.tagName === "LI").forEach((li) => {
+          const item = listItem(document, li);
+          if (item) ul.append(item);
+        });
+        if (ul.children.length) cell.push(ul);
+      });
+      if (cell.length) row.push(cell);
+    });
+    inner.querySelectorAll(".cmp-performance-details__note").forEach((note) => {
+      if (!clean10(note.textContent)) return;
+      const p = document.createElement("p");
+      p.textContent = clean10(note.textContent);
+      after.push(p);
+    });
+    if (!row.length) {
+      element.replaceWith(...before, ...after);
+      return;
+    }
+    const block = WebImporter.Blocks.createBlock(document, { name: "columns", cells: [row] });
+    element.replaceWith(...before, block, ...after);
+  }
+
   // tools/importer/transformers/granddesignrv-cleanup.js
   var TRACKING_SRC = /(googlesyndication\.com|doubleclick\.net|analytics\.twitter\.com|\/\/t\.co\/|clarity\.ms|demdex\.net|bat\.bing\.com|facebook\.com\/tr|google\.com\/recaptcha|gstatic\.com\/recaptcha)/i;
   function safeQueryAll(root, selector) {
@@ -1327,15 +1476,35 @@ var CustomImportScript = (() => {
         ]
       },
       {
+        "name": "hero-banner",
+        "instances": [
+          ".launchhero"
+        ]
+      },
+      {
+        "name": "columns",
+        "instances": [
+          ".performancedetails"
+        ]
+      },
+      {
         "name": "hero-model",
         "instances": [
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) > .cmp-container > .aem-Grid:has(> .text) > .container.full-width.section:first-child",
           ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):has(.cmp-container--gradient-black)",
           ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
         ]
       },
       {
+        "name": "tabs-feature",
+        "instances": [
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .tabs.panelcontainer:not(.thumbnailtabs) > .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
+        ]
+      },
+      {
         "name": "tabs-swatch",
         "instances": [
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .experiencefragment .thumbnailtabs .cmp-tabs:not(.cmp-tabs .cmp-tabs)",
           ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .cmp-tabs:not(.cmp-tabs .cmp-tabs)",
           ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
         ]
@@ -1390,6 +1559,7 @@ var CustomImportScript = (() => {
         "id": "section-2",
         "name": "Model hero",
         "selector": [
+          ".launchhero",
           ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
         ],
         "style": null,
@@ -1402,15 +1572,59 @@ var CustomImportScript = (() => {
         "id": "section-3",
         "name": "Black promo band (optional)",
         "selector": [
-          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1)",
-          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h2)"
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h1)",
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h2)"
         ],
         "style": "dark",
         "blocks": [],
         "defaultContent": [
-          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) h1",
-          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) .button a"
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h1) h1",
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h1) .button a"
         ]
+      },
+      {
+        "id": "section-3b",
+        "name": "Model intro after the hero band (launch layout: VP, Foundation)",
+        "selector": [
+          ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) > .cmp-container > .aem-Grid:has(> .text) > .container.full-width.section:first-child + *"
+        ],
+        "style": null,
+        "blocks": [],
+        "defaultContent": []
+      },
+      {
+        "id": "section-3c",
+        "name": "Launch: performance details",
+        "selector": [
+          ".performancedetails"
+        ],
+        "style": null,
+        "blocks": [
+          "columns"
+        ],
+        "defaultContent": []
+      },
+      {
+        "id": "section-3d",
+        "name": "Launch: everyday living + colour swatches",
+        "selector": [
+          ".performancedetails ~ *:has(.thumbnailtabs)"
+        ],
+        "style": null,
+        "blocks": [
+          "tabs-swatch"
+        ],
+        "defaultContent": []
+      },
+      {
+        "id": "section-3e",
+        "name": "Launch: updates form",
+        "selector": [
+          ".launchupdatesform"
+        ],
+        "style": null,
+        "blocks": [],
+        "defaultContent": []
       },
       {
         "id": "section-4",
@@ -1520,8 +1734,90 @@ var CustomImportScript = (() => {
     "tabs-feature": parse5,
     "tabs-vertical": parse6,
     "table-specs": parse7,
-    "quote-rating": parse8
+    "quote-rating": parse8,
+    // launch hero CTA points at the in-page updates form (#launch-updates-form): keep it
+    "hero-banner": (element, ctx) => parse9(element, __spreadProps(__spreadValues({}, ctx), { params: __spreadProps(__spreadValues({}, ctx.params), { keepAnchorCta: true }) })),
+    columns: parse10
   };
+  var LAUNCH_LAYOUT = ".launchhero, .root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) > .cmp-container > .aem-Grid:has(> .text) > .container.full-width.section:first-child";
+  function prepareLaunchLayout(main) {
+    if (!main.querySelector(LAUNCH_LAYOUT)) return;
+    const first = main.querySelector(".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)");
+    if (first) first.classList.add("excat-launch-layout");
+    main.querySelectorAll(".cmp-images-overlap").forEach((root) => {
+      const copy = main.ownerDocument.createElement("div");
+      root.querySelectorAll("img").forEach((img) => {
+        const p = main.ownerDocument.createElement("p");
+        p.append(img.cloneNode());
+        copy.append(p);
+      });
+      root.replaceWith(copy);
+    });
+    const form = main.querySelector(".launchupdatesform");
+    main.querySelectorAll('a.cmp-launch-hero__cta[href^="#"]').forEach((cta) => {
+      const id = cta.getAttribute("href").slice(1);
+      if (!id || !form || form.id === id) return;
+      const holder = [...main.querySelectorAll("[id]")].find((el) => el.id === id);
+      if (!holder) return;
+      const before = !holder.textContent.trim() && holder.compareDocumentPosition(form) & 4;
+      if (!(holder.contains(form) || before)) return;
+      holder.removeAttribute("id");
+      form.id = id;
+    });
+  }
+  function launchFormToContent(main, document) {
+    main.querySelectorAll(".cmp-launch-updates-form").forEach((section) => {
+      const clean11 = (t) => (t || "").replace(/[\s\u00a0]+/g, " ").trim();
+      const out = [];
+      section.querySelectorAll("h1, h2, h3").forEach((h) => {
+        if (h.closest("form") || !clean11(h.textContent)) return;
+        const el = document.createElement(h.tagName.toLowerCase());
+        el.textContent = clean11(h.textContent);
+        out.push(el);
+      });
+      section.querySelectorAll(".cmp-launch-updates-form__intro").forEach((p) => {
+        if (!clean11(p.textContent)) return;
+        const el = document.createElement("p");
+        el.textContent = clean11(p.textContent);
+        out.push(el);
+      });
+      const form = section.querySelector("form");
+      if (form) {
+        const ul = document.createElement("ul");
+        form.querySelectorAll("label").forEach((label) => {
+          if (!clean11(label.textContent)) return;
+          const li = document.createElement("li");
+          li.textContent = clean11(label.textContent);
+          ul.append(li);
+        });
+        if (ul.children.length) out.push(ul);
+        form.querySelectorAll('button[type="submit"], input[type="submit"]').forEach((btn) => {
+          const label = clean11(btn.textContent || btn.getAttribute("value"));
+          if (!label) return;
+          const p = document.createElement("p");
+          const strong = document.createElement("strong");
+          strong.textContent = label;
+          p.append(strong);
+          out.push(p);
+        });
+        form.querySelectorAll(".cmp-launch-updates-form__legal").forEach((legal) => {
+          if (!clean11(legal.textContent)) return;
+          const p = document.createElement("p");
+          legal.childNodes.forEach((n) => {
+            if (n.nodeType === 3) p.append(document.createTextNode(n.textContent.replace(/\s+/g, " ")));
+            else if (n.tagName === "A" && n.getAttribute("href")) {
+              const a = document.createElement("a");
+              a.href = n.getAttribute("href");
+              a.textContent = clean11(n.textContent);
+              p.append(a);
+            } else p.append(document.createTextNode(n.textContent));
+          });
+          out.push(p);
+        });
+      }
+      section.replaceWith(...out);
+    });
+  }
   var sectionTransformers = [transform3];
   var fragmentTransformers = [];
   var lateTransformers = [...sectionTransformers, ...fragmentTransformers];
@@ -1600,7 +1896,9 @@ var CustomImportScript = (() => {
       params.fragments = [];
       if (!params.targets) markPageTargets(payload);
       const pageBlocks = params.targets.blocks.map((block, i) => __spreadProps(__spreadValues({}, block), { element: document.querySelector(`[data-excat-block="${i}"]`) })).filter((block) => block.element);
+      prepareLaunchLayout(main);
       executeTransformers("beforeTransform", main, __spreadProps(__spreadValues({}, payload), { pageBlocks }), lateTransformers);
+      launchFormToContent(main, document);
       pageBlocks.forEach((block) => {
         if (!main.contains(block.element)) return;
         const parser = parsers[block.name];

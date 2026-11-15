@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/toy-haulers.html",
+  "path": "toy-haulers",
+  "timestamp": "2026-11-14T16:01:53.286Z",
+  "title": "Grand Design RV | Toy Haulers",
+  "template": "travel-trailers",
+  "blocks": [
+    "columns-image-text",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list"
+  ],
+  "importScript": "c9025bb445de"
+}

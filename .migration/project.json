@@ -2,10 +2,10 @@
   "type": "da",
   "sites": {
     "granddesignrv": {
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
       "previewOrg": "ynaka-adobe",
       "previewSite": "granddesignrv",
-      "contentHostUrl": "https://content.da.live/ynaka-adobe/granddesignrv/",
-      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+      "contentHostUrl": "https://content.da.live/ynaka-adobe/granddesignrv/"
     }
   }
 }

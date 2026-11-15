@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/motorized",
+  "path": "motorized",
+  "timestamp": "2026-11-14T16:02:15.761Z",
+  "title": "Grand Design RV | Motorized",
+  "template": "card-grid-landing",
+  "blocks": [
+    "columns-image-text",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list",
+    "cards-model-list"
+  ],
+  "importScript": "c9025bb445de"
+}

@@ -9,7 +9,8 @@
  * Output (one column):
  *   row 1: background image (video poster) or a link to the video URL
  *   row 2: eyebrow, h1 heading, subheading, body, CTA link
- * The scroll link (#launch-updates-form) is ignored.
+ * The scroll link (#launch-updates-form) is ignored; an in-page CTA (#...) is kept only with
+ * params.keepAnchorCta.
  */
 
 function clean(text) {
@@ -43,7 +44,10 @@ function buildMedia(document, element) {
   return null;
 }
 
-export default function parse(element, { document }) {
+export default function parse(element, { document, params }) {
+  // in-page anchor CTAs (#launch-updates-form) are kept only when the caller asks for them
+  // (model launch pages, where the target section carries that id); default: dropped
+  const keepAnchor = !!(params && params.keepAnchorCta);
   const cells = [];
   const inner = element.querySelector('.cmp-launch-hero__inner') || element;
 
@@ -71,7 +75,7 @@ export default function parse(element, { document }) {
   });
   inner.querySelectorAll('a.cmp-launch-hero__cta[href]').forEach((link) => {
     const href = link.getAttribute('href');
-    if (!href || href.startsWith('#') || !clean(link.textContent)) return;
+    if (!href || (href.startsWith('#') && !(keepAnchor && href.length > 1)) || !clean(link.textContent)) return;
     const a = document.createElement('a');
     a.href = href;
     a.textContent = clean(link.textContent);

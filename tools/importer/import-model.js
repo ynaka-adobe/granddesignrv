@@ -9,6 +9,8 @@ import tabsFeatureParser from './parsers/tabs-feature.js';
 import tabsVerticalParser from './parsers/tabs-vertical.js';
 import tableSpecsParser from './parsers/table-specs.js';
 import quoteRatingParser from './parsers/quote-rating.js';
+import heroBannerParser from './parsers/hero-banner.js';
+import columnsParser from './parsers/columns.js';
 
 import granddesignrvCleanupTransformer from './transformers/granddesignrv-cleanup.js';
 import granddesignrvDmImagesTransformer from './transformers/granddesignrv-dm-images.js';
@@ -50,15 +52,35 @@ const PAGE_TEMPLATE = {
       ]
     },
     {
+      "name": "hero-banner",
+      "instances": [
+        ".launchhero"
+      ]
+    },
+    {
+      "name": "columns",
+      "instances": [
+        ".performancedetails"
+      ]
+    },
+    {
       "name": "hero-model",
       "instances": [
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) > .cmp-container > .aem-Grid:has(> .text) > .container.full-width.section:first-child",
         ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):has(.cmp-container--gradient-black)",
         ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
       ]
     },
     {
+      "name": "tabs-feature",
+      "instances": [
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .tabs.panelcontainer:not(.thumbnailtabs) > .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
+      ]
+    },
+    {
       "name": "tabs-swatch",
       "instances": [
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .experiencefragment .thumbnailtabs .cmp-tabs:not(.cmp-tabs .cmp-tabs)",
         ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .cmp-tabs:not(.cmp-tabs .cmp-tabs)",
         ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
       ]
@@ -113,6 +135,7 @@ const PAGE_TEMPLATE = {
       "id": "section-2",
       "name": "Model hero",
       "selector": [
+        ".launchhero",
         ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
       ],
       "style": null,
@@ -125,15 +148,59 @@ const PAGE_TEMPLATE = {
       "id": "section-3",
       "name": "Black promo band (optional)",
       "selector": [
-        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1)",
-        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h2)"
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h1)",
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h2)"
       ],
       "style": "dark",
       "blocks": [],
       "defaultContent": [
-        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) h1",
-        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) .button a"
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h1) h1",
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):not(.excat-launch-layout):not(:has(.launchhero)):not(:has(> .cmp-container > .aem-Grid > .container.full-width.section:first-child ~ .text)) .container.full-width:has(h1) .button a"
       ]
+    },
+    {
+      "id": "section-3b",
+      "name": "Model intro after the hero band (launch layout: VP, Foundation)",
+      "selector": [
+        ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) > .cmp-container > .aem-Grid:has(> .text) > .container.full-width.section:first-child + *"
+      ],
+      "style": null,
+      "blocks": [],
+      "defaultContent": []
+    },
+    {
+      "id": "section-3c",
+      "name": "Launch: performance details",
+      "selector": [
+        ".performancedetails"
+      ],
+      "style": null,
+      "blocks": [
+        "columns"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "section-3d",
+      "name": "Launch: everyday living + colour swatches",
+      "selector": [
+        ".performancedetails ~ *:has(.thumbnailtabs)"
+      ],
+      "style": null,
+      "blocks": [
+        "tabs-swatch"
+      ],
+      "defaultContent": []
+    },
+    {
+      "id": "section-3e",
+      "name": "Launch: updates form",
+      "selector": [
+        ".launchupdatesform"
+      ],
+      "style": null,
+      "blocks": [],
+      "defaultContent": []
     },
     {
       "id": "section-4",
@@ -245,7 +312,110 @@ const parsers = {
   'tabs-vertical': tabsVerticalParser,
   'table-specs': tableSpecsParser,
   'quote-rating': quoteRatingParser,
+  // launch hero CTA points at the in-page updates form (#launch-updates-form): keep it
+  'hero-banner': (element, ctx) => heroBannerParser(element, { ...ctx, params: { ...ctx.params, keepAnchorCta: true } }),
+  columns: columnsParser,
 };
+
+/*
+ * Launch pages (Lineage Series E): the "launch updates" lead form (.cmp-launch-updates-form) is
+ * an AEM servlet form, not an EDS form sheet. Keep it as default content: heading, intro, the
+ * field labels as a list, the submit label and the legal copy with its links. Only that
+ * component is touched (absent from the series pages).
+ */
+/*
+ * Launch layouts only (a .launchhero, or a hero band followed by intro content in the first grid
+ * child: VP, Foundation, E); the series pages have neither, so this never runs there.
+ *  - the hero CTA's in-page target id (#launch-updates-form) sits on an empty
+ *    anchor container just before the form; move it onto the updates form so the form section
+ *    carries the anchor
+ *  - the before/after image slider's controls (range input "50", thumb arrows) are not content
+ */
+const LAUNCH_LAYOUT = '.launchhero, .root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) > .cmp-container > .aem-Grid:has(> .text) > .container.full-width.section:first-child';
+function prepareLaunchLayout(main) {
+  if (!main.querySelector(LAUNCH_LAYOUT)) return;
+  // the parsers replace .launchhero / the hero band, after which the promo-band section (section-3)
+  // fallback selectors would match the launch layout: this class keeps them off it
+  const first = main.querySelector('.root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)');
+  if (first) first.classList.add('excat-launch-layout');
+  // the slider is a live React root on the page being imported: removing its controls in place
+  // gets re-rendered before conversion, so swap the whole root for a static copy of its images
+  main.querySelectorAll('.cmp-images-overlap').forEach((root) => {
+    const copy = main.ownerDocument.createElement('div');
+    root.querySelectorAll('img').forEach((img) => {
+      const p = main.ownerDocument.createElement('p');
+      p.append(img.cloneNode());
+      copy.append(p);
+    });
+    root.replaceWith(copy);
+  });
+  const form = main.querySelector('.launchupdatesform');
+  main.querySelectorAll('a.cmp-launch-hero__cta[href^="#"]').forEach((cta) => {
+    const id = cta.getAttribute('href').slice(1);
+    if (!id || !form || form.id === id) return;
+    const holder = [...main.querySelectorAll('[id]')].find((el) => el.id === id);
+    // the target is an empty anchor container placed just before the form (or one wrapping it)
+    if (!holder) return;
+    const before = !holder.textContent.trim() && (holder.compareDocumentPosition(form) & 4);
+    if (!(holder.contains(form) || before)) return;
+    holder.removeAttribute('id');
+    form.id = id;
+  });
+}
+
+function launchFormToContent(main, document) {
+  main.querySelectorAll('.cmp-launch-updates-form').forEach((section) => {
+    const clean = (t) => (t || '').replace(/[\s\u00a0]+/g, ' ').trim();
+    const out = [];
+    section.querySelectorAll('h1, h2, h3').forEach((h) => {
+      if (h.closest('form') || !clean(h.textContent)) return;
+      const el = document.createElement(h.tagName.toLowerCase());
+      el.textContent = clean(h.textContent);
+      out.push(el);
+    });
+    section.querySelectorAll('.cmp-launch-updates-form__intro').forEach((p) => {
+      if (!clean(p.textContent)) return;
+      const el = document.createElement('p');
+      el.textContent = clean(p.textContent);
+      out.push(el);
+    });
+    const form = section.querySelector('form');
+    if (form) {
+      const ul = document.createElement('ul');
+      form.querySelectorAll('label').forEach((label) => {
+        if (!clean(label.textContent)) return;
+        const li = document.createElement('li');
+        li.textContent = clean(label.textContent);
+        ul.append(li);
+      });
+      if (ul.children.length) out.push(ul);
+      form.querySelectorAll('button[type="submit"], input[type="submit"]').forEach((btn) => {
+        const label = clean(btn.textContent || btn.getAttribute('value'));
+        if (!label) return;
+        const p = document.createElement('p');
+        const strong = document.createElement('strong');
+        strong.textContent = label;
+        p.append(strong);
+        out.push(p);
+      });
+      form.querySelectorAll('.cmp-launch-updates-form__legal').forEach((legal) => {
+        if (!clean(legal.textContent)) return;
+        const p = document.createElement('p');
+        legal.childNodes.forEach((n) => {
+          if (n.nodeType === 3) p.append(document.createTextNode(n.textContent.replace(/\s+/g, ' ')));
+          else if (n.tagName === 'A' && n.getAttribute('href')) {
+            const a = document.createElement('a');
+            a.href = n.getAttribute('href');
+            a.textContent = clean(n.textContent);
+            p.append(a);
+          } else p.append(document.createTextNode(n.textContent));
+        });
+        out.push(p);
+      });
+    }
+    section.replaceWith(...out);
+  });
+}
 // Late transformers change the DOM (section <hr> markers, shared fragments), so their beforeTransform
 // runs after block discovery.
 const sectionTransformers = [granddesignrvSectionsTransformer];
@@ -319,7 +489,9 @@ export default {
     const pageBlocks = params.targets.blocks
       .map((block, i) => ({ ...block, element: document.querySelector(`[data-excat-block="${i}"]`) }))
       .filter((block) => block.element);
+    prepareLaunchLayout(main);
     executeTransformers('beforeTransform', main, { ...payload, pageBlocks }, lateTransformers);
+    launchFormToContent(main, document);
 
     pageBlocks.forEach((block) => {
       if (!main.contains(block.element)) return;

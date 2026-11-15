@@ -11,7 +11,11 @@ import granddesignrvSectionsTransformer from './transformers/granddesignrv-secti
 const PAGE_TEMPLATE = {
   "name": "travel-trailers",
   "urls": [
-    "https://www.granddesignrv.com/travel-trailers"
+    "https://www.granddesignrv.com/travel-trailers",
+    "https://www.granddesignrv.com/fifth-wheels",
+    "https://www.granddesignrv.com/toy-haulers.html",
+    "https://www.granddesignrv.com/destination",
+    "https://www.granddesignrv.com/motorized"
   ],
   "representativeUrl": "https://www.granddesignrv.com/travel-trailers",
   "description": "Vehicle category landing page: intro (photo + H1 + copy) followed by a stacked model lineup (logo, spin image, stats, headline, copy, CTAs).",
@@ -19,13 +23,15 @@ const PAGE_TEMPLATE = {
     {
       "name": "columns-image-text",
       "instances": [
-        ".outer-block.margin-top-medium .inner-block__left:has(+ .inner-block__right h1)"
+        ".outer-block.margin-top-medium .inner-block__left:has(+ .inner-block__right h1)",
+        ".inner-block__left:has(+ .inner-block__right h1)"
       ]
     },
     {
       "name": "cards-model-list",
       "instances": [
-        ".outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)"
+        ".outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)",
+        ".root .experiencefragment:has(.dynamicmedia):not(.experiencefragment .experiencefragment):not([class*=\"aem-GridColumn--default--hide\"] *)"
       ]
     }
   ],
@@ -35,7 +41,8 @@ const PAGE_TEMPLATE = {
       "id": "section-1",
       "name": "Travel trailers intro and model lineup",
       "selector": [
-        ".outer-block.margin-top-medium"
+        ".outer-block.margin-top-medium",
+        ".root > .cmp-container > .container.responsivegrid"
       ],
       "style": null,
       "blocks": [

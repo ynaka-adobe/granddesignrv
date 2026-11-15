@@ -2,9 +2,9 @@
   "status": "success",
   "url": "https://www.granddesignrv.com/motorized/lineage-series-vt",
   "path": "motorized/lineage-series-vt",
-  "timestamp": "2026-11-13T05:44:33.110Z",
+  "timestamp": "2026-11-14T15:41:28.358Z",
   "title": "Motorized | Lineage Series VT",
-  "template": "model",
+  "template": "photo-hero-page",
   "blocks": [
     "model-subnav",
     "hero-model",
@@ -16,5 +16,5 @@
     "quote-rating",
     "quote-rating"
   ],
-  "importScript": "118622389486"
+  "importScript": "81f7c63466de"
 }

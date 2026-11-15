@@ -4,13 +4,174 @@
   },
   "templates": [
     {
-      "name": "home",
+      "name": "article-page",
       "urls": [
-        "https://www.granddesignrv.com/"
+        "https://www.granddesignrv.com/",
+        "https://www.granddesignrv.com/adventure-more",
+        "https://www.granddesignrv.com/adventure-more/buy",
+        "https://www.granddesignrv.com/adventure-more/buy/10-rv-safety-features-that-could-save-your-life-",
+        "https://www.granddesignrv.com/adventure-more/buy/3-Things-to-Expect-From-Grand-Design-RVs-First-Motorized-Lineup",
+        "https://www.granddesignrv.com/adventure-more/buy/5-Reasons-The-New-Series-VT-Luxury-Adventure-Van-Should-Be-Your-No1-Pick-This-Spring",
+        "https://www.granddesignrv.com/adventure-more/buy/Adventure-Vans-101-The-Ultimate-Guide-To-Freedom-on-Wheels",
+        "https://www.granddesignrv.com/adventure-more/buy/Extreme-Lithium-Package",
+        "https://www.granddesignrv.com/adventure-more/buy/Grand-Design-s-Lineage-Series-F-is-Rewriting-Off-Grid-Adventure",
+        "https://www.granddesignrv.com/adventure-more/buy/How-to-Choose-A-Fifth-Wheel-Toy-Hauler--Expert-Tips",
+        "https://www.granddesignrv.com/adventure-more/buy/Inside-The-Momentum-Toy-Hauler",
+        "https://www.granddesignrv.com/adventure-more/buy/Inside-The-Reflection-Fifth-Wheel",
+        "https://www.granddesignrv.com/adventure-more/buy/Super-C-Motorhomes-The-Perfect-Blend-of-Power-and-Luxury1",
+        "https://www.granddesignrv.com/adventure-more/buy/Toy-Hauler-Features-to-Consider-when-choosing-your-next-RV",
+        "https://www.granddesignrv.com/adventure-more/buy/What-to-Consider-for-Different-Classes-of-RVs",
+        "https://www.granddesignrv.com/adventure-more/buy/Why-Toy-Haulers-Are-Best-For-Families",
+        "https://www.granddesignrv.com/adventure-more/buy/a-first-time-buyer-s-guide-to-buying-an-rv",
+        "https://www.granddesignrv.com/adventure-more/buy/inside-sales--your-trusted-co-pilots-for-your-rv-adventures",
+        "https://www.granddesignrv.com/adventure-more/buy/rv-or-van-life---why-an-rv-might-be-a-better-fit-than-a-camperva",
+        "https://www.granddesignrv.com/adventure-more/buy/toy-hauler-travel-trailer-vs-fifth-wheel",
+        "https://www.granddesignrv.com/adventure-more/buy/what-is-the-difference-between-travel-trailers--fifth-wheels--an",
+        "https://www.granddesignrv.com/adventure-more/buy/which-grand-design-model-is-right-for-you-",
+        "https://www.granddesignrv.com/adventure-more/community",
+        "https://www.granddesignrv.com/adventure-more/community/3-dogs--3-bikes-and-a-bike-show",
+        "https://www.granddesignrv.com/adventure-more/community/7-reasons-why-rv-owners-love-rv-rallies-and-you-should-too-",
+        "https://www.granddesignrv.com/adventure-more/community/Ambassadors-Changing-Lanes",
+        "https://www.granddesignrv.com/adventure-more/community/Impact-Team-Meet-The-Campaholics",
+        "https://www.granddesignrv.com/adventure-more/community/boy-these-people-like-to-have-fun",
+        "https://www.granddesignrv.com/adventure-more/community/grand-design-gives-back",
+        "https://www.granddesignrv.com/adventure-more/community/grand-design-rv-heads-to-Quartzsite-2025",
+        "https://www.granddesignrv.com/adventure-more/community/grand-design-rv-heads-to-the-40th-annual-florida-rv-supershow-",
+        "https://www.granddesignrv.com/adventure-more/community/in-case-you-missed-the-2022-fall-rv-events-and-rallies",
+        "https://www.granddesignrv.com/adventure-more/community/lineage-launches-in-nyc",
+        "https://www.granddesignrv.com/adventure-more/community/the-story-behind-bass_queen83",
+        "https://www.granddesignrv.com/adventure-more/learn",
+        "https://www.granddesignrv.com/adventure-more/learn/Embrace-the-Chill--Winter-RVing-Like-a-Pro",
+        "https://www.granddesignrv.com/adventure-more/learn/GDRV-Tech-Forum",
+        "https://www.granddesignrv.com/adventure-more/learn/Golden-Threads-Heated-And-Enclosed-Underbelly",
+        "https://www.granddesignrv.com/adventure-more/learn/Golden-Threads-Introduction",
+        "https://www.granddesignrv.com/adventure-more/learn/Golden-Threads-Laminated-Units",
+        "https://www.granddesignrv.com/adventure-more/learn/Golden-Threads-Tire-Beads",
+        "https://www.granddesignrv.com/adventure-more/learn/cozy-camping--must-have-rv-accessories-for-fall-comfort",
+        "https://www.granddesignrv.com/adventure-more/learn/everything-you-need-for-the-ultimate-rv-internet-setup",
+        "https://www.granddesignrv.com/adventure-more/learn/how-do-full-time-rvers-get-their-mail-and-packages-",
+        "https://www.granddesignrv.com/adventure-more/learn/how-to-downsize-from-a-house-and-live-in-an-rv-full-time",
+        "https://www.granddesignrv.com/adventure-more/learn/how-to-load-and-level-your-new--rv",
+        "https://www.granddesignrv.com/adventure-more/learn/how-to-prep-your-rv-for-spring",
+        "https://www.granddesignrv.com/adventure-more/learn/how-to-winterize-your-rv-or-travel-trailer-in-six-easy-steps",
+        "https://www.granddesignrv.com/adventure-more/learn/make-the-most-of-your-weekend--rv-setup-and-teardown-checklist-",
+        "https://www.granddesignrv.com/adventure-more/learn/prepping-your-rv-for-fall---essential-rv-maintenance-as-the-temp",
+        "https://www.granddesignrv.com/adventure-more/learn/safer-towing-with-the-only-rv-anti-lock-brakes-on-the-market",
+        "https://www.granddesignrv.com/adventure-more/learn/staying-connected-on-the-road--navigating-internet-options-for-r",
+        "https://www.granddesignrv.com/adventure-more/learn/the-best-camping-chairs-for-maximum-value-and-comfort-",
+        "https://www.granddesignrv.com/adventure-more/learn/the-only-rv-checklist-you-need-before-leaving-home",
+        "https://www.granddesignrv.com/adventure-more/learn/tips-for-towing-down-a-steep-hill-with-an-rv-trailer",
+        "https://www.granddesignrv.com/adventure-more/learn/top-10-rv-towing-tips--tow-your-rv-with-confidence",
+        "https://www.granddesignrv.com/adventure-more/learn/top-6-simple-safety-tips-for-new-rv-owners",
+        "https://www.granddesignrv.com/adventure-more/learn/what-do-you-do-if-your-rv-breaks-down-",
+        "https://www.granddesignrv.com/adventure-more/live",
+        "https://www.granddesignrv.com/adventure-more/live/10-scenic-drives-to-add-to-your-rv-bucket-list",
+        "https://www.granddesignrv.com/adventure-more/live/5-delicious-and-easy-meal-ideas-for-camping",
+        "https://www.granddesignrv.com/adventure-more/live/5-must-haves-for-a-weekend-rv-camping-with-friends",
+        "https://www.granddesignrv.com/adventure-more/live/9-must-haves-for-hunting-in-an-rv",
+        "https://www.granddesignrv.com/adventure-more/live/9-practical-remote-jobs-for-rvers--van-lifers--and-digital-nomad",
+        "https://www.granddesignrv.com/adventure-more/live/All-it-takes-is-a-bit-of--Imagine-ation-",
+        "https://www.granddesignrv.com/adventure-more/live/Beyond-the-Border--Baja-Adventures-for-the-Bold",
+        "https://www.granddesignrv.com/adventure-more/live/Desert-Days,-Starry-Nights--Arizona-s-Hidden-Winter-Escapes",
+        "https://www.granddesignrv.com/adventure-more/live/Your-Winter-Home-From-Home-on-the-Road-",
+        "https://www.granddesignrv.com/adventure-more/live/adventure-on-a-dime--camp-for-free-in-these-moab-rv-parks",
+        "https://www.granddesignrv.com/adventure-more/live/adventure-on-a-dime--cheap-and-free-rv-camping-locations-in-flor",
+        "https://www.granddesignrv.com/adventure-more/live/adventure-on-a-dime--cheap-rv-parks-within-the-great-smoky-mount",
+        "https://www.granddesignrv.com/adventure-more/live/are-rv-parks-safe-from-crime--tips-for-weekenders-and-full-time-",
+        "https://www.granddesignrv.com/adventure-more/live/best-fall-foliage-rv-trips-in-the-united-states",
+        "https://www.granddesignrv.com/adventure-more/live/cozy-indoor-activities-for-winter-camping-in-your-rv",
+        "https://www.granddesignrv.com/adventure-more/live/exploring-fall-festivals---best-rv-friendly-events-across-the-co",
+        "https://www.granddesignrv.com/adventure-more/live/our-favorite-fun-rv-camping-accessories0",
+        "https://www.granddesignrv.com/adventure-more/live/the-best-family-rv-parks-to-visit-this-summer",
+        "https://www.granddesignrv.com/adventure-more/live/the-best-ice-fishing-trips-in-the-united-states",
+        "https://www.granddesignrv.com/adventure-more/live/the-best-rv-trips-to-take-during-spring-in-the-u-s-",
+        "https://www.granddesignrv.com/adventure-more/live/top-10-safety-tips-for-rv-camping-with-dogs",
+        "https://www.granddesignrv.com/adventure-more/live/top-5-fall-road-trips--the-best-scenic-routes-for-your-fall-rv-a",
+        "https://www.granddesignrv.com/adventure-more/live/top-6-national-parks-for-rv-camping",
+        "https://www.granddesignrv.com/adventure-more/live/top-rv-camping-activities-for-kids-and-families",
+        "https://www.granddesignrv.com/adventure-more/live/what-to-consider-when-choosing-an-rv-campground",
+        "https://www.granddesignrv.com/adventure-more/live/what-to-expect-from-using-solar-to-power-your-rv-",
+        "https://www.granddesignrv.com/adventure-more/live/what-you-need-to-know-before-you-go-rving-with-your-cats",
+        "https://www.granddesignrv.com/app",
+        "https://www.granddesignrv.com/company/contact-us/ask-a-question",
+        "https://www.granddesignrv.com/company/news",
+        "https://www.granddesignrv.com/owners/Owner-Support-Thank-You",
+        "https://www.granddesignrv.com/owners/dashboard",
+        "https://www.granddesignrv.com/owners/event-calendar",
+        "https://www.granddesignrv.com/owners/grand-design---national-rally",
+        "https://www.granddesignrv.com/owners/mygdrv",
+        "https://www.granddesignrv.com/owners/owner-FAQ",
+        "https://www.granddesignrv.com/owners/owner-support-archive",
+        "https://www.granddesignrv.com/owners/recalls",
+        "https://www.granddesignrv.com/owners/recalls/canadian-certificate-2023-170",
+        "https://www.granddesignrv.com/owners/recalls/canadian-certificate-2023-351",
+        "https://www.granddesignrv.com/owners/recalls/recalls---14v-214",
+        "https://www.granddesignrv.com/owners/recalls/recalls---14v-476",
+        "https://www.granddesignrv.com/owners/recalls/recalls---15v-212",
+        "https://www.granddesignrv.com/owners/recalls/recalls---15v-518",
+        "https://www.granddesignrv.com/owners/recalls/recalls---15v-822",
+        "https://www.granddesignrv.com/owners/recalls/recalls---16v-355",
+        "https://www.granddesignrv.com/owners/recalls/recalls---16v-717",
+        "https://www.granddesignrv.com/owners/recalls/recalls---16v-841",
+        "https://www.granddesignrv.com/owners/recalls/recalls---17v-271",
+        "https://www.granddesignrv.com/owners/recalls/recalls---17v-620",
+        "https://www.granddesignrv.com/owners/recalls/recalls---17v-743",
+        "https://www.granddesignrv.com/owners/recalls/recalls---17v-789",
+        "https://www.granddesignrv.com/owners/recalls/recalls---18v-399",
+        "https://www.granddesignrv.com/owners/recalls/recalls---18v-637",
+        "https://www.granddesignrv.com/owners/recalls/recalls---18v-658",
+        "https://www.granddesignrv.com/owners/recalls/recalls---18v-729",
+        "https://www.granddesignrv.com/owners/recalls/recalls---18v-764",
+        "https://www.granddesignrv.com/owners/recalls/recalls---18v-823",
+        "https://www.granddesignrv.com/owners/recalls/recalls---20v-362",
+        "https://www.granddesignrv.com/owners/recalls/recalls---20v-523",
+        "https://www.granddesignrv.com/owners/recalls/recalls---21v-393",
+        "https://www.granddesignrv.com/owners/recalls/recalls---21v-3930",
+        "https://www.granddesignrv.com/owners/recalls/recalls---21v-636",
+        "https://www.granddesignrv.com/owners/recalls/recalls---22v-038",
+        "https://www.granddesignrv.com/owners/recalls/recalls---22v-039",
+        "https://www.granddesignrv.com/owners/recalls/recalls---22v-203",
+        "https://www.granddesignrv.com/owners/recalls/recalls---22v-442",
+        "https://www.granddesignrv.com/owners/recalls/recalls---22v-603",
+        "https://www.granddesignrv.com/owners/recalls/recalls---23v-151",
+        "https://www.granddesignrv.com/owners/recalls/recalls---23v-364",
+        "https://www.granddesignrv.com/owners/recalls/recalls---23v-428",
+        "https://www.granddesignrv.com/owners/recalls/recalls---23v-455",
+        "https://www.granddesignrv.com/owners/recalls/recalls---23v-586",
+        "https://www.granddesignrv.com/owners/recalls/recalls---23v-788",
+        "https://www.granddesignrv.com/owners/recalls/recalls---24v-378",
+        "https://www.granddesignrv.com/owners/recalls/recalls---24v-522",
+        "https://www.granddesignrv.com/owners/recalls/recalls---24v-861",
+        "https://www.granddesignrv.com/owners/recalls/recalls---24v-863",
+        "https://www.granddesignrv.com/owners/recalls/recalls---24v-916",
+        "https://www.granddesignrv.com/owners/recalls/recalls---25v-119",
+        "https://www.granddesignrv.com/owners/recalls/recalls---25v-473",
+        "https://www.granddesignrv.com/owners/recalls/recalls--25v-061",
+        "https://www.granddesignrv.com/owners/recalls/recalls--25v-281",
+        "https://www.granddesignrv.com/owners/recalls/recalls--25v-784",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-042",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-044",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-174",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-276",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-277",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-354",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-446",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-490",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-491",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-492",
+        "https://www.granddesignrv.com/owners/recalls/recalls--26v-595",
+        "https://www.granddesignrv.com/owners/recalls/recalls-26v-057",
+        "https://www.granddesignrv.com/owners/recalls/recalls-26v-058",
+        "https://www.granddesignrv.com/owners/resources",
+        "https://www.granddesignrv.com/owners/resources/how-to-videos",
+        "https://www.granddesignrv.com/owners/resources/owners-manuals",
+        "https://www.granddesignrv.com/shopping-tools/Why-Grand-Design-RV",
+        "https://www.granddesignrv.com/shopping-tools/brochures/brochure-download",
+        "https://www.granddesignrv.com/shopping-tools/factory-tours",
+        "https://www.granddesignrv.com/shopping-tools/find-a-dealer",
+        "https://www.granddesignrv.com/toy-haulers/momentum/410th"
       ],
-      "representativeUrl": "https://www.granddesignrv.com/",
-      "description": "Grand Design RV homepage: hero carousel, quick links and brand pillar cards, brand tabs with model sliders, featured RV models with Lineage E launch banner, and owner testimonials.",
-      "urlPattern": "/",
+      "description": "Page that opens with body text and continues with long-form copy, images and card or column groups; covers the homepage, articles, recall notices and owner pages",
       "blocks": [
         {
           "name": "carousel-hero",
@@ -127,50 +288,391 @@
       ]
     },
     {
-      "name": "travel-trailers",
+      "name": "centered-heading-page",
       "urls": [
-        "https://www.granddesignrv.com/travel-trailers"
+        "https://www.granddesignrv.com/1-3-5-warranty",
+        "https://www.granddesignrv.com/Reflection-350RDS",
+        "https://www.granddesignrv.com/Transcend-345DQT",
+        "https://www.granddesignrv.com/company/contact-us/foundation-signup",
+        "https://www.granddesignrv.com/company/contact-us/lineage-vp-signup",
+        "https://www.granddesignrv.com/company/contact-us/lineage-vt-signup",
+        "https://www.granddesignrv.com/company/contact-us/mav-fw-signup",
+        "https://www.granddesignrv.com/company/contact-us/solitude-signup",
+        "https://www.granddesignrv.com/cont-improvement",
+        "https://www.granddesignrv.com/continuous-quality-improvements",
+        "https://www.granddesignrv.com/landing-pages/2025-grand-design-rv-awards",
+        "https://www.granddesignrv.com/omega-frame",
+        "https://www.granddesignrv.com/owners/newsletter-sign-up",
+        "https://www.granddesignrv.com/owners/resources/frame-faq",
+        "https://www.granddesignrv.com/partner/travlfi"
       ],
-      "representativeUrl": "https://www.granddesignrv.com/travel-trailers",
-      "description": "Vehicle category landing page: intro (photo + H1 + copy) followed by a stacked model lineup (logo, spin image, stats, headline, copy, CTAs).",
-      "blocks": [
-        {
-          "name": "columns-image-text",
-          "instances": [
-            ".outer-block.margin-top-medium .inner-block__left:has(+ .inner-block__right h1)"
-          ]
-        },
-        {
-          "name": "cards-model-list",
-          "instances": [
-            ".outer-block.margin-top-medium .aem-Grid > .experiencefragment:has(.dynamicmedia)"
-          ]
-        }
-      ],
-      "urlPattern": "/travel-trailers",
-      "sections": [
-        {
-          "id": "section-1",
-          "name": "Travel trailers intro and model lineup",
-          "selector": [
-            ".outer-block.margin-top-medium"
-          ],
-          "style": null,
-          "blocks": [
-            "columns-image-text",
-            "cards-model-list"
-          ],
-          "defaultContent": []
-        }
-      ]
+      "description": "Page that opens with a centered black heading, followed by text sections, an optional form and a card group",
+      "blocks": []
     },
     {
-      "name": "shop-and-compare",
+      "name": "photo-hero-page",
+      "urls": [
+        "https://www.granddesignrv.com/2025-hershey-rv-show",
+        "https://www.granddesignrv.com/2026-hershey-rv-show",
+        "https://www.granddesignrv.com/Momentum399M",
+        "https://www.granddesignrv.com/Series-VT-Launch",
+        "https://www.granddesignrv.com/Transcend-Lite",
+        "https://www.granddesignrv.com/adventure-more/learn/Omega-Fifth-Wheel-Frame",
+        "https://www.granddesignrv.com/adventure-more/learn/destinationvspark",
+        "https://www.granddesignrv.com/company/news/Current/2027-Solitude",
+        "https://www.granddesignrv.com/company/news/Current/3-Season-Wall",
+        "https://www.granddesignrv.com/company/news/Current/All-New-Lineage-Series-E",
+        "https://www.granddesignrv.com/company/news/Current/Champion-of-Women-Award",
+        "https://www.granddesignrv.com/company/news/Current/Foundation-Launch",
+        "https://www.granddesignrv.com/company/news/Current/Grand-Design-RV-Unveils-Exciting-Revamp-Across-Imagine-Travel-Trailer-Lineup",
+        "https://www.granddesignrv.com/company/news/Current/Momentum-MAV-FW",
+        "https://www.granddesignrv.com/company/news/Current/Momentum-Worry-Free-Roof",
+        "https://www.granddesignrv.com/company/news/Current/Promotion-of-Chris-Eppers-to-Product-Manager-for-Solitude-and-Influence",
+        "https://www.granddesignrv.com/company/news/Current/RV-of-the-Year-Awards",
+        "https://www.granddesignrv.com/company/news/Current/RVDA-Quality-Circle-Award",
+        "https://www.granddesignrv.com/company/news/Current/Transcend-Lite",
+        "https://www.granddesignrv.com/company/news/Current/Wildsam-Readers--Choice-Awards",
+        "https://www.granddesignrv.com/company/news/Current/Worry-Free-Seamless-Composite-Roof",
+        "https://www.granddesignrv.com/company/news/Current/best-of-the-best-awards",
+        "https://www.granddesignrv.com/company/news/archive",
+        "https://www.granddesignrv.com/company/news/archive/Don-Clark-of-Grand-Design-RV-Enters-the-RVMH-Hall-of-Fame",
+        "https://www.granddesignrv.com/company/news/archive/From-Albuquerque-to-San-Diego,-Grand-Design-s-Lineage-Embarks-on-La-Mesa-Kick-Off-Tour",
+        "https://www.granddesignrv.com/company/news/archive/GD-Earns-Top-Honors-from-RV-Business",
+        "https://www.granddesignrv.com/company/news/archive/GDRV-Industry-First-Transferrable-Warranty-Program",
+        "https://www.granddesignrv.com/company/news/archive/GDRV-Launches-Class-C-Lineage-In-NYC",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-2024---2025-Rebate",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-Lineage-Series-F-in-AutoEvolution-Magazine",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-Lineage-Series-VT-Launch",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-Momentum-Fifth-Wheel-in-RV-Today-Magazine",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-RV-Announces-Expanded-Transcend-Line,-Meeting-Diverse-Consumer-Needs-with-Innovative-2025-Models",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-RV-Drives-Lineage-Story-Forward-with-Super-C",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-RV-Partnership-with-The-Headrest-Safe-Co",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-RV-Reveals-Key-Features-Lineage-Series-F-Super-C",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-RV-Spreads-Cheer-with-Third-Annual-Christmas-in-July-Event",
+        "https://www.granddesignrv.com/company/news/archive/Grand-Design-Reflection-Travel-Trailer-in-RV-Today-Magazine",
+        "https://www.granddesignrv.com/company/news/archive/gdrv-imagine-reflection-hit-50k-milestone",
+        "https://www.granddesignrv.com/company/news/archive/grand-design--beacon-health-partner-to-improve-employee-health-a",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-again-recognized-as-best-employer-in-multiple-categ1",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-first-to-offer-anti-lock-braking-system-in-the-rv-i",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-hosts-eighth-annual-elkhart-national-owners--rally-",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-hosts-toys-for-tots-drive-in-elkhart",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-launches-new-consumer-merchandise-platform",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-promotes-chase-booth-to-product-manager",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-announces-first-motorized-rv---lineage--class-c",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-brands-continue-to-sweep-annual-dsi-survey-award",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-celebrates-historic-milestone-with-production-of",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-hosts-2nd-annual-christmas-in-july-event-with-to",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-launches-lippert-anti-lock-braking-system--abs--",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-launches-new-podcast--gdrv-fireside-chat",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-offers-premium-towing-experience-with-independen",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-partners-with-neuraflash-to-transform-customer-s",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-s-reflection-debuts-its-inaugural--100-series-",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-voted-best-employer-in-manufacturing-by--goshen-",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-welcomes-vice-president-of-human-resources",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-wins-rvda-dealer-satisfaction-index-quality-circle-",
+        "https://www.granddesignrv.com/company/news/archive/momentum-drives-record-sales-for-grand-design-rv",
+        "https://www.granddesignrv.com/company/news/archive/solitude-hits-sales-milestone-for-grand-design-rv",
+        "https://www.granddesignrv.com/company/news/archive/volta-power-systems---grand-design-partner-on-mass-market-off-gr",
+        "https://www.granddesignrv.com/fifth-wheels/fifth-wheels-dealer-stock-2024",
+        "https://www.granddesignrv.com/fifth-wheels/influence",
+        "https://www.granddesignrv.com/fifth-wheels/reflection",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series",
+        "https://www.granddesignrv.com/fifth-wheels/solitude",
+        "https://www.granddesignrv.com/fifth-wheels/solitude-s-class",
+        "https://www.granddesignrv.com/lineage-43-package",
+        "https://www.granddesignrv.com/lineage-series-f-tour",
+        "https://www.granddesignrv.com/motorized/lineage-series-f",
+        "https://www.granddesignrv.com/motorized/lineage-series-m/25tk",
+        "https://www.granddesignrv.com/motorized/lineage-series-vp",
+        "https://www.granddesignrv.com/motorized/lineage-series-vt",
+        "https://www.granddesignrv.com/solar/momentum-mav",
+        "https://www.granddesignrv.com/solitude-414ljmj",
+        "https://www.granddesignrv.com/toy-haulers/Animation-Test-Page",
+        "https://www.granddesignrv.com/toy-haulers/Test-Animation-Troubleshoot",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels",
+        "https://www.granddesignrv.com/travel-trailers/imagine",
+        "https://www.granddesignrv.com/travel-trailers/reflection"
+      ],
+      "description": "Page that opens with a full-width photo, followed by text sections, image-text columns and card groups; used for series overviews, news posts and event pages",
+      "blocks": []
+    },
+    {
+      "name": "hero-overlay-page",
+      "urls": [
+        "https://www.granddesignrv.com/Foundation",
+        "https://www.granddesignrv.com/company/news/Current",
+        "https://www.granddesignrv.com/destination/foundation",
+        "https://www.granddesignrv.com/foundation",
+        "https://www.granddesignrv.com/motorized/lineage-series-e",
+        "https://www.granddesignrv.com/owners/resources/parts-lookup",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/23g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/28g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/30g",
+        "https://www.granddesignrv.com/toy-haulers/momentum/414m"
+      ],
+      "description": "Page that opens with text over a background photo, followed by mixed text, column and card sections",
+      "blocks": []
+    },
+    {
+      "name": "display-heading-landing",
+      "urls": [
+        "https://www.granddesignrv.com/MomentumMAV-FW",
+        "https://www.granddesignrv.com/Solitude",
+        "https://www.granddesignrv.com/landing-pages/grand-design-rv-awards",
+        "https://www.granddesignrv.com/landing-pages/past-grand-design-rv-awards",
+        "https://www.granddesignrv.com/shopping-tools/dealership-rv-shows"
+      ],
+      "description": "Landing page that opens with a centered red display-font heading, followed by image-text columns, card groups and text sections",
+      "blocks": []
+    },
+    {
+      "name": "text-page",
+      "urls": [
+        "https://www.granddesignrv.com/adventure-more/media-content-submission",
+        "https://www.granddesignrv.com/company",
+        "https://www.granddesignrv.com/company/contact-us/adventure-more-signup",
+        "https://www.granddesignrv.com/company/news/archive/grand-design-rv-hires-michelle-blosser-for-interior-design",
+        "https://www.granddesignrv.com/owners",
+        "https://www.granddesignrv.com/privacy-policy/california-business-contacts-privacy-notice",
+        "https://www.granddesignrv.com/privacy-policy/employee-applicant-privacy-policy",
+        "https://www.granddesignrv.com/privacy-policy/privacy-policy-rev2025",
+        "https://www.granddesignrv.com/solar-faqs",
+        "https://www.granddesignrv.com/terms-and-conditions",
+        "https://www.granddesignrv.com/terms-and-conditions/ca-lemon-law-information"
+      ],
+      "description": "Page that opens with a left-aligned black heading, followed mostly by text, with an optional form; used for legal and simple info pages",
+      "blocks": []
+    },
+    {
+      "name": "card-grid-landing",
+      "urls": [
+        "https://www.granddesignrv.com/ask-an-expert",
+        "https://www.granddesignrv.com/company/careers",
+        "https://www.granddesignrv.com/container-v2-sample",
+        "https://www.granddesignrv.com/motorized",
+        "https://www.granddesignrv.com/motorized/lineage-series-m",
+        "https://www.granddesignrv.com/motorized1",
+        "https://www.granddesignrv.com/toy-haulers/momentum"
+      ],
+      "description": "Landing page that opens with a grid of repeated cards, followed by text sections and interactive components",
+      "blocks": []
+    },
+    {
+      "name": "display-heading-form-page",
+      "urls": [
+        "https://www.granddesignrv.com/company/Media-Request",
+        "https://www.granddesignrv.com/company/inside-sales",
+        "https://www.granddesignrv.com/company/our-story",
+        "https://www.granddesignrv.com/partner",
+        "https://www.granddesignrv.com/shop-inventory"
+      ],
+      "description": "Page that opens with a left-aligned red display-font heading, followed by intro columns, text and a form or interactive component",
+      "blocks": []
+    },
+    {
+      "name": "contact-page",
+      "urls": [
+        "https://www.granddesignrv.com/company/contact-us"
+      ],
+      "description": "Page that opens with a left-aligned black display-font heading, followed by intro columns, a contact form and a long list of contact details",
+      "blocks": []
+    },
+    {
+      "name": "red-heading-page",
+      "urls": [
+        "https://www.granddesignrv.com/company/new-contact-us",
+        "https://www.granddesignrv.com/landing-pages/awards"
+      ],
+      "description": "Page that opens with a left-aligned red heading, followed by intro columns, text sections and embedded components",
+      "blocks": []
+    },
+    {
+      "name": "resource-hub",
+      "urls": [
+        "https://www.granddesignrv.com/dealer-hub"
+      ],
+      "description": "Page that opens with a centered dark red heading, followed by text and groups of resource cards",
+      "blocks": []
+    },
+    {
+      "name": "event-detail",
+      "urls": [
+        "https://www.granddesignrv.com/dealerkit",
+        "https://www.granddesignrv.com/owners/event-calendar/2026-Grand-Design-Owners-Capital-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2026-Grand-Design-Owners-Las-Vegas-Regional-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2026-Grand-Design-Owners-North-Florida-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2026-Grand-Design-Owners-Rally---Sea---Fall-Foliage-Tour",
+        "https://www.granddesignrv.com/owners/event-calendar/2026-Grand-Design-Owners-Texas-Fall-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Arkansas-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Carolinas-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Colorado-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-DMV-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Gettysburg-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Illinois-RT-66-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Michigan-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Missouri-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Montana-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-National-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-New-England-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-New-York-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-North-Florida-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Ohio-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Ontario-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Quartzsite-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Rally---Sea---Pacific-Wine-Country",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Spruce-Grove-Alberta-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Tennessee-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Texas-Fall-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Utah-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Washington-Regional-Rally",
+        "https://www.granddesignrv.com/owners/event-calendar/2027-Grand-Design-Owners-Wisconsin-Rally"
+      ],
+      "description": "Page that opens with a centered red heading followed by stacked text, dates and details for a single event",
+      "blocks": []
+    },
+    {
+      "name": "model-detail",
+      "urls": [
+        "https://www.granddesignrv.com/destination/foundation/42gd",
+        "https://www.granddesignrv.com/fifth-wheels/influence/2903rl",
+        "https://www.granddesignrv.com/fifth-wheels/influence/3003rl",
+        "https://www.granddesignrv.com/fifth-wheels/influence/3203gk",
+        "https://www.granddesignrv.com/fifth-wheels/influence/3503gk",
+        "https://www.granddesignrv.com/fifth-wheels/influence/3705rd",
+        "https://www.granddesignrv.com/fifth-wheels/influence/3804ds",
+        "https://www.granddesignrv.com/fifth-wheels/influence/3904bh",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series/22rk",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series/24rl",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series/27bh",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series/28rl",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series/29rl",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series/32bh",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series/250ml",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series/260rd",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series/270bn",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series/298bh",
+        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series/310rl",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/303rls",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/311bhs",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/324mbs",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/337rls",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/340RKS",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/350rds",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/360fls",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/362tbs",
+        "https://www.granddesignrv.com/fifth-wheels/reflection/367bhs",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/310gk",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/370dv",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/376rd",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/380fl",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/382wb",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/388mbs",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/390rk",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/391dl",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/414ljmj",
+        "https://www.granddesignrv.com/fifth-wheels/solitude/417kb",
+        "https://www.granddesignrv.com/motorized/lineage-series-e/30dc",
+        "https://www.granddesignrv.com/motorized/lineage-series-f/29an",
+        "https://www.granddesignrv.com/motorized/lineage-series-f/29an5",
+        "https://www.granddesignrv.com/motorized/lineage-series-f/31zw",
+        "https://www.granddesignrv.com/motorized/lineage-series-f/31zw5",
+        "https://www.granddesignrv.com/motorized/lineage-series-m/25fw",
+        "https://www.granddesignrv.com/motorized/lineage-series-vp/lvp1",
+        "https://www.granddesignrv.com/motorized/lineage-series-vp/lvp2",
+        "https://www.granddesignrv.com/motorized/lineage-series-vp/lvp3",
+        "https://www.granddesignrv.com/motorized/lineage-series-vt/lvt1",
+        "https://www.granddesignrv.com/motorized/lineage-series-vt/lvt2",
+        "https://www.granddesignrv.com/test/productdetails-2025",
+        "https://www.granddesignrv.com/test/productdetails-2025/pdp2025",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/21g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/25g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/27g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/29gs",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers/31g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class/320g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class/325g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class/350g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class/363g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-g-class/394g",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels/270mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels/340mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels/390mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav/17mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav/22mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav/24mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav/27mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav/28mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum-mav/30mav",
+        "https://www.granddesignrv.com/toy-haulers/momentum/344m",
+        "https://www.granddesignrv.com/toy-haulers/momentum/351ms",
+        "https://www.granddesignrv.com/toy-haulers/momentum/381ms",
+        "https://www.granddesignrv.com/toy-haulers/momentum/392m",
+        "https://www.granddesignrv.com/toy-haulers/momentum/395mt",
+        "https://www.granddesignrv.com/toy-haulers/momentum/396db",
+        "https://www.granddesignrv.com/toy-haulers/momentum/399m",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2300mk",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2470bh",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2500rl",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2600rb",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2670mk",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2700bs",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2800bh",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2810bh",
+        "https://www.granddesignrv.com/travel-trailers/imagine/2970rl",
+        "https://www.granddesignrv.com/travel-trailers/imagine/3100rd",
+        "https://www.granddesignrv.com/travel-trailers/imagine/3210bh",
+        "https://www.granddesignrv.com/travel-trailers/reflection/317rsts",
+        "https://www.granddesignrv.com/travel-trailers/reflection/322fkts",
+        "https://www.granddesignrv.com/travel-trailers/reflection/342bhts",
+        "https://www.granddesignrv.com/travel-trailers/reflection/345rlts"
+      ],
+      "description": "Floorplan/model detail page that opens with side-by-side media and text, followed by spec tables, tabbed media, image-text columns and feature cards",
+      "blocks": []
+    },
+    {
+      "name": "embedded-form-page",
+      "urls": [
+        "https://www.granddesignrv.com/grand-design-marketing-requests"
+      ],
+      "description": "Page that opens with a single button and holds one embedded interactive form",
+      "blocks": []
+    },
+    {
+      "name": "dark-banner-landing",
+      "urls": [
+        "https://www.granddesignrv.com/landing-pages/anti-lock-braking-system",
+        "https://www.granddesignrv.com/motorized-launch",
+        "https://www.granddesignrv.com/toy-haulers/momentum-m-class"
+      ],
+      "description": "Landing page that opens with a centered white heading on a dark band, followed by text sections and image-text columns",
+      "blocks": []
+    },
+    {
+      "name": "embed-tool-page",
+      "urls": [
+        "https://www.granddesignrv.com/owners/recalls/recall-lookup"
+      ],
+      "description": "Page holding a single embedded third-party tool",
+      "blocks": []
+    },
+    {
+      "name": "search-results",
+      "urls": [
+        "https://www.granddesignrv.com/search"
+      ],
+      "description": "Search page with no static content; results are rendered dynamically",
+      "blocks": []
+    },
+    {
+      "name": "filter-listing",
       "urls": [
         "https://www.granddesignrv.com/shop-and-compare"
       ],
-      "representativeUrl": "https://www.granddesignrv.com/shop-and-compare",
-      "description": "Shop and Compare: intro heading + subtitle and the interactive floor plan finder (shop-compare block, reads the floor plan data sheet).",
+      "description": "Listing page with a left filter sidebar beside a grid of product results",
       "blocks": [
         {
           "name": "shop-compare",
@@ -179,7 +681,6 @@
           ]
         }
       ],
-      "urlPattern": "/shop-and-compare",
       "sections": [
         {
           "id": "section-1",
@@ -199,225 +700,29 @@
       ]
     },
     {
-      "name": "model",
+      "name": "inventory-search",
       "urls": [
-        "https://www.granddesignrv.com/travel-trailers/transcend-lite",
-        "https://www.granddesignrv.com/travel-trailers/transcend-one",
-        "https://www.granddesignrv.com/travel-trailers/transcend-xplor",
-        "https://www.granddesignrv.com/travel-trailers/transcend",
-        "https://www.granddesignrv.com/travel-trailers/imagine-aim",
-        "https://www.granddesignrv.com/travel-trailers/imagine-xls",
-        "https://www.granddesignrv.com/travel-trailers/imagine",
-        "https://www.granddesignrv.com/travel-trailers/serenova",
-        "https://www.granddesignrv.com/travel-trailers/reflection",
-        "https://www.granddesignrv.com/fifth-wheels/reflection-100-series",
-        "https://www.granddesignrv.com/fifth-wheels/reflection-150-series",
-        "https://www.granddesignrv.com/fifth-wheels/reflection",
-        "https://www.granddesignrv.com/fifth-wheels/influence",
-        "https://www.granddesignrv.com/fifth-wheels/solitude",
-        "https://www.granddesignrv.com/toy-haulers/momentum-mav",
-        "https://www.granddesignrv.com/toy-haulers/momentum-mav-fifth-wheels",
-        "https://www.granddesignrv.com/toy-haulers/momentum-g-class-travel-trailers",
-        "https://www.granddesignrv.com/toy-haulers/momentum-g-class",
-        "https://www.granddesignrv.com/toy-haulers/momentum",
-        "https://www.granddesignrv.com/motorized/lineage-series-m",
-        "https://www.granddesignrv.com/motorized/lineage-series-f",
-        "https://www.granddesignrv.com/motorized/lineage-series-vt"
+        "https://www.granddesignrv.com/shopping-tools/dealer-inventory",
+        "https://www.granddesignrv.com/shopping-tools/inventory-details"
       ],
-      "representativeUrl": "https://www.granddesignrv.com/toy-haulers/momentum",
-      "description": "RV model page (22 models): sticky model sub-nav, hero, intro with 360 spin, brand story, feature tabs, construction tabs, specifications table, customer reviews. Parts are positional children of the main grid.",
-      "blocks": [
-        {
-          "name": "model-subnav",
-          "instances": [
-            ".subnavigation"
-          ]
-        },
-        {
-          "name": "hero-model",
-          "instances": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1):has(.cmp-container--gradient-black)",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
-          ]
-        },
-        {
-          "name": "tabs-swatch",
-          "instances": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .cmp-tabs:not(.cmp-tabs .cmp-tabs)",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
-          ]
-        },
-        {
-          "name": "video-inline",
-          "instances": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .dynamicmedia:has([data-asset-type=\"videoavs\"])",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .dynamicmedia[data-asset-type=\"videoavs\"]"
-          ]
-        },
-        {
-          "name": "tabs-feature",
-          "instances": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(4) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
-          ]
-        },
-        {
-          "name": "tabs-vertical",
-          "instances": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(5) .cmp-tabs:not(.cmp-tabs .cmp-tabs)"
-          ]
-        },
-        {
-          "name": "table-specs",
-          "instances": [
-            ".spectable"
-          ]
-        },
-        {
-          "name": "quote-rating",
-          "instances": [
-            ".customercomment .q.grid-item"
-          ]
-        }
+      "description": "Listing page with a filter panel beside a results area of inventory rows and detail columns",
+      "blocks": []
+    },
+    {
+      "name": "uncaptured-page",
+      "urls": [
+        "https://www.granddesignrv.com/solar"
       ],
-      "urlPattern": "/{category}/{model}",
-      "sections": [
-        {
-          "id": "section-1",
-          "name": "Model sub-navigation (sticky)",
-          "selector": [
-            ".subnavigation"
-          ],
-          "style": null,
-          "blocks": [
-            "model-subnav"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "section-2",
-          "name": "Model hero",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1)"
-          ],
-          "style": null,
-          "blocks": [
-            "hero-model"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "section-3",
-          "name": "Black promo band (optional)",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1)",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h2)"
-          ],
-          "style": "dark",
-          "blocks": [],
-          "defaultContent": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) h1",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(1) .container.full-width:has(h1) .button a"
-          ]
-        },
-        {
-          "id": "section-4",
-          "name": "Exterior / 360 spin",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2)"
-          ],
-          "style": "centered",
-          "blocks": [],
-          "defaultContent": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .title",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .text",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .dynamicmedia"
-          ]
-        },
-        {
-          "id": "section-5",
-          "name": "Brand story (text + video)",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3)"
-          ],
-          "style": "split",
-          "blocks": [
-            "video-inline"
-          ],
-          "defaultContent": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .text"
-          ]
-        },
-        {
-          "id": "section-6",
-          "name": "Full body paint (optional colour picker)",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .experiencefragment:has(.cmp-tabs)",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .experiencefragment:has(.cmp-tabs)",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(2) .tabs:has(.cmp-tabs)",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(3) .tabs:has(.cmp-tabs)"
-          ],
-          "style": "centered",
-          "blocks": [
-            "tabs-swatch"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "section-7",
-          "name": "Feature tabs",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(4)"
-          ],
-          "style": "dark",
-          "blocks": [
-            "tabs-feature"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "section-8",
-          "name": "Constructed to a Superior Standard",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(5)"
-          ],
-          "style": null,
-          "blocks": [
-            "tabs-vertical"
-          ],
-          "defaultContent": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(5) .title h2"
-          ]
-        },
-        {
-          "id": "section-9",
-          "name": "Product Line Specifications",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(6)"
-          ],
-          "style": null,
-          "blocks": [
-            "table-specs"
-          ],
-          "defaultContent": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(6) .title h2",
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(6) .text"
-          ]
-        },
-        {
-          "id": "section-10",
-          "name": "Customer reviews",
-          "selector": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(7)"
-          ],
-          "style": null,
-          "blocks": [
-            "quote-rating"
-          ],
-          "defaultContent": [
-            ".root > .cmp-container > .container.responsivegrid > .cmp-container > .aem-Grid > :nth-child(7) .customercomment h2"
-          ]
-        }
-      ]
+      "description": "Page whose layout could not be captured during analysis; needs a manual look",
+      "blocks": []
+    },
+    {
+      "name": "table-listing",
+      "urls": [
+        "https://www.granddesignrv.com/unused/event-calender2"
+      ],
+      "description": "Page that opens with a data table listing entries",
+      "blocks": []
     }
   ]
 }
