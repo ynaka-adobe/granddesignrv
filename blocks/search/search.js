@@ -148,6 +148,13 @@ async function renderResults(block, config, filteredData, searchTerms) {
   }
 }
 
+const SERIES_CATEGORIES = ['travel-trailers', 'fifth-wheels', 'toy-haulers', 'motorized', 'destination'];
+
+function isSeriesPage(path = '') {
+  const segments = path.split('/').filter(Boolean);
+  return segments.length === 2 && SERIES_CATEGORIES.includes(segments[0]);
+}
+
 function compareFound(hit1, hit2) {
   return hit1.minIdx - hit2.minIdx;
 }
@@ -182,10 +189,17 @@ function filterData(searchTerms, data) {
     }
   });
 
-  return [
+  const ranked = [
     ...foundInHeader.sort(compareFound),
     ...foundInMeta.sort(compareFound),
   ].map((item) => item.result);
+
+  // Series pages (one level under a vehicle category, e.g. /fifth-wheels/solitude) come first;
+  // the relative order inside each group is kept.
+  return [
+    ...ranked.filter((result) => isSeriesPage(result.path)),
+    ...ranked.filter((result) => !isSeriesPage(result.path)),
+  ];
 }
 
 async function handleSearch(e, block, config) {
@@ -250,9 +264,25 @@ function searchBox(block, config) {
   return box;
 }
 
+/**
+ * The authored index URL is absolute (e.g. the live host). Preview, live and local each have
+ * their own index and the index is not served cross-origin, so when the URL points at this
+ * site's own aem.page / aem.live host, read the same path from the current origin instead.
+ */
+function resolveSource(href) {
+  if (!href) return '/query-index.json';
+  try {
+    const url = new URL(href, window.location.href);
+    const ownSite = /^[^.]+--granddesignrv--ynaka-adobe\.aem\.(page|live)$/.test(url.hostname);
+    return ownSite ? `${url.pathname}${url.search}` : url.href;
+  } catch (e) {
+    return href;
+  }
+}
+
 export default async function decorate(block) {
   const placeholders = await fetchPlaceholders();
-  const source = block.querySelector('a[href]') ? block.querySelector('a[href]').href : '/query-index.json';
+  const source = resolveSource(block.querySelector('a[href]')?.href);
   block.innerHTML = '';
   block.append(
     searchBox(block, { source, placeholders }),
