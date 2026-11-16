@@ -17,3 +17,6 @@ dist/
 .claude/
 migration-work/navigation-validation/
 migration-work/footer-validation/
+
+# Site scope / catalog output (screenshots and analysis, not site code)
+catalog/
