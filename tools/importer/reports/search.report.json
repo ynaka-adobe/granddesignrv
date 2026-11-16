@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/search",
+  "path": "search",
+  "timestamp": "2026-11-16T04:44:33.919Z",
+  "title": "Search",
+  "template": "search-results",
+  "blocks": [
+    "search"
+  ],
+  "importScript": "3e71901afdf0"
+}

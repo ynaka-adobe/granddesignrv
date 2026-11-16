@@ -1384,8 +1384,29 @@
       "urls": [
         "https://www.granddesignrv.com/search"
       ],
-      "description": "Search page with no static content; results are rendered dynamically",
-      "blocks": []
+      "description": "Site search page: a search box with results from the site query index.",
+      "blocks": [
+        {
+          "name": "search",
+          "instances": [
+            ".search-results-page > .cmp-search"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Search",
+          "selector": [
+            ".search-results-page"
+          ],
+          "style": null,
+          "blocks": [
+            "search"
+          ],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "filter-listing",

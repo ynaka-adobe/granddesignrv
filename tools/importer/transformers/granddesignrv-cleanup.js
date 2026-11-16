@@ -35,6 +35,19 @@ function removeAll(root, selectors) {
 
 export default function transform(hookName, element, payload) {
   if (hookName === 'beforeTransform') {
+    // Search page only: the page has no content of its own; its search box is the footer's
+    // quick-search. Move it into the page (before the footer chrome is removed below) so the
+    // search parser can turn it into the EDS search block.
+    if (payload && payload.template && payload.template.name === 'search-results') {
+      const quick = element.querySelector('.quicksearch .cmp-search');
+      if (quick && !element.querySelector('.search-results-page')) {
+        const holder = element.ownerDocument.createElement('div');
+        holder.className = 'search-results-page';
+        holder.append(quick);
+        element.prepend(holder);
+      }
+    }
+
     // Site header experience fragment (logo, nav, search).
     safeQueryAll(element, '.cmp-experiencefragment--header').forEach((xf) => {
       const wrapper = xf.closest('.experiencefragment') || xf;
