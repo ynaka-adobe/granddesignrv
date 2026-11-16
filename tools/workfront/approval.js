@@ -27,7 +27,7 @@ async function runtimeCall(params) {
 }
 
 async function ensureToken() {
-  let token = storedToken();
+  const token = storedToken();
   if (token) return token;
   const refresh = storedRefresh();
   if (refresh) {
@@ -157,9 +157,9 @@ function renderConnect() {
   document.body.innerHTML = '';
   const shell = el('div', 'ap-shell');
   const header = el('div', 'ap-header');
-  header.innerHTML = `<span class="ap-logo">CAT</span><span class="ap-title">Mark Task Complete</span>`;
+  header.innerHTML = '<span class="ap-logo">CAT</span><span class="ap-title">Mark Task Complete</span>';
   const body = el('div', 'ap-connect');
-  body.innerHTML = `<p>Connect your Workfront account to mark tasks as complete.</p>`;
+  body.innerHTML = '<p>Connect your Workfront account to mark tasks as complete.</p>';
   const btn = el('button', 'btn-connect', 'Connect Workfront');
   btn.addEventListener('click', () => {
     // Redirect URI is the Runtime action itself — a fixed, domain-independent
@@ -167,7 +167,7 @@ function renderConnect() {
     // postMessages the tokens back to this page's origin (passed via `state`).
     const url = `https://${WF_DOMAIN}/integrations/oauth2/authorize?`
       + `client_id=${WF_CLIENT_ID}&response_type=code&redirect_uri=${encodeURIComponent(RUNTIME_URL)}`
-      + `&state=${encodeURIComponent(location.origin)}`;
+      + `&state=${encodeURIComponent(window.location.origin)}`;
     window.open(url, '_blank', 'width=620,height=720');
 
     const onMessage = (e) => {
@@ -189,7 +189,7 @@ async function renderApp() {
   const shell = el('div', 'ap-shell');
 
   const header = el('div', 'ap-header');
-  header.innerHTML = `<span class="ap-logo">CAT</span><span class="ap-title">Mark Task Complete</span>`;
+  header.innerHTML = '<span class="ap-logo">CAT</span><span class="ap-title">Mark Task Complete</span>';
 
   const body = el('div', 'ap-body');
 
@@ -214,7 +214,7 @@ async function renderApp() {
   taskSearch.style.display = 'none';
 
   const taskList = el('div', 'task-list');
-  taskList.innerHTML = `<div class="ap-empty">Select a project to see tasks</div>`;
+  taskList.innerHTML = '<div class="ap-empty">Select a project to see tasks</div>';
 
   taskGroup.append(taskLabel, taskSearch, taskList);
   body.append(projGroup, taskGroup);
@@ -229,8 +229,8 @@ async function renderApp() {
     if (!projects.length) {
       projSelect.innerHTML = '<option value="">No projects found</option>';
     } else {
-      projSelect.innerHTML = '<option value="">Select a project…</option>'
-        + projects.map((p) => `<option value="${esc(p.ID)}">${esc(p.name)}</option>`).join('');
+      projSelect.innerHTML = `<option value="">Select a project…</option>${
+        projects.map((p) => `<option value="${esc(p.ID)}">${esc(p.name)}</option>`).join('')}`;
     }
   } catch {
     projSelect.innerHTML = '<option value="">Failed to load projects</option>';
@@ -239,13 +239,13 @@ async function renderApp() {
   projSelect.addEventListener('change', async () => {
     const projectId = projSelect.value;
     if (!projectId) {
-      taskList.innerHTML = `<div class="ap-empty">Select a project to see tasks</div>`;
+      taskList.innerHTML = '<div class="ap-empty">Select a project to see tasks</div>';
       taskSearch.style.display = 'none';
       allTasks = [];
       return;
     }
     taskSearch.style.display = 'none';
-    taskList.innerHTML = `<div class="ap-spinner">Loading tasks…</div>`;
+    taskList.innerHTML = '<div class="ap-spinner">Loading tasks…</div>';
     try {
       const data = await api({ resource: 'tasks', projectId });
       allTasks = data?.data || [];
@@ -253,7 +253,7 @@ async function renderApp() {
       taskSearch.style.display = allTasks.length > 4 ? '' : 'none';
       renderTasks(allTasks, taskList);
     } catch {
-      taskList.innerHTML = `<div class="ap-empty">Failed to load tasks</div>`;
+      taskList.innerHTML = '<div class="ap-empty">Failed to load tasks</div>';
     }
   });
 
@@ -266,7 +266,7 @@ async function renderApp() {
 function renderTasks(tasks, container) {
   container.innerHTML = '';
   if (!tasks.length) {
-    container.innerHTML = `<div class="ap-empty">No tasks found</div>`;
+    container.innerHTML = '<div class="ap-empty">No tasks found</div>';
     return;
   }
   tasks.forEach((task) => {
@@ -284,7 +284,9 @@ function renderTasks(tasks, container) {
         btn.disabled = true;
         btn.textContent = '…';
         try {
-          await api({ resource: 'update_task', taskId: task.ID, status: 'CPL', percentComplete: 100 });
+          await api({
+            resource: 'update_task', taskId: task.ID, status: 'CPL', percentComplete: 100,
+          });
           task.status = 'CPL';
           item.classList.add('done');
           tag.textContent = 'Complete';

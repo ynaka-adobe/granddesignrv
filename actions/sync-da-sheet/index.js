@@ -88,7 +88,7 @@ async function getImsToken(params) {
 }
 
 async function fetchSheet(org, repo, path, accessToken) {
-  const url = `${DA_API_BASE}/${org}/${repo}${path.startsWith('/') ? path : '/' + path}`;
+  const url = `${DA_API_BASE}/${org}/${repo}${path.startsWith('/') ? path : `/${path}`}`;
   const resp = await fetch(url, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -104,7 +104,7 @@ async function fetchSheet(org, repo, path, accessToken) {
 }
 
 async function updateSheet(org, repo, path, content, accessToken) {
-  const url = `${DA_API_BASE}/${org}/${repo}${path.startsWith('/') ? path : '/' + path}`;
+  const url = `${DA_API_BASE}/${org}/${repo}${path.startsWith('/') ? path : `/${path}`}`;
 
   const formData = new FormData();
   formData.append('data', new Blob([JSON.stringify(content)], { type: 'application/json' }), path.split('/').pop());

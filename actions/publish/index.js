@@ -118,10 +118,9 @@ async function main(params) {
   }
 
   // paths: comma-separated; empty segment => homepage. Default = homepage only.
-  const paths =
-    typeof params.paths === 'string'
-      ? params.paths.split(',').map((p) => p.trim())
-      : [''];
+  const paths = typeof params.paths === 'string'
+    ? params.paths.split(',').map((p) => p.trim())
+    : [''];
 
   let token = params.accessToken;
   let authError = null;
@@ -143,6 +142,9 @@ async function main(params) {
   }
 
   // Preview each path, then live each path. Report every result.
+  // Deliberately sequential: the admin API rate-limits concurrent calls, and every
+  // path must be previewed before any of them is published live.
+  /* eslint-disable no-restricted-syntax, no-await-in-loop */
   const results = [];
   for (const p of paths) {
     results.push(await adminPost('preview', targetOrg, targetRepo, p, token));
@@ -150,6 +152,7 @@ async function main(params) {
   for (const p of paths) {
     results.push(await adminPost('live', targetOrg, targetRepo, p, token));
   }
+  /* eslint-enable no-restricted-syntax, no-await-in-loop */
 
   const allOk = results.every((r) => r.ok);
 

@@ -380,10 +380,31 @@ function decorateSections(main) {
 }
 
 /**
+ * Origin for Document Authoring (nx) modules loaded at runtime, e.g. by the sidekick.
+ */
+export const NX_ORIGIN = 'https://da.live/nx';
+
+/**
+ * Moves Universal Editor instrumentation attributes from one element to another, so a
+ * block can rebuild its DOM without losing authoring affordances.
+ * @param {Element} from The element to read the instrumentation from
+ * @param {Element} to The element to move the instrumentation to (omit to just strip it)
+ */
+export function moveInstrumentation(from, to) {
+  if (!from) return;
+  const attrs = [...from.attributes]
+    .map(({ nodeName }) => nodeName)
+    .filter((attr) => attr.startsWith('data-aue') || attr.startsWith('data-richtext'));
+  attrs.forEach((attr) => {
+    if (to) to.setAttribute(attr, from.getAttribute(attr));
+    from.removeAttribute(attr);
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
-// eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);

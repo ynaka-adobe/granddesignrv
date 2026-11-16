@@ -16,7 +16,9 @@ async function fetchActivities() {
 
 async function fetchActivityDetails(activityId, activityType) {
   try {
-    const response = await runtimeFetch({ resource: 'activity', id: activityId, type: activityType, version: 'v3' });
+    const response = await runtimeFetch({
+      resource: 'activity', id: activityId, type: activityType, version: 'v3',
+    });
     console.log('Raw activity details response:', response);
     return response ?? {};
   } catch (err) {
@@ -35,7 +37,9 @@ async function fetchAudiences() {
   return audiences ?? [];
 }
 
-async function createXtActivity({ name, mbox, offerId, audienceId }) {
+async function createXtActivity({
+  name, mbox, offerId, audienceId,
+}) {
   return runtimeFetch({
     resource: 'create-xt',
     name,
@@ -156,7 +160,9 @@ async function showCreateXtModal(onCreated) {
       errEl.textContent = '';
 
       try {
-        const result = await createXtActivity({ name, mbox, offerId, audienceId });
+        const result = await createXtActivity({
+          name, mbox, offerId, audienceId,
+        });
         if (result.httpStatus >= 400 || result.error) {
           throw new Error(result.errors?.[0]?.message || result.error || 'Create failed');
         }
@@ -375,20 +381,20 @@ function renderActionBar(onActivityCreated) {
       console.log('Using mbox name:', mboxName);
 
       // Build empty target-offer block with one empty row
-      const offerBlockHtml = `<table><tbody>`
-        + `<tr><td>target-offer</td></tr>`
-        + `<tr><td></td></tr>`
-        + `</tbody></table>`;
+      const offerBlockHtml = '<table><tbody>'
+        + '<tr><td>target-offer</td></tr>'
+        + '<tr><td></td></tr>'
+        + '</tbody></table>';
 
       // Build metadata block with activity configuration
-      const metadataBlockHtml = `<table><tbody>`
-        + `<tr><td colspan="2">metadata</td></tr>`
+      const metadataBlockHtml = '<table><tbody>'
+        + '<tr><td colspan="2">metadata</td></tr>'
         + `<tr><td>Experience</td><td>${activity.name}</td></tr>`
-        + `<tr><td>target</td><td>on</td></tr>`
+        + '<tr><td>target</td><td>on</td></tr>'
         + `<tr><td>target-mbox-hero</td><td>${mboxName}</td></tr>`
-        + `<tr><td>target-mbox-hero-selector</td><td>.target-offer</td></tr>`
+        + '<tr><td>target-mbox-hero-selector</td><td>.target-offer</td></tr>'
         + `<tr><td>activity</td><td>${activity.id}</td></tr>`
-        + `</tbody></table>`;
+        + '</tbody></table>';
 
       // Send both blocks to be inserted into the page
       daContext.actions.sendHTML(offerBlockHtml + metadataBlockHtml);

@@ -1,1 +1,10 @@
 helix-importer-ui
+
+# Vendored third-party libraries — not ours to style
+deps/
+
+# Upstream AEM experimentation plugin, vendored as-is
+plugins/experimentation/
+
+# Generated importer bundles
+tools/importer/*.bundle.js

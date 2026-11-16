@@ -4,19 +4,12 @@ import DA_SDK from 'https://da.live/nx/utils/sdk.js';
 const TARGET_RUNTIME = 'https://332794-868ceruleanwhale.adobeioruntime.net/api/v1/web/default/target-activities';
 const WF_RUNTIME = 'https://3635370-144scarletlobster.adobeioruntime.net/api/v1/web/default/workfront-planning';
 const WF_DOMAIN = 'adoberm.my.workfront.com';
-const WF_CLIENT_ID = '56e219a0a1eeae8feb55c444e3d8a8b6';
 
 // ── Utilities ──────────────────────────────────────────────────────────────────
 
 function esc(str) {
-  return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function spinner() {
-  const w = document.createElement('div');
-  w.className = 'spinner-wrap';
-  w.innerHTML = '<div class="spinner"></div>';
-  return w;
+  return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 function emptyState(msg) {
@@ -57,15 +50,6 @@ async function fetchTargetActivityLocation(activityId, activityType) {
   return promise;
 }
 
-async function fetchTargetReporting(activityId) {
-  try {
-    const json = await targetFetch({ resource: 'reporting', activityId });
-    return json.report ?? null;
-  } catch {
-    return null;
-  }
-}
-
 async function activateTargetActivity(activityId) {
   const json = await targetFetch({ resource: 'activate', activityId });
   if (json.error) throw new Error(json.error);
@@ -85,8 +69,6 @@ async function createTargetActivity(params) {
 }
 
 // ── Workfront OAuth ────────────────────────────────────────────────────────────
-
-const WF_AUTH_CHANNEL = 'cmc_wf_auth';
 
 function wfStoredToken() {
   const token = localStorage.getItem('cmc_wf_token');
@@ -115,7 +97,7 @@ async function wfRuntimeCall(params) {
 }
 
 async function wfEnsureToken() {
-  let token = wfStoredToken();
+  const token = wfStoredToken();
   if (token) return token;
   const refresh = wfStoredRefresh();
   if (refresh) {
@@ -142,12 +124,12 @@ async function wfApi(params) {
 
 function targetStatusToDisplay(state) {
   const map = {
-    live:     { key: 'live',    label: 'Live',             dot: 'live' },
-    inactive: { key: 'ready',   label: 'Ready to Publish', dot: 'ready' },
-    saved:    { key: 'draft',   label: 'Draft',            dot: 'draft' },
-    paused:   { key: 'paused',  label: 'Paused',           dot: 'paused' },
-    archived: { key: 'archived',label: 'Archived',         dot: 'archived' },
-    deleted:  { key: 'archived',label: 'Archived',         dot: 'archived' },
+    live: { key: 'live', label: 'Live', dot: 'live' },
+    inactive: { key: 'ready', label: 'Ready to Publish', dot: 'ready' },
+    saved: { key: 'draft', label: 'Draft', dot: 'draft' },
+    paused: { key: 'paused', label: 'Paused', dot: 'paused' },
+    archived: { key: 'archived', label: 'Archived', dot: 'archived' },
+    deleted: { key: 'archived', label: 'Archived', dot: 'archived' },
   };
   return map[state] || { key: state, label: state, dot: 'paused' };
 }
@@ -422,7 +404,7 @@ function buildDetailPanel() {
     // Activity info
     const infoSection = document.createElement('div');
     infoSection.className = 'detail-section';
-    const fmtDate = (d) => d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—';
+    const fmtDate = (d) => (d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—');
     infoSection.innerHTML = `<div class="detail-section-title">Activity Details</div>
       <div class="detail-field"><div class="detail-field-label">Status</div>
         <div class="detail-field-value"><span class="campaign-status ${status.key}" style="display:inline-flex;align-items:center;gap:6px">
@@ -461,7 +443,7 @@ function buildDetailPanel() {
 
     // Target deep-link
     const targetLink = document.createElement('a');
-    targetLink.href = `https://experience.adobe.com/#/@adoberm/target/activities`;
+    targetLink.href = 'https://experience.adobe.com/#/@adoberm/target/activities';
     targetLink.target = '_blank';
     targetLink.rel = 'noopener';
     targetLink.style.cssText = 'display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#eb1000;color:#fff;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;margin-top:4px';
@@ -507,10 +489,10 @@ function buildBlockHTML(campaignType, variant, campaignName, mbox) {
   const table = (header, contentRows) => {
     const cols = Math.max(...contentRows.map((r) => r.length), 1);
     const mboxRow = `<tr><td>Mbox</td><td>${esc(mbox)}</td></tr>`;
-    return `<table>`
+    return '<table>'
       + `<thead><tr><th colspan="${cols}">${header}</th></tr></thead>`
       + `<tbody>${contentRows.map(row).join('')}${mboxRow}</tbody>`
-      + `</table>`;
+      + '</table>';
   };
 
   if (campaignType === 'banner') {
@@ -526,16 +508,16 @@ function buildBlockHTML(campaignType, variant, campaignName, mbox) {
       ]);
     }
     if (variant === 'cards') {
-      return `<h2>${esc(campaignName)}</h2>`
-        + table('Cards', [
+      return `<h2>${esc(campaignName)}</h2>${
+        table('Cards', [
           ['<p>[Add image]</p><p>[Card 1 title]</p><p>[Description]</p>',
-           '<p>[Add image]</p><p>[Card 2 title]</p><p>[Description]</p>',
-           '<p>[Add image]</p><p>[Card 3 title]</p><p>[Description]</p>'],
-        ]);
+            '<p>[Add image]</p><p>[Card 2 title]</p><p>[Description]</p>',
+            '<p>[Add image]</p><p>[Card 3 title]</p><p>[Description]</p>'],
+        ])}`;
     }
     // hero
-    return table('Hero', [['<p>[Add hero image]</p>']])
-      + `<h2>${esc(campaignName)}</h2><p>[Add campaign description]</p><p><a href="#">Shop Now</a></p>`;
+    return `${table('Hero', [['<p>[Add hero image]</p>']])
+    }<h2>${esc(campaignName)}</h2><p>[Add campaign description]</p><p><a href="#">Shop Now</a></p>`;
   }
 
   if (campaignType === 'specials') {
@@ -576,8 +558,8 @@ function showToast(msg, type = 'success') {
 }
 
 const CAMPAIGN_TYPES = [
-  { value: 'banner',   label: 'Create a Banner' },
-  { value: 'landing',  label: 'Create a Campaign Landing Page' },
+  { value: 'banner', label: 'Create a Banner' },
+  { value: 'landing', label: 'Create a Campaign Landing Page' },
   { value: 'specials', label: 'Create Specials' },
 ];
 
@@ -928,7 +910,9 @@ async function showNewCampaignModal(wfProjects, sdk, onCreated) {
         }
 
         // 2. Create Target activity with the variant-derived mbox
-        const result = await createTargetActivity({ name, mbox, campaignType, variant });
+        const result = await createTargetActivity({
+          name, mbox, campaignType, variant,
+        });
 
         close();
         showToast(`✓ "${name}" created — mbox: ${mbox}`);
@@ -949,14 +933,6 @@ async function showNewCampaignModal(wfProjects, sdk, onCreated) {
 }
 
 // ── WF connect prompt ──────────────────────────────────────────────────────────
-
-// Redirect URI is the Runtime action itself — a fixed, domain-independent
-// URL registered once with Workfront. It exchanges the code and postMessages
-// the tokens back to this page's origin (passed via `state`).
-function buildWfAuthUrl() {
-  return `https://${WF_DOMAIN}/integrations/oauth2/authorize?client_id=${WF_CLIENT_ID}&response_type=code&redirect_uri=${encodeURIComponent(WF_RUNTIME)}`
-    + `&state=${encodeURIComponent(location.origin)}`;
-}
 
 // ── Main app ───────────────────────────────────────────────────────────────────
 
@@ -989,7 +965,7 @@ async function buildApp(activities, wfProjects, sdk) {
 
   const titleWrap = document.createElement('div');
   titleWrap.className = 'header-title-wrap';
-  titleWrap.innerHTML = `<h1 class="header-title">Personalization Tool</h1><div class="header-title-underline"></div>`;
+  titleWrap.innerHTML = '<h1 class="header-title">Personalization Tool</h1><div class="header-title-underline"></div>';
 
   const headerActions = document.createElement('div');
   headerActions.className = 'header-actions';
@@ -999,7 +975,7 @@ async function buildApp(activities, wfProjects, sdk) {
   newBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
     <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
   </svg> New Campaign`;
-  newBtn.addEventListener('click', () => showNewCampaignModal(wfProjects, sdk, (result) => { location.reload(); }));
+  newBtn.addEventListener('click', () => showNewCampaignModal(wfProjects, sdk, () => { window.location.reload(); }));
 
   const bellBtn = document.createElement('button');
   bellBtn.className = 'header-icon-btn';
@@ -1055,7 +1031,7 @@ async function buildApp(activities, wfProjects, sdk) {
   </svg> Sort by:`;
   const sortSelect = document.createElement('select');
   sortSelect.className = 'sort-select';
-  sortSelect.innerHTML = `<option value="date">Date Modified</option><option value="status">Status</option><option value="name">Name</option>`;
+  sortSelect.innerHTML = '<option value="date">Date Modified</option><option value="status">Status</option><option value="name">Name</option>';
   sortWrap.append(sortSelect);
 
   tabSortBar.append(tabList, sortWrap);
@@ -1079,7 +1055,7 @@ async function buildApp(activities, wfProjects, sdk) {
       const wfProj = extra || wfProjects?.find((p) => p._linkedCampaignId === String(activity.id)) || null;
       detailPanel.show(activity, wfProj);
     } else if (action === 'monitor') {
-      window.open(`https://experience.adobe.com/#/@adoberm/target/activities`, '_blank', 'noopener');
+      window.open('https://experience.adobe.com/#/@adoberm/target/activities', '_blank', 'noopener');
     } else if (action === 'kebab') {
       showKebabMenu(activity, extra, (kAction, act) => handleKebabAction(kAction, act));
     } else if (action === 'refresh') {
@@ -1092,7 +1068,7 @@ async function buildApp(activities, wfProjects, sdk) {
       const wfProj = wfProjects?.find((p) => p._linkedCampaignId === String(activity.id)) || null;
       detailPanel.show(activity, wfProj);
     } else if (action === 'monitor') {
-      window.open(`https://experience.adobe.com/#/@adoberm/target/activities`, '_blank', 'noopener');
+      window.open('https://experience.adobe.com/#/@adoberm/target/activities', '_blank', 'noopener');
     } else if (action === 'activate') {
       try {
         await activateTargetActivity(activity.id);
@@ -1110,7 +1086,7 @@ async function buildApp(activities, wfProjects, sdk) {
         alert(`Failed to pause: ${err.message}`);
       }
     } else if (action === 'archive') {
-      if (confirm(`Archive "${activity.name}"? It will move to the Archived tab.`)) {
+      if (window.confirm(`Archive "${activity.name}"? It will move to the Archived tab.`)) {
         activity.state = 'archived';
         renderList();
       }
@@ -1134,7 +1110,9 @@ async function buildApp(activities, wfProjects, sdk) {
     if (sortKey === 'name') return [...list].sort((a, b) => (a.name || '').localeCompare(b.name || ''));
     if (sortKey === 'date') return [...list].sort((a, b) => new Date(b.modifiedAt || 0) - new Date(a.modifiedAt || 0));
     // status: live first, then ready, then others
-    const order = { live: 0, inactive: 1, saved: 2, paused: 3 };
+    const order = {
+      live: 0, inactive: 1, saved: 2, paused: 3,
+    };
     return [...list].sort((a, b) => (order[a.state] ?? 9) - (order[b.state] ?? 9));
   }
 
@@ -1217,28 +1195,76 @@ async function buildApp(activities, wfProjects, sdk) {
 // ── Sample activities (shown when Target runtime is unavailable) ───────────────
 
 const SAMPLE_ACTIVITIES = [
-  { id: 1001, name: 'DuPont Connect', state: 'live', type: 'xt', modifiedAt: '2026-06-15T00:00:00Z',
-    campaignType: 'banner', variant: 'leader-board', mbox: 'banner-leader-board',
+  {
+    id: 1001,
+    name: 'DuPont Connect',
+    state: 'live',
+    type: 'xt',
+    modifiedAt: '2026-06-15T00:00:00Z',
+    campaignType: 'banner',
+    variant: 'leader-board',
+    mbox: 'banner-leader-board',
     description: 'A promotional campaign highlighting DuPont\'s advanced materials portfolio, helping industrial customers source Tyvek, Kevlar and Nomex products through a streamlined online purchasing experience.',
-    metrics: [{ metricType: 'display', count: 15 }, { metricType: 'click', count: 10 }, { isConversionMetric: true, count: 6 }] },
-  { id: 1002, name: 'Water Filtration Essentials', state: 'live', type: 'xt', modifiedAt: '2026-06-20T00:00:00Z',
-    campaignType: 'banner', variant: 'large-rectangle', mbox: 'banner-large-rectangle',
+    metrics: [{ metricType: 'display', count: 15 }, { metricType: 'click', count: 10 }, { isConversionMetric: true, count: 6 }],
+  },
+  {
+    id: 1002,
+    name: 'Water Filtration Essentials',
+    state: 'live',
+    type: 'xt',
+    modifiedAt: '2026-06-20T00:00:00Z',
+    campaignType: 'banner',
+    variant: 'large-rectangle',
+    mbox: 'banner-large-rectangle',
     description: 'An educational campaign focused on water treatment and reverse osmosis system maintenance. Customers can access DuPont technical guides, sizing tools and replacement elements, with easy online ordering.',
-    metrics: [{ metricType: 'display', count: 23 }, { metricType: 'click', count: 18 }, { isConversionMetric: true, count: 7 }] },
-  { id: 1003, name: 'Optimize Your Production Line', state: 'inactive', type: 'ab', modifiedAt: '2026-07-01T00:00:00Z',
-    campaignType: 'banner', variant: 'medium-rectangle', mbox: 'banner-medium-rectangle',
+    metrics: [{ metricType: 'display', count: 23 }, { metricType: 'click', count: 18 }, { isConversionMetric: true, count: 7 }],
+  },
+  {
+    id: 1003,
+    name: 'Optimize Your Production Line',
+    state: 'inactive',
+    type: 'ab',
+    modifiedAt: '2026-07-01T00:00:00Z',
+    campaignType: 'banner',
+    variant: 'medium-rectangle',
+    mbox: 'banner-medium-rectangle',
     description: 'A promotional campaign offering exclusive pricing on DuPont performance materials. Focused on improving throughput and durability with genuine DuPont products and accessories.',
-    metrics: [] },
-  { id: 1004, name: 'Solution Finder Pro', state: 'live', type: 'xt', modifiedAt: '2026-06-10T00:00:00Z',
-    campaignType: 'landing', variant: 'hero', mbox: 'landing-hero',
+    metrics: [],
+  },
+  {
+    id: 1004,
+    name: 'Solution Finder Pro',
+    state: 'live',
+    type: 'xt',
+    modifiedAt: '2026-06-10T00:00:00Z',
+    campaignType: 'landing',
+    variant: 'hero',
+    mbox: 'landing-hero',
     description: 'Personalized product discovery helping customers identify the right DuPont material for their specific application with AI-powered recommendations.',
-    metrics: [{ metricType: 'display', count: 41 }, { metricType: 'click', count: 29 }, { isConversionMetric: true, count: 14 }] },
-  { id: 1005, name: 'Distributor Locator Campaign', state: 'inactive', type: 'xt', modifiedAt: '2026-07-05T00:00:00Z',
-    campaignType: 'landing', variant: 'split', mbox: 'landing-split',
+    metrics: [{ metricType: 'display', count: 41 }, { metricType: 'click', count: 29 }, { isConversionMetric: true, count: 14 }],
+  },
+  {
+    id: 1005,
+    name: 'Distributor Locator Campaign',
+    state: 'inactive',
+    type: 'xt',
+    modifiedAt: '2026-07-05T00:00:00Z',
+    campaignType: 'landing',
+    variant: 'split',
+    mbox: 'landing-split',
     description: 'Drive customers to their nearest authorized DuPont distributor with personalized location-based messaging and exclusive distributor-specific offers.',
-    metrics: [] },
-  { id: 1006, name: 'Winter Building Envelope Check', state: 'archived', type: 'ab', modifiedAt: '2025-12-01T00:00:00Z',
-    campaignType: 'specials', variant: 'seasonal', mbox: 'specials-seasonal',
+    metrics: [],
+  },
+  {
+    id: 1006,
+    name: 'Winter Building Envelope Check',
+    state: 'archived',
+    type: 'ab',
+    modifiedAt: '2025-12-01T00:00:00Z',
+    campaignType: 'specials',
+    variant: 'seasonal',
+    mbox: 'specials-seasonal',
     description: 'Seasonal campaign promoting Tyvek weatherization packages and cold-weather building envelope solutions.',
-    metrics: [{ metricType: 'display', count: 87 }, { metricType: 'click', count: 54 }, { isConversionMetric: true, count: 22 }] },
+    metrics: [{ metricType: 'display', count: 87 }, { metricType: 'click', count: 54 }, { isConversionMetric: true, count: 22 }],
+  },
 ];

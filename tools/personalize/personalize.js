@@ -14,23 +14,23 @@ const DEFAULT_MBOX = 'xsc-demo-personalize';
 
 // DA table markup for a `target-offer` block: name row, mbox row, default content.
 function targetOfferBlockHtml(mboxName) {
-  return `<table><tbody>`
-    + `<tr><td>target-offer</td></tr>`
+  return '<table><tbody>'
+    + '<tr><td>target-offer</td></tr>'
     + `<tr><td>${mboxName}</td></tr>`
-    + `<tr><td>Default content — replaced by the Target offer for the matching audience.</td></tr>`
-    + `</tbody></table>`;
+    + '<tr><td>Default content — replaced by the Target offer for the matching audience.</td></tr>'
+    + '</tbody></table>';
 }
 
 // DA Metadata block that enables Target on the page and points the hero-mbox
 // swap at the target-offer block. `target-at-js` is intentionally omitted —
 // head.html already sets it site-wide, and a duplicate breaks the loader.
 function targetMetadataBlockHtml(mboxName) {
-  return `<table><tbody>`
-    + `<tr><td>Metadata</td></tr>`
-    + `<tr><td>target</td><td>on</td></tr>`
+  return '<table><tbody>'
+    + '<tr><td>Metadata</td></tr>'
+    + '<tr><td>target</td><td>on</td></tr>'
     + `<tr><td>target-mbox-hero</td><td>${mboxName}</td></tr>`
-    + `<tr><td>target-mbox-hero-selector</td><td>.target-offer</td></tr>`
-    + `</tbody></table>`;
+    + '<tr><td>target-mbox-hero-selector</td><td>.target-offer</td></tr>'
+    + '</tbody></table>';
 }
 
 async function fetchAudiences() {
@@ -219,7 +219,7 @@ function renderAudiencesTable(audiences, onSelectionChange = () => {}) {
   selectAll.addEventListener('change', () => {
     selected.clear();
     if (selectAll.checked) audiences.forEach((a) => selected.add(a.id));
-    rowBoxes.forEach((box, i) => {
+    rowBoxes.forEach((box) => {
       box.checked = selectAll.checked;
       box.closest('tr').classList.toggle('selected', selectAll.checked);
     });

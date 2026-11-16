@@ -262,8 +262,8 @@ function init() {
   const region = document.getElementById('persona-region');
 
   select.innerHTML = PERSONAS.map((p, i) => `<option value="${i}">${p.name}</option>`).join('');
-  region.innerHTML = '<option value="">Region (state)</option>'
-    + REGIONS.map((c) => `<option value="${c}">${c}</option>`).join('');
+  region.innerHTML = `<option value="">Region (state)</option>${
+    REGIONS.map((c) => `<option value="${c}">${c}</option>`).join('')}`;
 
   readParamsIntoControls(select, loggedin, region);
 
