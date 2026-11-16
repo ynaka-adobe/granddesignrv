@@ -59,9 +59,19 @@ function getIcon(document, card) {
   return img;
 }
 
+/*
+ * Owner Support Archive tiles: the label is a rich-text heading (.cmp-text h3) instead of a
+ * .cmp-title. Used only when the strip has no .cmp-title at all (homepage strips always do), so
+ * the homepage output is unchanged. Same Cards output (2 columns): [icon image] [linked heading].
+ */
+function textLabels(element) {
+  return Array.from(element.querySelectorAll('.cmp-text h2, .cmp-text h3, .cmp-text h4'));
+}
+
 export default function parse(element, { document }) {
   const cells = [];
-  const titles = Array.from(element.querySelectorAll('.cmp-title'));
+  let titles = Array.from(element.querySelectorAll('.cmp-title'));
+  if (!titles.length) titles = textLabels(element);
 
   titles.forEach((title) => {
     const label = title.textContent.replace(/\s+/g, ' ').trim();

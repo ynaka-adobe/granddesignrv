@@ -208,6 +208,78 @@
           "instances": [
             ".customercomment .q.grid-item"
           ]
+        },
+        {
+          "name": "model-subnav",
+          "instances": [
+            ".sticky-nav .cmp-experiencefragment--secondary-navigation"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            ".container.responsivegrid.full-width:has(> section.dynamic-media-container > .dynamic-media-container__image picture):not(:has(.cmp-text, .cmp-button))"
+          ]
+        },
+        {
+          "name": "cards-callouts",
+          "instances": [
+            ".aem-Grid:has(> .container.responsivegrid.inner-block__center > .cmp-container[onclick*=\"location.href\"] .cmp-image)"
+          ]
+        },
+        {
+          "name": "columns-image-text",
+          "instances": [
+            ".outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title h1):has(+ .container.responsivegrid > .cmp-container > .aem-Grid > .image:only-child)"
+          ]
+        },
+        {
+          "name": "table",
+          "instances": [
+            ".outer-block .cmp-text table"
+          ]
+        },
+        {
+          "name": "video-inline",
+          "instances": [
+            ".outer-block .inner-block__right .dynamicmedia:has([data-asset-type=\"videoavs\"])"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".gallerycontainer:has(.gallery-items a.teaser img)"
+          ]
+        },
+        {
+          "name": "quote-rating",
+          "instances": [
+            ".customerrating .q.grid-item"
+          ]
+        },
+        {
+          "name": "columns-image-text",
+          "instances": [
+            ".cmp-blog-posts > .featured-post"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".filter-items__items__list:has(> .card)"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".cmp-experiencefragment--brochure-download .aem-Grid > .title + .container.responsivegrid:has(.cmp-download)"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".findadealer + .outer-block .aem-Grid > .inner-block__left:has(+ .inner-block__center + .inner-block__right)"
+          ]
         }
       ],
       "sections": [
@@ -283,6 +355,226 @@
           ],
           "defaultContent": [
             ".customercomment .reviewsheader h2"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Secondary navigation (owners / shopping tools)",
+          "selector": [
+            ".sticky-nav.sticky-nav--top"
+          ],
+          "style": "light-grey",
+          "blocks": [
+            "model-subnav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Teaser hero (full-width photo, optional title)",
+          "selector": [
+            ".container.responsivegrid.full-width:has(> section.dynamic-media-container > .dynamic-media-container__image picture):not(:has(.cmp-text, .cmp-button))"
+          ],
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Owner resource links (icon tiles)",
+          "selector": [
+            ".aem-Grid:has(> .container.responsivegrid.inner-block__center > .cmp-container[onclick*=\"location.href\"] .cmp-image)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-callouts"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Article body (title, copy, intro columns, rally table, video, CTAs, form link)",
+          "selector": [
+            ".outer-block"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-text",
+            "table",
+            "video-inline"
+          ],
+          "defaultContent": [
+            ".outer-block .title",
+            ".outer-block .text",
+            ".outer-block .button",
+            ".outer-block .embed",
+            ".outer-block + .container.responsivegrid .button"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "Photo gallery",
+          "selector": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .gallerycontainer)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .gallerycontainer) > .cmp-container > .aem-Grid > .title"
+          ]
+        },
+        {
+          "id": "section-11",
+          "name": "Customer comments",
+          "selector": [
+            ".customerrating"
+          ],
+          "style": null,
+          "blocks": [
+            "quote-rating"
+          ],
+          "defaultContent": [
+            ".customerrating .reviewsheader h2"
+          ]
+        },
+        {
+          "id": "section-12",
+          "name": "Blog intro (Adventure More welcome)",
+          "selector": [
+            ".aem-Grid > .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-feature):has(.blogposts)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".title.heading-scale-feature",
+            ".title.heading-scale-feature + .text"
+          ]
+        },
+        {
+          "id": "section-13",
+          "name": "Blog category: Live (featured post, filters, latest posts)",
+          "selector": [
+            ".aem-Grid > .title.cmp-title--blog:has(+ .container.responsivegrid .blogposts [data-prop-blog-path$=\"/adventure-more/live\"])"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-text",
+            "cards"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--blog",
+            ".filter-items__title",
+            ".filter-items__filters__list"
+          ]
+        },
+        {
+          "id": "section-14",
+          "name": "Blog category: Learn",
+          "selector": [
+            ".aem-Grid > .container.responsivegrid:has(> .cmp-container > .aem-Grid > .blogposts [data-prop-blog-path$=\"/adventure-more/learn\"])"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-text",
+            "cards"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--blog",
+            ".filter-items__title",
+            ".filter-items__filters__list"
+          ]
+        },
+        {
+          "id": "section-15",
+          "name": "Blog category: Community",
+          "selector": [
+            ".aem-Grid > .container.responsivegrid:has(> .cmp-container > .aem-Grid > .blogposts [data-prop-blog-path$=\"/adventure-more/community\"])"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-text",
+            "cards"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--blog",
+            ".filter-items__title",
+            ".filter-items__filters__list"
+          ]
+        },
+        {
+          "id": "section-16",
+          "name": "Blog category: Buy",
+          "selector": [
+            ".aem-Grid > .container.responsivegrid:has(> .cmp-container > .aem-Grid > .blogposts [data-prop-blog-path$=\"/adventure-more/buy\"])"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-text",
+            "cards"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--blog",
+            ".filter-items__title"
+          ]
+        },
+        {
+          "id": "section-17",
+          "name": "Media contact form (News sidebar)",
+          "selector": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .gdrv-form)"
+          ],
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            ".cmp-title",
+            ".cmp-text",
+            ".gdrv-form"
+          ]
+        },
+        {
+          "id": "section-18",
+          "name": "Dealer benefits (Service / Relationship / Local Laws)",
+          "selector": [
+            ".findadealer + .container.responsivegrid.outer-block"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".outer-block > .cmp-container > .aem-Grid > .text"
+          ]
+        },
+        {
+          "id": "section-19",
+          "name": "Brochure group: Towable",
+          "selector": [
+            ".cmp-experiencefragment--brochure-download .aem-Grid > .title:has(+ .container.responsivegrid .cmp-download)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            ".title.heading-scale-secondary"
+          ]
+        },
+        {
+          "id": "section-20",
+          "name": "Brochure group: Motorized",
+          "selector": [
+            ".cmp-experiencefragment--brochure-download .aem-Grid > .title:has(+ .container.responsivegrid .cmp-download) ~ .title:has(+ .container.responsivegrid .cmp-download)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            ".title.heading-scale-secondary"
           ]
         }
       ]
@@ -427,7 +719,150 @@
         "https://www.granddesignrv.com/shopping-tools/dealership-rv-shows"
       ],
       "description": "Landing page that opens with a centered red display-font heading, followed by image-text columns, card groups and text sections",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            ".containerv2 > .cmp-container-v2:not(.cmp-container-v2--desktop-columns-1)",
+            ".related-content > .related-content__grid"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "RV Shows intro",
+          "selector": [
+            ".aem-Grid:has(> .showcalendar) > .title.heading-scale-feature"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            ".aem-Grid:has(> .showcalendar) > .title.heading-scale-feature",
+            ".aem-Grid:has(> .showcalendar) > .text"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Show calendar (grey panel)",
+          "selector": [
+            ".aem-Grid:has(> .showcalendar) > .showcalendar"
+          ],
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            ".aem-Grid:has(> .showcalendar) > .showcalendar"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Show submission note",
+          "selector": [
+            ".aem-Grid:has(> .showcalendar) > .showcalendar ~ .container.responsivegrid"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            ".aem-Grid:has(> .showcalendar) > .showcalendar ~ .container.responsivegrid .cmp-text"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Awards intro",
+          "selector": [
+            ".aem-Grid:has(> .relatedcontent) > .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-feature)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".aem-Grid:has(> .relatedcontent) > .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-feature) .title"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Award: first model (badge row, award titles, copy)",
+          "selector": [
+            ".aem-Grid:has(> .relatedcontent) > .container.responsivegrid:has(.containerv2)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) > .cmp-container > .aem-Grid > .title",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) > .cmp-container > .aem-Grid > .container.responsivegrid .title",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) > .cmp-container > .aem-Grid > .container.responsivegrid .text"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Award: second model (nested in the first group)",
+          "selector": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary)"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .title",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .containerv2 .cmp-image",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .text"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Award: next model group",
+          "selector": [
+            ".aem-Grid:has(> .relatedcontent) > .container.responsivegrid:has(.containerv2) ~ .container.responsivegrid:has(.containerv2)"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .title",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .containerv2 .cmp-image",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .title.heading-scale-primary) .text"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Dealer Satisfaction Index award",
+          "selector": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .image + .title.heading-scale-primary)"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .image + .title.heading-scale-primary) .cmp-image",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .image + .title.heading-scale-primary) .title",
+            ".container.responsivegrid:has(> .cmp-container > .aem-Grid > .image + .title.heading-scale-primary) .text"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Previous awards button",
+          "selector": [
+            ".aem-Grid:has(> .relatedcontent) > .button"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            ".aem-Grid:has(> .relatedcontent) > .button"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "Related posts",
+          "selector": [
+            ".aem-Grid:has(> .relatedcontent) > .relatedcontent"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".aem-Grid:has(> .relatedcontent) > .relatedcontent .related-content__title"
+          ]
+        }
+      ]
     },
     {
       "name": "text-page",
@@ -459,7 +894,72 @@
         "https://www.granddesignrv.com/toy-haulers/momentum"
       ],
       "description": "Landing page that opens with a grid of repeated cards, followed by text sections and interactive components",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "model-subnav",
+          "instances": [
+            ".sticky-nav .cmp-experiencefragment--secondary-navigation"
+          ]
+        },
+        {
+          "name": "columns-image-text",
+          "instances": [
+            "main .outer-block .inner-block__left:has(.cmp-title h1):has(+ .inner-block__right .cmp-image img)"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Company sub-navigation",
+          "selector": [
+            ".sticky-nav.sticky-nav--top"
+          ],
+          "style": "light-grey",
+          "blocks": [
+            "model-subnav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Careers intro",
+          "selector": [
+            "main .outer-block"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-text"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Ask An Expert intro (grey panel)",
+          "selector": [
+            ".aem-Grid--12 > .container.responsivegrid.margin-top-small:has(.cmp-title h1)"
+          ],
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            ".aem-Grid--12 > .container.responsivegrid.margin-top-small:has(.cmp-title h1) .cmp-title",
+            ".aem-Grid--12 > .container.responsivegrid.margin-top-small:has(.cmp-title h1) .cmp-text",
+            ".aem-Grid--12 > .container.responsivegrid.margin-top-small:has(.cmp-title h1) .cmp-image"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Ask An Expert topic questionnaire",
+          "selector": [
+            ".aem-Grid--12 > .container.responsivegrid.margin-top-small:has(.cmp-title h1) + .container.responsivegrid"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".aem-Grid--12 > .container.responsivegrid.margin-top-small:has(.cmp-title h1) + .container.responsivegrid .askexpert"
+          ]
+        }
+      ]
     },
     {
       "name": "display-heading-form-page",
@@ -471,15 +971,235 @@
         "https://www.granddesignrv.com/shop-inventory"
       ],
       "description": "Page that opens with a left-aligned red display-font heading, followed by intro columns, text and a form or interactive component",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "model-subnav",
+          "instances": [
+            ".sticky-nav .cmp-experiencefragment--secondary-navigation"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.aem-GridColumn--default--6:has(+ .container.responsivegrid.aem-GridColumn--default--3)"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.full-width:has(.inner-block__left .cmp-image img)"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.full-width ~ .container.responsivegrid.padding-bottom-medium"
+          ]
+        },
+        {
+          "name": "cards-category",
+          "instances": [
+            ".cmp-container > .cmp-imageGrid"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Company sub-navigation",
+          "selector": [
+            ".sticky-nav.sticky-nav--top"
+          ],
+          "style": "light-grey",
+          "blocks": [
+            "model-subnav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Our Story intro",
+          "selector": [
+            "main .outer-block"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            "main .outer-block > .cmp-container > .aem-Grid > .title.heading-scale-feature:first-child"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Our Story promise (dark band)",
+          "selector": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.full-width"
+          ],
+          "style": "dark",
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Our Story leadership team",
+          "selector": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.full-width + .title"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-promo"
+          ],
+          "defaultContent": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.full-width + .title"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Partners intro and logo grid",
+          "selector": [
+            ".container.responsivegrid:has(> .cmp-container > .cmp-imageGrid)"
+          ],
+          "style": "rule-top",
+          "blocks": [
+            "cards-category"
+          ],
+          "defaultContent": [
+            ".container.responsivegrid:has(> .cmp-container > .cmp-imageGrid) > .cmp-container > .title",
+            ".container.responsivegrid:has(> .cmp-container > .cmp-imageGrid) > .cmp-container > .text"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Shop Inventory intro",
+          "selector": [
+            ".container.responsivegrid:has(> .cmp-container > .shopInventory)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".container.responsivegrid:has(> .cmp-container > .shopInventory) > .cmp-container > .title",
+            ".container.responsivegrid:has(> .cmp-container > .shopInventory) > .cmp-container > .text"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Shop Inventory dealer search (grey panel)",
+          "selector": [
+            ".shopInventory"
+          ],
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            ".shopInventory"
+          ]
+        }
+      ]
     },
     {
       "name": "contact-page",
       "urls": [
         "https://www.granddesignrv.com/company/contact-us"
       ],
-      "description": "Page that opens with a left-aligned black display-font heading, followed by intro columns, a contact form and a long list of contact details",
-      "blocks": []
+      "description": "Contact page: company sub-navigation, intro (heading, copy, CTA, address), department contact sections separated by rules, and a store FAQ accordion.",
+      "blocks": [
+        {
+          "name": "model-subnav",
+          "instances": [
+            ".sticky-nav .cmp-experiencefragment--secondary-navigation"
+          ]
+        },
+        {
+          "name": "accordion-boxed",
+          "instances": [
+            "main .accordion.panelcontainer"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Company sub-navigation",
+          "selector": [
+            ".sticky-nav.sticky-nav--top"
+          ],
+          "style": "light-grey",
+          "blocks": [
+            "model-subnav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Contact intro",
+          "selector": [
+            "main .outer-block > .cmp-container > .aem-Grid > .title.heading-scale-feature"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "main .outer-block > .cmp-container > .aem-Grid > .title.heading-scale-feature",
+            "main .outer-block > .cmp-container > .aem-Grid > .text",
+            "main .outer-block > .cmp-container > .aem-Grid > .button"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "GDRV Inside Sales Team",
+          "selector": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:nth-child(6)",
+            "main .outer-block > .cmp-container > .aem-Grid > .separator.cmp-separator--hidden + .container.responsivegrid"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:nth-child(6)"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Parts, Service & Warranty",
+          "selector": [
+            "main .outer-block > .cmp-container > .aem-Grid > .separator:not(.cmp-separator--hidden) + .container.responsivegrid + .container.responsivegrid",
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:nth-child(9)"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:nth-child(9)"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Media & Influencer Requests",
+          "selector": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:nth-child(11)",
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid + .separator:not(.cmp-separator--hidden) + .container.responsivegrid:not(:has(+ .container))"
+          ],
+          "style": "rule-top",
+          "blocks": [],
+          "defaultContent": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:nth-child(11)"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Merchandise & Store Questions",
+          "selector": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.margin-bottom-large",
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid:nth-child(15)"
+          ],
+          "style": "rule-top",
+          "blocks": [
+            "accordion-boxed"
+          ],
+          "defaultContent": [
+            "main .outer-block > .cmp-container > .aem-Grid > .container.responsivegrid.margin-bottom-large .text"
+          ]
+        }
+      ]
     },
     {
       "name": "red-heading-page",

@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/partner",
+  "path": "partner",
+  "timestamp": "2026-11-16T01:36:53.363Z",
+  "title": "GDRV Partners",
+  "template": "display-heading-form-page",
+  "blocks": [
+    "cards-category"
+  ],
+  "importScript": "3a61593bcc1a"
+}

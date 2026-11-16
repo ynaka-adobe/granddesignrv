@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/shopping-tools/brochures/brochure-download",
+  "path": "shopping-tools/brochures/brochure-download",
+  "timestamp": "2026-11-16T02:29:35.038Z",
+  "title": "Shopping Tools | Brochure | Download",
+  "template": "article-page",
+  "blocks": [
+    "model-subnav",
+    "cards",
+    "cards"
+  ],
+  "importScript": "0bbf7b88130d"
+}

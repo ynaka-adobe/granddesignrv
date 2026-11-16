@@ -107,7 +107,47 @@ function floorplanItem(card, document) {
   return parts.length ? li : null;
 }
 
+/*
+ * Company secondary navigation (.cmp-experiencefragment--secondary-navigation):
+ *   .cmp-title__text            section title ("Company")
+ *   .cmp-list .cmp-list__item-link   page links (Our Story, News, Careers)
+ * The "Ask An Expert" glightbox button and its .cmp-button__modal form are not authored.
+ * Output (2 columns): [title | ''], [Links | <ul> of page links]
+ */
+const SECONDARY_NAV = '.cmp-experiencefragment--secondary-navigation';
+
+function parseSecondaryNav(element, nav, document) {
+  const cells = [];
+  const isAuthored = (el) => !el.closest('.cmp-button__modal, .button, .glightbox');
+
+  const titleEl = [...nav.querySelectorAll('.cmp-title__text, h1, h2, h3')].find(isAuthored);
+  cells.push([clean(titleEl && titleEl.textContent), '']);
+
+  const links = document.createElement('ul');
+  nav.querySelectorAll('.cmp-list a[href]').forEach((link) => {
+    if (!isAuthored(link)) return;
+    const label = clean(link.textContent) || clean(link.getAttribute('title'));
+    if (!label || /ask an expert/i.test(label)) return;
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = relativize(link.getAttribute('href'));
+    a.textContent = label;
+    li.append(a);
+    links.append(li);
+  });
+  if (links.children.length) cells.push(['Links', links]);
+
+  const block = WebImporter.Blocks.createBlock(document, { name: 'model-subnav', cells });
+  element.replaceWith(block);
+}
+
 export default function parse(element, { document }) {
+  const secondaryNav = element.closest(SECONDARY_NAV) || element.querySelector(SECONDARY_NAV);
+  if (secondaryNav) {
+    parseSecondaryNav(element, secondaryNav, document);
+    return;
+  }
+
   const cells = [];
 
   // Row 1: model name | brochure

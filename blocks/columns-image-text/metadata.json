@@ -38,8 +38,11 @@
     ]
   },
   "usage": {
-    "pagesUsing": ["/travel-trailers"],
-    "reuseCount": 1,
-    "lastUsed": "2026-11-10T00:00:00.000Z"
+    "pagesUsing": [
+      "/travel-trailers",
+      "/company/careers"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-16T01:14:46.000Z"
   }
 }

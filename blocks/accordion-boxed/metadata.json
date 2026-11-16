@@ -1,0 +1,46 @@
+{
+  "variantName": "accordion-boxed",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-16T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.granddesignrv.com/company/contact-us",
+    "originPage": "Contact Us page, \"Merchandise & Store Questions\" section",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "FAQ-style collapsible items under a section's intro text",
+    "imagePattern": "none",
+    "notes": [
+      "Half-width stack on desktop, full width on mobile",
+      "Each item header is a grey-filled bar with a dark border and a chevron on the right",
+      "24px gap between items; panel expands below its header"
+    ]
+  },
+  "contentPattern": {
+    "structure": "One row per item, two cells: title | panel content (paragraphs, lists, links). Example items: Shipping Information, Delivery, Price & Sales Tax, Returns/ Exchanges",
+    "buttonCount": 0,
+    "imageCount": 0,
+    "hasCTA": false
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "reuseGuidance": {
+    "suitableFor": [
+      "FAQ or policy questions below a section's intro copy",
+      "short lists of collapsible help topics"
+    ],
+    "notSuitableFor": [
+      "full-width accordions with bordered panels (use accordion)",
+      "tabbed content (use tabs)"
+    ]
+  },
+  "usage": {
+    "rows": "one per accordion item",
+    "columns": 2,
+    "cells": ["title (plain text)", "body (rich text: paragraphs, lists, links)"]
+  }
+}

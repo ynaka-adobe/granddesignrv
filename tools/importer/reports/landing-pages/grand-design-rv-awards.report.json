@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/landing-pages/grand-design-rv-awards",
+  "path": "landing-pages/grand-design-rv-awards",
+  "timestamp": "2026-11-16T01:47:17.059Z",
+  "title": "Awards and Recognition",
+  "template": "display-heading-landing",
+  "blocks": [
+    "columns",
+    "columns"
+  ],
+  "importScript": "7e60d7c551ff"
+}

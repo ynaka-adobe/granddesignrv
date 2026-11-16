@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/shopping-tools/find-a-dealer",
+  "path": "shopping-tools/find-a-dealer",
+  "timestamp": "2026-11-16T02:29:28.108Z",
+  "title": "Shopping Tools | Find A Dealer",
+  "template": "article-page",
+  "blocks": [
+    "model-subnav",
+    "columns"
+  ],
+  "importScript": "0bbf7b88130d"
+}

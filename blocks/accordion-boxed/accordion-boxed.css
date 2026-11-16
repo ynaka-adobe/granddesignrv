@@ -1,0 +1,67 @@
+/* Accordion Boxed: structural styles only */
+.accordion-boxed {
+  max-width: 100%;
+}
+
+@media (width >= 900px) {
+  .accordion-boxed {
+    max-width: 50%;
+  }
+}
+
+.accordion-boxed .accordion-boxed-item + .accordion-boxed-item {
+  margin-top: 24px;
+}
+
+.accordion-boxed .accordion-boxed-item-label {
+  position: relative;
+  display: block;
+  padding: 8px 46px 8px 8px;
+  border: 1px solid currentcolor;
+  border-radius: 4px;
+  background-color: var(--light-color);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-boxed .accordion-boxed-item-label::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-boxed .accordion-boxed-item-label > :first-child {
+  margin-top: 0;
+}
+
+.accordion-boxed .accordion-boxed-item-label > :last-child {
+  margin-bottom: 0;
+}
+
+.accordion-boxed .accordion-boxed-item-label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  width: 6px;
+  height: 6px;
+  border: 2px solid;
+  border-width: 2px 2px 0 0;
+  transform: translateY(-75%) rotate(135deg);
+  transition: transform 0.2s;
+}
+
+.accordion-boxed .accordion-boxed-item[open] .accordion-boxed-item-label::after {
+  transform: translateY(-25%) rotate(-45deg);
+}
+
+.accordion-boxed .accordion-boxed-item-body {
+  padding: 8px;
+}
+
+.accordion-boxed .accordion-boxed-item-body > :first-child {
+  margin-top: 0;
+}
+
+.accordion-boxed .accordion-boxed-item-body > :last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/shopping-tools/factory-tours",
+  "path": "shopping-tools/factory-tours",
+  "timestamp": "2026-11-16T02:05:54.736Z",
+  "title": "Shopping Tools | Factory Tours",
+  "template": "article-page",
+  "blocks": [
+    "model-subnav",
+    "hero",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating",
+    "quote-rating"
+  ],
+  "importScript": "d486b8543dda"
+}

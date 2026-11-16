@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.granddesignrv.com/company/news",
+  "path": "company/news",
+  "timestamp": "2026-11-16T02:29:20.401Z",
+  "title": "Grand Design RV | News",
+  "template": "article-page",
+  "blocks": [
+    "model-subnav",
+    "cards",
+    "cards"
+  ],
+  "importScript": "0bbf7b88130d"
+}
