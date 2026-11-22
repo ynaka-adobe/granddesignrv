@@ -1,0 +1,29 @@
+.audience-debug main [data-audience-debug],
+.audience-debug main[data-audience-debug] {
+  position: relative;
+  outline: 2px dashed #0f6bff;
+  outline-offset: -2px;
+}
+
+.audience-debug main [data-audience-debug]::after,
+.audience-debug main[data-audience-debug]::after {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 50;
+  padding: 3px 10px;
+  color: #fff;
+  font: 700 11px/1.4 sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #191e24;
+  border-radius: 999px;
+  content: 'Variant: ' attr(data-audience-debug);
+  pointer-events: none;
+}
+
+.audience-debug main [data-audience-debug='default']::after,
+.audience-debug main[data-audience-debug='default']::after {
+  background: #546a7f;
+  content: 'Default (no audience matched)';
+}

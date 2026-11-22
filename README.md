@@ -41,6 +41,16 @@ and `shopper`, `owner`, `lifecycle` for demo persona IDs 1, 2, 3 respectively.
 Other audiences need site-specific rules in `scripts/experimentation.js` before activation.
 SureSmile's country, dental-interest, locale, insights, and credentials are not copied.
 
+Opening the Audiences Sidekick palette also shows blue dashed outlines on audience-controlled
+content, with **Variant: shopper/owner/lifecycle** or **Default (no audience matched)** badges.
+These use the experimentation engine's actual `data-audience` result, not merely the URL
+override (a failed variant load therefore remains default). Declared audience sections
+left unmarked by AEM because no audience matched show the original/default content.
+Closing/hiding the palette,
+switching to another palette, or removing Sidekick clears the debug styles. Opening debug
+does not change selection, reload content, or enable Insights/analytics. The palette's
+Preview, Default and Clear controls retain their existing behavior.
+
 To author an A/B test, create Grand Design RV control and challenger documents, and put
 **Experiment**, **Experiment Variants** (links to challengers), and **Experiment Status**
 (`Inactive` initially) in the control's Metadata or Section Metadata table. Preview all

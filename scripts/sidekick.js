@@ -1,5 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { NX_ORIGIN } from './scripts.js';
+import watchAudiencePalette from './audience-debug.js';
 
 let expMod;
 const DA_EXP = '/public/plugins/exp/exp.js';
@@ -21,5 +22,6 @@ async function toggleExp() {
 (async function sidekick() {
   const sk = document.querySelector('aem-sidekick');
   if (!sk) return;
+  watchAudiencePalette(sk);
   sk.addEventListener('custom:experimentation', toggleExp);
 }());
