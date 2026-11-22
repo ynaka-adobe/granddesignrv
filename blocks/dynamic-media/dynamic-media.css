@@ -1,0 +1,15 @@
+.dynamic-media picture {
+  display: block;
+}
+
+.dynamic-media img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.dynamic-media .dynamic-media-error {
+  padding: 16px;
+  border: 1px solid currentcolor;
+  color: #a10f0f;
+}

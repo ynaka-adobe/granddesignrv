@@ -13,7 +13,7 @@
 <!-- <meta name="target-mbox-hero" content="eds-hero-mbox"/> -->
 <!-- <meta name="target-mbox-hero-selector" content=".hero.block .hero-inner"/> -->
 <script nonce="aem">
-  /* Persona demo profile: capture URL params (p, li, region), persist them,
+  /* Persona demo profile: capture URL params (audience, li, region), persist them,
      expose to at.js via targetPageParams, and show a demo badge.
      Personas: 1 Shopper, 2 Owner, 3 Upgrader. Simulated lifecycle context only. */
   (function () {
@@ -21,16 +21,38 @@
       var q = new URLSearchParams(location.search);
       var cur = {};
       if (!q.has('demo-profile-reset')) {
-        try { cur = JSON.parse(localStorage.getItem('demoProfile') || '{}'); } catch (e) { cur = {}; }
+        var stored;
+        try { stored = localStorage.getItem('demoProfile'); } catch (e) { /* cookie fallback */ }
+        if (!stored) {
+          var cookie = document.cookie.match(/(?:^|;\s*)demoProfile=([^;]+)/);
+          if (cookie) {
+            try { stored = decodeURIComponent(cookie[1]); } catch (e) { console.warn('Could not decode the saved demo profile cookie.'); }
+          }
+        }
+        try { cur = JSON.parse(stored || '{}'); } catch (e) { console.warn('Could not read the saved demo profile.'); }
       } else {
         q.delete('demo-profile-reset');
         history.replaceState(null, '', location.pathname + (q.size ? '?' + q.toString() : '') + location.hash);
       }
+      // Keep this synchronous so Target can read its numeric profile before modules load.
+      var audiences = ['shopper', 'owner', 'lifecycle'];
       var p = q.get('p'); if (p === null) p = q.get('persona');
-      if (p !== null && p !== '') cur.persona = Number(p);
-      if (cur.persona !== undefined && ![1, 2, 3].includes(cur.persona)) {
-        console.warn('Unsupported demo persona; choose Shopper, Owner or Upgrader.');
+      var audience = q.has('audience') ? q.get('audience') : cur.audience;
+      if (q.has('audience')) {
+        cur.persona = audiences.indexOf(audience.trim().toLowerCase()) + 1;
+      } else if (p !== null) {
+        cur.persona = Number(p);
+      } else if (audience !== undefined) {
+        cur.persona = audiences.indexOf(String(audience).trim().toLowerCase()) + 1;
+      }
+      if ([1, 2, 3].includes(cur.persona)) {
+        cur.audience = audiences[cur.persona - 1];
+      } else {
+        if (p !== null && !q.has('audience')) {
+          console.warn('Unsupported demo persona; choose Shopper, Owner or Upgrader.');
+        }
         delete cur.persona;
+        delete cur.audience;
       }
       var li = q.get('li'); if (li === null) li = q.get('loggedin');
       if (li !== null) cur.loggedIn = (li === '1' || li === 'true');

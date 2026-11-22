@@ -1,3 +1,5 @@
+import { PERSONA_AUDIENCES, resolvePersona } from '../../scripts/persona-profile.js';
+
 const AXES = ['Explore', 'Research', 'Compare', 'Purchase', 'Trade-in', 'Support'];
 
 const PERSONAS = [
@@ -129,6 +131,8 @@ function renderRadar(svg, intent) {
 }
 
 function renderPersona(persona) {
+  document.getElementById('persona-card').hidden = !persona;
+  if (!persona) return;
   document.getElementById('persona-name').textContent = persona.name;
   document.getElementById('persona-description').textContent = persona.description;
   document.getElementById('persona-summary').textContent = persona.summary;
@@ -199,8 +203,9 @@ function navigateTo(url) {
 // Build the personalized URL from the current selections (no navigation).
 function buildUrl() {
   const { url } = pageContext();
-  const p = Number(document.getElementById('persona-select').value) + 1;
-  url.searchParams.set('p', String(p));
+  const selected = document.getElementById('persona-select').value;
+  ['p', 'persona', 'loggedin', 'r', 'demo-profile-reset'].forEach((key) => url.searchParams.delete(key));
+  url.searchParams.set('audience', selected === '' ? 'default' : PERSONA_AUDIENCES[Number(selected)]);
   url.searchParams.set('li', document.getElementById('persona-loggedin').checked ? 'true' : 'false');
   const region = document.getElementById('persona-region').value;
   if (region) url.searchParams.set('region', region); else url.searchParams.delete('region');
@@ -212,12 +217,12 @@ function applyToUrl() {
 }
 
 function resetUrl(select, loggedin, region) {
-  select.value = '0';
+  select.value = '';
   loggedin.checked = false;
   region.value = '';
-  renderPersona(PERSONAS[0]);
+  renderPersona();
   const { url } = pageContext();
-  ['p', 'persona', 'li', 'loggedin', 'region', 'r'].forEach((k) => url.searchParams.delete(k));
+  ['audience', 'p', 'persona', 'li', 'loggedin', 'region', 'r'].forEach((k) => url.searchParams.delete(k));
   url.searchParams.set('demo-profile-reset', '1');
   navigateTo(url);
 }
@@ -244,7 +249,14 @@ function getCurrentProfile() {
   }
   try {
     const q = pageContext().url.searchParams;
-    const p = q.get('p') ?? q.get('persona'); if (p) prof.persona = Number(p);
+    const persona = resolvePersona(q, prof);
+    if (persona) {
+      prof.persona = persona;
+      prof.audience = PERSONA_AUDIENCES[persona - 1];
+    } else {
+      delete prof.persona;
+      delete prof.audience;
+    }
     const li = q.get('li') ?? q.get('loggedin'); if (li !== null) prof.loggedIn = (li === '1' || li === 'true');
     const r = q.get('region') ?? q.get('r'); if (r) prof.region = r.toUpperCase();
     return prof;
@@ -256,8 +268,9 @@ function readParamsIntoControls(select, loggedin, region) {
     const prof = getCurrentProfile();
     if (Number.isInteger(prof.persona) && prof.persona >= 1 && prof.persona <= PERSONAS.length) {
       select.value = String(prof.persona - 1);
-    } else if (prof.persona !== undefined) {
-      document.getElementById('persona-status').textContent = 'Unsupported legacy persona. Choose Shopper, Owner or Upgrader and Apply.';
+    } else {
+      select.value = '';
+      document.getElementById('persona-status').textContent = 'No lifecycle persona selected; showing the default experience.';
     }
     if (typeof prof.loggedIn === 'boolean') loggedin.checked = prof.loggedIn;
     if (prof.region) region.value = String(prof.region).toUpperCase();
@@ -269,7 +282,8 @@ function init() {
   const loggedin = document.getElementById('persona-loggedin');
   const region = document.getElementById('persona-region');
 
-  select.innerHTML = PERSONAS.map((p, i) => `<option value="${i}">${p.name}</option>`).join('');
+  select.innerHTML = `<option value="">No persona (default)</option>${
+    PERSONAS.map((p, i) => `<option value="${i}">${p.name}</option>`).join('')}`;
   region.innerHTML = `<option value="">Region (state)</option>${
     REGIONS.map((c) => `<option value="${c}">${c}</option>`).join('')}`;
 
@@ -278,11 +292,17 @@ function init() {
   // Control changes only update the palette's own preview card — they do NOT
   // navigate, so the palette stays open while all three are set. Navigation
   // happens once, on Apply.
-  select.addEventListener('change', () => renderPersona(PERSONAS[Number(select.value)]));
+  const renderSelection = () => {
+    const selected = select.value;
+    document.getElementById('persona-status').textContent = selected === ''
+      ? 'No lifecycle persona selected; showing the default experience.' : '';
+    renderPersona(selected === '' ? undefined : PERSONAS[Number(selected)]);
+  };
+  select.addEventListener('change', renderSelection);
   document.getElementById('persona-apply').addEventListener('click', applyToUrl);
   document.getElementById('persona-reset').addEventListener('click', () => resetUrl(select, loggedin, region));
 
-  renderPersona(PERSONAS[Number(select.value)]);
+  renderSelection();
 }
 
 init();

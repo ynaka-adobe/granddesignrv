@@ -1,3 +1,5 @@
+import { resolvePersona } from '../../scripts/persona-profile.js';
+
 // Persona hero slot — personalizes CLIENT-SIDE by calling the Adobe Target
 // Delivery API for the `target-slot-hero` mbox and rendering the returned offer.
 // (Ported from the Fastly edge function so personalization no longer needs the
@@ -13,13 +15,13 @@ const PERSONA = {
   3: { color: '#00884a', color2: '#00542e' },
 };
 
-// persona/loggedIn/region — head.html exposes window.demoProfile from ?p/cookie;
+// persona/loggedIn/region — head.html exposes window.demoProfile from ?audience/cookie;
 // fall back to the URL query in case that snippet didn't run.
 function getProfile() {
   const d = { ...(window.demoProfile || {}) };
-  if (d.persona === undefined) {
-    const q = new URLSearchParams(window.location.search);
-    const p = q.get('p') ?? q.get('persona'); if (p) d.persona = Number(p);
+  const q = new URLSearchParams(window.location.search);
+  d.persona = resolvePersona(q, d);
+  if (window.demoProfile === undefined) {
     const li = q.get('li'); if (li !== null) d.loggedIn = (li === '1' || li === 'true');
     const r = q.get('region'); if (r) d.region = r.toUpperCase();
   }

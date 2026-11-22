@@ -1,9 +1,42 @@
+import { PERSONA_AUDIENCES, resolvePersona } from './persona-profile.js';
+
+export function selectedPersonaAudience() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('audience') || params.has('p') || params.has('persona')
+      || params.has('demo-profile-reset')) {
+    return PERSONA_AUDIENCES[resolvePersona(params) - 1] || null;
+  }
+  if (window.demoProfile !== undefined) {
+    return PERSONA_AUDIENCES[resolvePersona(params, window.demoProfile) - 1] || null;
+  }
+  let profile;
+  try {
+    profile = JSON.parse(localStorage.getItem('demoProfile') || 'null');
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.warn('AEM audiences could not read the stored demo profile', error);
+  }
+  if (!profile) {
+    try {
+      const cookie = document.cookie.match(/(?:^|;\s*)demoProfile=([^;]+)/);
+      if (cookie) profile = JSON.parse(decodeURIComponent(cookie[1]));
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.warn('AEM audiences could not read the demo profile cookie', error);
+    }
+  }
+  return PERSONA_AUDIENCES[resolvePersona(params, profile) - 1] || null;
+}
+
 const OPTIONS = {
   isProd: () => !['localhost', '127.0.0.1'].includes(window.location.hostname)
     && !/\.(aem|hlx)\.page$/.test(window.location.hostname),
   audiences: {
     mobile: () => window.innerWidth < 600,
     desktop: () => window.innerWidth >= 600,
+    shopper: () => selectedPersonaAudience() === 'shopper',
+    owner: () => selectedPersonaAudience() === 'owner',
+    lifecycle: () => selectedPersonaAudience() === 'lifecycle',
   },
 };
 

@@ -27,6 +27,12 @@ body {
   gap: 16px;
 }
 
+.persona-card:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .persona-label {
   font-size: 12px;
   font-weight: 700;

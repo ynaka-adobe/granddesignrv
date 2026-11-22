@@ -34,8 +34,10 @@ The Sidekick now includes **Audiences**, a local palette listing section audienc
 with Preview buttons, and **Experimentation**, which toggles DA's existing experimentation
 panel. Both are available in preview, live, and production, matching SureSmile's configuration.
 The engine's separate simulation pill loads only on local and AEM/Helix preview hosts.
-Audience previews use `?audience=<name>`; Default forces unmatched content, and Clear removes
-the override. Built-in automatic rules are `mobile` (below 600px) and `desktop` (600px or above).
+Audience previews use `?audience=<name>`; Default and Clear select `audience=default`,
+which also clears the saved lifecycle persona. Built-in automatic rules include `mobile`
+(below 600px), `desktop` (600px or above),
+and `shopper`, `owner`, `lifecycle` for demo persona IDs 1, 2, 3 respectively.
 Other audiences need site-specific rules in `scripts/experimentation.js` before activation.
 SureSmile's country, dental-interest, locale, insights, and credentials are not copied.
 
@@ -64,16 +66,75 @@ of its audience metadata-restoration approach.
 
 The Persona Sidekick card simulates **Shopper → Owner → Upgrader** as one evolving
 relationship, with each stage's goals, needs, content, context, activation and outcomes.
-The existing numeric profile contract is retained: `p=1` is Shopper, `p=2` is Owner,
-and `p=3` is Upgrader. Apply still passes `p`, `li` and `region` to the page, where
-`head.html` persists `demoProfile` and exposes the same Target profile parameters.
+Apply uses the canonical AEM selector: `audience=shopper`, `audience=owner`, or
+`audience=lifecycle` (the Upgrader card). It preserves `li`, `region` and unrelated page
+parameters, and removes stale `p`/`persona` selectors. `head.html` persists the selected
+audience in `demoProfile`, with numeric persona 1/2/3 retained for existing Target parameters
+and badge labels. Legacy `p=1|2|3` and `persona=1|2|3` links still work when `audience`
+is absent, but an explicit `audience` always wins, including `default`, empty or unsupported
+values, which clear the lifecycle selection instead of restoring a stale saved persona.
 Existing Target activities/offers using IDs 1–3 should be reviewed for the new lifecycle
 meaning; this change does not edit remote Target activities or offers.
 Legacy persona 4 and invalid values are cleared rather than misidentified as a new persona.
-Reset clears persisted demo selections via a one-time `demo-profile-reset` query flag,
+No persona is a selectable default state in the card. Reset removes both canonical and
+legacy selectors and clears persisted demo selections via a one-time `demo-profile-reset` query flag,
 which is removed from the page URL after processing.
 
 The interest bars and intent map are illustrative demo weights, not measured data.
 The Reflection 315RLTS example illustrates a possible Upgrader experience, not real
-customer recognition. No ownership tracking, service-history collection, backend audience
-rules, or new experimentation audiences are added.
+customer recognition. No ownership tracking, service-history collection, or backend audience
+rules are added.
+
+### Persona carousel audience drafts
+
+The AEM audience rules read explicit `audience` first, then legacy `p`/`persona` selectors
+when it is absent, then existing `demoProfile` (page state, localStorage, or cookie).
+The Upgrader card remains named
+**Upgrader**, while its audience identifier is **lifecycle**. A manual `?audience=shopper`,
+`?audience=owner`, or `?audience=lifecycle` updates both the Persona selection and AEM
+matching; `?audience=default` keeps the control and clears the saved persona.
+No selected/valid lifecycle persona also keeps the control.
+
+Original two-slide carousel content is authored as DA drafts:
+
+| DA document | Purpose |
+| --- | --- |
+| `/fragments/carousel-hero-shopper` | Model/floorplan discovery and dealer consideration |
+| `/fragments/carousel-hero-owner` | How-to, maintenance planning, FAQs and support |
+| `/fragments/carousel-hero-lifecycle` | Evolving needs, RV comparison, trade-in/dealer questions |
+| `/demo/persona-carousel` | Control with the existing homepage hero and three Audience rows |
+
+The control replaces only its first section; its explanatory second section stays unchanged.
+The actual homepage `/index.html` is untouched. To use these variants on the homepage after
+review, add **Audience: shopper**, **Audience: owner**, and **Audience: lifecycle** rows to
+the hero's Section Metadata table, linking to the corresponding fragment documents above.
+
+Drafts are not previewed or live-published by content creation. Deploy the code and explicitly
+preview the three fragments and the control before testing on an AEM preview URL.
+Live publication is a separate decision. No randomized experiment is configured.
+All images are reused from verified existing Grand Design RV content; the copy makes no
+inventory, price, specification, trade-in value or warranty promises.
+
+### Dynamic Media key/value block
+
+Author a two-column **dynamic-media** table:
+
+| dynamic-media | |
+| --- | --- |
+| assetID | REPLACE_WITH_PUBLISHED_ASSET_ID |
+| wid | 1200 |
+| fmt | webp |
+| qlt | 85 |
+
+Replace the placeholder with an actual published asset ID. The required `assetID` row
+selects the path under `https://gdrv.scene7.com/is/image/granddesignr/`; it is never sent
+as a query parameter. Folder paths such as `folder/asset` are supported. Asset path
+segments and query values are encoded, so spaces, ampersands and other special characters
+remain literal values. Full URLs, empty path segments and `.`/`..` segments are rejected.
+All other rows become query parameters, including empty values; duplicate keys use the
+last row (parameter names are case-sensitive, `assetID` is case-insensitive).
+
+The block renders the authored URL directly as a responsive image without rewriting
+parameters, using the asset ID as its image alternative text. Invalid tables, missing
+assets and image-loading failures show an author-visible error; there is no fallback
+asset, viewer or template behavior. Existing DM auto-blocking remains unchanged.

@@ -133,7 +133,7 @@ test('audience default simulation preserves default content', async ({ page }) =
 test('Sidekick configuration retains existing buttons and toggles experimentation', async ({ page }) => {
   const config = JSON.parse(await readFile(path.join(root, 'tools/sidekick/config.json'), 'utf8'));
   expect(config.plugins.map(({ id }) => id)).toEqual([
-    'aem-genai-variations', 'target', 'audiences', 'experimentation', 'persona',
+    'aem-genai-variations', 'audiences', 'experimentation', 'persona',
   ]);
   const exp = config.plugins.find(({ id }) => id === 'experimentation');
   expect(exp.event).toBe('experimentation');

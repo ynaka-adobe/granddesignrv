@@ -34,8 +34,8 @@ function audienceRows(section, host) {
 
 function navigate(host, audience) {
   const url = new URL(host);
-  url.searchParams.delete('audience');
-  if (audience) url.searchParams.set('audience', audience);
+  ['p', 'persona', 'demo-profile-reset'].forEach((key) => url.searchParams.delete(key));
+  url.searchParams.set('audience', audience || 'default');
   window.open(url.href, '_top');
 }
 
