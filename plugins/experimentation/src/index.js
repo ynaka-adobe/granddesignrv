@@ -889,7 +889,10 @@ async function getAudienceConfig(pluginOptions, metadata, overrides) {
     return null;
   }
 
-  const configuredAudiencesName = Object.keys(metadata.audiences || metadata).map(toClassName);
+  // Published metadata uses camelCase keys; audience IDs must retain word boundaries.
+  const configuredAudiences = Object.fromEntries(Object.entries(metadata.audiences || metadata)
+    .map(([name, url]) => [toClassName(name.replace(/([a-z0-9])([A-Z])/g, '$1-$2')), url]));
+  const configuredAudiencesName = Object.keys(configuredAudiences);
   const resolvedAudiences = await getResolvedAudiences(
     configuredAudiencesName,
     pluginOptions,
@@ -901,7 +904,7 @@ async function getAudienceConfig(pluginOptions, metadata, overrides) {
   const selectedAudience = overrides.audience || resolvedAudiences[0];
 
   return {
-    configuredAudiences: metadata.audiences || metadata,
+    configuredAudiences,
     resolvedAudiences,
     selectedAudience,
   };

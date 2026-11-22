@@ -1,4 +1,5 @@
 import { PERSONA_AUDIENCES, resolvePersona } from './persona-profile.js';
+import matchesVisitorCity from './city-audiences.js';
 
 export function selectedPersonaAudience() {
   const params = new URLSearchParams(window.location.search);
@@ -37,6 +38,9 @@ const OPTIONS = {
     shopper: () => selectedPersonaAudience() === 'shopper',
     owner: () => selectedPersonaAudience() === 'owner',
     lifecycle: () => selectedPersonaAudience() === 'lifecycle',
+    'san-francisco': () => matchesVisitorCity('san francisco'),
+    chicago: () => matchesVisitorCity('chicago'),
+    'los-angeles': () => matchesVisitorCity('los angeles'),
   },
 };
 

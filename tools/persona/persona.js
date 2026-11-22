@@ -1,4 +1,6 @@
-import { PERSONA_AUDIENCES, resolvePersona } from '../../scripts/persona-profile.js';
+import {
+  PERSONA_AUDIENCES, CITY_AUDIENCE_NAMES, resolveAudience, resolvePersona,
+} from '../../scripts/persona-profile.js';
 
 const AXES = ['Explore', 'Research', 'Compare', 'Purchase', 'Trade-in', 'Support'];
 
@@ -205,7 +207,12 @@ function buildUrl() {
   const { url } = pageContext();
   const selected = document.getElementById('persona-select').value;
   ['p', 'persona', 'loggedin', 'r', 'demo-profile-reset'].forEach((key) => url.searchParams.delete(key));
-  url.searchParams.set('audience', selected === '' ? 'default' : PERSONA_AUDIENCES[Number(selected)]);
+  if (selected === 'automatic') {
+    url.searchParams.delete('audience');
+    url.searchParams.set('demo-profile-reset', '1');
+  } else {
+    url.searchParams.set('audience', selected || 'default');
+  }
   url.searchParams.set('li', document.getElementById('persona-loggedin').checked ? 'true' : 'false');
   const region = document.getElementById('persona-region').value;
   if (region) url.searchParams.set('region', region); else url.searchParams.delete('region');
@@ -249,14 +256,10 @@ function getCurrentProfile() {
   }
   try {
     const q = pageContext().url.searchParams;
+    const audience = resolveAudience(q, prof);
     const persona = resolvePersona(q, prof);
-    if (persona) {
-      prof.persona = persona;
-      prof.audience = PERSONA_AUDIENCES[persona - 1];
-    } else {
-      delete prof.persona;
-      delete prof.audience;
-    }
+    if (audience) prof.audience = audience; else delete prof.audience;
+    if (persona) prof.persona = persona; else delete prof.persona;
     const li = q.get('li') ?? q.get('loggedin'); if (li !== null) prof.loggedIn = (li === '1' || li === 'true');
     const r = q.get('region') ?? q.get('r'); if (r) prof.region = r.toUpperCase();
     return prof;
@@ -266,11 +269,11 @@ function getCurrentProfile() {
 function readParamsIntoControls(select, loggedin, region) {
   try {
     const prof = getCurrentProfile();
-    if (Number.isInteger(prof.persona) && prof.persona >= 1 && prof.persona <= PERSONAS.length) {
-      select.value = String(prof.persona - 1);
+    if (prof.audience) {
+      select.value = prof.audience;
     } else {
-      select.value = '';
-      document.getElementById('persona-status').textContent = 'No lifecycle persona selected; showing the default experience.';
+      const q = pageContext().url.searchParams;
+      select.value = ['audience', 'p', 'persona'].some((key) => q.has(key)) ? '' : 'automatic';
     }
     if (typeof prof.loggedIn === 'boolean') loggedin.checked = prof.loggedIn;
     if (prof.region) region.value = String(prof.region).toUpperCase();
@@ -282,8 +285,12 @@ function init() {
   const loggedin = document.getElementById('persona-loggedin');
   const region = document.getElementById('persona-region');
 
-  select.innerHTML = `<option value="">No persona (default)</option>${
-    PERSONAS.map((p, i) => `<option value="${i}">${p.name}</option>`).join('')}`;
+  select.innerHTML = `<option value="">Default (no audience)</option>
+    <option value="automatic">Automatic (city detection)</option>
+    <optgroup label="Lifecycle personas">${
+  PERSONAS.map((p, i) => `<option value="${PERSONA_AUDIENCES[i]}">${p.name}</option>`).join('')}</optgroup>
+    <optgroup label="City demo audiences">${
+  Object.entries(CITY_AUDIENCE_NAMES).map(([id, name]) => `<option value="${id}">${name}</option>`).join('')}</optgroup>`;
   region.innerHTML = `<option value="">Region (state)</option>${
     REGIONS.map((c) => `<option value="${c}">${c}</option>`).join('')}`;
 
@@ -294,9 +301,12 @@ function init() {
   // happens once, on Apply.
   const renderSelection = () => {
     const selected = select.value;
-    document.getElementById('persona-status').textContent = selected === ''
-      ? 'No lifecycle persona selected; showing the default experience.' : '';
-    renderPersona(selected === '' ? undefined : PERSONAS[Number(selected)]);
+    let status = '';
+    if (selected === '') status = 'No lifecycle persona selected; showing the default experience.';
+    else if (selected === 'automatic') status = 'Automatic city detection on the custom-domain site; no manual audience override.';
+    else if (CITY_AUDIENCE_NAMES[selected]) status = `Manual city audience simulation: ${CITY_AUDIENCE_NAMES[selected]}. This replaces the lifecycle audience, not the detected visitor location.`;
+    document.getElementById('persona-status').textContent = status;
+    renderPersona(PERSONAS[PERSONA_AUDIENCES.indexOf(selected)]);
   };
   select.addEventListener('change', renderSelection);
   document.getElementById('persona-apply').addEventListener('click', applyToUrl);

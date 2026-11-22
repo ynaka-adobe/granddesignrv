@@ -36,17 +36,21 @@
       }
       // Keep this synchronous so Target can read its numeric profile before modules load.
       var audiences = ['shopper', 'owner', 'lifecycle'];
+      var cities = { 'san-francisco': 'San Francisco', chicago: 'Chicago', 'los-angeles': 'Los Angeles' };
       var p = q.get('p'); if (p === null) p = q.get('persona');
       var audience = q.has('audience') ? q.get('audience') : cur.audience;
-      if (q.has('audience')) {
-        cur.persona = audiences.indexOf(audience.trim().toLowerCase()) + 1;
-      } else if (p !== null) {
-        cur.persona = Number(p);
-      } else if (audience !== undefined) {
-        cur.persona = audiences.indexOf(String(audience).trim().toLowerCase()) + 1;
+      if (!q.has('audience') && p !== null) {
+        audience = [1, 2, 3].includes(Number(p)) ? audiences[Number(p) - 1] : undefined;
+      } else if (audience === undefined && [1, 2, 3].includes(cur.persona)) {
+        audience = audiences[cur.persona - 1];
       }
-      if ([1, 2, 3].includes(cur.persona)) {
-        cur.audience = audiences[cur.persona - 1];
+      audience = audience === undefined ? '' : String(audience).trim().toLowerCase();
+      if (audiences.includes(audience)) {
+        cur.persona = audiences.indexOf(audience) + 1;
+        cur.audience = audience;
+      } else if (Object.prototype.hasOwnProperty.call(cities, audience)) {
+        cur.audience = audience;
+        delete cur.persona;
       } else {
         if (p !== null && !q.has('audience')) {
           console.warn('Unsupported demo persona; choose Shopper, Owner or Upgrader.');
@@ -78,12 +82,14 @@
       var NAMES = { 1: 'Shopper', 2: 'Owner', 3: 'Upgrader' };
       document.addEventListener('DOMContentLoaded', function () {
         var d = window.demoProfile || {};
-        if (!d.persona) return;
+        if (!d.persona && !Object.prototype.hasOwnProperty.call(cities, d.audience)) return;
         var el = document.createElement('div');
         el.setAttribute('data-persona-badge', '');
         el.style.cssText = 'position:fixed;left:16px;bottom:16px;z-index:9999;background:#1a1a1a;color:#fff;font:13px/1.3 system-ui,sans-serif;padding:8px 12px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.25);display:flex;gap:10px;align-items:center';
         var txt = document.createElement('span');
-        txt.textContent = 'Persona ' + d.persona + ': ' + (NAMES[d.persona] || '?')
+        txt.textContent = (d.persona
+          ? 'Persona ' + d.persona + ': ' + (NAMES[d.persona] || '?')
+          : 'City audience: ' + cities[d.audience] + ' (demo simulation)')
           + ' · ' + (d.loggedIn ? 'logged in' : 'guest')
           + (d.region ? (' · ' + d.region) : '');
         var btn = document.createElement('button');

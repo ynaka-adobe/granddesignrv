@@ -51,6 +51,27 @@ switching to another palette, or removing Sidekick clears the debug styles. Open
 does not change selection, reload content, or enable Insights/analytics. The palette's
 Preview, Default and Clear controls retain their existing behavior.
 
+City audiences **san-francisco**, **chicago**, and **los-angeles** use exact city matching
+(case and whitespace normalized) and require a US country code. Automatic matching is
+available only on `https://granddesignrv.xsc.demo.adobe.com`, via same-origin
+`GET /api/visitor-profile`. The expected JSON contains string `city`, two-letter `country`,
+and `source: "cdn"`; the endpoint must return JSON with `Cache-Control: private, no-store`.
+The endpoint is requested only when a declared city rule needs evaluation, with one shared
+request per page when there is no manual demo audience preference, a two-second timeout
+and no persistent visitor storage. Unsupported
+hosts, missing/invalid responses and request failures do not match a city. Diagnostics
+contain no IP or location data. No Insights, analytics or new consent/tracking mechanism
+is installed; the existing site has no audience consent gate to reuse.
+
+IP-based city estimates are approximate and VPN-sensitive. Nearby/metro cities are not
+treated as exact matches. Provider `.aem.page`/`.aem.live` hosts have no automatic city
+lookup; native manual `?audience=san-francisco`, `?audience=chicago`,
+`?audience=los-angeles`, and `?audience=default` previews remain available without lookup.
+To change content, author **Audience: san-francisco**, **Audience: chicago**, or
+**Audience: los-angeles** section metadata linking to real variant documents. The existing
+Audiences palette lists those declared variants automatically, and its debug shows the
+actual resolved content. No city content variants are created by adding these rules.
+
 To author an A/B test, create Grand Design RV control and challenger documents, and put
 **Experiment**, **Experiment Variants** (links to challengers), and **Experiment Status**
 (`Inactive` initially) in the control's Metadata or Section Metadata table. Preview all
@@ -80,13 +101,26 @@ Apply uses the canonical AEM selector: `audience=shopper`, `audience=owner`, or
 `audience=lifecycle` (the Upgrader card). It preserves `li`, `region` and unrelated page
 parameters, and removes stale `p`/`persona` selectors. `head.html` persists the selected
 audience in `demoProfile`, with numeric persona 1/2/3 retained for existing Target parameters
-and badge labels. Legacy `p=1|2|3` and `persona=1|2|3` links still work when `audience`
+and badge labels. The single audience picker also offers **San Francisco**, **Chicago**,
+and **Los Angeles**, generating `audience=san-francisco`, `audience=chicago`, and
+`audience=los-angeles`. Native AEM accepts one forced audience value, so a city and
+lifecycle persona are mutually exclusive. City options hide the lifecycle card and are
+explicitly labeled manual demo simulations, not detected visitor location. A manual city
+is saved only as a demo audience preference and shown in the demo badge; no numeric Target
+persona is sent. Saved manual lifecycle/city choices remain exclusive after navigation.
+
+**Automatic (city detection)** removes the forced audience and clears saved manual
+audience preferences while preserving the selected login/region and unrelated URL context.
+This allows the CDN city rules to run on the custom domain. **Default (no audience)**
+emits `audience=default` to force original content without city lookup. Reset clears all
+demo preferences and allows normal automatic rules on the next page.
+Legacy `p=1|2|3` and `persona=1|2|3` links still work when `audience`
 is absent, but an explicit `audience` always wins, including `default`, empty or unsupported
 values, which clear the lifecycle selection instead of restoring a stale saved persona.
 Existing Target activities/offers using IDs 1–3 should be reviewed for the new lifecycle
 meaning; this change does not edit remote Target activities or offers.
 Legacy persona 4 and invalid values are cleared rather than misidentified as a new persona.
-No persona is a selectable default state in the card. Reset removes both canonical and
+Default is a selectable state in the card. Reset removes both canonical and
 legacy selectors and clears persisted demo selections via a one-time `demo-profile-reset` query flag,
 which is removed from the page URL after processing.
 

@@ -30,7 +30,7 @@ test.beforeEach(async ({ page }) => {
 
 async function palette(page, referrer = '/rv') {
   await page.goto(`/tools/persona/persona.html?referrer=${encodeURIComponent(origin + referrer)}`);
-  await expect(page.locator('#persona-select option')).toHaveCount(4);
+  await expect(page.locator('#persona-select option')).toHaveCount(8);
 }
 
 [
@@ -41,7 +41,8 @@ async function palette(page, referrer = '/rv') {
   await page.setViewportSize({ width: 400, height: 800 });
   await palette(page);
   await expect(page.locator('#persona-select option')).toHaveText([
-    'No persona (default)', 'Shopper', 'Owner', 'Upgrader',
+    'Default (no audience)', 'Automatic (city detection)', 'Shopper', 'Owner', 'Upgrader',
+    'San Francisco', 'Chicago', 'Los Angeles',
   ]);
   await expect(page.locator('.persona-lifecycle')).toHaveText('SHOP → OWN → UPGRADE → OWN → UPGRADE');
   await page.selectOption('#persona-select', { label: name });
@@ -126,7 +127,7 @@ test('manual audience selection overrides legacy selectors and saved Persona', a
     localStorage.setItem('demoProfile', JSON.stringify({ audience: 'lifecycle', persona: 3 }));
   });
   await palette(page, '/rv?audience=owner&p=1&persona=3');
-  await expect(page.locator('#persona-select')).toHaveValue('1');
+  await expect(page.locator('#persona-select')).toHaveValue('owner');
   await expect(page.locator('#persona-name')).toHaveText('Owner');
   await page.goto('/rv?audience=owner&p=1&persona=3');
   await expect(page.locator('[data-persona-badge]')).toContainText('Persona 2: Owner');
@@ -168,7 +169,7 @@ test('canonical audience cookie restores Persona when localStorage has no profil
     await page.goto('/rv');
     await expect(page.locator('[data-persona-badge]')).toHaveCount(0);
     await palette(page);
-    await expect(page.locator('#persona-select')).toHaveValue('');
+    await expect(page.locator('#persona-select')).toHaveValue('automatic');
     await expect(page.locator('#persona-card')).toBeHidden();
   },
 ));
@@ -182,6 +183,59 @@ test('Apply default removes conflicting selectors without losing unrelated param
   expect(await page.evaluate(() => window.demoProfile.persona)).toBeUndefined();
 });
 
+[
+  ['San Francisco', 'san-francisco'], ['Chicago', 'chicago'], ['Los Angeles', 'los-angeles'],
+].forEach(([name, audience]) => test(`Persona picker applies ${name} as a city simulation instead of a lifecycle persona`, async ({ page }) => {
+  await palette(page, '/rv?keep=1&audience=owner&p=2&persona=3&li=true&region=CA#hero');
+  const before = page.url();
+  await page.selectOption('#persona-select', audience);
+  await expect(page.locator('#persona-card')).toBeHidden();
+  await expect(page.locator('#persona-status')).toContainText(`Manual city audience simulation: ${name}`);
+  expect(page.url()).toBe(before);
+  await page.click('#persona-apply');
+  await expect(page).toHaveURL(`${origin}/rv?keep=1&audience=${audience}&li=true&region=CA#hero`);
+  await expect(page.locator('[data-persona-badge]')).toContainText(`City audience: ${name} (demo simulation)`);
+  expect(await page.evaluate(() => window.demoProfile)).toEqual({
+    audience, loggedIn: true, region: 'CA',
+  });
+  expect(await page.evaluate(() => window.targetPageParams()['profile.persona'])).toBeUndefined();
+  await palette(page);
+  await expect(page.locator('#persona-select')).toHaveValue(audience);
+  await page.selectOption('#persona-select', 'owner');
+  await expect(page.locator('#persona-card')).toBeVisible();
+  await page.click('#persona-apply');
+  await expect(page).toHaveURL(`${origin}/rv?audience=owner&li=true&region=CA`);
+  expect(await page.evaluate(() => window.demoProfile.persona)).toBe(2);
+}));
+
+test('Automatic clears the saved manual city while preserving unrelated context', async ({ page }) => {
+  await page.goto('/rv?audience=chicago&li=true&region=CA');
+  await palette(page, '/rv?audience=chicago&p=2&keep=1#hero');
+  await page.selectOption('#persona-select', 'automatic');
+  await expect(page.locator('#persona-card')).toBeHidden();
+  await page.click('#persona-apply');
+  await expect(page).toHaveURL(`${origin}/rv?keep=1&li=true&region=CA#hero`);
+  expect(await page.evaluate(() => window.demoProfile)).toEqual({ loggedIn: true, region: 'CA' });
+  await expect(page.locator('[data-persona-badge]')).toHaveCount(0);
+  await palette(page);
+  await expect(page.locator('#persona-select')).toHaveValue('automatic');
+});
+
+test('city default and Reset do not revive a saved city or numeric persona', async ({ page }) => {
+  await page.goto('/rv?audience=los-angeles&p=3');
+  await palette(page, '/rv?audience=los-angeles&keep=1');
+  await page.selectOption('#persona-select', '');
+  await page.click('#persona-apply');
+  await expect(page).toHaveURL(`${origin}/rv?audience=default&keep=1&li=false`);
+  expect(await page.evaluate(() => window.demoProfile.audience)).toBeUndefined();
+  await page.goto('/rv?audience=san-francisco');
+  await palette(page, '/rv?audience=san-francisco&keep=1');
+  await page.click('#persona-reset');
+  await expect(page).toHaveURL(`${origin}/rv?keep=1`);
+  expect(await page.evaluate(() => window.demoProfile)).toEqual({});
+  await expect(page.locator('[data-persona-badge]')).toHaveCount(0);
+});
+
 test('Audiences palette updates Persona and Clear removes stale legacy selectors', async ({ page }) => {
   await page.route('**/tools/audiences/**', async (route) => {
     const filename = new URL(route.request().url()).pathname;
@@ -193,7 +247,7 @@ test('Audiences palette updates Persona and Clear removes stale legacy selectors
     });
   });
   await page.route('**/rv.plain.html', (route) => route.fulfill({
-    body: '<div data-audience-owner="/owner"><h1>RV hero</h1></div>',
+    body: '<div data-audience-owner="/owner" data-audience-san-francisco="/sf"><h1>RV hero</h1></div>',
     contentType: 'text/html',
   }));
   const openAudiences = async (referrer) => {
@@ -203,6 +257,12 @@ test('Audiences palette updates Persona and Clear removes stale legacy selectors
   await page.getByRole('button', { name: 'Preview owner for RV hero' }).click();
   await expect(page).toHaveURL(`${origin}/rv?audience=owner&keep=1`);
   await expect(page.locator('[data-persona-badge]')).toContainText('Owner');
+  await openAudiences('/rv?audience=owner&p=2&keep=1');
+  await page.getByRole('button', { name: 'Preview san-francisco for RV hero' }).click();
+  await expect(page).toHaveURL(`${origin}/rv?audience=san-francisco&keep=1`);
+  await palette(page);
+  await expect(page.locator('#persona-select')).toHaveValue('san-francisco');
+  await expect(page.locator('#persona-card')).toBeHidden();
   await openAudiences('/rv?audience=owner&persona=2&keep=1');
   await page.click('#aud-reset');
   await expect(page).toHaveURL(`${origin}/rv?audience=default&keep=1`);
