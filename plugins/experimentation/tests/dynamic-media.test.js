@@ -4,7 +4,7 @@ import path from 'node:path';
 import { test, expect } from '@playwright/test';
 
 const root = path.resolve(__dirname, '../../..');
-const service = 'https://gdrv.scene7.com/is/image/granddesignr/';
+const service = 'https://gdrv.scene7.com/is/image/granddesignrv/';
 
 async function open(page, rows, failImage = false) {
   await page.route('**/blocks/dynamic-media/**', async (route) => {
@@ -14,7 +14,7 @@ async function open(page, rows, failImage = false) {
       contentType: filename.endsWith('.js') ? 'text/javascript' : 'text/css',
     });
   });
-  await page.route(`${service}**`, (route) => (failImage ? route.abort() : route.fulfill({
+  await page.route('https://gdrv.scene7.com/is/**', (route) => (failImage ? route.abort() : route.fulfill({
     body: '<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700"/>',
     contentType: 'image/svg+xml',
   })));
@@ -57,6 +57,26 @@ test('duplicate rows use the last value and empty query values are retained', as
   await expect(page.locator('img')).toHaveAttribute('src', `${service}second?wid=800&flag=`);
 });
 
+['hero', '$hero$'].forEach((preset) => test(`image preset ${preset} uses a standalone token`, async ({ page }) => {
+  await open(page, [['assetID', 'example'], ['image preset', preset], ['wid', '1200']]);
+  await expect(page.locator('img')).toHaveAttribute('src', `${service}example?$hero$&wid=1200`);
+}));
+
+test('preset aliases use the last row and special characters stay inside the token', async ({ page }) => {
+  await open(page, [['assetID', 'example'], ['imagePreset', 'old'], ['IMAGE-PRESET', '$RV & road?#$'], ['fmt', 'webp']]);
+  await expect(page.locator('img')).toHaveAttribute('src', `${service}example?$RV%20%26%20road%3F%23$&fmt=webp`);
+});
+
+['image', 'content'].forEach((type) => test(`type ${type} selects its endpoint without a query parameter`, async ({ page }) => {
+  await open(page, [['assetID', 'example'], ['type', type], ['image preset', 'hero'], ['wid', '1200']]);
+  await expect(page.locator('img')).toHaveAttribute('src', `https://gdrv.scene7.com/is/${type}/granddesignrv/example?$hero$&wid=1200`);
+}));
+
+test('type aliases are case-insensitive and the last row wins', async ({ page }) => {
+  await open(page, [['assetID', 'example'], ['type', 'image'], ['TYPE', ' Content ']]);
+  await expect(page.locator('img')).toHaveAttribute('src', 'https://gdrv.scene7.com/is/content/granddesignrv/example');
+});
+
 [
   [],
   [['wid', '800']],
@@ -66,10 +86,17 @@ test('duplicate rows use the last value and empty query values are retained', as
   [['assetID', 'folder//asset']],
   [['assetID', 'asset'], ['', '800']],
   [['assetID', 'asset', 'extra']],
+  [['assetID', 'asset'], ['image preset', '']],
+  [['assetID', 'asset'], ['image preset', '$hero']],
+  [['assetID', 'asset'], ['image preset', 'hero$']],
+  [['assetID', 'asset'], ['image preset', '$$hero$$']],
+  [['assetID', 'asset'], ['image preset', '$$']],
+  [['assetID', 'asset'], ['type', 'video']],
+  [['assetID', 'asset'], ['type', '']],
 ].forEach((rows, index) => test(`invalid authoring ${index + 1} shows an error without requesting an image`, async ({ page }) => {
   const images = [];
   page.on('request', (request) => {
-    if (request.url().startsWith(service)) images.push(request.url());
+    if (request.url().startsWith('https://gdrv.scene7.com/is/')) images.push(request.url());
   });
   await open(page, rows);
   await expect(page.getByRole('alert')).toContainText('Dynamic Media:');

@@ -122,19 +122,35 @@ Author a two-column **dynamic-media** table:
 | dynamic-media | |
 | --- | --- |
 | assetID | REPLACE_WITH_PUBLISHED_ASSET_ID |
+| type | image |
+| image preset | hero |
 | wid | 1200 |
 | fmt | webp |
 | qlt | 85 |
 
 Replace the placeholder with an actual published asset ID. The required `assetID` row
-selects the path under `https://gdrv.scene7.com/is/image/granddesignr/`; it is never sent
-as a query parameter. Folder paths such as `folder/asset` are supported. Asset path
+selects the asset path; it is never sent as a query parameter. The optional `type` row
+selects `https://gdrv.scene7.com/is/image/granddesignrv/` for `image` (the default when
+absent), or `https://gdrv.scene7.com/is/content/granddesignrv/` for `content`. `type`
+is excluded from query parameters; other supplied values, including empty values, are
+rejected. Values are case-insensitive.
+
+`image preset` is a special directive: `hero` or `$hero$` produces
+the standalone `$hero$` query token, never an `image preset=...` parameter. `imagePreset`,
+`image-preset` and `image_preset` spellings are also accepted. Empty names, unpaired dollar
+signs and multiple wrapping are rejected. The example builds:
+`https://gdrv.scene7.com/is/image/granddesignrv/REPLACE_WITH_PUBLISHED_ASSET_ID?$hero$&wid=1200&fmt=webp&qlt=85`.
+This follows [Adobe's image preset URL syntax](https://experienceleague.adobe.com/en/docs/dynamic-media-classic/using/image-sizing/linking-urls-web-application).
+Folder paths such as `folder/asset` are supported. Asset path
 segments and query values are encoded, so spaces, ampersands and other special characters
 remain literal values. Full URLs, empty path segments and `.`/`..` segments are rejected.
 All other rows become query parameters, including empty values; duplicate keys use the
-last row (parameter names are case-sensitive, `assetID` is case-insensitive).
+last row (parameter names are case-sensitive, `assetID` and image preset aliases are
+case-insensitive). Special characters in preset names are encoded inside the dollar signs.
 
 The block renders the authored URL directly as a responsive image without rewriting
 parameters, using the asset ID as its image alternative text. Invalid tables, missing
 assets and image-loading failures show an author-visible error; there is no fallback
 asset, viewer or template behavior. Existing DM auto-blocking remains unchanged.
+The `content` type changes endpoint routing only: the renderer still uses an image.
+Only image-decodable content is supported, not arbitrary videos, PDFs or other documents.

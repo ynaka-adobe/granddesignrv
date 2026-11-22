@@ -1,7 +1,9 @@
-const IMAGE_SERVICE = 'https://gdrv.scene7.com/is/image/granddesignr';
+const MEDIA_SERVER = 'https://gdrv.scene7.com';
 
 export function buildImageURL(rows) {
   let assetID;
+  let preset;
+  let type = 'image';
   const params = new URLSearchParams();
   rows.forEach(([key, value]) => {
     const name = key.trim();
@@ -10,6 +12,8 @@ export function buildImageURL(rows) {
       throw new Error('Each row needs a valid parameter name.');
     }
     if (name.toLowerCase() === 'assetid') assetID = value.trim();
+    else if (name.toLowerCase().replace(/[\s_-]/g, '') === 'imagepreset') preset = value.trim();
+    else if (name.toLowerCase() === 'type') type = value.trim().toLowerCase();
     else params.set(name, value.trim());
   });
   if (!assetID) throw new Error('Add an assetID row with a non-empty asset ID.');
@@ -19,8 +23,21 @@ export function buildImageURL(rows) {
       || segments.some((segment) => !segment || segment === '.' || segment === '..')) {
     throw new Error('assetID must be an asset path, not a URL or a relative traversal path.');
   }
-  const url = new URL(`${IMAGE_SERVICE}/${segments.map(encodeURIComponent).join('/')}`);
-  url.search = params.toString();
+  if (!['image', 'content'].includes(type)) {
+    throw new Error('type must be image or content.');
+  }
+  const url = new URL(`${MEDIA_SERVER}/is/${type}/granddesignrv/${segments.map(encodeURIComponent).join('/')}`);
+  const query = [];
+  if (preset !== undefined) {
+    const name = preset.startsWith('$') && preset.endsWith('$') ? preset.slice(1, -1) : preset;
+    // eslint-disable-next-line no-control-regex
+    if (!name.trim() || /[$\u0000-\u001f\u007f]/.test(name)) {
+      throw new Error('image preset must be a non-empty name, optionally wrapped once in dollar signs.');
+    }
+    query.push(`$${encodeURIComponent(name)}$`);
+  }
+  if (params.size) query.push(params.toString());
+  url.search = query.join('&');
   return { url: url.href, assetID };
 }
 
