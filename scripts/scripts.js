@@ -21,6 +21,7 @@ import {
   loadTarget,
   applyTargetHeroMboxIfConfigured,
 } from './target.js';
+import { runExperimentation, showExperimentationOverlay } from './experimentation.js';
 
 // --- BEGIN DM/Scene7 auto-block (excat-generated) ---
 
@@ -419,6 +420,7 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
+  await runExperimentation(doc);
   doc.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
@@ -465,6 +467,7 @@ async function loadLazy(doc) {
   loadFonts();
 
   import('../tools/sidekick/aem-genai-variations.js');
+  showExperimentationOverlay(doc);
 }
 
 /**

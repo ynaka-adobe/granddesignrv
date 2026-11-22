@@ -173,12 +173,14 @@ export function getAllMetadata(scope) {
  * @param {String} scope The scope/prefix for the metadata
  * @returns a map of key/value pairs for the given scope
  */
-// eslint-disable-next-line no-unused-vars
 function getAllDataAttributes(el, scope) {
   return el.getAttributeNames()
-    .filter((attr) => attr === `data-${scope}` || attr.startsWith(`data-${scope}-`))
+    .filter((attr) => attr === `data-${scope}`
+      || attr.startsWith(`data-${scope}-`) || attr.startsWith(`data-${scope}:`))
     .reduce((res, attr) => {
-      const key = attr === `data-${scope}` ? 'value' : attr.replace(`data-${scope}-`, '');
+      const key = attr === `data-${scope}`
+        ? 'value'
+        : toCamelCase(removeLeadingHyphens(attr.substring(`data-${scope}`.length + 1)));
       res[key] = el.getAttribute(attr);
       return res;
     }, {});
@@ -253,7 +255,8 @@ function getAllSectionMeta(block, scope) {
  */
 async function replaceInner(path, el, selector) {
   try {
-    const resp = await fetch(path);
+    // Revalidate republished variants instead of using a stale browser-cached copy.
+    const resp = await fetch(path, { cache: 'no-cache' });
     if (!resp.ok) {
       // eslint-disable-next-line no-console
       console.log('error loading content:', resp);
@@ -558,12 +561,15 @@ async function applyAllModifications(
   }
 
   // Section-level modifications
-  let sectionMetadata;
-  await Promise.all([...document.querySelectorAll('.section-metadata')]
-    .map(async (sm) => {
-      sectionMetadata = getAllSectionMeta(sm, type);
+  await Promise.all([...document.querySelectorAll('main > div')]
+    .map(async (section) => {
+      const sm = section.querySelector('.section-metadata');
+      const sectionMetadata = {
+        ...getAllDataAttributes(section, type),
+        ...(sm ? getAllSectionMeta(sm, type) : {}),
+      };
       const sectionNS = await modificationsHandler(
-        sm.parentElement,
+        section,
         sectionMetadata,
       );
       if (sectionNS) {

@@ -22,3 +22,40 @@ This specific repo has been _slightly_ modified to be compatible with DA's live 
 1. Start the AEM CLI: `aem up`.
 1. Open the `{repo}` folder in your favorite code editor and buil something.
 1. **Recommended:** Install common npm packages like linting and testing: `npm i`.
+
+## AEM experimentation
+
+The vendored experimentation engine runs before content decoration only on pages declaring
+experiment, campaign, or audience metadata. It supports raw DA section metadata and published
+EDS section attributes. No new runtime dependencies or Adobe Target configuration are needed;
+existing Target, Persona, Generate with AI, and Dynamic Media integrations are retained.
+
+The Sidekick now includes **Audiences**, a local palette listing section audience variants
+with Preview buttons, and **Experimentation**, which toggles DA's existing experimentation
+panel. Both are available in preview, live, and production, matching SureSmile's configuration.
+The engine's separate simulation pill loads only on local and AEM/Helix preview hosts.
+Audience previews use `?audience=<name>`; Default forces unmatched content, and Clear removes
+the override. Built-in automatic rules are `mobile` (below 600px) and `desktop` (600px or above).
+Other audiences need site-specific rules in `scripts/experimentation.js` before activation.
+SureSmile's country, dental-interest, locale, insights, and credentials are not copied.
+
+To author an A/B test, create Grand Design RV control and challenger documents, and put
+**Experiment**, **Experiment Variants** (links to challengers), and **Experiment Status**
+(`Inactive` initially) in the control's Metadata or Section Metadata table. Preview all
+documents first; publish them and set status to `Active` only when ready. Do not put the
+control experiment metadata on challenger documents. With one challenger, allocation is
+50/50 by default. For an experiment named `rv-hero-test`, force previews with
+`?experiment=rv-hero-test/control` and `?experiment=rv-hero-test/challenger-1`.
+No actual experiment documents are created or activated by this code change.
+
+See the vendored [experiments](plugins/experimentation/documentation/experiments.md),
+[audiences](plugins/experimentation/documentation/audiences.md), and
+[campaigns](plugins/experimentation/documentation/campaigns.md) authoring guides.
+The engine emits existing AEM RUM checkpoints and `aem:experimentation` events.
+Inline reporting requires this site's own RUM domain key, entered by an authorized author
+in the preview pill, never committed. No additional conversion analytics are installed.
+
+Reference: SureSmile main at `c0d5426f5ce977c323aec00350fbf6ab339d356d`.
+Its pre-decoration engine invocation, variant cache revalidation, and Sidekick palette/event
+configuration are adapted here. Published section attribute parsing is a local adaptation
+of its audience metadata-restoration approach.
