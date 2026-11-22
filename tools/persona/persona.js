@@ -1,65 +1,65 @@
-const AXES = ['Explore', 'Research', 'Compare', 'Purchase', 'Deals', 'Support'];
+const AXES = ['Explore', 'Research', 'Compare', 'Purchase', 'Trade-in', 'Support'];
 
 const PERSONAS = [
   {
-    name: 'Technical Evaluator',
-    description: 'A Lead Systems Architect, Product Engineer, R&D Scientist, or Technical Specialist evaluating materials, technologies, specifications, and compatibility. Visits product pages, downloads spec sheets, and views technical documentation.',
+    name: 'Shopper',
+    description: '“Which RV is right for me?”',
+    needs: 'Understand models and floorplans; compare features; see real inventory; understand pricing; find a trusted dealer.',
+    content: 'Product imagery/video, floorplans, specs, comparisons, lifestyle content, buying guides.',
+    context: 'Browsing behavior, models/floorplans viewed, location, inventory availability, dealer interactions.',
+    activation: 'Turn anonymous interest into qualified purchase intent.',
+    experience: 'Activate for discovery and consideration.',
     interests: [
-      { label: 'Data sheets & specifications', value: 60 },
-      { label: 'API/integration details', value: 45 },
-      { label: 'Architecture diagrams', value: 35 },
+      { label: 'Models & floorplans', value: 80 },
+      { label: 'Features & comparisons', value: 70 },
+      { label: 'Inventory & dealers', value: 60 },
     ],
     intent: {
-      Explore: 0.35, Research: 0.85, Compare: 0.7, Purchase: 0.15, Deals: 0.1, Support: 0.45,
+      Explore: 0.85, Research: 0.8, Compare: 0.75, Purchase: 0.6, 'Trade-in': 0.15, Support: 0.2,
     },
-    summary: 'Focused on technical documentation and product performance data',
-    metrics: 'spec sheet downloads · technical content engagement · webinar registrations',
-    trajectory: 'trajectory: technical docs, data sheets, API/integration pages, engineering case studies',
+    summary: 'Build confidence in a high-consideration purchase.',
+    metrics: 'Leads, dealer visits, quote requests, sales.',
+    trajectory: 'Inspiration → model discovery → comparison → floorplan → inventory → dealer/quote',
   },
   {
-    name: 'Business Decision Maker',
-    description: 'A VP Innovation, Business Unit Leader, Manufacturing Executive, or Product Development Leader looking for business outcomes and strategic value. Visits solutions, strategy, innovation, ESG, and executive content.',
+    name: 'Owner',
+    description: '“Help me get the most from the RV I own.”',
+    needs: 'Manuals and how-to content; warranty/service; maintenance; parts/accessories; troubleshooting; owner education.',
+    content: 'Manuals, videos, maintenance guides, FAQs, service information, accessories.',
+    context: 'Owned model, model year, configuration, warranty, service history, preferences.',
+    activation: 'Turn ownership into engagement and loyalty.',
+    experience: 'Activate for ownership and support.',
     interests: [
-      { label: 'Innovation stories', value: 55 },
-      { label: 'ROI & digital transformation', value: 50 },
-      { label: 'Sustainability impact', value: 30 },
+      { label: 'Manuals & how-to', value: 85 },
+      { label: 'Maintenance & service', value: 80 },
+      { label: 'Accessories & community', value: 60 },
     ],
     intent: {
-      Explore: 0.6, Research: 0.45, Compare: 0.3, Purchase: 0.4, Deals: 0.15, Support: 0.2,
+      Explore: 0.4, Research: 0.6, Compare: 0.2, Purchase: 0.2, 'Trade-in': 0.1, Support: 0.95,
     },
-    summary: 'Focused on strategic value, ROI, and digital transformation outcomes',
-    metrics: 'executive content consumption · consultation requests · contact sales conversions',
-    trajectory: 'trajectory: hero/executive content, transformation case studies, industry success stories',
+    summary: 'Maximize enjoyment, reliability and ownership value.',
+    metrics: 'Satisfaction, retention, service engagement, advocacy.',
+    trajectory: 'Registration → onboarding → how-to → maintenance → service/support → community',
   },
   {
-    name: 'Procurement & Sourcing Manager',
-    description: 'A Strategic Sourcing Manager, Procurement Director, or Vendor Manager focused on risk reduction and supplier evaluation. Visits compliance, sourcing, sustainability, and supplier pages.',
+    name: 'Upgrader',
+    description: '“What should I move into next?”',
+    needs: 'Compare current RV with potential upgrade; understand new features/models; assess trade-in; locate inventory; reconnect with dealer.',
+    content: '“What’s new,” model comparisons, upgrade guides, personalized recommendations, trade-in content.',
+    context: 'Owned RV + previous behavior + emerging needs + dealer relationship.',
+    activation: 'Turn an existing relationship into repeat purchase.',
+    experience: 'Activate using the existing relationship to drive the next best experience.',
     interests: [
-      { label: 'Sustainability credentials', value: 55 },
-      { label: 'Certifications & compliance', value: 50 },
-      { label: 'Supplier reliability', value: 40 },
+      { label: 'New models & comparisons', value: 85 },
+      { label: 'Trade-in & upgrade guides', value: 80 },
+      { label: 'Inventory & dealer next steps', value: 70 },
     ],
     intent: {
-      Explore: 0.2, Research: 0.6, Compare: 0.55, Purchase: 0.3, Deals: 0.15, Support: 0.5,
+      Explore: 0.65, Research: 0.8, Compare: 0.9, Purchase: 0.75, 'Trade-in': 0.85, Support: 0.35,
     },
-    summary: 'Focused on ESG credentials, compliance, and supplier reliability',
-    metrics: 'supplier inquiry forms · procurement document downloads',
-    trajectory: 'trajectory: sustainability/ESG content, certifications, global footprint, procurement resources',
-  },
-  {
-    name: 'Industry Researcher',
-    description: 'A student, industry analyst, sustainability researcher, individual engineer, or future customer champion in a learning and discovery mode, not purchasing. Arrives from search and consumes blogs and educational content.',
-    interests: [
-      { label: 'Educational blogs', value: 50 },
-      { label: 'Sustainability stories', value: 45 },
-      { label: 'Innovation showcases', value: 35 },
-    ],
-    intent: {
-      Explore: 0.75, Research: 0.4, Compare: 0.15, Purchase: 0.05, Deals: 0.1, Support: 0.15,
-    },
-    summary: 'Learning and discovery focused, not yet purchase-ready',
-    metrics: 'return visits · content engagement · subscriber growth',
-    trajectory: 'trajectory: search entry, blogs, videos, related articles, newsletter/webinar signups',
+    summary: 'Find a better fit as needs and experience change.',
+    metrics: 'Trade-ins, upgrades, cross-sell, lifetime value.',
+    trajectory: 'New need → research → comparison → trade-in → dealer → purchase',
   },
 ];
 
@@ -134,6 +134,9 @@ function renderPersona(persona) {
   document.getElementById('persona-summary').textContent = persona.summary;
   document.getElementById('persona-metrics').textContent = persona.metrics;
   document.getElementById('persona-trajectory').textContent = persona.trajectory;
+  ['needs', 'content', 'context', 'activation', 'experience'].forEach((field) => {
+    document.getElementById(`persona-${field}`).textContent = persona[field];
+  });
 
   const interests = document.getElementById('persona-interests');
   interests.innerHTML = '';
@@ -214,15 +217,17 @@ function resetUrl(select, loggedin, region) {
   region.value = '';
   renderPersona(PERSONAS[0]);
   const { url } = pageContext();
-  ['p', 'li', 'region'].forEach((k) => url.searchParams.delete(k));
+  ['p', 'persona', 'li', 'loggedin', 'region', 'r'].forEach((k) => url.searchParams.delete(k));
+  url.searchParams.set('demo-profile-reset', '1');
   navigateTo(url);
 }
 
 // Resolve the current selections. head.html persists them durably as a
 // `demoProfile` object (localStorage + cookie) on the content page, which
-// survives navigation and URL cleanup — read that first from an accessible
-// ancestor window, then fall back to the URL query params.
+// survives navigation and URL cleanup. Read accessible storage, then let explicit
+// content-page query params override it, as head.html does.
 function getCurrentProfile() {
+  let prof = {};
   const wins = [];
   try { if (window.top && window.top !== window) wins.push(window.top); } catch (e) { /* noop */ }
   try { if (window.parent && window.parent !== window) wins.push(window.parent); } catch (e) { /* noop */ }
@@ -230,27 +235,30 @@ function getCurrentProfile() {
   for (let i = 0; i < wins.length; i += 1) {
     try {
       const raw = wins[i].localStorage.getItem('demoProfile');
-      if (raw) return JSON.parse(raw);
+      if (raw) { prof = JSON.parse(raw); break; }
     } catch (e) { /* cross-origin / unavailable */ }
     try {
       const m = wins[i].document.cookie.match(/(?:^|;\s*)demoProfile=([^;]+)/);
-      if (m) return JSON.parse(decodeURIComponent(m[1]));
+      if (m) { prof = JSON.parse(decodeURIComponent(m[1])); break; }
     } catch (e) { /* cross-origin / unavailable */ }
   }
   try {
     const q = pageContext().url.searchParams;
-    const prof = {};
-    const p = q.get('p'); if (p) prof.persona = parseInt(p, 10);
-    const li = q.get('li'); if (li !== null) prof.loggedIn = (li === '1' || li === 'true');
-    const r = q.get('region'); if (r) prof.region = r.toUpperCase();
+    const p = q.get('p') ?? q.get('persona'); if (p) prof.persona = Number(p);
+    const li = q.get('li') ?? q.get('loggedin'); if (li !== null) prof.loggedIn = (li === '1' || li === 'true');
+    const r = q.get('region') ?? q.get('r'); if (r) prof.region = r.toUpperCase();
     return prof;
-  } catch (e) { return {}; }
+  } catch (e) { return prof; }
 }
 
 function readParamsIntoControls(select, loggedin, region) {
   try {
     const prof = getCurrentProfile();
-    if (prof.persona >= 1 && prof.persona <= PERSONAS.length) select.value = String(prof.persona - 1);
+    if (Number.isInteger(prof.persona) && prof.persona >= 1 && prof.persona <= PERSONAS.length) {
+      select.value = String(prof.persona - 1);
+    } else if (prof.persona !== undefined) {
+      document.getElementById('persona-status').textContent = 'Unsupported legacy persona. Choose Shopper, Owner or Upgrader and Apply.';
+    }
     if (typeof prof.loggedIn === 'boolean') loggedin.checked = prof.loggedIn;
     if (prof.region) region.value = String(prof.region).toUpperCase();
   } catch (e) { /* leave defaults */ }

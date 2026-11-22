@@ -11,8 +11,14 @@
   <body>
     <div class="persona-app">
       <div class="persona-label">Persona</div>
+      <p class="persona-summary">Grand Design isn't managing three separate audiences.
+        It's managing one evolving customer relationship.</p>
+      <p class="persona-lifecycle">SHOP → OWN → UPGRADE → OWN → UPGRADE</p>
+      <p class="persona-description">With Grand Design expanding from towable into motorized RVs,
+        someone's next Grand Design doesn't have to look like their current Grand Design.</p>
 
-      <select class="persona-select" id="persona-select"></select>
+      <select class="persona-select" id="persona-select" aria-label="Customer lifecycle persona"></select>
+      <p class="persona-description" id="persona-status" role="status"></p>
 
       <div class="persona-controls">
         <label class="persona-toggle">
@@ -28,20 +34,47 @@
       </div>
 
       <h2 class="persona-name" id="persona-name"></h2>
+      <div class="persona-section-label">Mindset</div>
       <p class="persona-description" id="persona-description"></p>
+      <div class="persona-section-label">Primary goal</div>
+      <p class="persona-summary" id="persona-summary"></p>
 
-      <div class="persona-section-label">Top Interests</div>
+      <div class="persona-section-label">Key interests</div>
       <div class="persona-interests" id="persona-interests"></div>
+      <p class="persona-description">Illustrative demo weights, not observed customer data.</p>
 
       <div class="persona-section-label">Intent Map</div>
       <div class="persona-radar-wrap">
         <svg class="persona-radar" id="persona-radar" viewBox="0 0 260 260"></svg>
       </div>
 
-      <p class="persona-summary" id="persona-summary"></p>
+      <dl class="persona-details">
+        <dt>Key needs</dt><dd id="persona-needs"></dd>
+        <dt>Content that matters</dt><dd id="persona-content"></dd>
+        <dt>Important context/data</dt><dd id="persona-context"></dd>
+        <dt>Activation opportunity</dt><dd id="persona-activation"></dd>
+      </dl>
 
+      <div class="persona-section-label">Business outcome</div>
       <div class="persona-metrics" id="persona-metrics"></div>
+      <div class="persona-section-label">Typical experiences</div>
       <div class="persona-trajectory" id="persona-trajectory"></div>
+
+      <details class="persona-explanation">
+        <summary>Manage once. Activate differently.</summary>
+        <div class="persona-section-label">Manage once</div>
+        <p>RV product information, specifications and floorplans, assets, manuals,
+          lifestyle/editorial content, service information.</p>
+        <div class="persona-section-label">Activate differently</div>
+        <p id="persona-experience"></p>
+        <p>Shopper: discovery and consideration. Owner: ownership and support.
+          Upgrader: the next best experience informed by an existing relationship.</p>
+        <p>Illustrative Upgrader experience, not an identified customer:</p>
+        <blockquote>“You own a Reflection 315RLTS. Here’s what has changed, what might fit
+          your evolving needs, what local dealers have available, and how to take the next step.”</blockquote>
+        <p>This card simulates lifecycle intent. It does not recognize a real owner or
+          collect ownership or service-history data.</p>
+      </details>
     </div>
   </body>
 </html>

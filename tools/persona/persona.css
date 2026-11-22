@@ -82,9 +82,7 @@ body {
 }
 
 .persona-interest-label {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 .persona-interest-track {
@@ -95,6 +93,7 @@ body {
 }
 
 .persona-interest-fill {
+  display: block;
   height: 100%;
   background-color: var(--persona-accent);
 }
@@ -164,6 +163,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
   margin: 10px 0 4px;
 }
 
@@ -253,4 +253,44 @@ body {
 .persona-reset:hover {
   background: #f5f5f5;
   color: #000;
+}
+
+.persona-lifecycle {
+  margin: 0;
+  color: var(--persona-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.persona-details {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.persona-details dt {
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.persona-details dd {
+  margin: 4px 0 0;
+  color: var(--persona-muted);
+}
+
+.persona-explanation {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.persona-explanation summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.persona-explanation blockquote {
+  margin: 12px 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--persona-accent);
 }

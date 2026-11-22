@@ -11,7 +11,6 @@ const PERSONA = {
   1: { color: '#0072ce', color2: '#004a86' },
   2: { color: '#e1261c', color2: '#8f1410' },
   3: { color: '#00884a', color2: '#00542e' },
-  4: { color: '#6a1b9a', color2: '#3f0f5c' },
 };
 
 // persona/loggedIn/region — head.html exposes window.demoProfile from ?p/cookie;
@@ -20,7 +19,7 @@ function getProfile() {
   const d = { ...(window.demoProfile || {}) };
   if (d.persona === undefined) {
     const q = new URLSearchParams(window.location.search);
-    const p = q.get('p'); if (p) d.persona = parseInt(p, 10);
+    const p = q.get('p') ?? q.get('persona'); if (p) d.persona = Number(p);
     const li = q.get('li'); if (li !== null) d.loggedIn = (li === '1' || li === 'true');
     const r = q.get('region'); if (r) d.region = r.toUpperCase();
   }
@@ -122,6 +121,11 @@ async function targetDeliver(profile) {
 export default async function decorate(block) {
   const profile = getProfile();
   if (!profile.persona) return; // no persona → stay empty (CSS hides it)
+  if (![1, 2, 3].includes(profile.persona)) {
+    // eslint-disable-next-line no-console
+    console.warn('Unsupported demo persona; Target hero was not requested.');
+    return;
+  }
   try {
     const offers = normalizeOffers(await targetDeliver(profile));
     const hero = offers.find((o) => o.token === 'hero');

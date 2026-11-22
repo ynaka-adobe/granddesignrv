@@ -59,3 +59,21 @@ Reference: SureSmile main at `c0d5426f5ce977c323aec00350fbf6ab339d356d`.
 Its pre-decoration engine invocation, variant cache revalidation, and Sidekick palette/event
 configuration are adapted here. Published section attribute parsing is a local adaptation
 of its audience metadata-restoration approach.
+
+## Grand Design RV lifecycle personas
+
+The Persona Sidekick card simulates **Shopper → Owner → Upgrader** as one evolving
+relationship, with each stage's goals, needs, content, context, activation and outcomes.
+The existing numeric profile contract is retained: `p=1` is Shopper, `p=2` is Owner,
+and `p=3` is Upgrader. Apply still passes `p`, `li` and `region` to the page, where
+`head.html` persists `demoProfile` and exposes the same Target profile parameters.
+Existing Target activities/offers using IDs 1–3 should be reviewed for the new lifecycle
+meaning; this change does not edit remote Target activities or offers.
+Legacy persona 4 and invalid values are cleared rather than misidentified as a new persona.
+Reset clears persisted demo selections via a one-time `demo-profile-reset` query flag,
+which is removed from the page URL after processing.
+
+The interest bars and intent map are illustrative demo weights, not measured data.
+The Reflection 315RLTS example illustrates a possible Upgrader experience, not real
+customer recognition. No ownership tracking, service-history collection, backend audience
+rules, or new experimentation audiences are added.

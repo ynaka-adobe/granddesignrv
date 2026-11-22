@@ -15,15 +15,23 @@
 <script nonce="aem">
   /* Persona demo profile: capture URL params (p, li, region), persist them,
      expose to at.js via targetPageParams, and show a demo badge.
-     Personas: 1 Technical Evaluator, 2 Business Decision Maker,
-     3 Procurement Manager, 4 Industry Researcher. */
+     Personas: 1 Shopper, 2 Owner, 3 Upgrader. Simulated lifecycle context only. */
   (function () {
     try {
       var q = new URLSearchParams(location.search);
       var cur = {};
-      try { cur = JSON.parse(localStorage.getItem('demoProfile') || '{}'); } catch (e) { cur = {}; }
+      if (!q.has('demo-profile-reset')) {
+        try { cur = JSON.parse(localStorage.getItem('demoProfile') || '{}'); } catch (e) { cur = {}; }
+      } else {
+        q.delete('demo-profile-reset');
+        history.replaceState(null, '', location.pathname + (q.size ? '?' + q.toString() : '') + location.hash);
+      }
       var p = q.get('p'); if (p === null) p = q.get('persona');
-      if (p !== null && p !== '') cur.persona = parseInt(p, 10);
+      if (p !== null && p !== '') cur.persona = Number(p);
+      if (cur.persona !== undefined && ![1, 2, 3].includes(cur.persona)) {
+        console.warn('Unsupported demo persona; choose Shopper, Owner or Upgrader.');
+        delete cur.persona;
+      }
       var li = q.get('li'); if (li === null) li = q.get('loggedin');
       if (li !== null) cur.loggedIn = (li === '1' || li === 'true');
       var r = q.get('region'); if (r === null) r = q.get('r');
@@ -45,7 +53,7 @@
       };
 
       /* demo badge (dismissible) */
-      var NAMES = { 1: 'Technical Evaluator', 2: 'Business Decision Maker', 3: 'Procurement Manager', 4: 'Industry Researcher' };
+      var NAMES = { 1: 'Shopper', 2: 'Owner', 3: 'Upgrader' };
       document.addEventListener('DOMContentLoaded', function () {
         var d = window.demoProfile || {};
         if (!d.persona) return;
